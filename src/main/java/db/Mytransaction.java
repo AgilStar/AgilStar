@@ -13,7 +13,7 @@ import org.hibernate.classic.Session;
  * @author tianyuanliu
  */
 public class Mytransaction {
-    static Transaction t;
+    public static Transaction t;
     public Mytransaction(){
         Session session = (Session) NewHibernateUtil.getSessionFactory().getCurrentSession();
      t= session.beginTransaction();
