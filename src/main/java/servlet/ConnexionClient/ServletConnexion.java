@@ -33,17 +33,8 @@ public class ServletConnexion extends HttpServlet {
         //out.print(email);
         //out.print(mdp);
         String url="";
-        if (new db.dbClient().verifyConnect(email, mdp)) {
-          //out.print(email);
-          url="/content/indexClient.html";
-//            RequestDispatcher rd = req.getRequestDispatcher("../indexClient.html");
-//            rd.forward(req, resp);
-        } else {
-           //out.print(mdp);
-             url="/content/page-login.html";
-//            RequestDispatcher rd = req.getRequestDispatcher("../page-login.html");
-//            rd.forward(req, resp);
-        }
+        url=new db.dbClient().verifyConnect(email, mdp);
+         
         RequestDispatcher rd = req.getRequestDispatcher(url);
         rd.forward(req, resp);
         

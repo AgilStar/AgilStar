@@ -30,9 +30,9 @@ public class dbClient {
         }
     }
 
-    public boolean verifyConnect(String email, String mdp) {
+    public String verifyConnect(String email, String mdp) {
 
-        boolean ok = false;
+        String url="";
         try {
            
             Statement st = cx.createStatement();
@@ -46,15 +46,19 @@ public class dbClient {
                 String mdpu = rs.getString("MDPU");
                 String statutu = rs.getString("STATUTU");
                 if ((mdpu.equals(mdp))) {
-                    ok = true;
-                } else {
-                    ok = false;
+                   if(statutu.equals("admin")||statutu.equals("coach")){
+                       url="/content/indexCoach.html";
+                   }else{
+                        url="/content/indexClient.html";
+                   }
+                }else{
+                     url="/content/page-login.html";
                 }
             }
 
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement " + ex.getMessage());
         }
-        return ok;
+        return url;
     }
 }
