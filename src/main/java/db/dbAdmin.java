@@ -14,10 +14,10 @@ import java.sql.SQLException;
  * @author tianyuanliu
  */
 public class dbAdmin {
-    private Connection cx;
+    public Connection cx;
 
     /*données de connexion*/
-    private String url = "jdbc:mysql://etu-web:3306/db_21201692";
+    private  String url = "jdbc:mysql://etu-web:3306/db_21201692";
     private String login = "21201692";
     private String password = "04964N";
     
@@ -31,25 +31,17 @@ public class dbAdmin {
         }
         /*ouverture de la connexion*/
         try {
-            this.cx = DriverManager.getConnection(url, login, password);
+            cx = DriverManager.getConnection(url, login, password);
         } catch (SQLException ex) {
             System.out.println("Erreur ouverture connexion " + ex.getMessage());
         }
 
     }
     
-    
-    public void insertExerice(){
-    
+    public Connection getConnection(){
+        return cx;
     }
     
-    
-    /*Programme principal du test*/
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
-         dbAdmin unebd = new dbAdmin();
-
-
-    }
     
     
 }

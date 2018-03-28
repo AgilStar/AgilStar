@@ -21,6 +21,8 @@
     <link href="../css/lib/owl.theme.default.min.css" rel="stylesheet" />
     <link href="../css/helper.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
+    <script type="text/JavaScript" src="../js/ajaxExercice.js"></script>
+     <script type="text/JavaScript" src="../js/ajaxAdmin.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
     <!--[if lt IE 9]>
@@ -396,21 +398,22 @@
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form>
+                                    
                                         <div class="form-group">
                                             <label>Nom d'exercice</label>
-                                            <input type="string" class="form-control" placeholder="nom de l'exercice" name="nameExercice">
+                                            <input type="string" class="form-control" placeholder="nom de l'exercice" id="nameExercice">
                                         </div>
                                         <div class="form-group">
                                             <label>Objectif</label>
-                                            <input type="string" class="form-control" placeholder="Objectif de l'exercice" name="objectiveExercice">
+                                            <input type="string" class="form-control" placeholder="Objectif de l'exercice" id="objectiveExercice">
                                         </div>
                                          <div class="form-group">
                                             <label>Lien de la vidéo</label>
-                                            <input type="string" class="form-control" placeholder="Lien de la vidéo" name="videoExercice">
+                                            <input type="string" class="form-control" placeholder="Lien de la vidéo" id="videoExercice" >
                                         </div>  
-                                        <button type="submit" class="btn btn-default">Créer</button>
-                                    </form>
+                                        <button type="button"  onclick="insertExercice()">Créer</button>
+                                        
+                                    
                                 </div>
                             </div>
                         </div>

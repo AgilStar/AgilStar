@@ -54,7 +54,6 @@ public class Exercice  implements java.io.Serializable {
 
 
 
-
 }
 
 
