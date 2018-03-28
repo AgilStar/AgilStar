@@ -49,9 +49,9 @@ public class dbClient {
                     String statutu = rs.getString("STATUTU");
                     if ((mdpu.equals(mdp))) {
                         if (statutu.equals("admin") || statutu.equals("coach")) {
-                            url = "/content/indexCoach.html";
+                            url = "/content/indexCoach.jsp";
                         } else {
-                            url = "/content/indexClient.html";
+                            url = "/content/indexClient.jsp";
                         }
                     } else {
                         url = "errorMot";

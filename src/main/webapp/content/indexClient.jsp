@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
@@ -390,38 +390,7 @@
             <!-- Container fluid  -->
             <div class="container-fluid">
                 <!-- Start Page Content -->
-                <div class="row">
-                    
-                 <div class="col-lg-6" >
-                        <div class="card">
-                            <div class="card-title">
-                                <h4>Création d'un exercice</h4>
-
-                            </div>
-                            <div class="card-body">
-                                <div class="basic-form">
-                                    
-                                        <div class="form-group">
-                                            <label>Nom d'exercice</label>
-                                            <input type="string" class="form-control" placeholder="nom de l'exercice" id="nameExercice">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Objectif</label>
-                                            <input type="string" class="form-control" placeholder="Objectif de l'exercice" id="objectiveExercice">
-                                        </div>
-                                         <div class="form-group">
-                                            <label>Lien de la vidéo</label>
-                                            <input type="string" class="form-control" placeholder="Lien de la vidéo" id="videoExercice" >
-                                        </div>  
-                                        <button type="button"  onclick="insertExercice()">Créer</button>
-                                        
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                   
-                </div>
+                
 
 
 

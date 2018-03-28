@@ -4,9 +4,6 @@
  * and open the template in the editor.
  */
 
-
-
-
 /**
  * Cette méthode "Ajax" affiche le XML.
  *
