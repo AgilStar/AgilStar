@@ -7,6 +7,7 @@ package db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
@@ -19,11 +20,11 @@ import model.Exercice;
  */
 public class dbExercice {
 
-    
     Connection cx;//La connection utilisé par toutes les méthodes dans cette classe
-/**
- * Constucteur
- */
+
+    /**
+     * Constucteur
+     */
     public dbExercice() {
         try {
             cx = new dbAdmin().getConnection();
@@ -34,22 +35,48 @@ public class dbExercice {
         }
     }
 
-   /**
-    * Ajouter un nouvel exercice
-    * @param name nom d'un exercice
-    * @param objective objectif d'un exercice
-    * @param lien lien de vidéo d'un exercice
-    */
-          
-    public void insertExercice(String name, String objective, String lien) {
+    /**
+     * Ajouter un nouvel exercice
+     *
+     * @param name nom d'un exercice
+     * @param objective objectif d'un exercice
+     * @param lien lien de vidéo d'un exercice
+     * @author Tianyuan,Nicolas
+     */
+    public boolean insertExercice(String name, String objective, String lien) {
         try {
+            if(!checkExistExercice(name)){
+                return false;
+            }
+            
             String sql = "insert into EXERCICE(LIBELLEE,OBJECTIFE,LIENVIDEO) VALUES('" + name + "','" + objective + "','" + lien + "')";
             Statement st = cx.createStatement();
             st.executeUpdate(sql);
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement " + ex.getMessage());
         }
+        return true;
 
+    }
+
+    public boolean checkExistExercice(String name) {
+        try {
+            String sql = "select count(*) as Nb from EXERCICE where LIBELLEE='" +name+"'";
+            Statement st = cx.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            int nb = 0;
+            while (rs.next()) {
+                nb = rs.getInt("Nb");
+            }
+            System.out.println("ssss"+nb);
+            if (nb==1)
+                return false;
+            else
+                return true;
+        } catch (SQLException ex) {
+            System.out.println("Il y a un problème sur statement " + ex.getMessage());
+        }
+        return true;
     }
 
 }
