@@ -38,6 +38,12 @@ public class dbAdmin {
 
     }
     
+    
+    public void insertExerice(){
+    
+    }
+    
+    
     /*Programme principal du test*/
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
          dbAdmin unebd = new dbAdmin();
