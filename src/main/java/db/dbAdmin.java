@@ -7,7 +7,11 @@ package db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import model.Utilisateur;
 
 /**
  *
@@ -40,6 +44,25 @@ public class dbAdmin {
     
     public Connection getConnection(){
         return cx;
+    }
+    public void getClients() {
+        ArrayList<Utilisateur> users = new ArrayList();
+        Utilisateur e;
+        try {
+            String sql = "select *  from UTILISATEUR";
+            Statement st = cx.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            
+            while (rs.next()) {
+                String s = rs.getString("NOMU");
+                //ajouter les autres attributs 
+                
+            }
+            
+        } catch (SQLException ex) {
+            System.out.println("Il y a un problème sur statement " + ex.getMessage());
+        }
+        
     }
     
     

@@ -24,6 +24,7 @@
     <script type="text/JavaScript" src="../js/ajaxExercice.js"></script>
      <script type="text/JavaScript" src="../js/ajaxAdmin.js"></script>
      <script type="text/JavaScript" src="../js/outilCommon.js"></script>
+     <script type="text/JavaScript" src="../js/pageChange.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
     <!--[if lt IE 9]>
@@ -251,9 +252,18 @@
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
                         <li class="nav-label">Home</li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Clients</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="#">Clients Validés </a></li>
+                                <li><a href="index1.html">Clients en attente </a></li>
+                                <li><a href="index1.html">Prospects </a></li>
+                            </ul>
+                        </li>
+                        
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Exercice</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="index.html">Création </a></li>
+                                <li><a >Création</a></li>
+                                <li><button onclick="pageCreateExercice()">sss</button></li>
                                 <li><a href="index1.html">Analytics </a></li>
                             </ul>
                         </li>
@@ -387,41 +397,47 @@
             </div>
             <!-- End Bread crumb -->
             <!-- Container fluid  -->
-            <div class="container-fluid">
+            <div class="container-fluid" id="mainPage">
                 <!-- Start Page Content -->
-                <div class="row">
-                    
-                 <div class="col-lg-6" >
-                        <div class="card">
-                            <div class="card-title">
-                                <h4>Création d'un exercice</h4>
-
+                <div class='row'>
+                    <div class='col-lg-6' >
+                        <div class='card'>
+                            <div class='card-title'>
+                                <h4>Liste des clients</h4>
                             </div>
-                            <div class="card-body">
-                                <div class="basic-form">
-                                    
-                                        <div class="form-group">
-                                            <label>Nom d'exercice</label>
-                                            <input type="string" class="form-control" placeholder="nom de l'exercice" id="nameExercice" required="required">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Objectif</label>
-                                            <input type="string" class="form-control" placeholder="Objectif de l'exercice" id="objectiveExercice" required="required">
-                                        </div>
-                                         <div class="form-group">
-                                            <label>Lien de la vidéo</label>
-                                            <input type="string" class="form-control" placeholder="Lien de la vidéo" id="videoExercice" >
-                                        </div>  
-                                        <div id="errorMessage"></div>
-                                        <button type="button"  onclick="insertExercice()">Créer</button>
-                                        
-                                    
+                            <div class ="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Nom</th>
+                                                <th>Prenom</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">Laporte</th>
+                                                <td>Alice</td>
+                                                <td><span class="badge badge-primary">Sale</span></td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Dhos</th>
+                                                <td>Emmanuelle</td>
+                                                <td><span class="badge badge-success">Tax</span></td>
+                                                
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
-                   
                 </div>
+               
 
 
 
