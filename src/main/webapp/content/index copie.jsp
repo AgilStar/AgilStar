@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon.png">
     <title>Ela - Bootstrap Admin Dashboard Template</title>
     <!-- Bootstrap Core CSS -->
     <link href="../css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -248,9 +248,9 @@
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
                         <li class="nav-label">Home</li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Exercice</span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard <span class="label label-rouded label-primary pull-right">2</span></span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="index.html">Création </a></li>
+                                <li><a href="index.html">Ecommerce </a></li>
                                 <li><a href="index1.html">Analytics </a></li>
                             </ul>
                         </li>
@@ -386,37 +386,7 @@
             <!-- Container fluid  -->
             <div class="container-fluid">
                 <!-- Start Page Content -->
-                <div class="row">
-                    
-                 <div class="col-lg-6" >
-                        <div class="card">
-                            <div class="card-title">
-                                <h4>Création d'un exercice</h4>
-
-                            </div>
-                            <div class="card-body">
-                                <div class="basic-form">
-                                    <form>
-                                        <div class="form-group">
-                                            <label>Nom d'exercice</label>
-                                            <input type="string" class="form-control" placeholder="nom de l'exercice" name="nameExercice">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Objectif</label>
-                                            <input type="string" class="form-control" placeholder="Objectif de l'exercice" name="objectiveExercice">
-                                        </div>
-                                         <div class="form-group">
-                                            <label>Lien de la vidéo</label>
-                                            <input type="string" class="form-control" placeholder="Lien de la vidéo" name="videoExercice">
-                                        </div>  
-                                        <button type="submit" class="btn btn-default">Créer</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                   
-                </div>
+                
 
 
 
