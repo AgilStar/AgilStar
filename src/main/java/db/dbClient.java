@@ -32,28 +32,31 @@ public class dbClient {
 
     public String verifyConnect(String email, String mdp) {
 
-        String url="";
+        String url = "";
         try {
-           
+
             Statement st = cx.createStatement();
-            String sql = "select MAILU,STATUTU,MDPU from UTILISATEUR where MAILU='" + email+"'";
+            String sql = "select MAILU,STATUTU,MDPU from UTILISATEUR where MAILU='" + email + "'";
 
             ResultSet rs = st.executeQuery(sql);
+            if (rs.next() == false) {
+                url = "null";
+            } else {
+                
 
-            while (rs.next()) {
-               
-                String mailu = rs.getString("MAILU");
-                String mdpu = rs.getString("MDPU");
-                String statutu = rs.getString("STATUTU");
-                if ((mdpu.equals(mdp))) {
-                   if(statutu.equals("admin")||statutu.equals("coach")){
-                       url="/content/indexCoach.html";
-                   }else{
-                        url="/content/indexClient.html";
-                   }
-                }else{
-                     url="/content/page-login.html";
-                }
+                    String mailu = rs.getString("MAILU");
+                    String mdpu = rs.getString("MDPU");
+                    String statutu = rs.getString("STATUTU");
+                    if ((mdpu.equals(mdp))) {
+                        if (statutu.equals("admin") || statutu.equals("coach")) {
+                            url = "/content/indexCoach.html";
+                        } else {
+                            url = "/content/indexClient.html";
+                        }
+                    } else {
+                        url = "errorMot";
+                    }
+                
             }
 
         } catch (SQLException ex) {

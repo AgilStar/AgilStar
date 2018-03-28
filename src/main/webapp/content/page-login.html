@@ -16,6 +16,9 @@
     <!-- Custom CSS -->
     <link href="../css/helper.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
+      <script src="../js/ajaxConnect.js"></script>
+      <script src="../js/outilCommon.js"></script>
+       <script src="../js/ajaxAdmin.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
     <!--[if lt IE 9]>
@@ -40,14 +43,14 @@
                         <div class="login-content card">
                             <div class="login-form">
                                 <h4>Connexion</h4>
-                                <form action="/ServletConnexion" method="GET">
+                               
                                     <div class="form-group">
                                         <label>Addresse mail</label>
-                                        <input type="email" class="form-control" name="email">
+                                        <input type="email" class="form-control" name="email" id="email">
                                     </div>
                                     <div class="form-group">
                                         <label>Mot de passe </label>
-                                        <input type="password" class="form-control" name="mdp">
+                                        <input type="password" class="form-control" name="mdp" id="mdp">
                                     </div>
                                     <div class="checkbox">
                                   
@@ -56,11 +59,12 @@
         									</label>
 
                                     </div>
-                                    <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Connexion</button>
+                                     <div id="errorCo"></div>
+                                    <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30" onclick="connectVerify()">Connexion</button>
                                     <div class="register-link m-t-15 text-center">
                                         <p>Avez-vous un compte ? <a href="#"> Enregistrez-vous ici </a></p>
                                     </div>
-                                </form>
+                                
                             </div>
                         </div>
                     </div>
