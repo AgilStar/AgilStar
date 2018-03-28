@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28 mars 2018 10:29:51 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Programmeperso" table="PROGRAMMEPERSO" catalog="db_21201692" optimistic-lock="version">
+        <id name="codepp" type="java.lang.Integer">
+            <column name="CODEPP" />
+            <generator class="identity" />
+        </id>
+        <property name="codeu" type="int">
+            <column name="CODEU" not-null="true" />
+        </property>
+        <property name="codept" type="int">
+            <column name="CODEPT" not-null="true" />
+        </property>
+        <property name="libellepp" type="string">
+            <column name="LIBELLEPP" length="128" />
+        </property>
+        <property name="descriptionpp" type="string">
+            <column name="DESCRIPTIONPP" length="128" />
+        </property>
+    </class>
+</hibernate-mapping>

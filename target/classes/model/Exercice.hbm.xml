@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28 mars 2018 10:29:51 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Exercice" table="EXERCICE" catalog="db_21201692" optimistic-lock="version">
+        <id name="codee" type="java.lang.Integer">
+            <column name="CODEE" />
+            <generator class="identity" />
+        </id>
+        <property name="libellee" type="string">
+            <column name="LIBELLEE" length="128" />
+        </property>
+        <property name="objectife" type="string">
+            <column name="OBJECTIFE" length="128" />
+        </property>
+        <property name="lienvideo" type="string">
+            <column name="LIENVIDEO" length="128" />
+        </property>
+    </class>
+</hibernate-mapping>
