@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28 mars 2018 10:29:51 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Utilisateur" table="UTILISATEUR" catalog="db_21201692" optimistic-lock="version">
+        <id name="codeu" type="java.lang.Integer">
+            <column name="CODEU" />
+            <generator class="identity" />
+        </id>
+        <property name="nomu" type="string">
+            <column name="NOMU" length="128" />
+        </property>
+        <property name="prenomu" type="string">
+            <column name="PRENOMU" length="128" />
+        </property>
+        <property name="mailu" type="string">
+            <column name="MAILU" length="128" />
+        </property>
+        <property name="genreu" type="string">
+            <column name="GENREU" length="32" />
+        </property>
+        <property name="datenaissance" type="date">
+            <column name="DATENAISSANCE" length="10" />
+        </property>
+        <property name="mdpu" type="string">
+            <column name="MDPU" length="128" />
+        </property>
+        <property name="statutu" type="string">
+            <column name="STATUTU" length="32" />
+        </property>
+        <property name="adresseu" type="string">
+            <column name="ADRESSEU" length="128" />
+        </property>
+        <property name="telu" type="string">
+            <column name="TELU" length="128" />
+        </property>
+        <property name="infooptu" type="string">
+            <column name="INFOOPTU" length="128" />
+        </property>
+    </class>
+</hibernate-mapping>

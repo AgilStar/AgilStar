@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28 mars 2018 10:29:51 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Planifierbilan" table="PLANIFIERBILAN" catalog="db_21201692" optimistic-lock="version">
+        <composite-id name="id" class="model.PlanifierbilanId">
+            <key-property name="codesb" type="int">
+                <column name="CODESB" />
+            </key-property>
+            <key-property name="codee" type="int">
+                <column name="CODEE" />
+            </key-property>
+            <key-property name="dater" type="date">
+                <column name="DATER" length="10" />
+            </key-property>
+        </composite-id>
+        <property name="ordreb" type="java.lang.Integer">
+            <column name="ORDREB" />
+        </property>
+        <property name="nbmaxu" type="string">
+            <column name="NBMAXU" length="32" />
+        </property>
+        <property name="tempsmaxu" type="java.lang.Integer">
+            <column name="TEMPSMAXU" />
+        </property>
+    </class>
+</hibernate-mapping>
