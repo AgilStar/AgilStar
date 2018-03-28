@@ -21,11 +21,24 @@ function insertExercice ()
          var videoExercice=document.getElementById("videoExercice").value;
          var objectiveExercice=document.getElementById("objectiveExercice").value;
         
-       
+        var errorMessage="";
+        var errorFlag=false;
+        if(!checkEmpty(nameExercice)){
+            errorFlag=true;
+            errorMessage=errorMessage+"Le nom de l'exercice est manquant "
+        }
         
-	// On précise ce que l'on va faire quand on aura reçu la réponse du serveur.
+        if(!checkEmpty(objectiveExercice)){
+             errorFlag=true;
+           errorMessage=errorMessage+"L'objectif de l'exercice est manquant"
+        }
+         
+        if(errorFlag){
+            document.getElementById("errorMessage").innerHTML=errorMessage;
+        }else{
+            // On précise ce que l'on va faire quand on aura reçu la réponse du serveur.
 	// Si l'on a tout reçu et que la requête http s'est bien passée.
-        xhr.onreadystatechange = function(){
+                    xhr.onreadystatechange = function(){
 		if (xhr.readyState === 4 && xhr.status === 200){
 			{
 			// Elément html que l'on va mettre à jour.
@@ -36,5 +49,10 @@ function insertExercice ()
 	// Requête au serveur avec les paramètres éventuels.
 	xhr.open("GET","/insertExercice?nameExercice="+nameExercice+"&videoExercice="+videoExercice+"&objectiveExercice="+objectiveExercice,true);
 	xhr.send(null);	
+            
+        }
+        
+	
+
 	
 	}

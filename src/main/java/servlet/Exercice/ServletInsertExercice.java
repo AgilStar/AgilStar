@@ -32,6 +32,6 @@ public class ServletInsertExercice extends HttpServlet {
         String videoExercice = req.getParameter("videoExercice");
         String objectiveExercice = req.getParameter("objectiveExercice");
         new db.dbExercice().insertExercice(nameExercice, objectiveExercice, videoExercice);
-
+        
     }
 }
