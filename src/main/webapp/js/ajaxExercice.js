@@ -12,47 +12,71 @@
  *
  * On utilise la propriété 'responseText' de l'objet XMLHttpRequest afin
  * de récupérer sous forme de texte le flux envoyé par le serveur.
+ * @author tianyuan
  */
-function insertExercice ()
-	{
-	// Objet XMLHttpRequest.
-	var xhr = getXMLHttpRequest();
-        var nameExercice=document.getElementById("nameExercice").value;
-         var videoExercice=document.getElementById("videoExercice").value;
-         var objectiveExercice=document.getElementById("objectiveExercice").value;
-        
-        var errorMessage="";
-        var errorFlag=false;
-        if(!checkEmpty(nameExercice)){
-            errorFlag=true;
-            errorMessage=errorMessage+"Le nom de l'exercice est manquant "
-        }
-        
-        if(!checkEmpty(objectiveExercice)){
-             errorFlag=true;
-           errorMessage=errorMessage+"L'objectif de l'exercice est manquant"
-        }
-         
-        if(errorFlag){
-            document.getElementById("errorMessage").innerHTML=errorMessage;
-        }else{
-            // On précise ce que l'on va faire quand on aura reçu la réponse du serveur.
-	// Si l'on a tout reçu et que la requête http s'est bien passée.
-                    xhr.onreadystatechange = function(){
-		if (xhr.readyState === 4 && xhr.status === 200){
-			{
-			// Elément html que l'on va mettre à jour.
-			alert("Vous avez réussi à créer un nouvel exercice");
-			}
-		};
-        }
-	// Requête au serveur avec les paramètres éventuels.
-	xhr.open("GET","/insertExercice?nameExercice="+nameExercice+"&videoExercice="+videoExercice+"&objectiveExercice="+objectiveExercice,true);
-	xhr.send(null);	
-            
-        }
-        
-	
+function insertExercice()
+{
+    //Initialiser
+    var divErrorMessageParent = document.getElementById("errorMessage");
+    divErrorMessageParent.innerHTML = "";
+    // Objet XMLHttpRequest.
+    var xhr = getXMLHttpRequest();
+    var nameExercice = document.getElementById("nameExercice").value;
+    var videoExercice = document.getElementById("videoExercice").value;
+    var objectiveExercice = document.getElementById("objectiveExercice").value;
+// on vérifie que les champs nom d'exercice et objectif sont remplis
+    var errorMessage = "";
+    var errorFlag = false;
+    if (!checkEmpty(nameExercice)) {
+        errorFlag = true;
+        errorMessage = errorMessage + "Le nom de l'exercice est manquant "
+    }
 
-	
-	}
+    if (!checkEmpty(objectiveExercice)) {
+        errorFlag = true;
+        errorMessage = errorMessage + "L'objectif de l'exercice est manquant"
+    }
+
+    if (errorFlag) {
+        //S'ils le sont, on affiche un message d'erreur
+        var divErrorMessage = document.createElement("div");
+        divErrorMessage.innerHTML = errorMessage;
+        divErrorMessage.setAttribute("class", "alert alert-danger");
+        divErrorMessageParent.appendChild(divErrorMessage);
+
+
+
+    } else {
+        // On insère le nouvel exercice dans la base de données
+        // On précise ce que l'on va faire quand on aura reçu la réponse du serveur.
+        // Si l'on a tout reçu et que la requête http s'est bien passée.
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                {
+
+                    var errorMessage = xhr.responseText;
+                    if (errorMessage.length > 0) {
+                        var divErrorMessage = document.createElement("div");
+                        divErrorMessage.innerHTML = errorMessage;
+                        divErrorMessage.setAttribute("class", "alert alert-danger");
+                        divErrorMessageParent.appendChild(divErrorMessage);
+
+                    } else {
+                        alert("Vous avez réussi à créer un nouvel exercice");
+                    }
+
+
+                }
+            }
+            ;
+        }
+        // Requête au serveur avec les paramètres éventuels.
+        xhr.open("GET", "/insertExercice?nameExercice=" + nameExercice + "&videoExercice=" + videoExercice + "&objectiveExercice=" + objectiveExercice, true);
+        xhr.send(null);
+
+    }
+
+
+
+
+}

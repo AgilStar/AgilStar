@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * On verifie que l exercice n existe pas avant de l inserer
  *
  * @author tianyuanliu,Nicolas
  */
@@ -31,7 +32,10 @@ public class ServletInsertExercice extends HttpServlet {
         String nameExercice = req.getParameter("nameExercice");
         String videoExercice = req.getParameter("videoExercice");
         String objectiveExercice = req.getParameter("objectiveExercice");
-        new db.dbExercice().insertExercice(nameExercice, objectiveExercice, videoExercice);
+        if(!new db.dbExercice().insertExercice(nameExercice, objectiveExercice, videoExercice)){
+            String s="L'exercice existe déjà";
+            out.println(new String(s.getBytes("ISO-8859-1")));
+        }
         
     }
 }
