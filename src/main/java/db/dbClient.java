@@ -9,8 +9,10 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.Utilisateur;
 
 /**
  *
@@ -29,7 +31,13 @@ public class dbClient {
             Logger.getLogger(dbExercice.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+/**
+ * 
+ * @param email
+ * @param mdp
+ * @return 
+ * @author aude,jin
+ */
     public String verifyConnect(String email, String mdp) {
 
         String url = "";
@@ -63,5 +71,38 @@ public class dbClient {
             System.out.println("Il y a un problème sur statement " + ex.getMessage());
         }
         return url;
+    }
+    
+    /**
+     * @author Alice,tianyuan
+     */
+     public ArrayList<Utilisateur> getClients() {
+        ArrayList<Utilisateur> users = new ArrayList();
+        Utilisateur e;
+        try {
+            String sql = "select *  from UTILISATEUR";
+            Statement st = cx.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            
+            while (rs.next()) {
+                int id = rs.getInt("CODEU");
+                String nomu = rs.getString("NOMU");
+                String prenomu = rs.getString("PRENOMU");
+                String mailu = rs.getString("MAILU");
+                String genreu = rs.getString("GENREU");
+                String birthday = rs.getString("DATENAISSANCE");
+                String statuu = rs.getString("STATUTU");
+                String adressu = rs.getString("ADRESSEU");
+                String telu = rs.getString("TELU");
+                String infooptu = rs.getString("INFOOPTU");
+                
+                //ajouter les autres attributs 
+                users.add(new Utilisateur(id,nomu,prenomu,mailu,genreu,birthday,statuu,adressu,telu,infooptu));
+            }
+            
+        } catch (SQLException ex) {
+            System.out.println("Il y a un problème sur statement " + ex.getMessage());
+        }
+        return users;
     }
 }

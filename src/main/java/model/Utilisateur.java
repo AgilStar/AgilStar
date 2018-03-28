@@ -15,8 +15,7 @@ public class Utilisateur  implements java.io.Serializable {
      private String prenomu;
      private String mailu;
      private String genreu;
-     private Date datenaissance;
-     private String mdpu;
+     private String datenaissance;
      private String statutu;
      private String adresseu;
      private String telu;
@@ -25,13 +24,13 @@ public class Utilisateur  implements java.io.Serializable {
     public Utilisateur() {
     }
 
-    public Utilisateur(String nomu, String prenomu, String mailu, String genreu, Date datenaissance, String mdpu, String statutu, String adresseu, String telu, String infooptu) {
-       this.nomu = nomu;
+    public Utilisateur(Integer codeu,String nomu, String prenomu, String mailu, String genreu, String datenaissance, String statutu, String adresseu, String telu, String infooptu) {
+       this.codeu=codeu;
+        this.nomu = nomu;
        this.prenomu = prenomu;
        this.mailu = mailu;
        this.genreu = genreu;
        this.datenaissance = datenaissance;
-       this.mdpu = mdpu;
        this.statutu = statutu;
        this.adresseu = adresseu;
        this.telu = telu;
@@ -73,20 +72,14 @@ public class Utilisateur  implements java.io.Serializable {
     public void setGenreu(String genreu) {
         this.genreu = genreu;
     }
-    public Date getDatenaissance() {
+    public String getDatenaissance() {
         return this.datenaissance;
     }
     
-    public void setDatenaissance(Date datenaissance) {
+    public void setDatenaissance(String datenaissance) {
         this.datenaissance = datenaissance;
     }
-    public String getMdpu() {
-        return this.mdpu;
-    }
-    
-    public void setMdpu(String mdpu) {
-        this.mdpu = mdpu;
-    }
+
     public String getStatutu() {
         return this.statutu;
     }

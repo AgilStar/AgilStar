@@ -1779,17 +1779,15 @@ textarea {
   }
   .mini-sidebar.fix-sidebar .left-sidebar {
     position: fixed;
-    display: block;
   }
 }
 @media (max-width: 767px) {
   .mini-sidebar .left-sidebar {
     position: fixed;
-    left: 0px;
-    display: none;
+    left: -240px;
   }
   .mini-sidebar .sidebar-footer {
-    left: 0px;
+    left: -240px;
   }
   .mini-sidebar.show-sidebar .left-sidebar {
     left: 0;
@@ -6786,7 +6784,6 @@ tbody tr td:last-child {
   .footer {
     left: 0;
   }
-
 }
 /*  7 - media screen and (max-width: 767px) End
 ---------------------------------------------------------------------- */

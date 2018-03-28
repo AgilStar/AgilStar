@@ -1,30 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <!-- Left Sidebar  -->
-        <div class="left-sidebar" id="left-sidebar">
+     <div class="left-sidebar">
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
-                        <li class="nav-label">Home</li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Clients</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="#">Clients Validés </a></li>
-                                <li><a href="index1.html">Clients en attente </a></li>
-                                <li><a href="index1.html">Prospects </a></li>
-                            </ul>
-                        </li>
+                        <li class="nav-label">Client</li>
+                         <li> <a href="listClient.jsp" aria-expanded="false"><i class="fa fa-user"></i><span class="hide-menu">List client</span></a></li>
                         
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Exercice</span></a>
+                        <li class="nav-label">Program</li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu">Exercice</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="/content/createExercice.jsp">Création</a></li>
-                                <li><a href="index1.html">Analytics </a></li>
+                                <li><a href="createExercice.jsp">Créer</a></li>
                             </ul>
                         </li>
-                        <li class="nav-label">Apps</li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Email</span></a>
+                        <li class="nav-label">Apps &amp; Charts</li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Mailbox</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="email-compose.html">Compose</a></li>
                                 <li><a href="email-read.html">Read</a></li>
@@ -43,8 +37,9 @@
                                 <li><a href="chart-peity.html">Peity</a></li>
                             </ul>
                         </li>
+                        <li> <a href="app-profile.html" aria-expanded="false"><i class="fa fa-user"></i><span class="hide-menu">Profile</span></a></li>
                         <li class="nav-label">Features</li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Bootstrap UI <span class="label label-rouded label-warning pull-right">6</span></span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Ui Elements <span class="label label-rouded label-danger pull-right">12</span></span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="ui-alert.html">Alert</a></li>
                                 <li><a href="ui-button.html">Button</a></li>
@@ -52,10 +47,6 @@
                                 <li><a href="ui-progressbar.html">Progressbar</a></li>
                                 <li><a href="ui-tab.html">Tab</a></li>
                                 <li><a href="ui-typography.html">Typography</a></li>
-                            </ul>
-                        </li>
-						<li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Components <span class="label label-rouded label-danger pull-right">6</span></span></a>
-                            <ul aria-expanded="false" class="collapse">
                                 <li><a href="uc-calender.html">Calender</a></li>
                                 <li><a href="uc-datamap.html">Datamap</a></li>
                                 <li><a href="uc-nestedable.html">Nestedable</a></li>
@@ -79,17 +70,13 @@
                                 <li><a href="table-datatable.html">Data Tables</a></li>
                             </ul>
                         </li>
-                        <li class="nav-label">Layout</li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu">Layout</span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-th-large"></i><span class="hide-menu">Widgets</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="layout-blank.html">Blank</a></li>
-                                <li><a href="layout-boxed.html">Boxed</a></li>
-                                <li><a href="layout-fix-header.html">Fix Header</a></li>
-                                <li><a href="layout-fix-sidebar.html">Fix Sidebar</a></li>
+                                <li><a href="widget.html">Widgets</a></li>
                             </ul>
                         </li>
                         <li class="nav-label">EXTRA</li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Pages <span class="label label-rouded label-success pull-right">8</span></span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Sample Pages <span class="label label-rouded label-success pull-right">25</span></span></a>
                             <ul aria-expanded="false" class="collapse">
 
                                 <li><a href="#" class="has-arrow">Authentication <span class="label label-rounded label-success">6</span></a>
@@ -112,8 +99,8 @@
                         </li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-map-marker"></i><span class="hide-menu">Maps</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="map-google.html">Google</a></li>
-                                <li><a href="map-vector.html">Vector</a></li>
+                                <li><a href="map-google.html">Google Maps</a></li>
+                                <li><a href="map-vector.html">Vector Map</a></li>
                             </ul>
                         </li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-level-down"></i><span class="hide-menu">Multi level dd</span></a>
