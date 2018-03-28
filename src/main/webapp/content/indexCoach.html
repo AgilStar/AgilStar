@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
     <title>Ela - Bootstrap Admin Dashboard Template</title>
     <!-- Bootstrap Core CSS -->
     <link href="../css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -21,6 +21,8 @@
     <link href="../css/lib/owl.theme.default.min.css" rel="stylesheet" />
     <link href="../css/helper.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
+    <script type="text/JavaScript" src="../js/ajaxExercice.js"></script>
+     <script type="text/JavaScript" src="../js/ajaxAdmin.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
     <!--[if lt IE 9]>
@@ -248,9 +250,9 @@
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
                         <li class="nav-label">Home</li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard <span class="label label-rouded label-primary pull-right">2</span></span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Exercice</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="index.html">Ecommerce </a></li>
+                                <li><a href="index.html">Création </a></li>
                                 <li><a href="index1.html">Analytics </a></li>
                             </ul>
                         </li>
@@ -386,7 +388,38 @@
             <!-- Container fluid  -->
             <div class="container-fluid">
                 <!-- Start Page Content -->
-                
+                <div class="row">
+                    
+                 <div class="col-lg-6" >
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Création d'un exercice</h4>
+
+                            </div>
+                            <div class="card-body">
+                                <div class="basic-form">
+                                    
+                                        <div class="form-group">
+                                            <label>Nom d'exercice</label>
+                                            <input type="string" class="form-control" placeholder="nom de l'exercice" id="nameExercice">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Objectif</label>
+                                            <input type="string" class="form-control" placeholder="Objectif de l'exercice" id="objectiveExercice">
+                                        </div>
+                                         <div class="form-group">
+                                            <label>Lien de la vidéo</label>
+                                            <input type="string" class="form-control" placeholder="Lien de la vidéo" id="videoExercice" >
+                                        </div>  
+                                        <button type="button"  onclick="insertExercice()">Créer</button>
+                                        
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
 
 
 

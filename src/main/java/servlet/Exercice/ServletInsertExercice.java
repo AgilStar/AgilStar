@@ -19,20 +19,19 @@ import javax.servlet.http.HttpServletResponse;
  * @author tianyuanliu,Nicolas
  */
 @WebServlet(
-        name = "MyServlet", 
+        name = "MyServlet",
         urlPatterns = {"/insertExercice"}
-    )
-public class ServletInsertExercice  extends HttpServlet {
+)
+public class ServletInsertExercice extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-       PrintWriter out = resp.getWriter();
-	String nameExercice=req.getParameter("nameExercice");
-         String videoExercice=req.getParameter("videoExercice");
-         String objectiveExercice=req.getParameter("objectiveExercice");
-         
-         new db.dbExercice().insertExercice(nameExercice, objectiveExercice, videoExercice);
-         
+        PrintWriter out = resp.getWriter();
+        String nameExercice = req.getParameter("nameExercice");
+        String videoExercice = req.getParameter("videoExercice");
+        String objectiveExercice = req.getParameter("objectiveExercice");
+        new db.dbExercice().insertExercice(nameExercice, objectiveExercice, videoExercice);
+
     }
 }
