@@ -80,7 +80,7 @@ public class dbClient {
         ArrayList<Utilisateur> users = new ArrayList();
         Utilisateur e;
         try {
-            String sql = "select *  from UTILISATEUR";
+            String sql = "select *  from UTILISATEUR where STATUTU<>'admin'";
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
             
@@ -90,7 +90,7 @@ public class dbClient {
                 String prenomu = rs.getString("PRENOMU");
                 String mailu = rs.getString("MAILU");
                 String genreu = rs.getString("GENREU");
-                String birthday = rs.getString("DATENAISSANCE");
+                String birthday = rs.getDate("DATENAISSANCE").toString();
                 String statuu = rs.getString("STATUTU");
                 String adressu = rs.getString("ADRESSEU");
                 String telu = rs.getString("TELU");

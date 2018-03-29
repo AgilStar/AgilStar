@@ -1,3 +1,6 @@
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="model.Utilisateur" %>
+<%@ page import="db.dbClient" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -36,54 +39,66 @@
                 <!-- Container fluid  -->
                 <div class="container-fluid" id="mainPage">
                     <!-- Start Page Content -->
-                    <div class='row'>
 
-                        <!-- Commmencer ici -->
-                      
-                        <div class='col-lg-6' >
-                            <div class='card'>
-                                <div class='card-title'>
-                                    <h4>Liste des clients</h4>
-                                </div>
-                                <div class ="card-body">
-                                    <div class="table-responsive">
-                                        <table class="table table-striped">
+                    <!-- End PAge Content -->
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <button onclick="mysearch()">valide</button>
+                                    <h4 class="card-title">List de client</h4>
+                                    <h6 class="card-subtitle">Touts les clients</h6>
+                                    <div class="table-responsive m-t-40">
+                                        <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                             <thead>
-                                                <tr>
-                                                    <th>Nom</th>
-                                                    <th>Prenom</th>
-                                                    <th>Status</th>
-                                                </tr>
+                                            <tr>
+                                            <tr>
+                                                <th>Nom</th>
+                                                <th>Prenom</th>
+                                                <th>Status</th>
+                                            </tr>
+                                            </tr>
                                             </thead>
+                                            <tfoot>
+                                            <tr>
+                                            <tr>
+                                                <th>Nom</th>
+                                                <th>Prenom</th>
+                                                <th>Status</th>
+                                            </tr>
+                                            </tr>
+                                            </tfoot>
                                             <tbody>
-                                                  <%
-                          //ArrayList<model.Utilisateur> e= new db.dbClient().getClients();
-                        %>
-                                                <tr>
-                                                    <th scope="row">Laporte</th>
-                                                    <td>Alice</td>
-                                                    <td><span class="badge badge-primary">Sale</span></td>
+                                            <%
+                                                ArrayList<Utilisateur> listUu= new dbClient().getClients();
+                                                for (Utilisateur u:listUu){
+                                                    out.print("<tr>");
+                                                    out.print("<th scope=\"row\">"+u.getNomu()+"</th>");
+                                                    out.print("<td>"+u.getPrenomu()+"</td>");
 
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Dhos</th>
-                                                    <td>Emmanuelle</td>
-                                                    <td><span class="badge badge-success">Tax</span></td>
+                                                    if (u.getStatutu().equals("validé")){
+                                                        out.print("<td><span class=\"badge badge-success\">"+u.getStatutu()+"</span></td>");
+                                                    }else if(u.getStatutu().equals("en attente")){
+                                                        out.print("<td><span class=\"badge badge-danger\">"+u.getStatutu()+"</span></td>");
+                                                    }else{
+                                                        out.print("<td><span class=\"badge badge-warning \">"+u.getStatutu()+"</span></td>");
+                                                    }
 
-                                                </tr>
 
+                                                    out.print("</tr>");
+                                                }
+                                            %>
+                                            <div class="badge badge-primary"></div>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
-
                             </div>
+
                         </div>
-
-
-
                     </div>
-                    <!-- End PAge Content -->
+
                 </div>
                 <!-- footer -->
                 <%@ include file="/content/templete/footer.jsp" %>
@@ -92,6 +107,16 @@
         <!-- All Jquery -->
         <%@ include file="/content/templete/libJquery.jsp" %>
 
+
+        <script src="/js/lib/datatables/datatables.min.js"></script>
+        <script src="/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+        <script src="/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+        <script src="/js/lib/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+        <script src="/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+        <script src="/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+        <script src="/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+        <script src="/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+        <script src="/js/lib/datatables/datatables-init.js"></script>
     </body>
 
 </html>
