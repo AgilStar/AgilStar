@@ -22,15 +22,7 @@ public class dbClient {
 
     Connection cx;//La connection utilisé par toutes les méthodes dans cette classe
 
-    public dbClient() {
-        try {
-            cx = new dbAdmin().getConnection();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(dbExercice.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(dbExercice.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+
 /**
  * 
  * @param email
@@ -42,7 +34,7 @@ public class dbClient {
 
         String url = "";
         try {
-
+            cx = new dbAdmin().getConnection();
             Statement st = cx.createStatement();
             String sql = "select MAILU,STATUTU,MDPU from UTILISATEUR where MAILU='" + email + "'";
 
@@ -66,7 +58,8 @@ public class dbClient {
                     }
                 
             }
-
+        rs.close();
+            cx.close();
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement " + ex.getMessage());
         }
@@ -76,11 +69,20 @@ public class dbClient {
     /**
      * @author Alice,tianyuan
      */
-     public ArrayList<Utilisateur> getClients() {
+     public ArrayList<Utilisateur> getClients(String condition) {
         ArrayList<Utilisateur> users = new ArrayList();
         Utilisateur e;
+
         try {
-            String sql = "select *  from UTILISATEUR where STATUTU<>'admin'";
+            cx = new dbAdmin().getConnection();
+            String sql="";
+            if (condition==null ||condition.equals("supprimer")){
+                sql = "select *  from UTILISATEUR where STATUTU<>'admin'";
+            }else{
+                System.out.println(condition);
+                sql = "select *  from UTILISATEUR where STATUTU='"+condition+"'";
+            }
+
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
             
@@ -99,10 +101,13 @@ public class dbClient {
                 //ajouter les autres attributs 
                 users.add(new Utilisateur(id,nomu,prenomu,mailu,genreu,birthday,statuu,adressu,telu,infooptu));
             }
-            
+            rs.close();
+            cx.close();
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement " + ex.getMessage());
         }
         return users;
     }
+
+
 }

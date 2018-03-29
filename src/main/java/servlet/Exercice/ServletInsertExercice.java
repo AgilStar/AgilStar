@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author tianyuanliu,Nicolas
  */
 @WebServlet(
-        name = "MyServlet",
+        name = "MyServletInsertExercice",
         urlPatterns = {"/insertExercice"}
 )
 public class ServletInsertExercice extends HttpServlet {

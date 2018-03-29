@@ -27,15 +27,7 @@ public class dbExercice {
     /**
      * Constucteur
      */
-    public dbExercice() {
-        try {
-            cx = new dbAdmin().getConnection();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(dbExercice.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(dbExercice.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+
 
     /**
      * Ajouter un nouvel exercice
@@ -47,13 +39,20 @@ public class dbExercice {
      */
     public boolean insertExercice(String name, String objective, String lien) {
         try {
+<<<<<<< HEAD
             if (!checkExistExercice(name)) {
+=======
+            cx = new dbAdmin().getConnection();
+            if(!checkExistExercice(name)){
+>>>>>>> fbebefadbad2b542d2bce6c98a9c076b22c9cc9b
                 return false;
             }
 
             String sql = "insert into EXERCICE(LIBELLEE,OBJECTIFE,LIENVIDEO) VALUES('" + name + "','" + objective + "','" + lien + "')";
             Statement st = cx.createStatement();
             st.executeUpdate(sql);
+            st.close();
+            cx.close();
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement " + ex.getMessage());
         }
@@ -63,15 +62,27 @@ public class dbExercice {
 
     public boolean checkExistExercice(String name) {
         try {
+<<<<<<< HEAD
             String sql = "select count(*) as Nb from EXERCICE where LIBELLEE='" + name + "'";
+=======
+            cx = new dbAdmin().getConnection();
+            String sql = "select count(*) as Nb from EXERCICE where LIBELLEE='" +name+"'";
+>>>>>>> fbebefadbad2b542d2bce6c98a9c076b22c9cc9b
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
             int nb = 0;
             while (rs.next()) {
                 nb = rs.getInt("Nb");
             }
+<<<<<<< HEAD
             System.out.println("ssss" + nb);
             if (nb == 1) {
+=======
+
+            st.close();
+            cx.close();
+            if (nb==1)
+>>>>>>> fbebefadbad2b542d2bce6c98a9c076b22c9cc9b
                 return false;
             } else {
                 return true;
