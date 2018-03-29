@@ -49,10 +49,11 @@
                                     <div class="card-body">
                                         <div class="form-validation">
                                             <h4>Création d'un client</h4>
-                                            <form class="form-valide" action="/ServletInsertUserFromAdmin" method="get">
+                                            <form id="formCreateUser" class="form-valide" action="/ServletInsertUserFromAdmin" method="get">
                                                 <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label" for="nameUser"> Nom <span class="text-danger">*</span></label>
                                                     <div class="col-lg-6">
+                                                         <input type="hidden" name="user" value="admin">
                                                         <input type="text" class="form-control" id="nameUser" name="nameUser" placeholder="Entrez le nom du client" required>
                                                     </div>
                                                 </div>
@@ -89,9 +90,19 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label" for="sexUser">Genre <span class="text-danger">*</span></label>
                                                     <div class="col-lg-6">
-                                                        <select class="form-control" id="sexUser" name="val-skill">
+                                                        <select class="form-control" id="sexUser" name="sexUser">
                                                             <option value="homme">Homme</option>
                                                             <option value="femme">Femme</option>                           
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                 <div class="form-group row">
+                                                    <label class="col-lg-4 col-form-label" for="statut">Statut <span class="text-danger">*</span></label>
+                                                    <div class="col-lg-6">
+                                                        <select class="form-control" id="statut" name="statut">
+                                                            <option value="prospect">prospect</option>
+                                                            <option value="attente">en attente</option>   
+                                                            <option value="valide">validé</option> 
                                                         </select>
                                                     </div>
                                                 </div>
@@ -104,25 +115,25 @@
                                                                 listProf = new dbProfil().getProfils();                                          
                                                                 for (Profil p:listProf){
                                                                 out.print("<option value=\""+p.getLibelleprofil()+"\">"+p.getLibelleprofil()+"</option>");                                              
-                                                      }                                                   
+                                                                         }                                                   
                                                             %>
-                                                            out.print("</select>"); 
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="telUser">Numéro de téléphone <span class="text-danger">*</span></label>
+                                                    <label class="col-lg-4 col-form-label" for="telUser">Numéro de téléphone <span class="text-danger"></span></label>
                                                     <div class="col-lg-6">
                                                         <input type="text" pattern="[0-9]{10}"class="form-control" id="telUser" name="telUser" placeholder="format : 0xxxxxxxxx">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="adressUser">Adresse <span class="text-danger">*</span></label>
+                                                    <label class="col-lg-4 col-form-label" for="adressUser">Adresse <span class="text-danger"></span></label>
                                                     <div class="col-lg-6">
                                                         <input type="text" class="adressUser" id="adressUser" name="adressUser" placeholder="http://example.com">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="infoUser">Informations<span class="text-danger">*</span></label>
+                                                    <label class="col-lg-4 col-form-label" for="infoUser">Informations<span class="text-danger"></span></label>
                                                     <div class="col-lg-6">
                                                         <input type="text" class="form-control" id="infoUser" name="infoUser" placeholder="Informations du client">
                                                     </div>

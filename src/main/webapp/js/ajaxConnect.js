@@ -5,7 +5,7 @@
  */
 
 function connectVerify() {
-    
+
     //Initialiser
     var divErrorParent = document.getElementById("errorCo");
     divErrorParent.innerHTML = "";
@@ -37,27 +37,27 @@ function connectVerify() {
 
     } else {
         xhr.onreadystatechange = function () {
-     
+
             if (xhr.readyState === 4 && xhr.status === 200) {
                 {
                     var errorMessage = xhr.responseText;
-                    if (errorMessage=="errorMot") {
+                    if (errorMessage == "errorMot") {
                         var divErrorMessage = document.createElement("div");
                         divErrorMessage.innerHTML = "Mot de passe n'est pas correct";
                         divErrorMessage.setAttribute("class", "alert alert-danger");
                         divErrorParent.appendChild(divErrorMessage);
 
-                    }else if(errorMessage=="null"){
-                         var divErrorMessage = document.createElement("div");
+                    } else if (errorMessage == "null") {
+                        var divErrorMessage = document.createElement("div");
                         divErrorMessage.innerHTML = "Vous n'avez pas de compte";
                         divErrorMessage.setAttribute("class", "alert alert-danger");
                         divErrorParent.appendChild(divErrorMessage);
-                    
-                       // 
-                    }else{
-                        window.location.href=errorMessage;
+
+                        // 
+                    } else {
+                        window.location.href = errorMessage;
                     }
-                   
+
 
 
                 }
@@ -65,7 +65,7 @@ function connectVerify() {
 
         }
         // Requête au serveur avec les paramètres éventuels.
-        xhr.open("GET", "/ServletConnexion?email=" + email + "&mdp=" + mdp,true);
+        xhr.open("GET", "/ServletConnexion?email=" + email + "&mdp=" + mdp, true);
         xhr.send(null);
     }
 

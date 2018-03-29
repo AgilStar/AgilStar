@@ -54,6 +54,8 @@
                                                     <label class="col-lg-4 col-form-label" for="nameUser"> Nom <span class="text-danger">*</span></label>
                                                     <div class="col-lg-6">
                                                         <input type="text" class="form-control" id="nameUser" name="nameUser" placeholder="Entrez votre nom" required>
+                                                        <input type="hidden" name="user" value="client">
+                                                        <input type="hidden" name="statut" value="prospect">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -106,27 +108,22 @@
                                                                 out.print("<option value=\""+p.getLibelleprofil()+"\">"+p.getLibelleprofil()+"</option>");                                              
                                                       }                                                   
                                                             %>
-                                                            out.print("</select>"); 
+                                                           </select>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="telUser">Numéro de téléphone <span class="text-danger">*</span></label>
+                                                    <label class="col-lg-4 col-form-label" for="telUser">Numéro de téléphone <span class="text-danger"></span></label>
                                                     <div class="col-lg-6">
                                                         <input type="text" pattern="[0-9]{10}"class="form-control" id="telUser" name="telUser" placeholder="format : 0xxxxxxxxx">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="adressUser">Adresse <span class="text-danger">*</span></label>
+                                                    <label class="col-lg-4 col-form-label" for="adressUser">Adresse <span class="text-danger"></span></label>
                                                     <div class="col-lg-6">
                                                         <input type="text" class="adressUser" id="adressUser" name="adressUser" placeholder="http://example.com">
                                                     </div>
                                                 </div>
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="infoUser">Informations<span class="text-danger">*</span></label>
-                                                    <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="infoUser" name="infoUser" placeholder="Informations du client">
-                                                    </div>
-                                                </div>                                 
+                                                                              
                                                 <div class="form-group row">
                                                     <div class="col-lg-8 ml-auto">
                                                         <button type="submit" class="btn btn-primary">Créer</button>

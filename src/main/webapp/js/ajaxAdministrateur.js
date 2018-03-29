@@ -1,4 +1,5 @@
 function changeDelete(ss) {
+
     var check=ss.firstChild.firstChild;
     if(check.checked){
         ss.style.backgroundColor="#fedee5";
@@ -6,6 +7,7 @@ function changeDelete(ss) {
     }else{
         ss.style.backgroundColor="#d1ecf1";
         check.checked=true;
+
     }
 }
 

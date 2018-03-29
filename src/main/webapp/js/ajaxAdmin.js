@@ -4,33 +4,34 @@
  * and open the template in the editor.
  */
 function getXMLHttpRequest()
-	{
-	var xhr = null;
+{
+    var xhr = null;
 
-	// Firefox et bien d'autres.
-	if (window.XMLHttpRequest)
-		xhr = new XMLHttpRequest();
-	else
+    // Firefox et bien d'autres.
+    if (window.XMLHttpRequest)
+        xhr = new XMLHttpRequest();
+    else
 
-	// Internet Explorer.
-	if (window.ActiveXObject)
-		{
-		try	{
-			xhr = new ActiveXObject("Msxml2.XMLHTTP");
-			}
-		catch (e)
-			{
-			xhr = new ActiveXObject("Microsoft.XMLHTTP");
-			}
-		}
+    // Internet Explorer.
+    if (window.ActiveXObject)
+    {
+        try {
+            xhr = new ActiveXObject("Msxml2.XMLHTTP");
+        }
+        catch (e)
+        {
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+    }
 
-	// XMLHttpRequest non supporté.
-	else
-		{
-		alert("Votre navigateur ne supporte pas l'objet XmlHttpRequest.");
-		xhr = false;
-		}
+    // XMLHttpRequest non supporté.
+    else
+    {
+        alert("Votre navigateur ne supporte pas l'objet XmlHttpRequest.");
+        xhr = false;
+    }
 
-	return xhr;
-	}
+    return xhr;
+}
 
+document.getElementById("formCreateUser").reset();

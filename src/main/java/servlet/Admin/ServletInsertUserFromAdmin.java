@@ -5,6 +5,7 @@
  */
 package servlet.Admin;
 
+import db.dbAdmin;
 import java.io.PrintWriter;
 import java.io.IOException;
 import java.sql.Date;
@@ -17,6 +18,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -41,26 +43,32 @@ public class ServletInsertUserFromAdmin extends HttpServlet {
         String lastNameUser = req.getParameter("lastNameUser");
         String mailUser = req.getParameter("mailUser");
         String sexUser = req.getParameter("sexUser");
-        String objUser = req.getParameter("objUser");    
-        
+        String objUser = req.getParameter("objUser");
+
         String dateBornUserString = req.getParameter("dateBornUser");
-        System.out.println("date:"+dateBornUserString);
+        System.out.println("date:" + dateBornUserString);
 
-
-        String passwordUser = req.getParameter("val-password");       
-        String statementUser = "en attente";
+        String passwordUser = req.getParameter("val-password");
+        String statementUser =req.getParameter("statut");
         String adressUser = req.getParameter("adressUser");
         String telUser = req.getParameter("telUser");
         String infoUser = req.getParameter("infoUser");
 
-
-            new db.dbAdmin().insertUser(nameUser,lastNameUser,mailUser,sexUser,dateBornUserString,passwordUser,
-                    statementUser,adressUser,telUser,infoUser);
-            String idU = new db.dbAdmin().recupIdUtilisateur(mailUser);
-            String idP = new db.dbAdmin().recupProfilUtilisateur(objUser);
-            new db.dbAdmin().insertProfilToUser(idP, idU);
-
+        new db.dbAdmin().insertUser(nameUser, lastNameUser, mailUser, sexUser, dateBornUserString, passwordUser,
+                statementUser, adressUser, telUser, infoUser);
+        String idU = new db.dbAdmin().recupIdUtilisateur(mailUser);
+        String idP = new db.dbAdmin().recupProfilUtilisateur(objUser);
+        new db.dbAdmin().insertProfilToUser(idP, idU);
         
-        resp.sendRedirect("content/indexCoach.jsp");
+        String user=req.getParameter("user");
+        if(user.equals("client")){
+            String id=new db.dbAdmin().recupIdUtilisateur(mailUser);
+            HttpSession session=req.getSession();
+            session.setAttribute("id", id);
+            resp.sendRedirect("content/indexClient.jsp");
+        }else{
+             resp.sendRedirect("content/indexCoach.jsp");
+        }
+       
     }
 }
