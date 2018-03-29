@@ -14,8 +14,10 @@ public class CtrlChangeStatu {
             list=getUsers("STATUTU<>'admin'");
         }else if(condition.equals("validé")){
             list=getUsers("STATUTU='validé'");
-        }else if (condition.equals("en attente")||condition.equals("valider")){
+        }else if (condition.equals("en attente")){
             list=getUsers("STATUTU='en attente'");
+        }else if (condition.equals("valider")){
+            list=getUsers("STATUTU='en attente' or STATUTU='prospect'");
         }else if (condition.equals("prospect")||condition.equals("passerAttente")){
             list=getUsers("STATUTU='prospect'");
         }
