@@ -116,8 +116,10 @@
                                                         /*
                                                         Pour supprimer
                                                          */
-                                                        out.print("<tr style=\"background-color:#d1ecf1\" onclick=\"changeDelete(this)\" tag=\"0\" >");
+                                                        out.print("<tr style=\"background-color:#d1ecf1\" onclick=\"changeDelete(this)\">");
+
                                                         out.print("<th scope=\"row\">");
+                                                        out.print("<input type=\"checkbox\" name=\"user\" value=\"Bike\" hidden>");
                                                         if (u.getGenreu().equals("Homme")){
                                                             out.print("<i class=\"fa fa-male\" style=\"color:blue\"></i>");
                                                         }else{
@@ -135,11 +137,16 @@
                                                             out.print("<td><span class=\"badge badge-warning \" >"+u.getStatutu()+"</span></td>");
                                                         }
                                                         out.print("</tr>");
+
+
+
+
                                                     }
 
                                                 }
+
                                             %>
-                                            <div class="badge badge-primary"></div>
+
                                             </tbody>
                                         </table>
                                     </div>
@@ -148,6 +155,15 @@
 
                         </div>
                     </div>
+                    <%
+                        if(flagSupprime){
+                            out.print("<div class=\"row\">");
+                            out.print("<div class=\"col-12\">");
+                            out.print(" <a href=\"listClient.jsp?condition=supprimer\"><button type=\"button\" class=\"btn btn-danger btn-rounded m-b-10 m-l-5\">Confirmer</button></a>");
+                            out.print("</div>");
+                            out.print("</div>");
+                        }
+                    %>
 
                 </div>
                 <!-- footer -->
