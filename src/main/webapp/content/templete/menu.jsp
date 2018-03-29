@@ -11,6 +11,10 @@
                         <li class="nav-label">Client</li>
                          <li> <a href="listClient.jsp" aria-expanded="false"><i class="fa fa-user"></i><span class="hide-menu">List client</span></a></li>
                         
+<li> <a href="createClient.jsp" aria-expanded="false"><i class="fa fa-user"></i><span class="hide-menu">Création d'un client</span></a></li>
+
+
+                        
                         <li class="nav-label">Program</li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu">Exercice</span></a>
                             <ul aria-expanded="false" class="collapse">
