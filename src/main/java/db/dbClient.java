@@ -75,14 +75,7 @@ public class dbClient {
 
         try {
             cx = new dbAdmin().getConnection();
-            String sql="";
-            if (condition==null ||condition.equals("supprimer")){
-                sql = "select *  from UTILISATEUR where STATUTU<>'admin'";
-            }else{
-                System.out.println(condition);
-                sql = "select *  from UTILISATEUR where STATUTU='"+condition+"'";
-            }
-
+            String sql = "select *  from UTILISATEUR where "+condition;
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
             
@@ -107,6 +100,21 @@ public class dbClient {
             System.out.println("Il y a un problème sur statement " + ex.getMessage());
         }
         return users;
+    }
+
+    public void changeStatue(String codeu,String cible){
+        cx = new dbAdmin().getConnection();
+        String sql = "update UTILISATEUR SET STATUTU ='"+cible+"' where CODEU="+codeu+"";
+        Statement st = null;
+        try {
+            st = cx.createStatement();
+            st.executeUpdate(sql);
+            st.close();
+            cx.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 
 

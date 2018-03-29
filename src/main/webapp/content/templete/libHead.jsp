@@ -16,7 +16,7 @@
     <link href="../css/lib/owl.theme.default.min.css" rel="stylesheet" />
     <link href="../css/helper.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
-    
-     <script type="text/JavaScript" src="/js/ajaxAdmin.js"></script>
-     <script type="text/JavaScript" src="/js/outilCommon.js"></script>
-    <script type="text/JavaScript" src="/js/ajaxAdministrateur.js"></script>
+
+ <script type="text/JavaScript" src="/js/outilCommon.js"></script>
+ <script type="text/JavaScript" src="/js/ajaxAdmin.js"></script>
+ <script type="text/JavaScript" src="/js/ajaxAdministrateur.js"></script>

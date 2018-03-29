@@ -1,14 +1,14 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="model.Utilisateur" %>
 <%@ page import="db.dbClient" %>
+<%@ page import="servlet.GestionClient.CtrlChangeStatu" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%
-    Boolean flagSupprime=false;
+    Boolean flagChange=false;
     String condition= request.getParameter("condition");
-    if (condition!=null &&condition.equals("supprimer")){
-        flagSupprime=true;
-    }
+   if(condition!=null && (condition.equals("valider") ||condition.equals("passerAttente")))
+       flagChange=true;
 %>
 <!DOCTYPE html>
 <html lang="fr">
@@ -50,10 +50,20 @@
                     <!-- End PAge Content -->
                     <div class="row">
                         <div class="col-12">
-                            <a href="listClient.jsp"><button type="button" class="btn btn-primary btn-rounded m-b-10 m-l-5">Tous</button></a>
+                            <a href="listClient.jsp?condition=valider"><button type="button" class="btn btn-primary btn-outline m-b-10 m-l-5">Valider</button></a>
+                            <a href="listClient.jsp?condition=passerAttente"><button type="button" class="btn btn-success btn-outline m-b-10 m-l-5">Passer en attente</button></a>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="listClient.jsp"><button type="button" class="btn btn-primary btn-rounded m-b-10 m-l-5">Tout</button></a>
                             <a href="listClient.jsp?condition=validé"><button type="button" class="btn btn-success btn-rounded m-b-10 m-l-5">Validé</button></a>
-                            <a href="listClient.jsp?condition=en attente"><button type="button" class="btn btn-warning btn-rounded m-b-10 m-l-5">En attent</button></a>
-                            <a href="listClient.jsp?condition=supprimer"><button type="button" class="btn btn-danger btn-rounded m-b-10 m-l-5">Supprimer</button></a>
+                            <a href="listClient.jsp?condition=en attente"><button type="button" class="btn btn-warning btn-rounded m-b-10 m-l-5">En attente</button></a>
+                            <a href="listClient.jsp?condition=prospect"><button type="button" class="btn btn-danger btn-rounded m-b-10 m-l-5">Prospect</button></a>
                         </div>
 
                     </div>
@@ -86,65 +96,63 @@
                                             <tbody>
                                             <%
 
-                                                ArrayList<Utilisateur> listUu= new dbClient().getClients(condition);
+                                                ArrayList<Utilisateur> listUu= new CtrlChangeStatu(condition).getList();
 
-                                                for (Utilisateur u:listUu){
-                                                    if (!flagSupprime){
+    for (Utilisateur u : listUu) {
+        if (!flagChange) {
                                                         /*
-                                                        Pas de cas pour supprimer
+                                                        Pas de cas pour valider ou passer en attente
                                                          */
-                                                        out.print("<tr onclick=\"alert('"+u.getCodeu()+"')\">");
-                                                        out.print("<th scope=\"row\">");
-                                                        if (u.getGenreu().equals("Homme")){
-                                                            out.print("<i class=\"fa fa-male\" style=\"color:blue\"></i>");
-                                                        }else{
-                                                            out.print("<i class=\"fa fa-female\" style=\"color:red\"></i>");
-                                                        }
-                                                        out.print(u.getNomu());
-                                                        out.print("</th>");
-                                                        out.print("<td>"+u.getPrenomu()+"</td>");
+            out.print("<tr onclick=\"alert('" + u.getCodeu() + "')\">");
+            out.print("<th scope=\"row\">");
+            if (u.getGenreu().equals("Homme")) {
+                out.print("<i class=\"fa fa-male\" style=\"color:blue\"></i>");
+            } else {
+                out.print("<i class=\"fa fa-female\" style=\"color:red\"></i>");
+            }
+            out.print(u.getNomu());
+            out.print("</th>");
+            out.print("<td>" + u.getPrenomu() + "</td>");
 
-                                                        if (u.getStatutu().equals("validé")){
-                                                            out.print("<td><span class=\"badge badge-success\">"+u.getStatutu()+"</span></td>");
-                                                        }else if(u.getStatutu().equals("en attente")){
-                                                            out.print("<td><span class=\"badge badge-danger\">"+u.getStatutu()+"</span></td>");
-                                                        }else{
-                                                            out.print("<td><span class=\"badge badge-warning \">"+u.getStatutu()+"</span></td>");
-                                                        }
-                                                        out.print("</tr>");
-                                                    }else{
+            if (u.getStatutu().equals("validé")) {
+                out.print("<td><span class=\"badge badge-success\">" + u.getStatutu() + "</span></td>");
+            } else if (u.getStatutu().equals("en attente")) {
+                out.print("<td><span class=\"badge badge-danger\">" + u.getStatutu() + "</span></td>");
+            } else {
+                out.print("<td><span class=\"badge badge-warning \">" + u.getStatutu() + "</span></td>");
+            }
+            out.print("</tr>");
+        } else {
                                                         /*
-                                                        Pour supprimer
+                                                        Pour valider ou passer en attente
                                                          */
-                                                        out.print("<tr style=\"background-color:#d1ecf1\" onclick=\"changeDelete(this)\">");
+            out.print("<tr style=\"background-color:#fedee5\" onclick=\"changeDelete(this)\">");
 
-                                                        out.print("<th scope=\"row\">");
-                                                        out.print("<input type=\"checkbox\" name=\"user\" value=\"Bike\" hidden>");
-                                                        if (u.getGenreu().equals("Homme")){
-                                                            out.print("<i class=\"fa fa-male\" style=\"color:blue\"></i>");
-                                                        }else{
-                                                            out.print("<i class=\"fa fa-female\" style=\"color:red\"></i>");
-                                                        }
-                                                        out.print(u.getNomu());
-                                                        out.print("</th>");
-                                                        out.print("<td>"+u.getPrenomu()+"</td>");
+            out.print("<th scope=\"row\">");
+            out.print("<input type=\"checkbox\" name=\"user\" value=\""+u.getCodeu()+"\" hidden>");
+            if (u.getGenreu().equals("Homme")) {
+                out.print("<i class=\"fa fa-male\" style=\"color:blue\"></i>");
+            } else {
+                out.print("<i class=\"fa fa-female\" style=\"color:red\"></i>");
+            }
+            out.print(u.getNomu());
+            out.print("</th>");
+            out.print("<td>" + u.getPrenomu() + "</td>");
 
-                                                        if (u.getStatutu().equals("validé")){
-                                                            out.print("<td><span class=\"badge badge-success\">"+u.getStatutu()+"</span></td>");
-                                                        }else if(u.getStatutu().equals("en attente")){
-                                                            out.print("<td><span class=\"badge badge-danger\">"+u.getStatutu()+"</span></td>");
-                                                        }else{
-                                                            out.print("<td><span class=\"badge badge-warning \" >"+u.getStatutu()+"</span></td>");
-                                                        }
-                                                        out.print("</tr>");
-
-
+            if (u.getStatutu().equals("validé")) {
+                out.print("<td><span class=\"badge badge-success\">" + u.getStatutu() + "</span></td>");
+            } else if (u.getStatutu().equals("en attente")) {
+                out.print("<td><span class=\"badge badge-danger\">" + u.getStatutu() + "</span></td>");
+            } else {
+                out.print("<td><span class=\"badge badge-warning \" >" + u.getStatutu() + "</span></td>");
+            }
+            out.print("</tr>");
 
 
-                                                    }
+        }
 
-                                                }
 
+}
                                             %>
 
                                             </tbody>
@@ -156,10 +164,18 @@
                         </div>
                     </div>
                     <%
-                        if(flagSupprime){
+                        if(flagChange){
                             out.print("<div class=\"row\">");
                             out.print("<div class=\"col-12\">");
-                            out.print(" <a href=\"listClient.jsp?condition=supprimer\"><button type=\"button\" class=\"btn btn-danger btn-rounded m-b-10 m-l-5\">Confirmer</button></a>");
+                            String cible="";
+                            if (condition.equals("valider")){
+                                cible="validé";
+                            }else{
+                                cible="en attente";
+                            }
+
+                            out.print("<button type=\"button\" class=\"btn btn-danger btn-rounded m-b-10 m-l-5\" onclick=\"changeStatu('"+cible+"')\" >Confirmer</button>");
+
                             out.print("</div>");
                             out.print("</div>");
                         }
