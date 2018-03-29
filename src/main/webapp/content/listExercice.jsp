@@ -1,12 +1,12 @@
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="model.Utilisateur" %>
-<%@ page import="db.dbClient" %>
+<%@ page import="model.Exercice" %>
+<%@ page import="db.dbExercice" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <title>Ela - Bootstrap Admin Dashboard Template</title>
+        <title>liste des exercices</title>
         <%@ include file="/content/templete/libHead.jsp" %>
         <script type="text/JavaScript" src="../js/ajaxExercice.js"></script>
     </head>
@@ -28,11 +28,11 @@
                 <!-- Bread crumb -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text-primary">Dashboard</h3> </div>
+                        <h3 class="text-primary">Exercice</h3> </div>
                     <div class="col-md-7 align-self-center">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard</li>
+                            <li class="breadcrumb-item active">Exercice</li>
                         </ol>
                     </div>
                 </div>
@@ -41,28 +41,22 @@
                     <!-- Start Page Content -->
 
                     <!-- End PAge Content -->
-                    <div class="row">
-                        <div class="col-12">
-                            <button type="button" class="btn btn-success btn-rounded m-b-10 m-l-5">Validé</button>
-                            <button type="button" class="btn btn-warning btn-rounded m-b-10 m-l-5">En attent</button>
-                            <button type="button" class="btn btn-danger btn-rounded m-b-10 m-l-5">Supprimer</button>
-                        </div>
 
-                    </div>
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">List de client</h4>
-                                    <h6 class="card-subtitle">Touts les clients</h6>
+                                    <h4 class="card-title">Liste des exercices</h4>
+                                    <h6 class="card-subtitle">Tous les exercices</h6>
                                     <div class="table-responsive m-t-40">
                                         <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                             <thead>
                                             <tr>
                                             <tr>
                                                 <th>Nom</th>
-                                                <th>Prenom</th>
-                                                <th>Status</th>
+                                                <th>Objectif</th>
+                                                <th>Lien multimédia</th>
+                                                <th>Modifier</th>
                                             </tr>
                                             </tr>
                                             </thead>
@@ -70,36 +64,25 @@
                                             <tr>
                                             <tr>
                                                 <th>Nom</th>
-                                                <th>Prenom</th>
-                                                <th>Status</th>
+                                                <th>Objectif</th>
+                                                <th>Lien multimédia</th>
+                                                <th>Modifier</th>
                                             </tr>
                                             </tr>
                                             </tfoot>
                                             <tbody>
                                             <%
-                                                ArrayList<Utilisateur> listUu= new dbClient().getClients();
-                                                for (int i=0;i<10;i++){
-                                                for (Utilisateur u:listUu){
-                                                    out.print("<tr onclick=\"alert('"+u.getCodeu()+"')\">");
-                                                    out.print("<th scope=\"row\">");
-                                                    if (u.getGenreu().equals("Homme")){
-                                                        out.print("<i class=\"fa fa-male\" style=\"color:blue\"></i>");
-                                                    }else{
-                                                        out.print("<i class=\"fa fa-female\" style=\"color:red\"></i>");
-                                                    }
-                                                    out.print(u.getNomu());
-                                                    out.print("</th>");
-                                                    out.print("<td>"+u.getPrenomu()+"</td>");
-
-                                                    if (u.getStatutu().equals("validé")){
-                                                        out.print("<td><span class=\"badge badge-success\">"+u.getStatutu()+"</span></td>");
-                                                    }else if(u.getStatutu().equals("en attente")){
-                                                        out.print("<td><span class=\"badge badge-danger\">"+u.getStatutu()+"</span></td>");
-                                                    }else{
-                                                        out.print("<td><span class=\"badge badge-warning \">"+u.getStatutu()+"</span></td>");
-                                                    }
+                                                ArrayList<Exercice> listE= new dbExercice().getExercices();
+                                                for (Exercice e:listE){
+                                                  
+                                                    out.print("<tr>");
+                                                    out.print("<th scope=\"row\">"+e.getLibellee()+"</th>");
+                                                    out.print("<td>"+e.getObjectife()+"</td>");
+                                                    out.print("<td>"+e.getLienvideo()+"</td>");
+                                                    out.print("<td><button type='button' onclick=\"window.location.href='modifierExo.jsp?codee="+e.getCodee()+"'\"+e.getCodee()+'\" class='btn btn-warning btn-rounded m-b-10 m-l-5'>Voir</button></td>");
                                                     out.print("</tr>");
-                                                }}
+                                                    
+                                                }
                                             %>
                                             <div class="badge badge-primary"></div>
                                             </tbody>
