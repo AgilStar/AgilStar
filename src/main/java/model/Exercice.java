@@ -22,6 +22,12 @@ public class Exercice  implements java.io.Serializable {
        this.objectife = objectife;
        this.lienvideo = lienvideo;
     }
+    public Exercice(Integer id,String libellee, String objectife, String lienvideo) {
+       this.codee=id;
+       this.libellee = libellee;
+       this.objectife = objectife;
+       this.lienvideo = lienvideo;
+    }
    
     public Integer getCodee() {
         return this.codee;

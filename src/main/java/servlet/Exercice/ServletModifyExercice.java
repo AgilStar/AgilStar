@@ -7,6 +7,9 @@ package servlet.Exercice;
 
 import java.io.PrintWriter;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
@@ -15,28 +18,31 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * On verifie que l exercice n existe pas avant de l inserer
+ * On modifie l'exercice selectionné
  *
- * @author tianyuanliu,Nicolas
+ * @author aude, jin
  */
 @WebServlet(
-        name = "MyServletInsertExercice",
-        urlPatterns = {"/insertExercice"}
+        name = "ServletModifyExercice",
+        urlPatterns = {"/ServletModifyExercice"}
 )
-public class ServletInsertExercice extends HttpServlet {
+public class ServletModifyExercice extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+           
         PrintWriter out = resp.getWriter();
+        Integer codee= new Integer(req.getParameter("codee"));
         String nameExercice = req.getParameter("nameExercice");
         String videoExercice = req.getParameter("videoExercice");
         String objectiveExercice = req.getParameter("objectiveExercice");
-        if(!new db.dbExercice().insertExercice(nameExercice, objectiveExercice, videoExercice)){
-            String s="L'exercice existe d&eacute;j&agrave;";
-            
-            out.println(new String(s.getBytes("ISO-8859-1")));
+        try {
+            new db.dbExercice().modifyExercice(codee,nameExercice, objectiveExercice, videoExercice);
+        } catch (SQLException ex) {
+            Logger.getLogger(ServletModifyExercice.class.getName()).log(Level.SEVERE, null, ex);
         }
+       
         
     }
 }

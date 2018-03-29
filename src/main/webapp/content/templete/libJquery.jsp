@@ -11,10 +11,3 @@
     <script src="/js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
     <!--Custom JavaScript -->
     <script src="/js/custom.min.js"></script>
-    
-    
-    <!-- Form validation -->
-    <script src="/js/lib/form-validation/jquery.validate.min.js"></script>
-    <script src="/js/lib/form-validation/jquery.validate-init.js"></script>
-    <!--Custom JavaScript -->
-    <script src="/js/custom.min.js"></script>

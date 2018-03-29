@@ -66,14 +66,82 @@ function insertExercice()
                 }
             }
             ;
-        }
+        };
         // Requête au serveur avec les paramètres éventuels.
         xhr.open("GET", "/insertExercice?nameExercice=" + nameExercice + "&videoExercice=" + videoExercice + "&objectiveExercice=" + objectiveExercice, true);
         xhr.send(null);
 
     }
-
-
-
-
 }
+
+
+function modifierExercice()
+{
+ 
+    //Initialiser
+    var divErrorMessageParent = document.getElementById("errorMessageM");
+    divErrorMessageParent.innerHTML = "";
+    // Objet XMLHttpRequest.
+    var xhr = getXMLHttpRequest();
+    var nameExercice = document.getElementById("nameExerciceM").value;
+    var codee = document.getElementById("codeeM").value;
+    var videoExercice = document.getElementById("videoExerciceM").value;
+    var objectiveExercice = document.getElementById("objectiveExerciceM").value;
+// on vérifie que les champs nom d'exercice et objectif sont remplis
+    var errorMessage = "";
+    var errorFlag = false;
+    if (!checkEmpty(nameExercice)) {
+        errorFlag = true;
+        errorMessage = errorMessage + "Le nom de l'exercice est manquant "
+    }
+
+    if (!checkEmpty(objectiveExercice)) {
+        errorFlag = true;
+        errorMessage = errorMessage + "L'objectif de l'exercice est manquant"
+    }
+
+    if (errorFlag) {
+        alert("yyyy");
+        //S'ils le sont, on affiche un message d'erreur
+        var divErrorMessage = document.createElement("div");
+        divErrorMessage.innerHTML = errorMessage;
+        divErrorMessage.setAttribute("class", "alert alert-danger");
+        divErrorMessageParent.appendChild(divErrorMessage);
+
+
+
+    } else {
+        // On insère le nouvel exercice dans la base de données
+        // On précise ce que l'on va faire quand on aura reçu la réponse du serveur.
+        // Si l'on a tout reçu et que la requête http s'est bien passée.
+        
+        xhr.onreadystatechange = function () {
+             
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                {
+                  
+                    var errorMessage = xhr.responseText;
+                    if (errorMessage.length > 0) {
+                        var divErrorMessage = document.createElement("div");
+                        divErrorMessage.innerHTML = errorMessage;
+                        divErrorMessage.setAttribute("class", "alert alert-danger");
+                        divErrorMessageParent.appendChild(divErrorMessage);
+
+                    } else {
+                        window.location.href="listExercice.jsp"
+                    }
+
+
+                }
+            }
+            ;
+        }
+        // Requête au serveur avec les paramètres éventuels.
+        xhr.open("GET", "/ServletModifyExercice?codee=" + codee + "&nameExercice=" + nameExercice + "&videoExercice=" + videoExercice + "&objectiveExercice=" + objectiveExercice, true);
+        xhr.send(null);
+
+    }
+    
+    }
+
+
