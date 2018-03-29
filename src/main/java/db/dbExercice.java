@@ -25,15 +25,7 @@ public class dbExercice {
     /**
      * Constucteur
      */
-    public dbExercice() {
-        try {
-            cx = new dbAdmin().getConnection();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(dbExercice.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(dbExercice.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+
 
     /**
      * Ajouter un nouvel exercice
@@ -45,6 +37,7 @@ public class dbExercice {
      */
     public boolean insertExercice(String name, String objective, String lien) {
         try {
+            cx = new dbAdmin().getConnection();
             if(!checkExistExercice(name)){
                 return false;
             }
@@ -52,6 +45,8 @@ public class dbExercice {
             String sql = "insert into EXERCICE(LIBELLEE,OBJECTIFE,LIENVIDEO) VALUES('" + name + "','" + objective + "','" + lien + "')";
             Statement st = cx.createStatement();
             st.executeUpdate(sql);
+            st.close();
+            cx.close();
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement " + ex.getMessage());
         }
@@ -61,6 +56,7 @@ public class dbExercice {
 
     public boolean checkExistExercice(String name) {
         try {
+            cx = new dbAdmin().getConnection();
             String sql = "select count(*) as Nb from EXERCICE where LIBELLEE='" +name+"'";
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -68,7 +64,9 @@ public class dbExercice {
             while (rs.next()) {
                 nb = rs.getInt("Nb");
             }
-            System.out.println("ssss"+nb);
+
+            st.close();
+            cx.close();
             if (nb==1)
                 return false;
             else

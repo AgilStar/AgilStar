@@ -18,16 +18,16 @@ import model.Utilisateur;
  * @author tianyuanliu
  */
 public class dbAdmin {
-    public Connection cx;
+
 
     /*données de connexion*/
     private  String url = "jdbc:mysql://etu-web:3306/db_21201692";
     private String login = "21201692";
     private String password = "04964N";
+
     
-     /*Constructeurs*/
-    public dbAdmin() throws ClassNotFoundException, SQLException {
-        /*chargement du pilote pour la base de données*/
+    public Connection getConnection(){
+        Connection cx=null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException ex) {
@@ -39,10 +39,6 @@ public class dbAdmin {
         } catch (SQLException ex) {
             System.out.println("Erreur ouverture connexion " + ex.getMessage());
         }
-
-    }
-    
-    public Connection getConnection(){
         return cx;
     }
    

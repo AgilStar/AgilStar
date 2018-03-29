@@ -3,13 +3,6 @@
 <%@ page import="db.dbClient" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-<%
-    Boolean flagSupprime=false;
-    String condition= request.getParameter("condition");
-    if (condition!=null &&condition.equals("supprimer")){
-        flagSupprime=true;
-    }
-%>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -50,10 +43,9 @@
                     <!-- End PAge Content -->
                     <div class="row">
                         <div class="col-12">
-                            <a href="listClient.jsp"><button type="button" class="btn btn-primary btn-rounded m-b-10 m-l-5">Tous</button></a>
-                            <a href="listClient.jsp?condition=validé"><button type="button" class="btn btn-success btn-rounded m-b-10 m-l-5">Validé</button></a>
-                            <a href="listClient.jsp?condition=en attente"><button type="button" class="btn btn-warning btn-rounded m-b-10 m-l-5">En attent</button></a>
-                            <a href="listClient.jsp?condition=supprimer"><button type="button" class="btn btn-danger btn-rounded m-b-10 m-l-5">Supprimer</button></a>
+                            <button type="button" class="btn btn-success btn-rounded m-b-10 m-l-5">Validé</button>
+                            <button type="button" class="btn btn-warning btn-rounded m-b-10 m-l-5">En attent</button>
+                            <button type="button" class="btn btn-danger btn-rounded m-b-10 m-l-5">Supprimer</button>
                         </div>
 
                     </div>
@@ -85,59 +77,29 @@
                                             </tfoot>
                                             <tbody>
                                             <%
-
-                                                ArrayList<Utilisateur> listUu= new dbClient().getClients(condition);
-
+                                                ArrayList<Utilisateur> listUu= new dbClient().getClients();
+                                                for (int i=0;i<10;i++){
                                                 for (Utilisateur u:listUu){
-                                                    if (!flagSupprime){
-                                                        /*
-                                                        Pas de cas pour supprimer
-                                                         */
-                                                        out.print("<tr onclick=\"alert('"+u.getCodeu()+"')\">");
-                                                        out.print("<th scope=\"row\">");
-                                                        if (u.getGenreu().equals("Homme")){
-                                                            out.print("<i class=\"fa fa-male\" style=\"color:blue\"></i>");
-                                                        }else{
-                                                            out.print("<i class=\"fa fa-female\" style=\"color:red\"></i>");
-                                                        }
-                                                        out.print(u.getNomu());
-                                                        out.print("</th>");
-                                                        out.print("<td>"+u.getPrenomu()+"</td>");
-
-                                                        if (u.getStatutu().equals("validé")){
-                                                            out.print("<td><span class=\"badge badge-success\">"+u.getStatutu()+"</span></td>");
-                                                        }else if(u.getStatutu().equals("en attente")){
-                                                            out.print("<td><span class=\"badge badge-danger\">"+u.getStatutu()+"</span></td>");
-                                                        }else{
-                                                            out.print("<td><span class=\"badge badge-warning \">"+u.getStatutu()+"</span></td>");
-                                                        }
-                                                        out.print("</tr>");
+                                                    out.print("<tr onclick=\"alert('"+u.getCodeu()+"')\">");
+                                                    out.print("<th scope=\"row\">");
+                                                    if (u.getGenreu().equals("Homme")){
+                                                        out.print("<i class=\"fa fa-male\" style=\"color:blue\"></i>");
                                                     }else{
-                                                        /*
-                                                        Pour supprimer
-                                                         */
-                                                        out.print("<tr style=\"background-color:#d1ecf1\" onclick=\"changeDelete(this)\" tag=\"0\" >");
-                                                        out.print("<th scope=\"row\">");
-                                                        if (u.getGenreu().equals("Homme")){
-                                                            out.print("<i class=\"fa fa-male\" style=\"color:blue\"></i>");
-                                                        }else{
-                                                            out.print("<i class=\"fa fa-female\" style=\"color:red\"></i>");
-                                                        }
-                                                        out.print(u.getNomu());
-                                                        out.print("</th>");
-                                                        out.print("<td>"+u.getPrenomu()+"</td>");
-
-                                                        if (u.getStatutu().equals("validé")){
-                                                            out.print("<td><span class=\"badge badge-success\">"+u.getStatutu()+"</span></td>");
-                                                        }else if(u.getStatutu().equals("en attente")){
-                                                            out.print("<td><span class=\"badge badge-danger\">"+u.getStatutu()+"</span></td>");
-                                                        }else{
-                                                            out.print("<td><span class=\"badge badge-warning \" >"+u.getStatutu()+"</span></td>");
-                                                        }
-                                                        out.print("</tr>");
+                                                        out.print("<i class=\"fa fa-female\" style=\"color:red\"></i>");
                                                     }
+                                                    out.print(u.getNomu());
+                                                    out.print("</th>");
+                                                    out.print("<td>"+u.getPrenomu()+"</td>");
 
-                                                }
+                                                    if (u.getStatutu().equals("validé")){
+                                                        out.print("<td><span class=\"badge badge-success\">"+u.getStatutu()+"</span></td>");
+                                                    }else if(u.getStatutu().equals("en attente")){
+                                                        out.print("<td><span class=\"badge badge-danger\">"+u.getStatutu()+"</span></td>");
+                                                    }else{
+                                                        out.print("<td><span class=\"badge badge-warning \">"+u.getStatutu()+"</span></td>");
+                                                    }
+                                                    out.print("</tr>");
+                                                }}
                                             %>
                                             <div class="badge badge-primary"></div>
                                             </tbody>
