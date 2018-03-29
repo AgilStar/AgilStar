@@ -20,28 +20,26 @@ import javax.servlet.http.HttpSession;
  * @author auden
  */
 @WebServlet(
-        name = "MyServletConnection",
-        urlPatterns = {"/ServletConnexion"}
+        name = "MyServletLogOut",
+        urlPatterns = {"/ServletLogOut"}
 )
-public class ServletConnexion extends HttpServlet {
+public class ServletLogOut extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         PrintWriter out = resp.getWriter();
-        String email = req.getParameter("email");
-        String mdp = req.getParameter("mdp");
-        //out.print(email);
-        //out.print(mdp);
-        String url = "";
-        url = new db.dbClient().verifyConnect(email, mdp);
-         out.print(url);
-         if(url!="errorMot"&&url!="null"){
-            String id=new db.dbAdmin().recupIdUtilisateur(email);
-            HttpSession session=req.getSession();
-            session.setAttribute("id", id);
-           
-         }
+        HttpSession session=req.getSession(false);
+        if(session!=null){
+            if(session.getAttribute("id")!=null){
+                session.removeAttribute("id");
+            }
+            session.invalidate();
+        }
+        
+        resp.sendRedirect("content/page-login.html");
+       
    
-    }}
+    }
+}
 

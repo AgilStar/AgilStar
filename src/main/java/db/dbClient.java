@@ -22,14 +22,13 @@ public class dbClient {
 
     Connection cx;//La connection utilisé par toutes les méthodes dans cette classe
 
-
-/**
- * 
- * @param email
- * @param mdp
- * @return 
- * @author aude,jin
- */
+    /**
+     *
+     * @param email
+     * @param mdp
+     * @return
+     * @author aude,jin
+     */
     public String verifyConnect(String email, String mdp) {
 
         String url = "";
@@ -42,50 +41,49 @@ public class dbClient {
             if (rs.next() == false) {
                 url = "null";
             } else {
-                
 
-                    String mailu = rs.getString("MAILU");
-                    String mdpu = rs.getString("MDPU");
-                    String statutu = rs.getString("STATUTU");
-                    if ((mdpu.equals(mdp))) {
-                        if (statutu.equals("admin") || statutu.equals("coach")) {
-                            url = "/content/indexCoach.jsp";
-                        } else {
-                            url = "/content/indexClient.jsp";
-                        }
+                String mailu = rs.getString("MAILU");
+                String mdpu = rs.getString("MDPU");
+                String statutu = rs.getString("STATUTU");
+                if ((mdpu.equals(mdp))) {
+                    if (statutu.equals("admin") || statutu.equals("coach")) {
+                        url = "/content/indexCoach.jsp";
                     } else {
-                        url = "errorMot";
+                        url = "/content/indexClient.jsp";
                     }
-                
+                } else {
+                    url = "errorMot";
+                }
+
             }
-        rs.close();
+            rs.close();
             cx.close();
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement " + ex.getMessage());
         }
         return url;
     }
-    
+
     /**
      * @author Alice,tianyuan
      */
-     public ArrayList<Utilisateur> getClients(String condition) {
+    public ArrayList<Utilisateur> getClients(String condition) {
         ArrayList<Utilisateur> users = new ArrayList();
         Utilisateur e;
 
         try {
             cx = new dbAdmin().getConnection();
-            String sql="";
-            if (condition==null ||condition.equals("supprimer")){
+            String sql = "";
+            if (condition == null || condition.equals("supprimer")) {
                 sql = "select *  from UTILISATEUR where STATUTU<>'admin'";
-            }else{
+            } else {
                 System.out.println(condition);
-                sql = "select *  from UTILISATEUR where STATUTU='"+condition+"'";
+                sql = "select *  from UTILISATEUR where STATUTU='" + condition + "'";
             }
 
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
-            
+
             while (rs.next()) {
                 int id = rs.getInt("CODEU");
                 String nomu = rs.getString("NOMU");
@@ -97,9 +95,9 @@ public class dbClient {
                 String adressu = rs.getString("ADRESSEU");
                 String telu = rs.getString("TELU");
                 String infooptu = rs.getString("INFOOPTU");
-                
+
                 //ajouter les autres attributs 
-                users.add(new Utilisateur(id,nomu,prenomu,mailu,genreu,birthday,statuu,adressu,telu,infooptu));
+                users.add(new Utilisateur(id, nomu, prenomu, mailu, genreu, birthday, statuu, adressu, telu, infooptu));
             }
             rs.close();
             cx.close();
@@ -108,6 +106,5 @@ public class dbClient {
         }
         return users;
     }
-
 
 }
