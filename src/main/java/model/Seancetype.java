@@ -13,6 +13,7 @@ public class Seancetype  implements java.io.Serializable {
      private int codecat;
      private String libellest;
      private String descriptionst;
+     private String echauffementst;
 
     public Seancetype() {
     }
@@ -21,14 +22,24 @@ public class Seancetype  implements java.io.Serializable {
     public Seancetype(int codecat) {
         this.codecat = codecat;
     }
-    public Seancetype(int codecat, String libellest, String descriptionst) {
+    public Seancetype(int codest,int codecat, String libellest, String descriptionst,String echauffementst) {
+       this.codest=codest;
        this.codecat = codecat;
        this.libellest = libellest;
        this.descriptionst = descriptionst;
+       this.echauffementst=echauffementst;
     }
    
     public Integer getCodest() {
         return this.codest;
+    }
+
+    public String getEchauffementst() {
+        return echauffementst;
+    }
+
+    public void setEchauffementst(String echauffementst) {
+        this.echauffementst = echauffementst;
     }
     
     public void setCodest(Integer codest) {

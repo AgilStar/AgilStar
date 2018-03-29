@@ -16,6 +16,7 @@
 
                         
                         <li class="nav-label">Program</li>
+                        <li><a href="listProgramm.jsp">Liste des programmes</a></li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu">Exercice</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="listExercice.jsp">Liste</a></li>
