@@ -16,8 +16,14 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listClient.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="730">
-              <caret line="164" column="25" lean-forward="false" selection-start-line="164" selection-start-column="25" selection-end-line="164" selection-end-column="25" />
-              <folding />
+              <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+              <folding>
+                <marker date="1522309678000" expanded="true" signature="5363:5387" ph="..." />
+                <marker date="1522309678000" expanded="true" signature="5363:5505" ph="..." />
+                <marker date="1522309678000" expanded="true" signature="5363:5520" ph="..." />
+                <marker date="1522309678000" expanded="true" signature="5363:6527" ph="..." />
+                <marker date="1522309678000" expanded="true" signature="5363:6536" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -25,8 +31,8 @@
       <file leaf-file-name="ajaxAdministrateur.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ajaxAdministrateur.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="41" lean-forward="false" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -36,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/libHead.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="15" column="73" lean-forward="true" selection-start-line="15" selection-start-column="73" selection-end-line="15" selection-end-column="73" />
+              <caret line="15" column="73" lean-forward="false" selection-start-line="15" selection-start-column="73" selection-end-line="15" selection-end-column="73" />
               <folding />
             </state>
           </provider>
@@ -61,8 +67,7 @@
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <marker date="1522329546715" expanded="true" signature="424:5361" ph="{...}" />
-                <marker date="1522329546715" expanded="true" signature="1597:2548" ph="{...}" />
+                <marker date="1522309678000" expanded="true" signature="424:2805" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -71,29 +76,19 @@
       <file leaf-file-name="dbClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/db/dbClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="51" column="1" lean-forward="false" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
-              <folding>
-                <marker date="1522318297847" expanded="true" signature="866:936" ph="select MAILU... UTILISATEUR" />
-                <marker date="1522318297847" expanded="true" signature="2284:2333" ph="select * fro... UTILISATEUR" />
-                <marker date="1522318297847" expanded="true" signature="2425:2481" ph="select * fro... UTILISATEUR" />
-              </folding>
+            <state relative-caret-position="720">
+              <caret line="59" column="1" lean-forward="false" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dbExercice.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dbExercice.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/db/dbExercice.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="164" column="23" lean-forward="false" selection-start-line="164" selection-start-column="23" selection-end-line="164" selection-end-column="23" />
-              <folding>
-                <marker date="1522330227308" expanded="true" signature="1177:1285" ph="insert into EXERCICE... " />
-                <marker date="1522330227308" expanded="true" signature="1741:1803" ph="select count... EXERCICE" />
-                <marker date="1522330227308" expanded="true" signature="2630:2653" ph="select * fro... EXERCICE" />
-                <marker date="1522330227308" expanded="true" signature="3602:3638" ph="select * fro... EXERCICE" />
-                <marker date="1522330227308" expanded="true" signature="4566:4659" ph="update EXERC... " />
-              </folding>
+            <state relative-caret-position="891">
+              <caret line="74" column="28" lean-forward="false" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -103,17 +98,25 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-315">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1522311308000" expanded="true" signature="2228:2234" ph="..." />
+                <marker date="1522311308000" expanded="true" signature="2228:2243" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dbAdmin.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dbAdmin.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/db/dbAdmin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="538">
+              <caret line="72" column="13" lean-forward="true" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
+              <folding>
+                <marker date="1522328058000" expanded="true" signature="1685:2044" ph="insert into UTILISATEUR... " />
+                <marker date="1522328058000" expanded="true" signature="2503:2573" ph="insert into DETENIR... " />
+                <marker date="1522328058000" expanded="true" signature="3159:3207" ph="select * fro... UTILISATEUR" />
+                <marker date="1522328058000" expanded="true" signature="3824:3878" ph="select * fro... PROFIL" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -159,6 +162,7 @@
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="dedicatedModuleDir" value="$PROJECT_DIR$" />
+        <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
   </component>
@@ -443,7 +447,7 @@
       <option name="presentableId" value="Default" />
       <updated>1522278112570</updated>
       <workItem from="1522278117278" duration="3630000" />
-      <workItem from="1522313233861" duration="12345000" />
+      <workItem from="1522313233861" duration="12707000" />
     </task>
     <servers />
   </component>
@@ -453,7 +457,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15975000" />
+    <option name="totallyTimeSpent" value="16337000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="-845" width="1920" height="1080" extended-state="0" />
@@ -538,7 +542,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="44" column="10" lean-forward="false" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
-          <folding />
+          <folding>
+            <marker date="1522309678000" expanded="true" signature="5363:5387" ph="..." />
+            <marker date="1522309678000" expanded="true" signature="5363:5505" ph="..." />
+            <marker date="1522309678000" expanded="true" signature="5363:5520" ph="..." />
+            <marker date="1522309678000" expanded="true" signature="5363:6527" ph="..." />
+            <marker date="1522309678000" expanded="true" signature="5363:6536" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -586,11 +596,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1230">
           <caret line="82" column="66" lean-forward="false" selection-start-line="82" selection-start-column="66" selection-end-line="82" selection-end-column="66" />
-          <folding>
-            <marker date="1522318297847" expanded="true" signature="866:936" ph="select MAILU... UTILISATEUR" />
-            <marker date="1522318297847" expanded="true" signature="2284:2333" ph="select * fro... UTILISATEUR" />
-            <marker date="1522318297847" expanded="true" signature="2425:2481" ph="select * fro... UTILISATEUR" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -606,7 +612,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="23" column="47" lean-forward="false" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
-          <folding />
+          <folding>
+            <marker date="1522328058000" expanded="true" signature="1685:2044" ph="insert into UTILISATEUR... " />
+            <marker date="1522328058000" expanded="true" signature="2503:2573" ph="insert into DETENIR... " />
+            <marker date="1522328058000" expanded="true" signature="3159:3207" ph="select * fro... UTILISATEUR" />
+            <marker date="1522328058000" expanded="true" signature="3824:3878" ph="select * fro... PROFIL" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -678,7 +689,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-315">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1522311308000" expanded="true" signature="2228:2234" ph="..." />
+            <marker date="1522311308000" expanded="true" signature="2228:2243" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -688,8 +702,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1522329546715" expanded="true" signature="424:5361" ph="{...}" />
-            <marker date="1522329546715" expanded="true" signature="1597:2548" ph="{...}" />
+            <marker date="1522309678000" expanded="true" signature="424:2805" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -707,7 +720,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/libHead.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="15" column="73" lean-forward="true" selection-start-line="15" selection-start-column="73" selection-end-line="15" selection-end-column="73" />
+          <caret line="15" column="73" lean-forward="false" selection-start-line="15" selection-start-column="73" selection-end-line="15" selection-end-column="73" />
           <folding />
         </state>
       </provider>
@@ -722,8 +735,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ajaxAdministrateur.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="41" lean-forward="false" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -731,41 +744,42 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listClient.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="730">
-          <caret line="164" column="25" lean-forward="false" selection-start-line="164" selection-start-column="25" selection-end-line="164" selection-end-column="25" />
+          <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+          <folding>
+            <marker date="1522309678000" expanded="true" signature="5363:5387" ph="..." />
+            <marker date="1522309678000" expanded="true" signature="5363:5505" ph="..." />
+            <marker date="1522309678000" expanded="true" signature="5363:5520" ph="..." />
+            <marker date="1522309678000" expanded="true" signature="5363:6527" ph="..." />
+            <marker date="1522309678000" expanded="true" signature="5363:6536" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="59" column="1" lean-forward="false" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbExercice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="891">
+          <caret line="74" column="28" lean-forward="false" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/db/dbAdmin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="51" column="1" lean-forward="false" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+        <state relative-caret-position="538">
+          <caret line="72" column="13" lean-forward="true" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
           <folding>
-            <marker date="1522318297847" expanded="true" signature="866:936" ph="select MAILU... UTILISATEUR" />
-            <marker date="1522318297847" expanded="true" signature="2284:2333" ph="select * fro... UTILISATEUR" />
-            <marker date="1522318297847" expanded="true" signature="2425:2481" ph="select * fro... UTILISATEUR" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbExercice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="164" column="23" lean-forward="false" selection-start-line="164" selection-start-column="23" selection-end-line="164" selection-end-column="23" />
-          <folding>
-            <marker date="1522330227308" expanded="true" signature="1177:1285" ph="insert into EXERCICE... " />
-            <marker date="1522330227308" expanded="true" signature="1741:1803" ph="select count... EXERCICE" />
-            <marker date="1522330227308" expanded="true" signature="2630:2653" ph="select * fro... EXERCICE" />
-            <marker date="1522330227308" expanded="true" signature="3602:3638" ph="select * fro... EXERCICE" />
-            <marker date="1522330227308" expanded="true" signature="4566:4659" ph="update EXERC... " />
+            <marker date="1522328058000" expanded="true" signature="1685:2044" ph="insert into UTILISATEUR... " />
+            <marker date="1522328058000" expanded="true" signature="2503:2573" ph="insert into DETENIR... " />
+            <marker date="1522328058000" expanded="true" signature="3159:3207" ph="select * fro... UTILISATEUR" />
+            <marker date="1522328058000" expanded="true" signature="3824:3878" ph="select * fro... PROFIL" />
           </folding>
         </state>
       </provider>
