@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef1cdac3-136c-4724-8a4f-2c47a48dd52a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/listClient.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/listClient.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/ajaxAdministrateur.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/ajaxAdministrateur.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dbExercice.java" afterPath="$PROJECT_DIR$/src/main/java/db/dbExercice.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,7 +14,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="listClient.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="listClient.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listClient.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="730">
@@ -65,6 +63,8 @@
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
+                <marker date="1522329546715" expanded="true" signature="424:5361" ph="{...}" />
+                <marker date="1522329546715" expanded="true" signature="1597:2548" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -73,7 +73,7 @@
       <file leaf-file-name="dbClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/db/dbClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
+            <state relative-caret-position="600">
               <caret line="51" column="1" lean-forward="false" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
               <folding>
                 <marker date="1522318297847" expanded="true" signature="866:936" ph="select MAILU... UTILISATEUR" />
@@ -84,14 +84,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dbExercice.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dbExercice.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/db/dbExercice.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5">
-              <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+            <state relative-caret-position="-346">
+              <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding>
-                <marker date="1522318297851" expanded="true" signature="1109:1217" ph="insert into EXERCICE... " />
-                <marker date="1522318297851" expanded="true" signature="1655:1717" ph="select count... EXERCICE" />
+                <marker date="1522329790665" expanded="true" signature="1177:1285" ph="insert into EXERCICE... " />
+                <marker date="1522329790665" expanded="true" signature="1741:1803" ph="select count... EXERCICE" />
+                <marker date="1522329790665" expanded="true" signature="2586:2609" ph="select * fro... EXERCICE" />
+                <marker date="1522329790665" expanded="true" signature="3466:3502" ph="select * fro... EXERCICE" />
+                <marker date="1522329790665" expanded="true" signature="4342:4435" ph="update EXERC... " />
               </folding>
             </state>
           </provider>
@@ -140,11 +143,11 @@
         <option value="$PROJECT_DIR$/src/main/java/model/Utilisateur.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/listClient copie.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/db/dbAdmin.java" />
-        <option value="$PROJECT_DIR$/src/main/java/db/dbExercice.java" />
         <option value="$PROJECT_DIR$/src/main/java/db/dbClient.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/templete/libHead.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/ajaxAdministrateur.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/listClient.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/db/dbExercice.java" />
       </list>
     </option>
   </component>
@@ -442,7 +445,7 @@
       <option name="presentableId" value="Default" />
       <updated>1522278112570</updated>
       <workItem from="1522278117278" duration="3630000" />
-      <workItem from="1522313233861" duration="11267000" />
+      <workItem from="1522313233861" duration="11760000" />
     </task>
     <servers />
   </component>
@@ -452,11 +455,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14897000" />
+    <option name="totallyTimeSpent" value="15390000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="-845" width="1920" height="1080" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -472,7 +474,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16666667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16666667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -687,37 +689,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbAdmin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbExercice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
-          <folding>
-            <marker date="1522318297851" expanded="true" signature="1109:1217" ph="insert into EXERCICE... " />
-            <marker date="1522318297851" expanded="true" signature="1655:1717" ph="select count... EXERCICE" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="51" column="1" lean-forward="false" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
-          <folding>
-            <marker date="1522318297847" expanded="true" signature="866:936" ph="select MAILU... UTILISATEUR" />
-            <marker date="1522318297847" expanded="true" signature="2284:2333" ph="select * fro... UTILISATEUR" />
-            <marker date="1522318297847" expanded="true" signature="2425:2481" ph="select * fro... UTILISATEUR" />
+            <marker date="1522329546715" expanded="true" signature="424:5361" ph="{...}" />
+            <marker date="1522329546715" expanded="true" signature="1597:2548" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -761,6 +734,40 @@
         <state relative-caret-position="730">
           <caret line="164" column="25" lean-forward="false" selection-start-line="164" selection-start-column="25" selection-end-line="164" selection-end-column="25" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbAdmin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="51" column="1" lean-forward="false" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+          <folding>
+            <marker date="1522318297847" expanded="true" signature="866:936" ph="select MAILU... UTILISATEUR" />
+            <marker date="1522318297847" expanded="true" signature="2284:2333" ph="select * fro... UTILISATEUR" />
+            <marker date="1522318297847" expanded="true" signature="2425:2481" ph="select * fro... UTILISATEUR" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbExercice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-346">
+          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding>
+            <marker date="1522329790665" expanded="true" signature="1177:1285" ph="insert into EXERCICE... " />
+            <marker date="1522329790665" expanded="true" signature="1741:1803" ph="select count... EXERCICE" />
+            <marker date="1522329790665" expanded="true" signature="2586:2609" ph="select * fro... EXERCICE" />
+            <marker date="1522329790665" expanded="true" signature="3466:3502" ph="select * fro... EXERCICE" />
+            <marker date="1522329790665" expanded="true" signature="4342:4435" ph="update EXERC... " />
+          </folding>
         </state>
       </provider>
     </entry>
