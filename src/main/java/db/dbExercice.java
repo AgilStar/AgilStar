@@ -95,6 +95,7 @@ public class dbExercice {
      * @author Aude, Jin
      */
     public ArrayList<Exercice> getExercices() {
+        cx = new dbAdmin().getConnection();
         ArrayList<Exercice> exos = new ArrayList();
         Exercice e;
         try {
@@ -111,6 +112,8 @@ public class dbExercice {
                 //ajouter les autres attributs 
                 exos.add(new Exercice(id, nome, objectif, lien));
             }
+            st.close();
+            cx.close();
 
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement " + ex.getMessage());
@@ -124,6 +127,7 @@ public class dbExercice {
      * @author Aude, Jin
      */
     public Exercice getExercice(Integer codee) {
+        cx = new dbAdmin().getConnection();
         Exercice exo = new Exercice();
         try {
 
@@ -142,6 +146,8 @@ public class dbExercice {
                 exo.setLienvideo(lien);
 
             }
+            st.close();
+            cx.close();
 
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement " + ex.getMessage());
@@ -149,17 +155,19 @@ public class dbExercice {
         return exo;
     }
      public void modifyExercice(int codee,String nom, String obj, String lien) throws SQLException {
-    
+         cx = new dbAdmin().getConnection();
         try {
 
             String sql = "update EXERCICE set LIBELLEE='"+nom+"',OBJECTIFE='"+obj+"', LIENVIDEO='"+lien+"' where codee="+codee;
             Statement st = cx.createStatement();
             int nb = st.executeUpdate(sql);
+            st.close();
+            cx.close();
             }
 
          catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement " + ex.getMessage());
         }
-        
+
     }
 }
