@@ -18,11 +18,11 @@
             <state relative-caret-position="730">
               <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
               <folding>
-                <marker date="1522309678000" expanded="true" signature="5363:5387" ph="..." />
-                <marker date="1522309678000" expanded="true" signature="5363:5505" ph="..." />
-                <marker date="1522309678000" expanded="true" signature="5363:5520" ph="..." />
-                <marker date="1522309678000" expanded="true" signature="5363:6527" ph="..." />
-                <marker date="1522309678000" expanded="true" signature="5363:6536" ph="..." />
+                <marker date="1522331346300" expanded="true" signature="5363:5387" ph="..." />
+                <marker date="1522331346300" expanded="true" signature="5363:5505" ph="..." />
+                <marker date="1522331346300" expanded="true" signature="5363:5520" ph="..." />
+                <marker date="1522331346300" expanded="true" signature="5363:6527" ph="..." />
+                <marker date="1522331346300" expanded="true" signature="5363:6536" ph="..." />
               </folding>
             </state>
           </provider>
@@ -67,7 +67,7 @@
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <marker date="1522309678000" expanded="true" signature="424:2805" ph="{...}" />
+                <marker date="1522331346312" expanded="true" signature="424:2805" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -99,8 +99,8 @@
             <state relative-caret-position="-315">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1522311308000" expanded="true" signature="2228:2234" ph="..." />
-                <marker date="1522311308000" expanded="true" signature="2228:2243" ph="..." />
+                <marker date="1522331346301" expanded="true" signature="2228:2234" ph="..." />
+                <marker date="1522331346301" expanded="true" signature="2228:2243" ph="..." />
               </folding>
             </state>
           </provider>
@@ -109,13 +109,13 @@
       <file leaf-file-name="dbAdmin.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/db/dbAdmin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
-              <caret line="72" column="13" lean-forward="true" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
+            <state relative-caret-position="128">
+              <caret line="78" column="34" lean-forward="true" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
               <folding>
-                <marker date="1522328058000" expanded="true" signature="1685:2044" ph="insert into UTILISATEUR... " />
-                <marker date="1522328058000" expanded="true" signature="2503:2573" ph="insert into DETENIR... " />
-                <marker date="1522328058000" expanded="true" signature="3159:3207" ph="select * fro... UTILISATEUR" />
-                <marker date="1522328058000" expanded="true" signature="3824:3878" ph="select * fro... PROFIL" />
+                <marker date="1522331346268" expanded="true" signature="1685:2044" ph="insert into UTILISATEUR... " />
+                <marker date="1522331346268" expanded="true" signature="2503:2573" ph="insert into DETENIR... " />
+                <marker date="1522331346268" expanded="true" signature="3159:3207" ph="select * fro... UTILISATEUR" />
+                <marker date="1522331346268" expanded="true" signature="3824:3878" ph="select * fro... PROFIL" />
               </folding>
             </state>
           </provider>
@@ -143,12 +143,12 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/model/Utilisateur.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/listClient copie.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/db/dbAdmin.java" />
         <option value="$PROJECT_DIR$/src/main/java/db/dbClient.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/templete/libHead.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/ajaxAdministrateur.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/listClient.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/db/dbExercice.java" />
+        <option value="$PROJECT_DIR$/src/main/java/db/dbAdmin.java" />
       </list>
     </option>
   </component>
@@ -447,7 +447,7 @@
       <option name="presentableId" value="Default" />
       <updated>1522278112570</updated>
       <workItem from="1522278117278" duration="3630000" />
-      <workItem from="1522313233861" duration="12707000" />
+      <workItem from="1522313233861" duration="12800000" />
     </task>
     <servers />
   </component>
@@ -457,7 +457,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16337000" />
+    <option name="totallyTimeSpent" value="16430000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="-845" width="1920" height="1080" extended-state="0" />
@@ -472,7 +472,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298351" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21359223" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21359223" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -543,11 +543,11 @@
         <state relative-caret-position="660">
           <caret line="44" column="10" lean-forward="false" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
           <folding>
-            <marker date="1522309678000" expanded="true" signature="5363:5387" ph="..." />
-            <marker date="1522309678000" expanded="true" signature="5363:5505" ph="..." />
-            <marker date="1522309678000" expanded="true" signature="5363:5520" ph="..." />
-            <marker date="1522309678000" expanded="true" signature="5363:6527" ph="..." />
-            <marker date="1522309678000" expanded="true" signature="5363:6536" ph="..." />
+            <marker date="1522331346300" expanded="true" signature="5363:5387" ph="..." />
+            <marker date="1522331346300" expanded="true" signature="5363:5505" ph="..." />
+            <marker date="1522331346300" expanded="true" signature="5363:5520" ph="..." />
+            <marker date="1522331346300" expanded="true" signature="5363:6527" ph="..." />
+            <marker date="1522331346300" expanded="true" signature="5363:6536" ph="..." />
           </folding>
         </state>
       </provider>
@@ -613,10 +613,10 @@
         <state relative-caret-position="195">
           <caret line="23" column="47" lean-forward="false" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
           <folding>
-            <marker date="1522328058000" expanded="true" signature="1685:2044" ph="insert into UTILISATEUR... " />
-            <marker date="1522328058000" expanded="true" signature="2503:2573" ph="insert into DETENIR... " />
-            <marker date="1522328058000" expanded="true" signature="3159:3207" ph="select * fro... UTILISATEUR" />
-            <marker date="1522328058000" expanded="true" signature="3824:3878" ph="select * fro... PROFIL" />
+            <marker date="1522331346268" expanded="true" signature="1685:2044" ph="insert into UTILISATEUR... " />
+            <marker date="1522331346268" expanded="true" signature="2503:2573" ph="insert into DETENIR... " />
+            <marker date="1522331346268" expanded="true" signature="3159:3207" ph="select * fro... UTILISATEUR" />
+            <marker date="1522331346268" expanded="true" signature="3824:3878" ph="select * fro... PROFIL" />
           </folding>
         </state>
       </provider>
@@ -690,8 +690,8 @@
         <state relative-caret-position="-315">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1522311308000" expanded="true" signature="2228:2234" ph="..." />
-            <marker date="1522311308000" expanded="true" signature="2228:2243" ph="..." />
+            <marker date="1522331346301" expanded="true" signature="2228:2234" ph="..." />
+            <marker date="1522331346301" expanded="true" signature="2228:2243" ph="..." />
           </folding>
         </state>
       </provider>
@@ -702,7 +702,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1522309678000" expanded="true" signature="424:2805" ph="{...}" />
+            <marker date="1522331346312" expanded="true" signature="424:2805" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -746,11 +746,11 @@
         <state relative-caret-position="730">
           <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
           <folding>
-            <marker date="1522309678000" expanded="true" signature="5363:5387" ph="..." />
-            <marker date="1522309678000" expanded="true" signature="5363:5505" ph="..." />
-            <marker date="1522309678000" expanded="true" signature="5363:5520" ph="..." />
-            <marker date="1522309678000" expanded="true" signature="5363:6527" ph="..." />
-            <marker date="1522309678000" expanded="true" signature="5363:6536" ph="..." />
+            <marker date="1522331346300" expanded="true" signature="5363:5387" ph="..." />
+            <marker date="1522331346300" expanded="true" signature="5363:5505" ph="..." />
+            <marker date="1522331346300" expanded="true" signature="5363:5520" ph="..." />
+            <marker date="1522331346300" expanded="true" signature="5363:6527" ph="..." />
+            <marker date="1522331346300" expanded="true" signature="5363:6536" ph="..." />
           </folding>
         </state>
       </provider>
@@ -773,13 +773,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/db/dbAdmin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="72" column="13" lean-forward="true" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
+        <state relative-caret-position="128">
+          <caret line="78" column="34" lean-forward="true" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
           <folding>
-            <marker date="1522328058000" expanded="true" signature="1685:2044" ph="insert into UTILISATEUR... " />
-            <marker date="1522328058000" expanded="true" signature="2503:2573" ph="insert into DETENIR... " />
-            <marker date="1522328058000" expanded="true" signature="3159:3207" ph="select * fro... UTILISATEUR" />
-            <marker date="1522328058000" expanded="true" signature="3824:3878" ph="select * fro... PROFIL" />
+            <marker date="1522331346268" expanded="true" signature="1685:2044" ph="insert into UTILISATEUR... " />
+            <marker date="1522331346268" expanded="true" signature="2503:2573" ph="insert into DETENIR... " />
+            <marker date="1522331346268" expanded="true" signature="3159:3207" ph="select * fro... UTILISATEUR" />
+            <marker date="1522331346268" expanded="true" signature="3824:3878" ph="select * fro... PROFIL" />
           </folding>
         </state>
       </provider>
