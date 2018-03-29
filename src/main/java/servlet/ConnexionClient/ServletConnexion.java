@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author auden
  */
 @WebServlet(
-        name = "MyServletConnection",
+        name = "MyServlet",
         urlPatterns = {"/ServletConnexion"}
 )
 public class ServletConnexion extends HttpServlet {
@@ -35,6 +35,6 @@ public class ServletConnexion extends HttpServlet {
         String url = "";
         url = new db.dbClient().verifyConnect(email, mdp);
          out.print(url);
-   
+      
     }}
 

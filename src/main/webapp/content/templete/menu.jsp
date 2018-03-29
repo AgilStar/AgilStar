@@ -8,19 +8,17 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
-                        <li class="nav-label">Client</li>
-                         <li> <a href="listClient.jsp" aria-expanded="false"><i class="fa fa-user"></i><span class="hide-menu">List client</span></a></li>
+                        <li class="nav-label">Gestion Client</li>
+                         <li> <a href="listClient.jsp" aria-expanded="false"><i class="fa fa-user"></i><span class="hide-menu">Liste des clients</span></a></li>
+                         <li> <a href="createClient.jsp" aria-expanded="false"><i class="fa fa-user"></i><span class="hide-menu">Création d'un client</span></a></li>
                         
                         <li class="nav-label">Program</li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu">Exercice</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="listExercice.jsp">Liste</a></li>
-                            </ul>
-                            <ul aria-expanded="false" class="collapse">
                                 <li><a href="createExercice.jsp">Créer</a></li>
                             </ul>
                         </li>
-                        <li class="nav-label">Apps &amp; Charts</li>
+                        <li class="nav-label">Apps</li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Mailbox</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="email-compose.html">Compose</a></li>

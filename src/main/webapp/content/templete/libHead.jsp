@@ -19,4 +19,4 @@
     
      <script type="text/JavaScript" src="/js/ajaxAdmin.js"></script>
      <script type="text/JavaScript" src="/js/outilCommon.js"></script>
-    <script type="text/JavaScript" src="/js/ajaxAdministrateur.js"></script>
+ <script type="text/JavaScript" src="/js/ajaxAdministrateur.js"></script>
