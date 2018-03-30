@@ -22,10 +22,8 @@ import model.Utilisateur;
 public class dbProfil {
      Connection cx;//La connection utilisé par toutes les méthodes dans cette classe
 
-    /**
-     * Constucteur
-     */
-    
+
+
          public ArrayList<Profil> getProfils() {
              cx = new dbAdmin().getConnection();
         ArrayList<Profil> profils = new ArrayList();
@@ -36,11 +34,10 @@ public class dbProfil {
             ResultSet rs = st.executeQuery(sql);
             
             while (rs.next()) {
-                //int id = rs.getInt("CODEPROFIL");
+                int id = rs.getInt("CODEPROFIL");
                 String libelleProfil = rs.getString("LIBELLEPROFIL");
-                
                 //ajouter les autres attributs 
-                profils.add(new Profil(libelleProfil));
+                profils.add(new Profil(id,libelleProfil));
             }
             st.close();
             cx.close();
