@@ -1,5 +1,7 @@
 package servlet;
 
+import db.dbAdmin;
+
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -19,7 +21,9 @@ public class HelloServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         ServletOutputStream out = resp.getOutputStream();
+
         out.write("hello heroku".getBytes());
+        out.print( new dbAdmin().test());
         out.flush();
         out.close();
     }

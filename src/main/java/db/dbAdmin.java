@@ -40,7 +40,25 @@ public class dbAdmin {
         }
         return cx;
     }
-   
+
+    public String test(){
+        cx=getConnection();
+        String m="No Problem";
+        try {
+            Statement st = cx.createStatement();
+            return m;
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+            m=e.getMessage();
+            return m;
+
+
+        }
+
+    }
+
+
     public void insertUser(String nomu, String prenomu, String mailu, String genreu,         
             String datenaissance, String mdpu, String statutu, String adresseu, String telu, String infooptu) {
        cx=getConnection();
