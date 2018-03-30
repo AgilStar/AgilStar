@@ -1,10 +1,11 @@
                      <div class="col-lg-6">
+                       
                          <div class="card card-outline-info">
                              <div class="card-header">
                                 <h4 class="m-b-0 text-white">Mensurations</h4>
                             </div>
                             <div class="card-body">
-                             <form action="#">
+                             <form action="/ServletMensuration">
                                     <div class="form-body">
                                         <h3 class="card-title m-t-15">Parties gauches</h3>
                                         <hr>

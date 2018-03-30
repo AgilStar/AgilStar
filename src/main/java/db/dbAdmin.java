@@ -21,7 +21,7 @@ public class dbAdmin {
 
     Connection cx;
     /*données de connexion*/
-    private  String url = "jdbc:mysql://etu-web:3306/db_21201692";
+    private  String url = "jdbc:mysql://localhost:3306/db_21201692";
     private String login = "21201692";
     private String password = "04964N";
 
