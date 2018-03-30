@@ -1,1 +1,1 @@
-<%@ include file="/content/indexCoach.jsp" %>
+<%@ include file="/content/l.jsp" %>
