@@ -16,7 +16,8 @@ public class Programmetype  implements java.io.Serializable {
     public Programmetype() {
     }
 
-    public Programmetype(String libellept, String descriptionpt) {
+    public Programmetype(Integer codept,String libellept, String descriptionpt) {
+       this.codept = codept;
        this.libellept = libellept;
        this.descriptionpt = descriptionpt;
     }

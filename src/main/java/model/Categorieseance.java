@@ -15,6 +15,12 @@ public class Categorieseance  implements java.io.Serializable {
     public Categorieseance() {
     }
 
+    
+    public Categorieseance(Integer codecat,String libellecat) {
+       this.codecat = codecat;
+       this.libellecat = libellecat;
+    }
+    
     public Categorieseance(String libellecat) {
        this.libellecat = libellecat;
     }
