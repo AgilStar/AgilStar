@@ -50,8 +50,8 @@
                     <!-- End PAge Content -->
                     <div class="row">
                         <div class="col-12">
-                            <a href="listClient.jsp?condition=valider"><button type="button" class="btn btn-primary btn-outline m-b-10 m-l-5">Valider</button></a>
-                            <a href="listClient.jsp?condition=passerAttente"><button type="button" class="btn btn-success btn-outline m-b-10 m-l-5">Passer en attente</button></a>
+                            <a href="/content/listClient.jsp?condition=valider"><button type="button" class="btn btn-primary btn-outline m-b-10 m-l-5">Valider</button></a>
+                            <a href="/content/listClient.jsp?condition=passerAttente"><button type="button" class="btn btn-success btn-outline m-b-10 m-l-5">Passer en attente</button></a>
                         </div>
 
                     </div>
@@ -60,10 +60,10 @@
 
                     <div class="row">
                         <div class="col-12">
-                            <a href="listClient.jsp"><button type="button" class="btn btn-primary btn-rounded m-b-10 m-l-5">Tout</button></a>
-                            <a href="listClient.jsp?condition=validé"><button type="button" class="btn btn-success btn-rounded m-b-10 m-l-5">Validé</button></a>
-                            <a href="listClient.jsp?condition=en attente"><button type="button" class="btn btn-danger btn-rounded m-b-10 m-l-5">En attente</button></a>
-                            <a href="listClient.jsp?condition=prospect"><button type="button" class="btn btn-warning btn-rounded m-b-10 m-l-5">Prospect</button></a>
+                            <a href="/content/listClient.jsp"><button type="button" class="btn btn-primary btn-rounded m-b-10 m-l-5">Tout</button></a>
+                            <a href="/content/listClient.jsp?condition=validé"><button type="button" class="btn btn-success btn-rounded m-b-10 m-l-5">Validé</button></a>
+                            <a href="/content/listClient.jsp?condition=en attente"><button type="button" class="btn btn-danger btn-rounded m-b-10 m-l-5">En attente</button></a>
+                            <a href="/content/listClient.jsp?condition=prospect"><button type="button" class="btn btn-warning btn-rounded m-b-10 m-l-5">Prospect</button></a>
                         </div>
 
                     </div>
