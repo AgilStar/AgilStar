@@ -21,7 +21,7 @@ public class dbAdmin {
 
     Connection cx;
     /*données de connexion*/
-    private  String url = "jdbc:mysql://f1gjwyloxachkfoz:gs9yu3v1vkklitcy@cvktne7b4wbj4ks1.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/qzp3fhnbxy9eh4c1";
+    private  String url = "jdbc:mysql://cvktne7b4wbj4ks1.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/qzp3fhnbxy9eh4c1";
     private String login = "f1gjwyloxachkfoz";
     private String password = "gs9yu3v1vkklitcy";
 
