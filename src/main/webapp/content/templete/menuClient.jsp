@@ -15,7 +15,7 @@
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu">Profil de base</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="/modifyPerso.jsp">Modifier</a></li>
-                                
+                                 <li><a href="modifyPwdClient.jsp">Modifier le mot de passe </a></li>
                             </ul>
                          <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu">Profil sportif</span></a>
                              <ul aria-expanded="false" class="collapse">

@@ -287,7 +287,7 @@ public class dbClient {
                 //on modifie l'enregistrement de ce jour 
                 try {
 
-                    String sql1 = "update MENSURATION set TAILLE=" + taille + ",HANCHES=" + hanches + ", CUISSES=" + cuisses + ",POITRINE="+poitrine+",BRAS="+bras+" where CODEU=" + codeu;
+                    String sql1 = "update MENSURATION set TAILLE=" + taille + ",HANCHES=" + hanches + ", CUISSES=" + cuisses + ",POITRINE=" + poitrine + ",BRAS=" + bras + " where CODEU=" + codeu;
                     System.out.println(sql1);
                     Statement st1 = cx.createStatement();
                     int nb1 = st1.executeUpdate(sql1);
@@ -301,8 +301,8 @@ public class dbClient {
                 try {
 
                     String sql2 = "Insert into MENSURATION(CODEU,DATEM, TAILLE, HANCHES,CUISSES,POITRINE, BRAS) "
-                            + "values("+codeu+",sysdate(),"+taille+","+hanches+", "+cuisses+", "+poitrine+","+ bras+")";
-                         System.out.println(sql2); 
+                            + "values(" + codeu + ",sysdate()," + taille + "," + hanches + ", " + cuisses + ", " + poitrine + "," + bras + ")";
+                    System.out.println(sql2);
                     Statement st2 = cx.createStatement();
                     int nb2 = st2.executeUpdate(sql2);
                     st2.close();
@@ -313,6 +313,47 @@ public class dbClient {
             }
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement compter mensuration " + ex.getMessage());
+        }
+    }
+
+    public boolean verifyPwd(int id, String pwd) {
+        boolean ok = false;
+
+        try {
+            cx = new dbAdmin().getConnection();
+            String sql = "select count(*) as Nb from UTILISATEUR where CODEU=" + id + " and MDPU='" + pwd+"'";
+            System.out.println(sql);
+            Statement st = cx.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            int nb=0;
+            while (rs.next()) {
+                nb = rs.getInt("Nb");
+            }
+            System.out.println(nb);
+            st.close();
+            if (nb==1){
+                ok=true;
+            } else {
+                ok=false;
+            }
+             cx.close();
+        } catch (SQLException ex) {
+            System.out.println("Il y a un problème sur statement compter mensuration " + ex.getMessage());
+        }
+
+        return ok;
+    }
+    public void changePwd(int id, String pwd){
+         cx = new dbAdmin().getConnection();
+        String sql = "update UTILISATEUR SET MDPU ='" + pwd + "' where CODEU=" + id + "";
+        Statement st = null;
+        try {
+            st = cx.createStatement();
+            st.executeUpdate(sql);
+            st.close();
+            cx.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }
