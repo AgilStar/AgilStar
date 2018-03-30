@@ -1,2 +1,2 @@
 
-    <%@ include file="listClient.jsp" %>
+    <%@ include file="profilClient.jsp" %>

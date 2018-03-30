@@ -81,6 +81,7 @@
                                                 <th>Nom</th>
                                                 <th>Prenom</th>
                                                 <th>Status</th>
+                                                
                                             </tr>
                                             </tr>
                                             </thead>
@@ -90,6 +91,7 @@
                                                 <th>Nom</th>
                                                 <th>Prenom</th>
                                                 <th>Status</th>
+                                              
                                             </tr>
                                             </tr>
                                             </tfoot>
@@ -103,7 +105,8 @@
                                                         /*
                                                         Pas de cas pour valider ou passer en attente
                                                          */
-            out.print("<tr onclick=\"alert('" + u.getCodeu() + "')\">");
+            //out.print("<tr onclick=\"alert('" + u.getCodeu() + "')\">");
+            out.print("<tr onclick=\"window.location.href='detailUser.jsp?codeu='"+u.getCodeu()+"')\">");
             out.print("<th scope=\"row\">");
             if (u.getGenreu().equals("Homme")) {
                 out.print("<i class=\"fa fa-male\" style=\"color:blue\"></i>");
@@ -121,6 +124,7 @@
             } else {
                 out.print("<td><span class=\"badge badge-warning \">" + u.getStatutu() + "</span></td>");
             }
+           
             out.print("</tr>");
         } else {
                                                         /*
