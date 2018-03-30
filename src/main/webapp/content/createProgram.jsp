@@ -42,13 +42,42 @@
                 <div class='row'>
                     
                     <!-- Commmencer ici -->
-    <%
-        ArrayList<Profil> listProfil=new ctrlCreateProgram().getProfil();
-        for(Profil p:listProfil){
-            out.print(p.getLibelleprofil());
-        }
 
-    %>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Choisir un ou plusieur profil</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Profil</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <%
+                                            ArrayList<Profil> listProfil=new ctrlCreateProgram().getProfil();
+                                            for(Profil p:listProfil){
+                                                out.print("<tr onclick=\"changeDelete(this)\" style=\"background-color:#fedee5\">");
+                                                out.print("<th scope=\"row\">"+p.getCodeprofil()+"</th>");
+                                                out.print("<td style=\"color:black\" >"+p.getLibelleprofil()+"</td>");
+                                                out.print("</tr>");
+                                            }
+                                        %>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
 
 
 

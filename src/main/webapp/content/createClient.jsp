@@ -156,8 +156,8 @@
                     <%@ include file="/content/templete/footer.jsp" %>
                 </div>
             </div>
-            <!-- All Jquery -->
-            <%@ include file="/content/templete/libJquery.jsp" %>
+
+           
 
     </body>
 
