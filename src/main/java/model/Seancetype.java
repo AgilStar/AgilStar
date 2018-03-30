@@ -11,6 +11,7 @@ public class Seancetype  implements java.io.Serializable {
 
      private Integer codest;
      private int codecat;
+     private String categorieCat;
      private String libellest;
      private String descriptionst;
      private String echauffementst;
@@ -18,7 +19,14 @@ public class Seancetype  implements java.io.Serializable {
     public Seancetype() {
     }
 
-	
+    public String getCategorieCat() {
+        return categorieCat;
+    }
+
+    public void setCategorieCat(String categorieCat) {
+        this.categorieCat = categorieCat;
+    }
+
     public Seancetype(int codecat) {
         this.codecat = codecat;
     }

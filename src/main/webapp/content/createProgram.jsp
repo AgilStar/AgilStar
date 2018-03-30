@@ -43,14 +43,14 @@
                     
                     <!-- Commmencer ici -->
 
-                    <div class="col-lg-6">
+                    <div class="col-12">
                         <div class="card">
                             <div class="card-title">
                                 <h4>Choisir un ou plusieur profil</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table">
+                                    <table class="table" id="tableProfil">
                                         <thead>
                                         <tr>
                                             <th>#</th>
@@ -62,11 +62,15 @@
                                             ArrayList<Profil> listProfil=new ctrlCreateProgram().getProfil();
                                             for(Profil p:listProfil){
                                                 out.print("<tr onclick=\"changeDelete(this)\" style=\"background-color:#fedee5\">");
-                                                out.print("<th scope=\"row\">"+p.getCodeprofil()+"</th>");
+                                                out.print("<th scope=\"row\">");
+                                                out.print("<input type=\"checkbox\" name=\"profil\" value=\""+p.getCodeprofil()+"\" hidden>");
+                                                out.print(p.getCodeprofil());
+                                                out.print("</th>");
                                                 out.print("<td style=\"color:black\" >"+p.getLibelleprofil()+"</td>");
                                                 out.print("</tr>");
                                             }
                                         %>
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -77,12 +81,13 @@
 
 
 
+                </div>
+                <div class="row">
+                    <div class="col-12">
 
+                        <button type="button" class="btn btn-danger btn-rounded m-b-10 m-l-5" onclick="confirmProfilProgram()" >Confirmer</button>
 
-
-
-
-
+                    </div>
                 </div>
                 <!-- End PAge Content -->
             </div>

@@ -17,6 +17,7 @@
  <script type="text/JavaScript" src="/js/ajaxAdmin.js"></script>
  <script type="text/JavaScript" src="/js/ajaxAdministrateur.js"></script>
   <script type="text/JavaScript" src="/js/ajaxExercice.js"></script>
+    <script type="text/JavaScript" src="/js/ajaxCoach.js"></script>
 
  <!-- All Jquery -->
     <script src="/js/lib/jquery/jquery.min.js"></script>

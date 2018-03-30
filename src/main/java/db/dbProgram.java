@@ -297,14 +297,40 @@ public class dbProgram {
 
     }
 
-    public static void main(String[] args) throws SQLException {
+    /**
+     * Obtenir tous les séance dans le table SeanceType
+     * @return
+     */
+    public ArrayList<Seancetype> getAllSeanceType(){
+        cx = new dbAdmin().getConnection();
+        ArrayList<Seancetype> list=new ArrayList<Seancetype>();
+        try {
 
-        dbProgram d = new dbProgram();
-        Exercice e = d.getOneExercice("1");
-        String t = "   <div class=\"form-group\">  <label>Nom de l'exercice</label><input type=\"string\" "
-                + "class=\"form-control\" id=\"nameExercice" + e.getCodee() + "\" value=\"" + e.getLibellee() + "\"></div>";
-        System.out.println(t);
-        //System.out.println(s.getCodecat()+s.getCodest()+s.getDescriptionst()+s.getLibellest()+s.getEchauffementst());
+            String sql = "select CODEST,LIBELLECAT,LIBELLEST,DESCRIPTIONST  from SEANCETYPE,CATEGORIESEANCE where SEANCETYPE.CODECAT=CATEGORIESEANCE.CODECAT";
+            Statement st = cx.createStatement();
+            ResultSet rs = st.executeQuery(sql);
 
+            while (rs.next()) {
+                String LIBELLECAT = rs.getString("LIBELLECAT");
+                String LIBELLEST = rs.getString("LIBELLEST");
+                String DESCRIPTIONST = rs.getString("DESCRIPTIONST");
+                int CODEST = rs.getInt("CODEST");
+                Seancetype s = new Seancetype();
+
+
+                s.setCodest(CODEST);
+                s.setCategorieCat(LIBELLECAT);
+                s.setLibellest(LIBELLEST);
+                s.setDescriptionst(DESCRIPTIONST);
+                list.add(s);
+            }
+            st.close();
+            cx.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Il y a un problÃ¨me sur statement getOneExercice" + ex.getMessage());
+        }
+        return list;
     }
+
 }
