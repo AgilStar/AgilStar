@@ -6,6 +6,7 @@
 package db;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -73,5 +74,53 @@ public class dbProfil {
         }
         return profilsU;
    } 
+   
+   public int countBilanInit(int id){
+        cx = new dbAdmin().getConnection();
+       int nb=0;
+        try {
+            String sql = "select count(*) as NB from SEANCEBILAN  where NUMSEMAINE =-1 and codeu="+id;
+            Statement st = cx.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            
+            if(rs.next()) {  
+                 nb = rs.getInt("NB");
+            }else{
+             nb=0;
+            }
+            st.close();
+            cx.close();
+
+
+        } catch (SQLException ex) {
+            System.out.println("Il y a un problème sur statement " + ex.getMessage());
+        }
+       
+       return nb;
+   }
+   
+   public String findDateBilan(int id){
+       cx = new dbAdmin().getConnection();
+       String date="";
+        try {
+            String sql = "select DATE_FORMAT(max(DATEM), '%d-%m-%Y') as date from SEANCEBILAN  where codeu="+id;
+            Statement st = cx.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            
+            if(rs.next()) {  
+                 date = rs.getString("date");
+            }else{
+             date="";
+            }
+            st.close();
+            cx.close();
+
+
+        } catch (SQLException ex) {
+            System.out.println("Il y a un problème sur statement " + ex.getMessage());
+        }
+       
+       return date;
+    }
     
 }

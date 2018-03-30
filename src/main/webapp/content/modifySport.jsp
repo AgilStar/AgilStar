@@ -25,7 +25,25 @@
                 <!-- Bread crumb -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text-primary">Dashboard</h3> </div>
+                        <!-- vérifier si le client a déjà fait un bilan d'évaluation -->
+                        <%  HttpSession session2=request.getSession(false);
+                            if(session2!=null){
+                            String id=(String)session2.getAttribute("id");
+ 
+                            if (new db.dbProfil().countBilanInit(Integer.parseInt(id))==0){
+                                out.print("<h3 class='text-primary'>Remplir le bilan</h3>");
+                               
+                                }else{
+                                 String date=new db.dbProfil().findDateBilan(Integer.parseInt(id));
+                                out.print(" <button type='button' class='btn btn-primary disabled'>Voir le bilan au "+date+" </button>");
+                                }
+                            }
+                        %>
+
+
+
+
+                    </div>
                     <div class="col-md-7 align-self-center">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
@@ -39,97 +57,87 @@
                     <div class='row'>
 
                         <!-- Commmencer ici -->
+
                         <div class="col-lg-6">
+
                             <div class="card card-outline-primary">
                                 <div class="card-header">
                                     <h4 class="m-b-0 text-white">Evaluation condition physique et performances</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form action="ServletModifySport" method="get">
+                                    <form action="/ServletModifySport" method="get">
                                         <div class="form-body">
-                                           
+
                                             <div class="row p-t-20">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Age</label>
                                                         <input type="text" id="age" class="form-control" name="age">
-                                                       </div>
+                                                    </div>
                                                 </div>
                                                 <!--/span-->
                                                 <div class="col-md-6">
                                                     <div class="form-group has-danger">
                                                         <label class="control-label">Poids</label>
                                                         <input type="text" id="poids" class="form-control form-control-danger" name="poids">
-                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <!--/span-->
                                             </div>
                                             <h3 class="card-title m-t-15">Conditions</h3>
-                                        <hr>
-                                            <!--/row-->
-                                           <div class="col-md-12 ">
-                                                    <div class="form-group has-danger">
-                                                        <label class="control-label">Fréquence cardiaque au repos</label>
-                                                        <input type="text" id="fcr" class="form-control form-control-danger" name="fcr">
-                                                 </div>
-                                                </div>
-                                            <!--/row-->
-                                         <div class="col-md-12 ">
-                                                    <div class="form-group has-danger">
-                                                        <label class="control-label">Fréquence cardiaque après 30 flexions complètes en 45 sec</label>
-                                                        <input type="text" id="poids" class="form-control form-control-danger" name="poids">
-                                                      </div>
-                                                </div>
-                                             
-                                           
+                                            <hr>
                                             <!--/row-->
                                             <div class="col-md-12 ">
-                                                    <div class="form-group has-danger">
-                                                        <label class="control-label">Fréquence cardiaque après exercice allongé</label>
-                                                        <input type="text" id="fca" class="form-control form-control-danger" name="fca">
-                                                     </div>
+                                                <div class="form-group has-danger">
+                                                    <label class="control-label">Fréquence cardiaque au repos</label>
+                                                    <input type="text" id="fcr" class="form-control form-control-danger" name="fcr">
                                                 </div>
-                                            <!--/row-->
-                                      
-                                         
-                                            <!--/row-->
-                                        
-                                            
+                                            </div>
                                             <!--/row-->
                                             <div class="col-md-12 ">
-                                                    <div class="form-group has-danger">
-                                                        <label class="control-label">Fréquence cardiaque après exercice allongé</label>
-                                                        <input type="text" id="fca" class="form-control form-control-danger" name="fca">
-                                                       </div>
+                                                <div class="form-group has-danger">
+                                                    <label class="control-label">Fréquence cardiaque après 30 flexions complètes en 45 sec</label>
+                                                    <input type="text" id="fcf" class="form-control form-control-danger" name="fcf">
                                                 </div>
+                                            </div>
+
+
                                             <!--/row-->
-                                     
-                                             <h3 class="card-title m-t-15">Performance</h3>
-                                        <hr>
-                                        <small class="form-control-feedback"> Effectuer le maximun de répétitions ou tenir le plus longtemps possible pour chaque exercice </small> 
-                                         <div class="row p-t-20">
+                                            <div class="col-md-12 ">
+                                                <div class="form-group has-danger">
+                                                    <label class="control-label">Fréquence cardiaque après exercice allongé</label>
+                                                    <input type="text" id="fca" class="form-control form-control-danger" name="fca">
+                                                </div>
+                                            </div>
+                                            <!--/row-->
+
+
+                                            <h3 class="card-title m-t-15">Performance</h3>
+                                            <hr>
+                                            <small class="form-control-feedback"> Effectuer le maximun de répétitions ou tenir le plus longtemps possible pour chaque exercice </small> 
+                                            <div class="row p-t-20">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label"></label>
                                                         <img src="/images/exercices/gainage.jpg" height="100" width="180" alt="gainage" title="gainage">
-                                                   </div>
+                                                    </div>
                                                 </div>
                                                 <!--/span-->
                                                 <div class="col-md-6">
                                                     <div class="form-group has-danger">
                                                         <label class="control-label">Evaluation gainage </label>
                                                         <input type="text" id="evalg" class="form-control form-control-danger" name="evalg">
-                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <!--/span-->
                                             </div>
                                             <!--/row-->
-                                        <div class="row p-t-20">
+                                            <div class="row p-t-20">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label"></label>
                                                         <img src="/images/exercices/fente.jpg" height="150" width="150"alt="fentes" title="fentes">
-                                                         </div>
+                                                    </div>
                                                 </div>
                                                 <!--/span-->
                                                 <div class="col-md-6">
@@ -138,76 +146,76 @@
                                                         <input type="text" id="evalfg" class="form-control form-control-danger" name="evalfg">
                                                         <label class="control-label">Evaluation jambe droite devant </label>
                                                         <input type="text" id="evalfd" class="form-control form-control-danger" name="evalfd">
-                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <!--/span-->
                                             </div>
-                                             <div class="row p-t-20">
+                                            <div class="row p-t-20">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label"></label>
                                                         <img src="/images/exercices/crunch.jpg" height="60" width="180" alt="crunch" title="crunch">
-                                                 </div>
+                                                    </div>
                                                 </div>
                                                 <!--/span-->
                                                 <div class="col-md-6">
                                                     <div class="form-group has-danger">
                                                         <label class="control-label">Evaluation crunch </label>
                                                         <input type="text" id="crunch" class="form-control form-control-danger" name="crunch">
-                                                         </div>
+                                                    </div>
                                                 </div>
                                                 <!--/span-->
                                             </div>
-                                        
-                                              <div class="row p-t-20">
+
+                                            <div class="row p-t-20">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label"></label>
                                                         <img src="/images/exercices/pompe.jpg" height="150" width="200"alt="1/2 pompes" title="1/2 pompes">
-                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <!--/span-->
                                                 <div class="col-md-6">
                                                     <div class="form-group has-danger">
-                                                        
+
                                                         <label class="control-label">Evaluation 1/2 pompes</label>
                                                         <input type="text" id="pompe" class="form-control form-control-danger" name="pompe">
-                                                       </div>
+                                                    </div>
                                                 </div>
                                                 <!--/span-->
                                             </div>
-                                             <div class="row p-t-20">
+                                            <div class="row p-t-20">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label"></label>
                                                         <img src="/images/exercices/squat.jpg" height="150" width="180"alt="1/2 squat" title="1/2 squat">
-                                                         </div>
+                                                    </div>
                                                 </div>
                                                 <!--/span-->
                                                 <div class="col-md-6">
                                                     <div class="form-group has-danger">
-                                                        
+
                                                         <label class="control-label">Evaluation 1/2 squat</label>
                                                         <input type="text" id="squat" class="form-control form-control-danger" name="squat">
-                                                      </div>
+                                                    </div>
                                                 </div>
                                                 <!--/span-->
                                             </div>
-                                            
-                                             <div class="row p-t-20">
+
+                                            <div class="row p-t-20">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label"></label>
                                                         <img src="/images/exercices/dips.jpg" height="150" width="200"alt="dips" title="dips">
-                                                       </div>
+                                                    </div>
                                                 </div>
                                                 <!--/span-->
                                                 <div class="col-md-6">
                                                     <div class="form-group has-danger">
-                                                        
+
                                                         <label class="control-label">Evaluation dips</label>
                                                         <input type="text" id="dips" class="form-control form-control-danger" name="dips">
-                                                     </div>
+                                                    </div>
                                                 </div>
                                                 <!--/span-->
                                             </div>
@@ -228,9 +236,9 @@
  
                             if (new db.dbProfil().getProfilUser(Integer.parseInt(id)).contains("Amincissement")){
                            
-                                %>
-                                   <%@ include file="/content/mensuration.jsp" %>
-                       
+                        %>
+                        <%@ include file="/content/mensuration.jsp" %>
+
                         <%}
                         }%>
 

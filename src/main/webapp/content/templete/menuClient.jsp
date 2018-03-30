@@ -19,7 +19,7 @@
                             </ul>
                          <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu">Profil sportif</span></a>
                              <ul aria-expanded="false" class="collapse">
-                                <li><a href="modifySport.jsp">Modifier</a></li>
+                                <li><a href="modifySport.jsp">Remplir</a></li>
                                 
                             </ul>
                         </li>
