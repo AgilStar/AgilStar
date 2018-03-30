@@ -23,7 +23,7 @@ public class HelloServlet extends HttpServlet {
         ServletOutputStream out = resp.getOutputStream();
 
         out.write("hello heroku".getBytes());
-        out.print( new dbAdmin().test());
+        out.write( new dbAdmin().test().getBytes());
         out.flush();
         out.close();
     }
