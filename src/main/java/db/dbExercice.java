@@ -39,11 +39,8 @@ public class dbExercice {
      */
     public boolean insertExercice(String name, String objective, String lien) {
         try {
-
-
-
                 cx = new dbAdmin().getConnection();
-                if (!checkExistExercice(name)) {
+                if (!checkExistExercice(name,cx)) {
 
                     return false;
                 }
@@ -55,13 +52,14 @@ public class dbExercice {
                 cx.close();
 
         } catch (SQLException ex) {
-            System.out.println("Il y a un problème sur statement " + ex.getMessage());
+            System.out.println("Il y a un problème sur Pour inserExercice statement " + ex.getMessage());
+
         }
         return true;
 
     }
 
-    public boolean checkExistExercice(String name) {
+    public boolean checkExistExercice(String name,Connection cx) {
         try {
 
             cx = new dbAdmin().getConnection();
@@ -73,10 +71,7 @@ public class dbExercice {
             while (rs.next()) {
                 nb = rs.getInt("Nb");
             }
-
-
             st.close();
-            cx.close();
             if (nb==1){
 
                 return false;
