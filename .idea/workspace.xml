@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef1cdac3-136c-4724-8a4f-2c47a48dd52a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/servlet/ConnexionClient/ServletModifyPwdClient.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/content/modifyPwdClient.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/ajaxModifyPwd.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dbAdmin.java" afterPath="$PROJECT_DIR$/src/main/java/db/dbAdmin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dbProgram.java" afterPath="$PROJECT_DIR$/src/main/java/db/dbProgram.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/listSession.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/listSession.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/templete/libHead.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/templete/libHead.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/ajaxAdmin.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/ajaxAdmin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dbClient.java" afterPath="$PROJECT_DIR$/src/main/java/db/dbClient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/templete/menuClient.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/templete/menuClient.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,7 +19,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="listSession.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="listSession.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listSession.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
@@ -81,16 +80,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dbAdmin.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dbAdmin.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/db/dbAdmin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="23" column="49" lean-forward="false" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+            <state relative-caret-position="180">
+              <caret line="22" column="28" lean-forward="false" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
               <folding>
-                <marker date="1522441814002" expanded="true" signature="1518:1877" ph="insert into UTILISATEUR... " />
-                <marker date="1522441814002" expanded="true" signature="2336:2406" ph="insert into DETENIR... " />
-                <marker date="1522441814002" expanded="true" signature="2992:3040" ph="select * fro... UTILISATEUR" />
-                <marker date="1522441814002" expanded="true" signature="3658:3712" ph="select * fro... PROFIL" />
+                <marker date="1522461399323" expanded="true" signature="1532:1891" ph="insert into UTILISATEUR... " />
+                <marker date="1522461399323" expanded="true" signature="2350:2420" ph="insert into DETENIR... " />
+                <marker date="1522461399323" expanded="true" signature="3006:3054" ph="select * fro... UTILISATEUR" />
+                <marker date="1522461399323" expanded="true" signature="3672:3726" ph="select * fro... PROFIL" />
               </folding>
             </state>
           </provider>
@@ -159,10 +158,10 @@
         <option value="$PROJECT_DIR$/src/main/java/servlet/Program/ctrlCreateProgram.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/templete/libHead.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/ajaxAdmin.js" />
-        <option value="$PROJECT_DIR$/src/main/java/db/dbAdmin.java" />
         <option value="$PROJECT_DIR$/src/main/java/db/dbProgram.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/listSession.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/db/dbAdmin.java" />
       </list>
     </option>
   </component>
@@ -496,7 +495,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51408000" />
+    <option name="totallyTimeSpent" value="51467000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -621,9 +620,9 @@
         <state relative-caret-position="1230">
           <caret line="82" column="66" lean-forward="false" selection-start-line="82" selection-start-column="66" selection-end-line="82" selection-end-column="66" />
           <folding>
-            <marker date="1522431174124" expanded="true" signature="891:961" ph="select MAILU... UTILISATEUR" />
-            <marker date="1522431174124" expanded="true" signature="2138:2171" ph="select * fro... UTILISATEUR" />
-            <marker date="1522431174124" expanded="true" signature="3401:3457" ph="update UTILI... " />
+            <marker date="1522461377371" expanded="true" signature="891:961" ph="select MAILU... UTILISATEUR" />
+            <marker date="1522461377371" expanded="true" signature="2138:2171" ph="select * fro... UTILISATEUR" />
+            <marker date="1522461377371" expanded="true" signature="3401:3457" ph="update UTILI... " />
           </folding>
         </state>
       </provider>
@@ -641,10 +640,10 @@
         <state relative-caret-position="195">
           <caret line="23" column="47" lean-forward="false" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
           <folding>
-            <marker date="1522441814002" expanded="true" signature="1518:1877" ph="insert into UTILISATEUR... " />
-            <marker date="1522441814002" expanded="true" signature="2336:2406" ph="insert into DETENIR... " />
-            <marker date="1522441814002" expanded="true" signature="2992:3040" ph="select * fro... UTILISATEUR" />
-            <marker date="1522441814002" expanded="true" signature="3658:3712" ph="select * fro... PROFIL" />
+            <marker date="1522461399323" expanded="true" signature="1532:1891" ph="insert into UTILISATEUR... " />
+            <marker date="1522461399323" expanded="true" signature="2350:2420" ph="insert into DETENIR... " />
+            <marker date="1522461399323" expanded="true" signature="3006:3054" ph="select * fro... UTILISATEUR" />
+            <marker date="1522461399323" expanded="true" signature="3672:3726" ph="select * fro... PROFIL" />
           </folding>
         </state>
       </provider>
@@ -811,9 +810,9 @@
         <state relative-caret-position="23">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
-            <marker date="1522431174124" expanded="true" signature="891:961" ph="select MAILU... UTILISATEUR" />
-            <marker date="1522431174124" expanded="true" signature="2138:2171" ph="select * fro... UTILISATEUR" />
-            <marker date="1522431174124" expanded="true" signature="3401:3457" ph="update UTILI... " />
+            <marker date="1522461377371" expanded="true" signature="891:961" ph="select MAILU... UTILISATEUR" />
+            <marker date="1522461377371" expanded="true" signature="2138:2171" ph="select * fro... UTILISATEUR" />
+            <marker date="1522461377371" expanded="true" signature="3401:3457" ph="update UTILI... " />
           </folding>
         </state>
       </provider>
@@ -972,19 +971,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbAdmin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="23" column="49" lean-forward="false" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
-          <folding>
-            <marker date="1522441814002" expanded="true" signature="1518:1877" ph="insert into UTILISATEUR... " />
-            <marker date="1522441814002" expanded="true" signature="2336:2406" ph="insert into DETENIR... " />
-            <marker date="1522441814002" expanded="true" signature="2992:3040" ph="select * fro... UTILISATEUR" />
-            <marker date="1522441814002" expanded="true" signature="3658:3712" ph="select * fro... PROFIL" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/Programmetype.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1059,6 +1045,19 @@
         <state relative-caret-position="238">
           <caret line="134" column="66" lean-forward="true" selection-start-line="134" selection-start-column="66" selection-end-line="134" selection-end-column="66" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbAdmin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="22" column="28" lean-forward="false" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+          <folding>
+            <marker date="1522461399323" expanded="true" signature="1532:1891" ph="insert into UTILISATEUR... " />
+            <marker date="1522461399323" expanded="true" signature="2350:2420" ph="insert into DETENIR... " />
+            <marker date="1522461399323" expanded="true" signature="3006:3054" ph="select * fro... UTILISATEUR" />
+            <marker date="1522461399323" expanded="true" signature="3672:3726" ph="select * fro... PROFIL" />
+          </folding>
         </state>
       </provider>
     </entry>
