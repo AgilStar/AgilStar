@@ -53,8 +53,8 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">List de client</h4>
-                                    <h6 class="card-subtitle">Touts les clients</h6>
+                                    <h4 class="card-title">Liste de client</h4>
+                                    <h6 class="card-subtitle">Tous les clients</h6>
                                     <div class="table-responsive m-t-40">
                                         <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                             <thead>

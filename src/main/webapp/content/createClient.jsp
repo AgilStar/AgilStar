@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <title>Ela - Bootstrap Admin Dashboard Template</title>
+        <title>Jean David Coaching - Création de client</title>
         <%@ include file="/content/templete/libHead.jsp" %>
         <script type="text/JavaScript" src="../js/ajaxExercice.js"></script>
         <script type="text/JavaScript" src="../js/ajaxAdmin.js"></script>
@@ -29,13 +29,7 @@
                 <!-- Bread crumb -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text-primary">Dashboard</h3> </div>
-                    <div class="col-md-7 align-self-center">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard</li>
-                        </ol>
-                    </div>
+                        <h3 class="text-primary">Création d'un Client</h3> </div>
                 </div>
                 <!-- Container fluid  -->
                 <div class="container-fluid" id="mainPage">
@@ -54,37 +48,37 @@
                                                     <label class="col-lg-4 col-form-label" for="nameUser"> Nom <span class="text-danger">*</span></label>
                                                     <div class="col-lg-6">
                                                          <input type="hidden" name="user" value="admin">
-                                                        <input type="text" class="form-control" id="nameUser" name="nameUser" placeholder="Entrez le nom du client" required>
+                                                        <input type="text" class="form-control" id="nameUser" name="nameUser" required>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label" for="lastNameUser"> Prénom <span class="text-danger">*</span></label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="lastNameUser" name="lastNameUser" placeholder="Entrez le nom du client" required>
+                                                        <input type="text" class="form-control" id="lastNameUser" name="lastNameUser" required>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label" for="mailUser">Email <span class="text-danger">*</span></label>
                                                     <div class="col-lg-6">
-                                                        <input type="email" class="form-control" id="mailUser" name="mailUser" placeholder="Email de l'utilisateur" required>
+                                                        <input type="email" class="form-control" id="mailUser" name="mailUser" required>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label" for="val-password">Mot de Passe <span class="text-danger">*</span></label>
                                                     <div class="col-lg-6">
-                                                        <input type="password" class="form-control" id="val-password" name="val-password" placeholder="Choose a safe one..">
+                                                        <input type="password" class="form-control" id="val-password" name="val-password" >
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label" for="val-confirm-password">Confirmation de mot de passe <span class="text-danger">*</span></label>
                                                     <div class="col-lg-6">
-                                                        <input type="password" class="form-control" id="val-confirm-password" name="val-confirm-password" placeholder="..and confirm it!">
+                                                        <input type="password" class="form-control" id="val-confirm-password" name="val-confirm-password" >
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label" for="dateBornUser">Date de naissance <span class="text-danger">*</span></label>
                                                     <div class="col-lg-6">
-                                                        <input type="date" class="form-control" id="dateBornUser" name="dateBornUser" placeholder="Choose a safe one.." required>
+                                                        <input type="date" class="form-control" id="dateBornUser" name="dateBornUser" required>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -129,13 +123,13 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label" for="adressUser">Adresse <span class="text-danger"></span></label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="adressUser" id="adressUser" name="adressUser" placeholder="http://example.com">
+                                                        <input type="text" class="adressUser" id="adressUser" name="adressUser">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label" for="infoUser">Informations<span class="text-danger"></span></label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="infoUser" name="infoUser" placeholder="Informations du client">
+                                                        <input type="text" class="form-control" id="infoUser" name="infoUser">
                                                     </div>
                                                 </div>                                 
                                                 <div class="form-group row">

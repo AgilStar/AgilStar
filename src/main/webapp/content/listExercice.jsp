@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <title>liste des exercices</title>
+        <title>Liste des exercices</title>
         <%@ include file="/content/templete/libHead.jsp" %>
         <script type="text/JavaScript" src="../js/ajaxExercice.js"></script>
     </head>
@@ -28,13 +28,7 @@
                 <!-- Bread crumb -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text-primary">Exercice</h3> </div>
-                    <div class="col-md-7 align-self-center">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Exercice</li>
-                        </ol>
-                    </div>
+                        <h3 class="text-primary">Liste des exercices</h3> </div>
                 </div>
                 <!-- Container fluid  -->
                 <div class="container-fluid" id="mainPage">
@@ -47,7 +41,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">Liste des exercices</h4>
-                                    <h6 class="card-subtitle">Tous les exercices</h6>
+                                    <h6 class="card-subtitle">Tout les exercices</h6>
                                     <div class="table-responsive m-t-40">
                                         <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                             <thead>

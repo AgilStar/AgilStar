@@ -7,7 +7,7 @@
 <%
     Boolean flagChange=false;
     String condition= request.getParameter("condition");
-   if(condition!=null && (condition.equals("valider") ||condition.equals("passerAttente")))
+   if(condition!=null && (condition.equals("validé") ||condition.equals("passerAttente")))
        flagChange=true;
 %>
 <!DOCTYPE html>
@@ -16,6 +16,7 @@
         <title>Ela - Bootstrap Admin Dashboard Template</title>
         <%@ include file="/content/templete/libHead.jsp" %>
         <script type="text/JavaScript" src="../js/ajaxExercice.js"></script>
+        
     </head>
 
     <body class="fix-header fix-sidebar">
@@ -35,12 +36,8 @@
                 <!-- Bread crumb -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text-primary">Dashboard</h3> </div>
+                        <h3 class="text-primary">Liste des clients</h3> </div>
                     <div class="col-md-7 align-self-center">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard</li>
-                        </ol>
                     </div>
                 </div>
                 <!-- Container fluid  -->
@@ -50,7 +47,7 @@
                     <!-- End PAge Content -->
                     <div class="row">
                         <div class="col-12">
-                            <a href="/content/listClient.jsp?condition=valider"><button type="button" class="btn btn-primary btn-outline m-b-10 m-l-5">Valider</button></a>
+                            <a href="/content/listClient.jsp?condition=validé"><button type="button" class="btn btn-primary btn-outline m-b-10 m-l-5">Valider</button></a>
                             <a href="/content/listClient.jsp?condition=passerAttente"><button type="button" class="btn btn-success btn-outline m-b-10 m-l-5">Passer en attente</button></a>
                         </div>
 
@@ -71,8 +68,8 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">List de client</h4>
-                                    <h6 class="card-subtitle">Touts les clients</h6>
+                                    <h4 class="card-title">Liste de client</h4>
+                                    <h6 class="card-subtitle">Tous les clients</h6>
                                     <div class="table-responsive m-t-40">
                                         <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                             <thead>
@@ -131,7 +128,7 @@
                                                         Pour valider ou passer en attente
                                                          */
             out.print("<tr style=\"background-color:#fedee5\" onclick=\"changeDelete(this)\">");
-
+ 
             out.print("<th scope=\"row\">");
             out.print("<input type=\"checkbox\" name=\"user\" value=\""+u.getCodeu()+"\" hidden>");
             if (u.getGenreu().equals("Homme")) {
@@ -172,7 +169,7 @@
                             out.print("<div class=\"row\">");
                             out.print("<div class=\"col-12\">");
                             String cible="";
-                            if (condition.equals("valider")){
+                            if (condition.equals("validé")){
                                 cible="validé";
                             }else{
                                 cible="en attente";
@@ -192,7 +189,15 @@
         </div>
         <!-- All Jquery -->
 
-
+    <script src="/js/lib/datatables/datatables.min.js"></script>
+        <script src="/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+        <script src="/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+        <script src="/js/lib/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+        <script src="/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+        <script src="/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+        <script src="/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+        <script src="/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+        <script src="/js/lib/datatables/datatables-init.js"></script>
     </body>
 
 </html>

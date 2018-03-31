@@ -1,6 +1,5 @@
 package db;
 
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -89,8 +88,10 @@ public class dbProgram {
         try {
             codes = getCodeSceanceType(codept);
             for (String code : codes) {
-                String sql = "select *  from SEANCETYPE WHERE CODEST='" + code + "'";
+                cx = new dbAdmin().getConnection();
                 Statement st = cx.createStatement();
+                String sql = "select *  from SEANCETYPE WHERE CODEST='" + code + "'";
+
                 ResultSet rs = st.executeQuery(sql);
                 while (rs.next()) {
                     Integer idSceance = rs.getInt("CODEST");
@@ -100,10 +101,12 @@ public class dbProgram {
                     String echauffementSt = rs.getString("ECHAUFFEMENTST");
                     //ajouter les autres attributs
                     sceances.add(new Seancetype(idSceance, nameCat, libelleSceance, descSceance, echauffementSt));
+
                 }
                 st.close();
                 cx.close();
             }
+
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statementde getSceanceTypeProgramm " + ex.getMessage());
         }
@@ -157,7 +160,7 @@ public class dbProgram {
             st.close();
             cx.close();
         } catch (SQLException ex) {
-            System.out.println("Il y a un problème sur statement de getCodeSceancetype " + ex.getMessage());
+            System.out.println("Il y a un problème sur statement de getDescriptionSeance " + ex.getMessage());
         }
         return descriptionEx;
     }
@@ -309,11 +312,12 @@ public class dbProgram {
 
     /**
      * Obtenir tous les séance dans le table SeanceType
+     *
      * @return
      */
-    public ArrayList<Seancetype> getAllSeanceType(){
+    public ArrayList<Seancetype> getAllSeanceType() {
         cx = new dbAdmin().getConnection();
-        ArrayList<Seancetype> list=new ArrayList<Seancetype>();
+        ArrayList<Seancetype> list = new ArrayList<Seancetype>();
         try {
 
             String sql = "select CODEST,LIBELLECAT,LIBELLEST,DESCRIPTIONST from SEANCETYPE,CATEGORIESEANCE where SEANCETYPE.CODECAT=CATEGORIESEANCE.CODECAT";
@@ -326,7 +330,6 @@ public class dbProgram {
                 String DESCRIPTIONST = rs.getString("DESCRIPTIONST");
                 int CODEST = rs.getInt("CODEST");
                 Seancetype s = new Seancetype();
-
 
                 s.setCodest(CODEST);
                 s.setCategorieCat(LIBELLECAT);

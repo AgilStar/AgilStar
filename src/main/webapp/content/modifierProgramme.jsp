@@ -4,10 +4,11 @@
 <%@ page import="model.Seancetype" %>
 <%@ page import="db.dbProgram" %>
 <%@ page import="java.util.ArrayList" %>
+<% Integer codep= new Integer(request.getParameter("codep"));%>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <title>Ela - Bootstrap Admin Dashboard Template</title>
+        <title>Affichage programme <%=codep%></title>
         <%@ include file="/content/templete/libHead.jsp" %>
         <script type="text/JavaScript" src="../js/ajaxExercice.js"></script>
     </head>
@@ -29,13 +30,7 @@
                 <!-- Bread crumb -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text-primary">Exercices</h3> </div>
-                    <div class="col-md-7 align-self-center">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Exercice</li>
-                        </ol>
-                    </div>
+                        <h3 class="text-primary">Modification d'un programme</h3> </div>
                 </div>
                 <!-- Container fluid  -->
                 <div class="container-fluid" id="mainPage">
@@ -46,15 +41,14 @@
                         <div class="col-lg-6" >
                             <div class="card">
                                 <div class="card-title">
-                                    <h4>Modification d'un programme</h4>
+                                    <h3>Programme <%=codep%> </h3>
 
                                 </div>
                                 <div class="card-body">
                                     <div class="basic-form">
 
                                         <%
-                                           Integer codep= new Integer(request.getParameter("codep"));
-                                           
+                                         
                                            Programmetype p = new dbProgram().getOneProgramm(codep);
                                         %>
 
@@ -67,7 +61,7 @@
                                             <input type="string" class="form-control"  id="objectiveExerciceM"  value="<%=p.getDescriptionpt()%>">
                                         </div>
 
-                                        <h5>Séances</h5>
+                                        <h4><b>Séances</b></h4>
                                   
                                             <%
                                                 ArrayList<Seancetype> listS = new dbProgram().getSceanceTypeProgramm(codep.toString());

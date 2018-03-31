@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <title>Ela - Bootstrap Admin Dashboard Template</title>
+        <title>Création de Séance Type</title>
         <%@ include file="/content/templete/libHead.jsp" %>
         <script type="text/JavaScript" src="../js/ajaxTypeSession.js"></script>
         <script type="text/JavaScript" src="../js/gestionTableau.js"></script>
@@ -31,13 +31,7 @@
                 <!-- Bread crumb -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text-primary">Dashboard</h3> </div>
-                    <div class="col-md-7 align-self-center">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard</li>
-                        </ol>
-                    </div>
+                        <h3 class="text-primary">Création de Séance Type</h3> </div>
                 </div>
                 <!-- Container fluid  -->
                 <div class="container-fluid" id="mainPage">
@@ -48,7 +42,7 @@
                         <div class="col-lg-13" >
                             <div class="card">
                                 <div class="card-title">
-                                    <h4>Création d'une séance type</h4>
+                                    <h3>Création d'une Séance Type</h3>
 
                                 </div>
                                 <div class="card-body">
@@ -84,15 +78,11 @@
 
                                         <div class="card-title">
                                             <h4>Sélection des exercices</h4></br>
+                                            </br>
                                             <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                                 <thead>
                                                     <tr>
                                                         <th>Exercice</th>
-                                                        <!--
-                                                        <th>Séries à faire</th>
-                                                        <th>Durée attendue</th>
-                                                        <th>Quantité Attendue</th>
-                                                        -->
                                                         <th></th>
                                                     </tr>
                                                 </thead>
@@ -108,15 +98,11 @@
              
                                                             %> 
                                                         </td>
-                                                        <!--
-                                                        <td> <input type="number" id="serieExercice" min="0" placeholder="Séries à faire"></td>
-                                                        <td><input type="number" id="durationExercice" min="0" placeholder="Durée(sec)"></td> 
-                                                        <td><input type="number" id="quantityExercice" min="0" placeholder="Quantité"></td>
-                                                        -->
                                                         <td><button onClick="addLine()" value="+">+</button></td>
                                                 </tbody>
                                             </table></br>
                                             <h4>Exercices à insérer</h4></br>
+                                            </br>
                                             <table id="example24" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                                 <thead>
                                                     <tr>

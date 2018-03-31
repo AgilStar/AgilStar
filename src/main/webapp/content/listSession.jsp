@@ -13,7 +13,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <title>Ela - Bootstrap Admin Dashboard Template</title>
+        <title>Liste des Séances Types</title>
         <%@ include file="/content/templete/libHead.jsp" %>
         <script type="text/JavaScript" src="../js/ajaxExercice.js"></script>
         <script type="text/JavaScript" src="../js/ajaxCoach.js"></script>
@@ -36,13 +36,7 @@
                 <!-- Bread crumb -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text-primary">Dashboard</h3> </div>
-                    <div class="col-md-7 align-self-center">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard</li>
-                        </ol>
-                    </div>
+                        <h3 class="text-primary">Liste des Séances Types</h3> </div>
                 </div>
                 <!-- Container fluid  -->
                 <div class="container-fluid" id="mainPage">
@@ -54,90 +48,56 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">List de séance</h4>
                                     <div class="table-responsive m-t-40">
                                         <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                             <thead>
-                                            <tr>
-                                            <tr>
-                                                <th>Séance</th>
-                                                <th>Opération</th>
-                                                <th>Catégorie</th>
-                                                <th>Description</th>
-                                            </tr>
-                                            </tr>
+                                                <tr>
+                                                <tr>
+                                                    <th>Séance</th>
+                                                    <th>Catégorie</th>
+                                                    <th>Description</th>
+                                                    <th></th>
+                                                </tr>
+                                                </tr>
                                             </thead>
                                             <tbody id="listSessionTotal">
-                                            <%
+                                                <%
 
-                                                ArrayList<Seancetype> listUu= new ctrlCreateProgram().getAllSeanceType();
+                                                    ArrayList<Seancetype> listUu= new ctrlCreateProgram().getAllSeanceType();
 
-    for (Seancetype u : listUu) {
-                                                        /*
-                                                        Pour valider ou passer en attente
-                                                         */
-            out.print("<tr style=\"background-color:#fedee5\" nameSession='"+u.getLibellest()+" ("+u.getDescriptionst()+")' idSession='"+u.getCodest()+"' nbSession=0>");
+        for (Seancetype u : listUu) {
+                                                            /*
+                                                            Pour valider ou passer en attente
+                                                             */
+                out.print("<tr style=\"background-color:#fedee5\" nameSession='"+u.getLibellest()+" ("+u.getDescriptionst()+")' idSession='"+u.getCodest()+"' nbSession=0>");
 
-            out.print("<th scope=\"row\">");
-            out.print("<input type=\"checkbox\" name=\"user\" value=\""+u.getCodest()+"\" hidden>");
-            out.print(u.getLibellest());
-            out.print("</th>");
-            out.print("<td>");
-        out.print("  <button id='btnAddChoixSession' class='btn btn-success btn-outline' onclick=\"addChoixSession(this)\" >+</button>");
-        out.print("  <button id='btnDeleteChoixSession' class='btn btn-warning btn-outline' onclick=\"deleteChoixSession(this)\" >-</button>");
-          out.print("</td>");
-            out.print("<td>" + u.getCategorieCat() + "</td>");
-        out.print("<td>" + u.getDescriptionst() + "</td>");
-
-            out.print("</tr>");
+                out.print("<th scope=\"row\">");
+                out.print("<input type=\"checkbox\" name=\"user\" value=\""+u.getCodest()+"\" hidden>");
+                out.print(u.getLibellest());
+                out.print("</th>");
+                out.print("<td>" + u.getCategorieCat() + "</td>");
+            out.print("<td>" + u.getDescriptionst() + "</td>");
+            out.print("<td><button type='button' onclick=\"window.location.href='modifierSeanceType.jsp?codes="+u.getCodest()+"'\"+u.getCodest()+'\" class='btn btn-warning btn-rounded m-b-10 m-l-5'>Voir</button></td>");
+                out.print("</tr>");
 
 
 
 
 
-}
-                                            %>
+    }
+                                                %>
 
                                             </tbody>
                                         </table>
 
-                                    </div>
-                                    <button class="btn btn-info btn-rounded m-b-10 m-l-5" onclick="addBilan()">Ajouter un bilan</button>
-                                    <button class="btn btn-danger btn-rounded m-b-10 m-l-5" onclick="deleteBilan()">Supprimer un bilan</button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Nestedable</h4>
-                                <div class="card-content">
-                                    <div class="nestable">
-                                        <div class="dd" id="nestable">
-                                            <ol class="dd-list" id="listSession">
-
-                                            </ol>
-                                        </div>
+                                        <!-- footer -->
+                                        <%@ include file="/content/templete/footer.jsp" %>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-</div>
-                </div>
-                <button class="btn btn-danger btn-rounded m-b-5 m-l-5" onclick="checkSession()">Confirmer</button>
-                <button class="btn btn-danger btn-rounded m-b-5 m-l-5" onclick="window.location.href='listSession.jsp'">Reset</button>
-                <!-- footer -->
-                <%@ include file="/content/templete/footer.jsp" %>
-            </div>
-        </div>
-        <!-- All Jquery -->
+                            <!-- All Jquery -->
 
 
-    </body>
+                            </body>
 
-</html>
+                            </html>

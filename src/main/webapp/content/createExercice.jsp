@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Ela - Bootstrap Admin Dashboard Template</title>
+    <title>Création d'exercice</title>
     <%@ include file="/content/templete/libHead.jsp" %>
     <script type="text/JavaScript" src="../js/ajaxExercice.js"></script>
 </head>
@@ -25,12 +25,8 @@
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Dashboard</h3> </div>
+                    <h3 class="text-primary">Création d'un exercice</h3> </div>
                 <div class="col-md-7 align-self-center">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard</li>
-                    </ol>
                 </div>
             </div>
             <!-- Container fluid  -->
@@ -49,16 +45,16 @@
                                 <div class="basic-form">
                                     
                                         <div class="form-group">
-                                            <label>Nom d'exercice</label>
-                                            <input type="string" class="form-control" placeholder="nom de l'exercice" id="nameExercice">
+                                            <label>Nom</label>
+                                            <input type="string" class="form-control" id="nameExercice">
                                         </div>
                                         <div class="form-group">
                                             <label>Objectif</label>
-                                            <input type="string" class="form-control" placeholder="Objectif de l'exercice" id="objectiveExercice">
+                                            <input type="string" class="form-control" id="objectiveExercice">
                                         </div>
                                          <div class="form-group">
                                             <label>Lien de la vidéo</label>
-                                            <input type="string" class="form-control" placeholder="Lien de la vidéo" id="videoExercice" >
+                                            <input type="string" class="form-control"id="videoExercice" >
                                         </div>  
                                         <div id="errorMessage"></div>
                                         <button type="button"  onclick="insertExercice()">Créer</button>
