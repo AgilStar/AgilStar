@@ -8,7 +8,7 @@ function addLine()
     var exercice = document.getElementById("exercices").value;
 
     var colonne1 = ligne.insertCell(0);//on a une ajouté une cellule
-    colonne1.innerHTML += exercice+"<input type=\"hidden\" id=\"nameExercice" + arrayLignes + "\ value='"+exercice+"'>";
+    colonne1.innerHTML += exercice+"<input type=\"text\" id=\"nameExercice" + arrayLignes + "\" value=\""+exercice+"\" hidden>";
 
     var colonne2 = ligne.insertCell(1);//on ajoute la seconde cellule
     colonne2.innerHTML += "<input type=\"number\" id=\"serieExercice" + arrayLignes + "\" min=\"0\" \n\
@@ -23,9 +23,10 @@ function addLine()
    placeholder=\"Quantite\">";//les mois commencent par 0
     var colonne5 = ligne.insertCell(4);
     colonne5.innerHTML += "<button onClick=\"deleteLine(" + arrayLignes + ")\" value=\"-\">-</button>";
+    
 }
 
 function deleteLine(num)
-{
+{   
 	document.getElementById("example24").deleteRow(num);
 }

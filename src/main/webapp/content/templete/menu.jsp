@@ -34,6 +34,12 @@
                                 <li><a href="createProgram.jsp">Créer</a></li>
                             </ul>
                         </li>
+                          <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu">Séances Types</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="createSession.jsp">Créer</a></li>
+                                <li><a href="createSession.jsp">Modifier</a></li>
+                            </ul>
+                        </li>   
 
 
 
