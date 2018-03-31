@@ -5,10 +5,10 @@
  */
 
 /**
- * Cette m√©thode "Ajax" affiche le XML.
+ * Cette mÈthode "Ajax" affiche le XML.
  *
- * On utilise la propri√©t√© 'responseText' de l'objet XMLHttpRequest afin
- * de r√©cup√©rer sous forme de texte le flux envoy√© par le serveur.
+ * On utilise la propriÈtÈ 'responseText' de l'objet XMLHttpRequest afin
+ * de rÈcupÈrer sous forme de texte le flux envoyÈ par le serveur.
  * @author Alice
  */
 
@@ -24,9 +24,8 @@ function insertSession()
     var descrSession = document.getElementById("descrSession").value;
     var descrWarmUp = document.getElementById("descrWarmUp").value;
     var arrayLignes = document.getElementById("example24").rows.length-1;
-
-
-    // on v√©rifie que les champs nom d'exercice et objectif sont remplis
+    
+    // on vÈrifie que les champs nom d'exercice et objectif sont remplis
     var errorMessage = "";
     var errorFlag = false;
     for (var i = 0; i <= arrayLignes; i++) {
@@ -45,7 +44,7 @@ function insertSession()
         }
         if(arrayLignes==0){
             errorFlag = true;
-            errorMessage = errorMessage + "Il faut crÈer au moins un exercice"+i+"</br>";
+            errorMessage = errorMessage + "Il faut cr? au moins un exercice"+i+"</br>";
         }
         for (var i = 1; i <= arrayLignes; i++) {
             if (!checkEmpty(document.getElementById("serieExercice" + i).value)) {
@@ -53,7 +52,7 @@ function insertSession()
                 errorMessage = errorMessage + "Le nombre de s&eacute;ries pour  pour l'exercice"+i+"</br>";
             }
             
-            if (!checkEmpty(document.getElementById("durationExercice"+i).value) || !checkEmpty(document.getElementById("quantityExercice"+i).value)) {
+            if (!checkEmpty(document.getElementById("durationExercice"+i).value) && !checkEmpty(document.getElementById("quantityExercice"+i).value)) {
                 errorFlag = true;
                 errorMessage = errorMessage + "Le nombre ou la dur&eacute;e de l'exercice est manquant pour l'exercice"+i+"</br>";
             }
@@ -62,7 +61,6 @@ function insertSession()
                 errorMessage = errorMessage + "Choisir la dur&eacute;e OU la quantit&eacute; &agrave; effectuer pour l'exercice"+i+"</br>";
             }
         }
- 
         if (errorFlag) {
             //S'ils le sont, on affiche un message d'erreur
             var divErrorMessage = document.createElement("div");
@@ -72,37 +70,22 @@ function insertSession()
             divErrorMessageParent.appendChild(divErrorMessage);
 
         } else {
-            // On ins√®re la nouvelle sÈance dans la base de donn√©es
-            // On pr√©cise ce que l'on va faire quand on aura re√ßu la r√©ponse du serveur.
-            // Si l'on a tout re√ßu et que la requ√™te http s'est bien pass√©e.
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    {
-
-                        var errorMessage = xhr.responseText;
-                        if (errorMessage.length > 0) {
-                            var divErrorMessage = document.createElement("div");
-                            divErrorMessage.innerHTML = errorMessage;
-                            divErrorMessage.setAttribute("class", "alert alert-danger");
-                            divErrorMessageParent.appendChild(divErrorMessage);
-
-                        } else {
-                            alert("Vous avez r√©ussi √† cr√©er une nouvelle sÈance");
-                        }
-
-
-                    }
-                }
-                ;
-            }
-            // Requ√™te au serveur avec les param√®tres √©ventuels.
             var url ="&cpt="+arrayLignes;
             for (var i = 1; i <= arrayLignes; i++) {
-            url += "&nameExercice"+i+"="+document.getElementById("nameExercice" + i).value;    
+            url += "&nameExercice"+i+"="+document.getElementById("nameExercice"+i).value;    
             url += "&serieExercice"+i+"="+document.getElementById("serieExercice" + i).value;
             url += "&durationExercice"+i+"="+document.getElementById("durationExercice" + i).value;
             url += "&quantityExercice"+i+"="+document.getElementById("quantityExercice" + i).value;
             }
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    {
+                       alert("vous avez r?si l'insertion !!");
+                    }
+                }
+                ;
+            }
+            // RequÍte au serveur avec les paramËtres Èventuels.
             xhr.open("GET", "/insertTypeSession?nameSession=" + nameSession + "&catSession=" + catSession + "&descrSession=" + descrSession + "&descrWarmUp=" + descrWarmUp +
                     url, true);
             xhr.send(null);
