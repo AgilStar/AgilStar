@@ -16,6 +16,7 @@
         <title>Ela - Bootstrap Admin Dashboard Template</title>
         <%@ include file="/content/templete/libHead.jsp" %>
         <script type="text/JavaScript" src="../js/ajaxExercice.js"></script>
+        <script type="text/JavaScript" src="../js/ajaxCoach.js"></script>
     </head>
 
     <body class="fix-header fix-sidebar">
@@ -60,21 +61,13 @@
                                             <tr>
                                             <tr>
                                                 <th>Séance</th>
+                                                <th>Opération</th>
                                                 <th>Catégorie</th>
                                                 <th>Description</th>
                                             </tr>
                                             </tr>
                                             </thead>
-                                            <tfoot>
-                                            <tr>
-                                            <tr>
-                                                <th>Séance</th>
-                                                <th>Catégorie</th>
-                                                <th>Description</th>
-                                            </tr>
-                                            </tr>
-                                            </tfoot>
-                                            <tbody>
+                                            <tbody id="listSessionTotal">
                                             <%
 
                                                 ArrayList<Seancetype> listUu= new ctrlCreateProgram().getAllSeanceType();
@@ -83,12 +76,16 @@
                                                         /*
                                                         Pour valider ou passer en attente
                                                          */
-            out.print("<tr style=\"background-color:#fedee5\" onclick=\"changeDelete(this)\">");
+            out.print("<tr style=\"background-color:#fedee5\" nameSession='"+u.getLibellest()+" ("+u.getDescriptionst()+")' idSession='"+u.getCodest()+"' nbSession=0>");
 
             out.print("<th scope=\"row\">");
             out.print("<input type=\"checkbox\" name=\"user\" value=\""+u.getCodest()+"\" hidden>");
             out.print(u.getLibellest());
             out.print("</th>");
+            out.print("<td>");
+        out.print("  <button id='btnAddChoixSession' class='btn btn-success btn-outline' onclick=\"addChoixSession(this)\" >+</button>");
+        out.print("  <button id='btnDeleteChoixSession' class='btn btn-warning btn-outline' onclick=\"deleteChoixSession(this)\" >-</button>");
+          out.print("</td>");
             out.print("<td>" + u.getCategorieCat() + "</td>");
         out.print("<td>" + u.getDescriptionst() + "</td>");
 
@@ -103,15 +100,37 @@
 
                                             </tbody>
                                         </table>
+
                                     </div>
+                                    <button class="btn btn-info btn-rounded m-b-10 m-l-5" onclick="addBilan()">Ajouter un bilan</button>
+                                    <button class="btn btn-danger btn-rounded m-b-10 m-l-5" onclick="deleteBilan()">Supprimer un bilan</button>
                                 </div>
                             </div>
 
                         </div>
                     </div>
 
+                    <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Nestedable</h4>
+                                <div class="card-content">
+                                    <div class="nestable">
+                                        <div class="dd" id="nestable">
+                                            <ol class="dd-list" id="listSession">
 
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+</div>
                 </div>
+                <button class="btn btn-danger btn-rounded m-b-5 m-l-5" onclick="checkSession()">Confirmer</button>
+                <button class="btn btn-danger btn-rounded m-b-5 m-l-5" onclick="window.location.href='listSession.jsp'">Reset</button>
                 <!-- footer -->
                 <%@ include file="/content/templete/footer.jsp" %>
             </div>

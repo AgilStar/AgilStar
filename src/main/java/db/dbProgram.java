@@ -30,6 +30,7 @@ public class dbProgram {
      * @author Alice,tianyuan
      */
     public ArrayList<Programmetype> getProgramms() {
+        cx = new dbAdmin().getConnection();
         ArrayList<Programmetype> programms = new ArrayList();
         Utilisateur e;
         try {
@@ -44,6 +45,8 @@ public class dbProgram {
                 //ajouter les autres attributs
                 programms.add(new Programmetype(idProgramm, nameProgramm, descrProgramm));
             }
+            st.close();
+            cx.close();
 
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement " + ex.getMessage());
@@ -54,6 +57,7 @@ public class dbProgram {
 
     public Programmetype getOneProgramm(Integer codept) {
         cx = new dbAdmin().getConnection();
+
         Programmetype prog = new Programmetype();
         try {
 
@@ -79,6 +83,7 @@ public class dbProgram {
     }
 
     public ArrayList<Seancetype> getSceanceTypeProgramm(String codept) throws SQLException {
+        cx = new dbAdmin().getConnection();
         ArrayList<Seancetype> sceances = new ArrayList();
         ArrayList<String> codes = new ArrayList<String>();
         try {
@@ -96,7 +101,8 @@ public class dbProgram {
                     //ajouter les autres attributs
                     sceances.add(new Seancetype(idSceance, nameCat, libelleSceance, descSceance, echauffementSt));
                 }
-
+                st.close();
+                cx.close();
             }
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statementde getSceanceTypeProgramm " + ex.getMessage());
@@ -106,6 +112,7 @@ public class dbProgram {
     }
 
     public ArrayList<String> getCodeSceanceType(String codept) {
+        cx = new dbAdmin().getConnection();
         ArrayList<String> codes = new ArrayList();
         try {
             String sql = "select *  from COMPRENDRETYPE WHERE CODEPT='" + codept + "'";
@@ -120,7 +127,8 @@ public class dbProgram {
                 //ajouter les autres attributs
                 codes.add(codeSt.toString());
             }
-
+            st.close();
+            cx.close();
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement de getCodeSceancetype " + ex.getMessage());
         }
@@ -128,6 +136,7 @@ public class dbProgram {
     }
 
     public ArrayList<String[]> getDescriptionSeance(String codest) {
+        cx = new dbAdmin().getConnection();
         ArrayList<String[]> descriptionEx = new ArrayList();
         String[] organisertype = null;
         try {
@@ -145,7 +154,8 @@ public class dbProgram {
                 //ajouter les autres attributs
                 descriptionEx.add(organisertype);
             }
-
+            st.close();
+            cx.close();
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement de getCodeSceancetype " + ex.getMessage());
         }
@@ -306,7 +316,7 @@ public class dbProgram {
         ArrayList<Seancetype> list=new ArrayList<Seancetype>();
         try {
 
-            String sql = "select CODEST,LIBELLECAT,LIBELLEST,DESCRIPTIONST  from SEANCETYPE,CATEGORIESEANCE where SEANCETYPE.CODECAT=CATEGORIESEANCE.CODECAT";
+            String sql = "select CODEST,LIBELLECAT,LIBELLEST,DESCRIPTIONST from SEANCETYPE,CATEGORIESEANCE where SEANCETYPE.CODECAT=CATEGORIESEANCE.CODECAT";
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
 

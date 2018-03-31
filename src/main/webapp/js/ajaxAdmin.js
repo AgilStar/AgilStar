@@ -33,5 +33,3 @@ function getXMLHttpRequest()
 
     return xhr;
 }
-
-document.getElementById("formCreateUser").reset();

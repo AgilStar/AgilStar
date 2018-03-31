@@ -12,6 +12,7 @@
     <!-- Custom CSS -->
     <link href="../css/helper.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/lib/nestable/nestable.css" rel="stylesheet">
 
  <script type="text/JavaScript" src="/js/outilCommon.js"></script>
  <script type="text/JavaScript" src="/js/ajaxAdmin.js"></script>
@@ -20,18 +21,22 @@
     <script type="text/JavaScript" src="/js/ajaxCoach.js"></script>
 
  <!-- All Jquery -->
-    <script src="/js/lib/jquery/jquery.min.js"></script>
+    <script src="../js/lib/jquery/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="/js/lib/bootstrap/js/popper.min.js"></script>
-    <script src="/js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/lib/bootstrap/js/popper.min.js"></script>
+    <script src="../js/lib/bootstrap/js/bootstrap.min.js"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="/js/jquery.slimscroll.js"></script>
+    <script src="../js/jquery.slimscroll.js"></script>
     <!--Menu sidebar -->
-    <script src="/js/sidebarmenu.js"></script>
+    <script src="../js/sidebarmenu.js"></script>
     <!--stickey kit -->
-    <script src="/js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="../js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
+
+    <script src="../js/lib/nestable/jquery.nestable.js"></script>
+    <!-- scripit init-->
+    <script src="../js/lib/nestable/nestable.init.js"></script>
     <!--Custom JavaScript -->
-    <script src="/js/custom.min.js"></script>
+    <script src="../js/custom.min.js"></script>
 
 
     <script src="../js/lib/datatables/datatables.min.js"></script>
