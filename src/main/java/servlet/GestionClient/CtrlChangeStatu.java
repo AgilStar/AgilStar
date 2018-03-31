@@ -12,11 +12,11 @@ public class CtrlChangeStatu {
     public CtrlChangeStatu(String condition){
         if (condition==null){
             list=getUsers("STATUTU<>'admin'");
-        }else if(condition.equals("validé")){
-            list=getUsers("STATUTU='validé'");
+        }else if(condition.equals("validÃ©")){
+            list=getUsers("STATUTU='validÃ©'");
         }else if (condition.equals("en attente")){
             list=getUsers("STATUTU='en attente'");
-        }else if (condition.equals("validé")){
+        }else if (condition.equals("valider")){
             list=getUsers("STATUTU='en attente' or STATUTU='prospect'");
         }else if (condition.equals("prospect")||condition.equals("passerAttente")){
             list=getUsers("STATUTU='prospect'");

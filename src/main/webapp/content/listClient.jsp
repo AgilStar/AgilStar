@@ -7,7 +7,7 @@
 <%
     Boolean flagChange=false;
     String condition= request.getParameter("condition");
-   if(condition!=null && (condition.equals("validé") ||condition.equals("passerAttente")))
+   if(condition!=null && (condition.equals("valider") ||condition.equals("passerAttente")))
        flagChange=true;
 %>
 <!DOCTYPE html>
@@ -47,7 +47,7 @@
                     <!-- End PAge Content -->
                     <div class="row">
                         <div class="col-12">
-                            <a href="/content/listClient.jsp?condition=validé"><button type="button" class="btn btn-primary btn-outline m-b-10 m-l-5">Valider</button></a>
+                            <a href="/content/listClient.jsp?condition=valider"><button type="button" class="btn btn-primary btn-outline m-b-10 m-l-5">Valider</button></a>
                             <a href="/content/listClient.jsp?condition=passerAttente"><button type="button" class="btn btn-success btn-outline m-b-10 m-l-5">Passer en attente</button></a>
                         </div>
 
@@ -76,8 +76,8 @@
                                             <tr>
                                             <tr>
                                                 <th>Nom</th>
-                                                <th>Prenom</th>
-                                                <th>Status</th>
+                                                <th>Prénom</th>
+                                                <th>Statut</th>
                                                 
                                             </tr>
                                             </tr>
@@ -86,8 +86,8 @@
                                             <tr>
                                             <tr>
                                                 <th>Nom</th>
-                                                <th>Prenom</th>
-                                                <th>Status</th>
+                                                <th>Prénom</th>
+                                                <th>Statut</th>
                                               
                                             </tr>
                                             </tr>
@@ -105,10 +105,12 @@
             //out.print("<tr onclick=\"alert('" + u.getCodeu() + "')\">");
             out.print("<tr onclick=\"window.location.href='detailUser.jsp?codeu='"+u.getCodeu()+"')\">");
             out.print("<th scope=\"row\">");
-            if (u.getGenreu().equals("Homme")) {
+            if (u.getGenreu().toLowerCase().equals("homme")) {
                 out.print("<i class=\"fa fa-male\" style=\"color:blue\"></i>");
-            } else {
+            } else if(u.getGenreu().toLowerCase().equals("femme")){
                 out.print("<i class=\"fa fa-female\" style=\"color:red\"></i>");
+            }else{
+
             }
             out.print(u.getNomu());
             out.print("</th>");
@@ -131,10 +133,12 @@
  
             out.print("<th scope=\"row\">");
             out.print("<input type=\"checkbox\" name=\"user\" value=\""+u.getCodeu()+"\" hidden>");
-            if (u.getGenreu().equals("Homme")) {
+            if (u.getGenreu().toLowerCase().equals("homme")) {
                 out.print("<i class=\"fa fa-male\" style=\"color:blue\"></i>");
-            } else {
+            } else if(u.getGenreu().toLowerCase().equals("femme")){
                 out.print("<i class=\"fa fa-female\" style=\"color:red\"></i>");
+            }else{
+
             }
             out.print(u.getNomu());
             out.print("</th>");
@@ -148,8 +152,6 @@
                 out.print("<td><span class=\"badge badge-warning \" >" + u.getStatutu() + "</span></td>");
             }
             out.print("</tr>");
-
-
         }
 
 
@@ -169,7 +171,7 @@
                             out.print("<div class=\"row\">");
                             out.print("<div class=\"col-12\">");
                             String cible="";
-                            if (condition.equals("validé")){
+                            if (condition.equals("valider")){
                                 cible="validé";
                             }else{
                                 cible="en attente";

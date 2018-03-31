@@ -1,6 +1,8 @@
 <%@ page import="servlet.Program.ctrlCreateProgram" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="model.Profil" %>
+<%@ page import="servlet.Program.ctrlCreateProgram" %>
+<%@ page import="model.Seancetype" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -36,11 +38,28 @@
                 <div class='row'>
                     
                     <!-- Commmencer ici -->
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-title">
+                                <h3 style="color: #00ccff"> Étape 1</h3>
+                                <h4>Choisir un ou plusieurs profils</h4>
+                            </div>
+                            <div class="card-body">
+                                <h5>Nom</h5>
+                                <input type="text" id="nameProgram" required/>
+                                <h5>Description</h5>
+                                <input type="text" id="descriptionProgram"/>
+                            </div>
+                        </div>
+                    </div>
+
+
+
 
                     <div class="col-12">
                         <div class="card">
                             <div class="card-title">
-                                <h3> Première étape </h3>
+                                <h3 style="color: #00ccff"> Étape 2</h3>
                                 <h4>Choisir un ou plusieurs profils</h4>
                             </div>
                             <div class="card-body">
@@ -48,7 +67,7 @@
                                     <table class="table" id="tableProfil">
                                         <thead>
                                         <tr>
-                                            <th>#</th>
+                                            <th>Code de profil</th>
                                             <th>Profil</th>
                                         </tr>
                                         </thead>
@@ -77,13 +96,83 @@
 
 
                 </div>
+
+
+
                 <div class="row">
                     <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 style="color: #00ccff"> Étape 3</h3>
+                                <h4 class="card-title">Choisir ou supprimer les séances à ajouter dans le programme</h4>
+                                <div class="table-responsive m-t-40">
+                                    <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                        <thead>
+                                        <tr>
+                                        <tr>
+                                            <th>Séance</th>
+                                            <th>Opération</th>
+                                            <th>Catégorie</th>
+                                            <th>Description</th>
+                                        </tr>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="listSessionTotal">
+                                        <%
+                                            ArrayList<Seancetype> listUu= new ctrlCreateProgram().getAllSeanceType();
+                                            for (Seancetype u : listUu) {
+                                                        /*
+                                                        Pour valider ou passer en attente
+                                                         */
+                                                out.print("<tr style=\"background-color:#fedee5\" nameSession='"+u.getLibellest()+" ("+u.getDescriptionst()+")' idSession='"+u.getCodest()+"' nbSession=0>");
+                                                out.print("<th scope=\"row\">");
+                                                out.print(u.getLibellest());
+                                                out.print("</th>");
+                                                out.print("<td>");
+                                                out.print("  <button id='btnAddChoixSession' class='btn btn-success btn-outline' onclick=\"addChoixSession(this)\" >+</button>");
+                                                out.print("  <button id='btnDeleteChoixSession' class='btn btn-warning btn-outline' onclick=\"deleteChoixSession(this)\" >-</button>");
+                                                out.print("</td>");
+                                                out.print("<td>" + u.getCategorieCat() + "</td>");
+                                                out.print("<td>" + u.getDescriptionst() + "</td>");
+                                                out.print("</tr>");
+                                            }
+                                        %>
+                                        </tbody>
+                                    </table>
 
-                        <button type="button" class="btn btn-danger btn-rounded m-b-10 m-l-5" onclick="confirmProfilProgram()" >Confirmer</button>
+                                </div>
+
+                            </div>
+                        </div>
 
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title" style="color: #00ccff">Étape 4</h3>
+                                <h4 class="card-title">Organiser vos séances et billans</h4>
+                                <button class="btn btn-success" onclick="addBilan()">+</button>
+                                <span>Bilan</span>
+                                <button class="btn btn-warning" onclick="deleteBilan()">-</button>
+                                <div class="card-content">
+                                    <div class="nestable">
+                                        <div class="dd" id="nestable">
+                                            <ol class="dd-list" id="listSession">
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-danger btn-rounded m-b-5 m-l-5" onclick="confirmProfilProgram()">Confirmer</button>
+            <button class="btn btn-danger btn-rounded m-b-5 m-l-5" onclick="window.location.href='listSession.jsp'">Reset</button>
+
                 <!-- End PAge Content -->
             </div>
             <!-- footer -->

@@ -1,7 +1,40 @@
 function  confirmProfilProgram() {
-   var checked = getCheckeds("tableProfil"); //will contain all checked checkboxes
-    alert(checked);
-    window.location.href="listSessionProgramm.jsp?profil="+checked;
+
+
+    var flag=true;
+    var name=document.getElementById("nameProgram").value;
+    var desc=document.getElementById("descriptionProgram").value;
+   var checkedProfil = getCheckeds("tableProfil"); //will contain all checked checkboxes
+   if(name==""){
+       flag=false;
+       alert("Name!!!");
+   }
+
+   if(checkedProfil==""){
+       flag=false;
+       alert("Profil!!!");
+   }
+
+    var listSession=document.getElementById("listSession");
+    var listLi=listSession.getElementsByTagName("li");
+    var listS=[];
+    if(listLi.length==0){
+        flag=false
+        alert("List seance");
+    }else{
+        if(!checkBilanContinue()){
+            flag=false;
+            alert("Les bilans sont successifs");
+        }
+    }
+    for(var i=0;i<listLi.length;i++){
+        listS.push(listLi[i].getAttribute("idSession"));
+    }
+
+    if(flag){
+        window.location.href="/ServletAddProgram?name="+name+"&desc="+desc+"&checkedProfil="+checkedProfil+"&listS="+listS;
+    }
+
 }
 
 function deleteSeance(t) {
@@ -20,6 +53,13 @@ function deleteSeance(t) {
                 listSessionTotal[i].getElementsByTagName("button")[0].innerHTML="+"+nb;
             }
         }
+    }
+    var listSession=document.getElementById("listSession");
+    var listLi=listSession.getElementsByTagName("li");
+    if(listLi.length==3){
+        listSession.removeChild(listLi[0]);
+        listSession.removeChild(listLi[0]);
+        listSession.removeChild(listLi[0]);
     }
     t.parentNode.parentNode.parentNode.removeChild( t.parentNode.parentNode);
 }
@@ -90,32 +130,7 @@ function checkBilanContinue() {
     return true;
 }
 
-function checkSessionBilan() {
-    var listSession=document.getElementById("listSession");
-    var listLi=listSession.getElementsByTagName("li");
-    var nbSession=0;
-    var nbBilan=0;
-    for(var i=0;i<listLi.length;i++){
-        if(parseInt(listLi[i].getAttribute("idSession"))==-1){
-            nbBilan++;
-        }else{
-            nbSession++
-        }
-    }
-    return nbSession>=(nbBilan-1);
-}
 
-/**
- * Vérifier si les programmation suivent les règles
- */
-function checkSession() {
-    if(!checkBilanContinue()){
-        alert("Les bilans sont continus");
-    }
-    if(!checkSessionBilan()){
-        alert("Le nombre de séance doit être supérieur ou égale au nombre de bilan moins un");
-    }
-}
 
 //Ajouter une seance à choix
 function addChoixSession(button) {
@@ -179,12 +194,22 @@ function deleteChoixSession(button) {
         }
     }
 
+    if(listLi.length==2){
+        listSession.removeChild(listLi[0]);
+        listSession.removeChild(listLi[0]);
+    }
 }
 
 
 function addBilan() {
     var listSession=document.getElementById("listSession");
-    listSession.insertBefore(createNodeLiSession(-1,"Bilan",true),listSession.children[1]);
+    if(listSession.getElementsByTagName("li").length==0){
+        listSession.insertBefore(createNodeLiSession(-1,"Bilan",false),listSession.children[1]);
+        listSession.insertBefore(createNodeLiSession(-1,"Bilan",false),listSession.children[1]);
+    }else{
+        listSession.insertBefore(createNodeLiSession(-1,"Bilan",true),listSession.children[1]);
+    }
+
 }
 function deleteBilan() {
     var listSession=document.getElementById("listSession");
@@ -194,6 +219,10 @@ function deleteBilan() {
             listSession.removeChild(listLi[i]);
             break;
         }
+    }
+    if(listLi.length==2){
+        listSession.removeChild(listLi[0]);
+        listSession.removeChild(listLi[0]);
     }
 
 }

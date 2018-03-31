@@ -346,4 +346,58 @@ public class dbProgram {
         return list;
     }
 
+
+    /**
+     * Inserter un program
+     * @param name
+     * @param desc
+     * @return
+     * @Author Jin,Tianyuan
+     */
+    public String insertProgram(String name,String desc){
+        if(!checkNameProgram(name))
+            return "Le nom de programme existe";
+        cx = new dbAdmin().getConnection();
+        try {
+            String sql = "insert into PROGRAMMETYPE(LIBELLEPT,DESCRIPTIONPT) VALUES('"+name+"','"+desc+"')";
+            Statement st = cx.createStatement();
+            st.executeUpdate(sql);
+            st.close();
+            cx.close();
+        } catch (SQLException ex) {
+            System.out.println("Il y a un problÃ¨me sur statement getOneExercice" + ex.getMessage());
+        }
+        return "true";
+
+    }
+
+
+    /**
+     * Vérifier si le nom de programme existe
+     * @param name Nom de programme
+     * @return
+     * @author Jin,Tianyuan
+     */
+    public boolean checkNameProgram(String name) {
+        cx = new dbAdmin().getConnection();
+        boolean flag = true;
+        try {
+            String sql = "select count(*) as Nb from PROGRAMMETYPE where LIBELLEPT='" + name + "'";
+            Statement st = cx.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+                if(rs.getInt("Nb")==1){
+                    flag=false;
+                }
+            }
+            st.close();
+            cx.close();
+        } catch (SQLException ex) {
+            System.out.println("Il y a un problÃ¨me sur statement getOneExercice" + ex.getMessage());
+        }
+        return flag;
+    }
+
+
+
 }

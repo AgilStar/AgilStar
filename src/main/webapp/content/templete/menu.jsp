@@ -26,7 +26,7 @@
                             </ul>
                         </li>
                             <%--Programmation--%>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu">Programmation</span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu">Programme</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="listProgramm.jsp">Liste</a></li>
                             </ul>
