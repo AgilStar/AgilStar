@@ -41,6 +41,7 @@ public class Seanceperso  implements java.io.Serializable {
        this.ouvert = ouvert;
        this.validersp = validersp;
     }
+
    
     public Integer getCodesp() {
         return this.codesp;

@@ -13,7 +13,51 @@ public class Exercice  implements java.io.Serializable {
      private String libellee;
      private String objectife;
      private String lienvideo;
+     private String desc;
+     private Integer dureeAttentue;
+     private Integer nbAttentu;
+     private Integer serie;
+     private Integer tempsReposE;
 
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public Integer getDureeAttentue() {
+        return dureeAttentue;
+    }
+
+    public void setDureeAttentue(Integer dureeAttentue) {
+        this.dureeAttentue = dureeAttentue;
+    }
+
+    public Integer getNbAttentu() {
+        return nbAttentu;
+    }
+
+    public void setNbAttentu(Integer nbAttentu) {
+        this.nbAttentu = nbAttentu;
+    }
+
+    public Integer getSerie() {
+        return serie;
+    }
+
+    public void setSerie(Integer serie) {
+        this.serie = serie;
+    }
+
+    public Integer getTempsReposE() {
+        return tempsReposE;
+    }
+
+    public void setTempsReposE(Integer tempsReposE) {
+        this.tempsReposE = tempsReposE;
+    }
     public Exercice() {
     }
 
@@ -27,6 +71,18 @@ public class Exercice  implements java.io.Serializable {
        this.libellee = libellee;
        this.objectife = objectife;
        this.lienvideo = lienvideo;
+    }
+
+    public Exercice(Integer codee, String libellee, String objectife, String lienvideo, String desc, Integer dureeAttentue, Integer nbAttentu, Integer serie, Integer tempsReposE) {
+        this.codee = codee;
+        this.libellee = libellee;
+        this.objectife = objectife;
+        this.lienvideo = lienvideo;
+        this.desc = desc;
+        this.dureeAttentue = dureeAttentue;
+        this.nbAttentu = nbAttentu;
+        this.serie = serie;
+        this.tempsReposE = tempsReposE;
     }
    
     public Integer getCodee() {

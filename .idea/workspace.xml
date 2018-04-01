@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef1cdac3-136c-4724-8a4f-2c47a48dd52a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/content/templete/listProfil.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/content/templete/listSeance.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dbAdmin.java" afterPath="$PROJECT_DIR$/src/main/java/db/dbAdmin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dbProfil.java" afterPath="$PROJECT_DIR$/src/main/java/db/dbProfil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dbProgram.java" afterPath="$PROJECT_DIR$/src/main/java/db/dbProgram.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/Profil.java" afterPath="$PROJECT_DIR$/src/main/java/model/Profil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/createProgram.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/createProgram.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dbProgramPerso.java" afterPath="$PROJECT_DIR$/src/main/java/db/dbProgramPerso.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/Exercice.java" afterPath="$PROJECT_DIR$/src/main/java/model/Exercice.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/Seanceperso.java" afterPath="$PROJECT_DIR$/src/main/java/model/Seanceperso.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/detailProgramPerso.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/detailProgramPerso.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/sessionOnGoing.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/sessionOnGoing.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -119,13 +115,13 @@
       <file leaf-file-name="dbAdmin.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/db/dbAdmin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="226">
+              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding>
-                <marker date="1522593416907" expanded="true" signature="2007:2366" ph="insert into UTILISATEUR... " />
-                <marker date="1522593416907" expanded="true" signature="2825:2895" ph="insert into DETENIR... " />
-                <marker date="1522593416907" expanded="true" signature="3481:3529" ph="select * fro... UTILISATEUR" />
-                <marker date="1522593416907" expanded="true" signature="4147:4201" ph="select * fro... PROFIL" />
+                <marker date="1522625792182" expanded="true" signature="1832:2191" ph="insert into UTILISATEUR... " />
+                <marker date="1522625792182" expanded="true" signature="2650:2720" ph="insert into DETENIR... " />
+                <marker date="1522625792182" expanded="true" signature="3306:3354" ph="select * fro... UTILISATEUR" />
+                <marker date="1522625792182" expanded="true" signature="3972:4026" ph="select * fro... PROFIL" />
               </folding>
             </state>
           </provider>
@@ -203,7 +199,6 @@
         <option value="$PROJECT_DIR$/src/main/java/servlet/Program/ctrlProgram.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Programmetype.java" />
         <option value="$PROJECT_DIR$/src/main/java/test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/db/dbAdmin.java" />
         <option value="$PROJECT_DIR$/src/main/java/db/dbProgram.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Profil.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/createProgram.jsp" />
@@ -212,6 +207,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/templete/listSeance.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/db/dbAdmin.java" />
       </list>
     </option>
   </component>
@@ -582,7 +578,7 @@
       <workItem from="1522313233861" duration="11760000" />
       <workItem from="1522331814284" duration="139000" />
       <workItem from="1522331975650" duration="7018000" />
-      <workItem from="1522524117178" duration="23794000" />
+      <workItem from="1522524117178" duration="23875000" />
     </task>
     <servers />
   </component>
@@ -592,7 +588,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81131000" />
+    <option name="totallyTimeSpent" value="81212000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1170,13 +1166,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/db/dbAdmin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="226">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
-            <marker date="1522593416907" expanded="true" signature="2007:2366" ph="insert into UTILISATEUR... " />
-            <marker date="1522593416907" expanded="true" signature="2825:2895" ph="insert into DETENIR... " />
-            <marker date="1522593416907" expanded="true" signature="3481:3529" ph="select * fro... UTILISATEUR" />
-            <marker date="1522593416907" expanded="true" signature="4147:4201" ph="select * fro... PROFIL" />
+            <marker date="1522625792182" expanded="true" signature="1832:2191" ph="insert into UTILISATEUR... " />
+            <marker date="1522625792182" expanded="true" signature="2650:2720" ph="insert into DETENIR... " />
+            <marker date="1522625792182" expanded="true" signature="3306:3354" ph="select * fro... UTILISATEUR" />
+            <marker date="1522625792182" expanded="true" signature="3972:4026" ph="select * fro... PROFIL" />
           </folding>
         </state>
       </provider>
