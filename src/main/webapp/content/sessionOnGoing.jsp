@@ -108,9 +108,11 @@
                                     </div>
                                   
                                 </div>
-                          
-                       <button type="button" style="margin-top:20px;"class="btn btn-danger btn-rounded m-b-10 m-l-5">Démarrez la séance!</button>   
-                      
+                          <div class="row justify-content-center">
+                              <button type="button" style="margin-top:20px;"class="btn btn-danger btn-rounded m-b-30 m-t-30">Démarrez la séance!</button>
+
+                          </div>
+
                             </div>
 
                         </div>
