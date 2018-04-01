@@ -26,7 +26,7 @@
                         <li class="nav-label">Programmes</li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Programmes</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="email-compose.html">Séances</a></li>
+                                <li><a href="listProgram.jsp">Liste des programmes</a></li>
                                 
                             </ul>
                         </li>
