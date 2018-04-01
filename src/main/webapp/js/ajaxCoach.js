@@ -155,7 +155,7 @@ var nbSession=listSession.getElementsByTagName("li").length;
         listSession.appendChild(createNodeLiSession(-1,"Bilan",false));
     }else{
         var nodeSession=createNodeLiSession(ss.getAttribute("idSession"),ss.getAttribute("nameSession"),true);
-        listSession.insertBefore(nodeSession,listSession.lastChild);
+        listSession.insertBefore(nodeSession,listSession.getElementsByTagName("li")[nbSession-1]);
     }
 
 }
@@ -224,6 +224,25 @@ function deleteBilan() {
         listSession.removeChild(listLi[0]);
         listSession.removeChild(listLi[0]);
     }
+
+}
+
+
+function switchListSeance() {
+    var table=document.getElementById("listSeance");
+    if(table.getAttribute("hidden")==null){
+        table.setAttribute("hidden",true);
+    }else{
+        table.removeAttribute("hidden");
+    }
+   // alert(document.getElementById("example23").getAttribute("hidden"))
+   // document.getElementById("example23").setAttribute("hidden","hidden");
+
+    // if( document.getElementById("example23").style.display=="block"){
+    //     document.getElementById("example23").style.display="none";
+    // }else{
+    //     document.getElementById("example23").style.display="block";
+    // }
 
 }
 

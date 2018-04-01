@@ -122,5 +122,30 @@ public class dbProfil {
        
        return date;
     }
-    
+
+    /**
+     * Trouver les profil pour un programme
+     * @param codeProgram code de program
+     * @return la liste de profil
+     * @Author: Tianyuan
+     */
+    public ArrayList<Profil> findProfilProgramm(String codeProgram){
+        cx = new dbAdmin().getConnection();
+        ArrayList<Profil> list=new ArrayList<Profil>();
+        try {
+            String sql = "select C.CODEPROFIL,LIBELLEPROFIL FROM correspondre C,PROFIL P where P.CODEPROFIL=C.CODEPROFIL AND CODEPT="+codeProgram;
+            System.out.println(sql);
+            Statement st = cx.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+                list.add(new Profil(rs.getInt("CODEPROFIL"),rs.getString("LIBELLEPROFIL")));
+            }
+            st.close();
+            cx.close();
+        } catch (SQLException ex) {
+            System.out.println("Il y a un problème sur statement " + ex.getMessage());
+        }
+
+        return list;
+    }
 }

@@ -59,31 +59,9 @@
                                 <h4>Choisir un ou plusieurs profils</h4>
                             </div>
                             <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table" id="tableProfil">
-                                        <thead>
-                                        <tr>
-                                            <th>Code de profil</th>
-                                            <th>Profil</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <%
-                                            ArrayList<Profil> listProfil=new ctrlProgram().getProfil();
-                                            for(Profil p:listProfil){
-                                                out.print("<tr onclick=\"changeDelete(this)\" style=\"background-color:#fedee5\">");
-                                                out.print("<th scope=\"row\">");
-                                                out.print("<input type=\"checkbox\" name=\"profil\" value=\""+p.getCodeprofil()+"\" hidden>");
-                                                out.print(p.getCodeprofil());
-                                                out.print("</th>");
-                                                out.print("<td style=\"color:black\" >"+p.getLibelleprofil()+"</td>");
-                                                out.print("</tr>");
-                                            }
-                                        %>
-
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <jsp:include page="templete/listProfil.jsp" flush="true">
+                                    <jsp:param name="codeP" value="-1"/>
+                                </jsp:include>
                             </div>
                         </div>
                     </div>
@@ -101,43 +79,7 @@
                             <div class="card-body">
                                 <h3 style="color: #00ccff"> Étape 3</h3>
                                 <h4 class="card-title">Choisir ou supprimer les séances à ajouter dans le programme</h4>
-                                <div class="table-responsive m-t-40">
-                                    <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
-                                        <thead>
-                                        <tr>
-                                        <tr>
-                                            <th>Séance</th>
-                                            <th>Opération</th>
-                                            <th>Catégorie</th>
-                                            <th>Description</th>
-                                        </tr>
-                                        </tr>
-                                        </thead>
-                                        <tbody id="listSessionTotal">
-                                        <%
-                                            ArrayList<Seancetype> listUu= new ctrlProgram().getAllSeanceType();
-                                            for (Seancetype u : listUu) {
-                                                        /*
-                                                        Pour valider ou passer en attente
-                                                         */
-                                                out.print("<tr style=\"background-color:#fedee5\" nameSession='"+u.getLibellest()+" ("+u.getDescriptionst()+")' idSession='"+u.getCodest()+"' nbSession=0>");
-                                                out.print("<th scope=\"row\">");
-                                                out.print(u.getLibellest());
-                                                out.print("</th>");
-                                                out.print("<td>");
-                                                out.print("  <button id='btnAddChoixSession' class='btn btn-success btn-outline' onclick=\"addChoixSession(this)\" >+</button>");
-                                                out.print("  <button id='btnDeleteChoixSession' class='btn btn-warning btn-outline' onclick=\"deleteChoixSession(this)\" >-</button>");
-                                                out.print("</td>");
-                                                out.print("<td>" + u.getCategorieCat() + "</td>");
-                                                out.print("<td>" + u.getDescriptionst() + "</td>");
-                                                out.print("</tr>");
-                                            }
-                                        %>
-                                        </tbody>
-                                    </table>
-
-                                </div>
-
+                                <%@include file="templete/listSeance.jsp"%>
                             </div>
                         </div>
 

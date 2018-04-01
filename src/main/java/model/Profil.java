@@ -35,9 +35,20 @@ public class Profil  implements java.io.Serializable {
         this.libelleprofil = libelleprofil;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Profil)) return false;
 
+        Profil profil = (Profil) o;
 
+        return getCodeprofil().equals(profil.getCodeprofil());
+    }
 
+    @Override
+    public int hashCode() {
+        return getCodeprofil().hashCode();
+    }
 }
 
 

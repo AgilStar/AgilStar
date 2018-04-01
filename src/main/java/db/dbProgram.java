@@ -104,8 +104,9 @@ public class dbProgram {
                     Integer nb=rs.getInt("NB");
                     //ajouter les autres attributs
 
-
+                    System.out.println(type);
                     if (type.equals("BILAN")){
+
                         p.addSeanceBilanType(nb,new Seancebilantype(code,libelle,description));
                     }else{
                         p.addSeanceType(nb,new Seancetype(code,libelle,description,echauffement));
