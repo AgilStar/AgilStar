@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @WebServlet(
         name = "ServletAddProgram",
@@ -21,14 +24,32 @@ public class ServletAddProgram extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         PrintWriter out = resp.getWriter();
-        String name=req.getParameter("name");
-        String des=req.getParameter("desc");
-        String[] checkedProfil=req.getParameter("checkedProfil").split(",");
-        String[] listS=req.getParameter("listS").split(",");
+        String name = req.getParameter("name");
+        String des = req.getParameter("desc");
+        String[] checkedProfil = req.getParameter("checkedProfil").split(",");
+        String[] listS = req.getParameter("listS").split(",");
 
-
-        new dbProgram().insertProgram(name,des);
-
+        //insertion dans la table programme type
+        if (new dbProgram().insertProgramType(name, des).equals("true")) {
+            
+              //insertion dans la table correspondre profil
+            try {
+                new dbProgram().insertCorrespondre(checkedProfil);
+            } catch (SQLException ex) {
+                Logger.getLogger(ServletAddProgram.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+              //insertion dans la table comprendre type et la table comprendre sbt
+            try {
+                new dbProgram().insertComprendreType(listS);
+            } catch (SQLException ex) {
+                Logger.getLogger(ServletAddProgram.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            resp.sendRedirect("content/listProgramm.jsp"); 
+        }else{
+            System.out.println("echouer a inserer dans la table programme type");
+            resp.sendRedirect("content/createProgram.jsp"); 
+        }
 
     }
 }

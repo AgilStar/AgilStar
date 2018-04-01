@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Ela - Bootstrap Admin Dashboard Template</title>
+    <title>Création d'un programme type</title>
     <%@ include file="/content/templete/libHead.jsp" %>
     <script type="text/JavaScript" src="../js/ajaxExercice.js"></script>
 </head>

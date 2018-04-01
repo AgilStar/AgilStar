@@ -21,10 +21,13 @@ public class dbAdmin {
 
     Connection cx;
     /*données de connexion*/
-   private  String url = "jdbc:mysql://etu-web.ut-capitole.fr:3306/db_21201692";
-    //private  String url = "jdbc:mysql://localhost:3306/db_21201692";
+    private  String url = "jdbc:mysql://etu-web.ut-capitole.fr:3306/db_21201692";
     private String login = "21201692";
     private String password = "04964N";
+    
+     //private  String url = "jdbc:mysql://localhost:3306/projettttt";
+     //private String login = "root";
+     //private String password = "";
     public Connection getConnection(){
         try {
             Class.forName("com.mysql.jdbc.Driver");

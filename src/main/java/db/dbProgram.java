@@ -346,34 +346,125 @@ public class dbProgram {
         return list;
     }
 
-
     /**
-     * Inserter un program
+     * Inserer un program
+     *
      * @param name
      * @param desc
      * @return
      * @Author Jin,Tianyuan
      */
-    public String insertProgram(String name,String desc){
-        if(!checkNameProgram(name))
+    public String insertProgramType(String name, String desc) {
+        if (!checkNameProgram(name)) {
             return "Le nom de programme existe";
+        }
         cx = new dbAdmin().getConnection();
         try {
-            String sql = "insert into PROGRAMMETYPE(LIBELLEPT,DESCRIPTIONPT) VALUES('"+name+"','"+desc+"')";
+            String sql = "insert into PROGRAMMETYPE(LIBELLEPT,DESCRIPTIONPT) VALUES('" + name + "','" + desc + "')";
             Statement st = cx.createStatement();
             st.executeUpdate(sql);
             st.close();
             cx.close();
         } catch (SQLException ex) {
-            System.out.println("Il y a un problÃ¨me sur statement getOneExercice" + ex.getMessage());
+            System.out.println("Il y a un problÃ¨me sur statement insertProgram" + ex.getMessage());
         }
         return "true";
 
     }
 
+    /**
+     * inserer dans la table correspondre pour lier un programme a des profils
+     *
+     * @param listProfil
+     * @Author Jin,Tianyuan
+     */
+    public void insertCorrespondre(String[] listProfil) throws SQLException {
+       
+        int codePTMax = findMaxCodePT();
+        for (int i = 0; i < listProfil.length; i++) {
+              cx = new dbAdmin().getConnection();
+              int codeProfil = Integer.parseInt(listProfil[i]);
+            try {
+                String sql = "insert into CORRESPONDRE(CODEPT,CODEPROFIL) VALUES("+codePTMax + "," + codeProfil + ")";
+                Statement st = cx.createStatement();
+                st.executeUpdate(sql);
+                st.close();
+                cx.close();
+            } catch (SQLException ex) {
+                System.out.println("Il y a un problÃ¨me sur statement insertCorrespondre  " + ex.getMessage());
+            }
+        }
+       
+        
+
+    }
+
+    /**
+     * inserer dans les 2 tables association comprendre seance pour creer un
+     * nouveau programme
+     *
+     * @param listSession
+     * @return
+     * @throws SQLException
+     * @Author Jin,Tianyuan
+     */
+    public void insertComprendreType(String[] listSession) throws SQLException {
+        int codePTMax = findMaxCodePT();
+        cx = new dbAdmin().getConnection();
+        for (int i = 0; i < listSession.length; i++) {
+            int codeSession = Integer.parseInt(listSession[i]);
+            int ordre = i + 1;
+            if (codeSession == -1) {
+                //inserer dans la table comprendreSBT
+                try {
+                    String sql = "insert into COMPRENDRESBT(CODESBT,CODEPT,ORDRESBT) VALUES(1," + codePTMax + "," + ordre + ")";
+                    Statement st = cx.createStatement();
+                    st.executeUpdate(sql);
+                    st.close();
+
+                } catch (SQLException ex) {
+                    System.out.println("Il y a un problÃ¨me sur statement insertComprendreType COMPRENDRESBT " + ex.getMessage());
+                }
+            } else {
+                //inserer dans la table comprendreType
+                try {
+                    String sql = "insert into COMPRENDRETYPE(CODEPT,CODEST,ORDREPT) VALUES(" + codePTMax + "," + codeSession + "," + ordre + ")";
+                    Statement st = cx.createStatement();
+                    st.executeUpdate(sql);
+                    st.close();
+
+                } catch (SQLException ex) {
+                    System.out.println("Il y a un problÃ¨me sur statement insertComprendreType COMPRENDRESBT " + ex.getMessage());
+                }
+            }
+
+        }
+        cx.close();
+
+    }
+
+    public int findMaxCodePT() throws SQLException {
+        cx = new dbAdmin().getConnection();
+        int code = 0;
+        try {
+            String sql = "select max(CODEPT) as codePT from PROGRAMMETYPE";
+            Statement st = cx.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+                code = rs.getInt("codePT");
+
+            }
+            st.close();
+            cx.close();
+        } catch (SQLException ex) {
+            System.out.println("Il y a un problÃ¨me sur statement findMaxCodePT" + ex.getMessage());
+        }
+        return code;
+    }
 
     /**
      * Vérifier si le nom de programme existe
+     *
      * @param name Nom de programme
      * @return
      * @author Jin,Tianyuan
@@ -386,18 +477,16 @@ public class dbProgram {
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
-                if(rs.getInt("Nb")==1){
-                    flag=false;
+                if (rs.getInt("Nb") == 1) {
+                    flag = false;
                 }
             }
             st.close();
             cx.close();
         } catch (SQLException ex) {
-            System.out.println("Il y a un problÃ¨me sur statement getOneExercice" + ex.getMessage());
+            System.out.println("Il y a un problÃ¨me sur statement checkNameProgram" + ex.getMessage());
         }
         return flag;
     }
-
-
 
 }
