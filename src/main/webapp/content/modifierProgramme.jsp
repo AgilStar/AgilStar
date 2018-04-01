@@ -4,6 +4,9 @@
 <%@ page import="model.Seancetype" %>
 <%@ page import="db.dbProgram" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.Collections" %>
+<%@ page import="java.util.HashMap" %>
+<%@ page import="model.Seancebilantype" %>
 <% Integer codep= new Integer(request.getParameter("codep"));%>
 <!DOCTYPE html>
 <html lang="fr">
@@ -51,7 +54,6 @@
                                          
                                            Programmetype p = new dbProgram().getOneProgramm(codep);
                                         %>
-
                                         <div class="form-group">
                                             <label>Nom du programme</label>
                                             <input type="string" class="form-control" id="nameExerciceM" value="<%=p.getLibellept()%>">
@@ -61,14 +63,40 @@
                                             <input type="string" class="form-control"  id="objectiveExerciceM"  value="<%=p.getDescriptionpt()%>">
                                         </div>
 
+                                        <%--Secance--%>
+                                                        <h4 class="card-title">Mofier vos séances et billans</h4>
+                                                        <button class="btn btn-success" onclick="addBilan()">+</button>
+                                                        <span>Bilan</span>
+                                                        <button class="btn btn-warning" onclick="deleteBilan()">-</button>
+                                                        <div class="card-content">
+                                                            <div class="nestable">
+                                                                <div class="dd" id="nestable">
+                                                                    <ol class="dd-list" id="listSession">
+                                                                        <%
+                                                                            Programmetype programmetype = new dbProgram().getSceanceTypeProgramm(codep.toString());
+                                                                            int nbMax= Collections.max(programmetype.getListSeanceBilanType().keySet());
+                                                                           HashMap<Integer, Seancebilantype> listBilan=programmetype.getListSeanceBilanType();
+                                                                            HashMap<Integer, Seancetype> listSeance=programmetype.getListSeanceType();
+                                                                            for (int i=0;i<nbMax;i++){
+                                                                                if(listSeance.get(i)!=null){
+                                                                                    out.print("<li class='dd-item dd-item' >");
+                                                                                }
+                                                                            }
+                                                                        %>
+                                                                    </ol>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+
+
                                         <h4><b>Séances</b></h4>
-                                  
                                             <%
-                                                ArrayList<Seancetype> listS = new dbProgram().getSceanceTypeProgramm(codep.toString());
+                                                Programmetype programmetype = new dbProgram().getSceanceTypeProgramm(codep.toString());
                                                 Integer cpt = 0;
                                                 for(Seancetype st : listS){
                                                     cpt++;
-                     
                                                     out.print("<h6> <a href='modifierSeanceT.jsp?codes="+st.getCodest()+"&codep="+codep+"'>Seance "+cpt+" </a></h6>");
                                                     out.print("<table id=\"example23\" class=\"display nowrap table table-hover table-striped table-bordered\" cellspacing=\"0\" width=\"100%\">");
                                                     out.print("<thead><tr><th>Nom Seance</th><th>Description</th><th>Echauffement</th></tr></thead>");
@@ -81,18 +109,9 @@
                                                     out.print("</tr></tbody></table></br>");
                                                 }
                                             %>
-                                   
-                                        
-
-
                                         <input type="hidden" class="form-control" id="codeP" value="<%=p.getCodept()%>">
-
-
                                         <div id="errorMessageM"></div>
                                         <button type="button" class="btn btn-danger btn-rounded m-b-10 m-l-5" onclick="">Modifier</button>
-
-
-
                                     </div>
                                 </div>
                             </div>

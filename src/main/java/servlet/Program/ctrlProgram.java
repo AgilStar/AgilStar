@@ -7,7 +7,7 @@ import model.Seancetype;
 
 import java.util.ArrayList;
 
-public class ctrlCreateProgram {
+public class ctrlProgram {
 
 
 public ArrayList<Profil> getProfil(){

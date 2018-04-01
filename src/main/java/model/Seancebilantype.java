@@ -16,7 +16,7 @@ public class Seancebilantype  implements java.io.Serializable {
     public Seancebilantype() {
     }
 
-    public Seancebilantype(String libellesbt, String descriptionsbt) {
+    public Seancebilantype(Integer codesbt,String libellesbt, String descriptionsbt) { this.codesbt=codesbt;
        this.libellesbt = libellesbt;
        this.descriptionsbt = descriptionsbt;
     }
