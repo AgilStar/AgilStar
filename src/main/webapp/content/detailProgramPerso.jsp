@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="model.Programmeperso" %>
+<%@ page import="db.dbProgramPerso" %>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <title>Ela - Bootstrap Admin Dashboard Template</title>
+        <title>Un programme</title>
         <%@ include file="/content/templete/libHead.jsp" %>
         <script type="text/JavaScript" src="../js/ajaxExercice.js"></script>
     </head>
@@ -25,11 +28,11 @@
                 <!-- Bread crumb -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text-primary">Dashboard</h3> </div>
+                        <h3 class="text-primary">Un programme</h3> </div>
                     <div class="col-md-7 align-self-center">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard</li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Programmes</a></li>
+                            <li class="breadcrumb-item active">detail programme</li>
                         </ol>
                     </div>
                 </div>
@@ -42,16 +45,20 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">Vos programmes</h4>
-                                    <h6 class="card-subtitle">Vos programmes</h6>
+                                    <h4 class="card-title">Programme</h4>
+
                                     <div class="table-responsive m-t-40">
                                         <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                             <thead>
                                                 <tr>
                                                 <tr>
+                                                    <th>Ordre</th>
+                                                    <th>Type</th>
                                                     <th>Libelle</th>
                                                     <th>Description</th>
-                                                    <th>Nombre de séances</th>
+                                                    <th>CommentaireCoach</th>
+                                                    <th>Etat Ouverture</th>
+                                                    <th>Etat Valider</th>
 
                                                 </tr>
                                                 </tr>
@@ -64,18 +71,35 @@
                                             <tbody>
                                                 <%
                             String codeProgramPerso=request.getParameter("codepp");
-                            out.print(codeProgramPerso);
+                          
                             Integer codePP=Integer.parseInt(codeProgramPerso);
                             
-                            
-                            ArrayList<Seanceperso> listS= new dbProgramPerso().getAllSeances(codePP);
-                             for (Seanceperso s : listS){
-                                    out.print("<tr onclick=\"window.location.href='detailProgramPerso.jsp?codepp="+p.getCodepp()+"'\">");
-                                    //out.print("<tr onclick=alert();>");
-                                    out.print("<th scope=\"row\">"+p.getLibellepp()+"</th>");
-                                    out.print("<td>"+p.getDescriptionpp()+"</td>");
-                                    out.print("<td>"+new dbProgramPerso().getNbSessionForProgram(p.getCodepp())+"</td>");
-                                    out.print("</tr>");
+                            //0:ordre, 1:codeseance,2:libelleseance,3:descseance,4:commentaire,5:ouvert,6:valider,7:type
+                            ArrayList<String[]> listS= new dbProgramPerso().getAllSeances(codePP);
+                             for (String[] s : listS){
+                                    if(s[5].equals("oui")){
+                                        out.print("<tr style='background-color: rgb(209, 236, 241); color:black' onclick=\"window.location.href='sessionOnGoing.jsp?codeS="+s[1]+"&type="+s[7]+"'\">");
+                                        out.print("<th style='color:black' scope=\"row\">"+s[0]+"</th>");
+                                        out.print("<td style='color:black'>"+s[7]+"</td>");
+                                        out.print("<td style='color:black'>"+s[2]+"</td>");
+                                        out.print("<td style='color:black'>"+s[3]+"</td>");
+                                        out.print("<td style='color:black'>"+s[4]+"</td>");
+                                        out.print("<td style='color:black'>"+s[5]+"</td>");
+                                        out.print("<td style='color:black'>"+s[6]+"</td>");
+                                        out.print("</tr>");
+                                    }else{
+                                        out.print("<tr>");
+                                        out.print("<th scope=\"row\">"+s[0]+"</th>");
+                                        out.print("<td>"+s[7]+"</td>");
+                                        out.print("<td>"+s[2]+"</td>");
+                                        out.print("<td>"+s[3]+"</td>");
+                                        out.print("<td>"+s[4]+"</td>");
+                                        out.print("<td>"+s[5]+"</td>");
+                                        out.print("<td>"+s[6]+"</td>");
+                                        out.print("</tr>");
+                                    }
+                                    
+                                    
                                       }
                                                 %>
                                             <div class="badge badge-primary"></div>
