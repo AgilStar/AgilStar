@@ -33,18 +33,13 @@ public class ServletAddProgram extends HttpServlet {
         if (new dbProgram().insertProgramType(name, des).equals("true")) {
             
               //insertion dans la table correspondre profil
-            try {
+
                 new dbProgram().insertCorrespondre(checkedProfil);
-            } catch (SQLException ex) {
-                Logger.getLogger(ServletAddProgram.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
+
               //insertion dans la table comprendre type et la table comprendre sbt
-            try {
+
                 new dbProgram().insertComprendreType(listS);
-            } catch (SQLException ex) {
-                Logger.getLogger(ServletAddProgram.class.getName()).log(Level.SEVERE, null, ex);
-            }
+
             resp.sendRedirect("content/listProgramm.jsp"); 
         }else{
             System.out.println("echouer a inserer dans la table programme type");

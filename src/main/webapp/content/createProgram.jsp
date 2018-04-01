@@ -1,7 +1,6 @@
-<%@ page import="servlet.Program.ctrlCreateProgram" %>
+<%@ page import="servlet.Program.ctrlProgram" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="model.Profil" %>
-<%@ page import="servlet.Program.ctrlCreateProgram" %>
 <%@ page import="model.Seancetype" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
@@ -53,9 +52,6 @@
                         </div>
                     </div>
 
-
-
-
                     <div class="col-12">
                         <div class="card">
                             <div class="card-title">
@@ -73,7 +69,7 @@
                                         </thead>
                                         <tbody>
                                         <%
-                                            ArrayList<Profil> listProfil=new ctrlCreateProgram().getProfil();
+                                            ArrayList<Profil> listProfil=new ctrlProgram().getProfil();
                                             for(Profil p:listProfil){
                                                 out.print("<tr onclick=\"changeDelete(this)\" style=\"background-color:#fedee5\">");
                                                 out.print("<th scope=\"row\">");
@@ -119,7 +115,7 @@
                                         </thead>
                                         <tbody id="listSessionTotal">
                                         <%
-                                            ArrayList<Seancetype> listUu= new ctrlCreateProgram().getAllSeanceType();
+                                            ArrayList<Seancetype> listUu= new ctrlProgram().getAllSeanceType();
                                             for (Seancetype u : listUu) {
                                                         /*
                                                         Pour valider ou passer en attente

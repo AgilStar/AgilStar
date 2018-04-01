@@ -7,11 +7,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.Categorieseance;
-import model.Exercice;
-import model.Programmetype;
-import model.Seancetype;
-import model.Utilisateur;
+
+import model.*;
 
 /**
  *
@@ -81,62 +78,72 @@ public class dbProgram {
         return prog;
     }
 
-    public ArrayList<Seancetype> getSceanceTypeProgramm(String codept) throws SQLException {
+    public Programmetype getSceanceTypeProgramm(String codep) {
         cx = new dbAdmin().getConnection();
-        ArrayList<Seancetype> sceances = new ArrayList();
-        ArrayList<String> codes = new ArrayList<String>();
+        Programmetype p=new Programmetype();
         try {
-            codes = getCodeSceanceType(codept);
-            for (String code : codes) {
-                cx = new dbAdmin().getConnection();
                 Statement st = cx.createStatement();
-                String sql = "select *  from SEANCETYPE WHERE CODEST='" + code + "'";
+                String sql = "select ST.CODEST AS CODE,LIBELLEST AS LIBELLE,DESCRIPTIONST AS DESCRIPTION, ECHAUFFEMENTST AS ECHAUFFEMENT, OrdrePT AS NB,\"SEANCE\" as TYPE\n" +
+                        "FROM comprendretype CT,seancetype ST\n" +
+                        "WHERE CT.CODEST=ST.CODEST\n" +
+                        "and CT.CODEPT="+codep+"\n" +
+                        "UNION\n" +
+                        "select CSBT.CODESBT AS CODE,LIBELLESBT AS LIBELLE,DESCRIPTIONSBT AS DESCRIPTION, \"\" AS ECHAUFFEMENT, (ordreSBT) AS NB,\"BILAN\" as TYPE\n" +
+                        "FROM comprendresbt CSBT,seancebilantype SBT\n" +
+                        "WHERE CSBT.CODESBT=SBT.CODESBT\n" +
+                        "and CSBT.CODEPT="+codep+"\n" +
+                        "ORDER BY NB;";
 
                 ResultSet rs = st.executeQuery(sql);
                 while (rs.next()) {
-                    Integer idSceance = rs.getInt("CODEST");
-                    Integer nameCat = rs.getInt("CODECAT");
-                    String libelleSceance = rs.getString("LIBELLEST");
-                    String descSceance = rs.getString("DESCRIPTIONST");
-                    String echauffementSt = rs.getString("ECHAUFFEMENTST");
+                    Integer code = rs.getInt("CODE");
+                    String libelle = rs.getString("LIBELLE");
+                    String description = rs.getString("DESCRIPTION");
+                    String echauffement = rs.getString("ECHAUFFEMENT");
+                    String type=rs.getString("TYPE");
+                    Integer nb=rs.getInt("NB");
                     //ajouter les autres attributs
-                    sceances.add(new Seancetype(idSceance, nameCat, libelleSceance, descSceance, echauffementSt));
+
+
+                    if (type.equals("BILAN")){
+                        p.addSeanceBilanType(nb,new Seancebilantype(code,libelle,description));
+                    }else{
+                        p.addSeanceType(nb,new Seancetype(code,libelle,description,echauffement));
+                    }
 
                 }
                 st.close();
                 cx.close();
-            }
+
 
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statementde getSceanceTypeProgramm " + ex.getMessage());
         }
 
-        return sceances;
+        return p;
     }
 
-    public ArrayList<String> getCodeSceanceType(String codept) {
-        cx = new dbAdmin().getConnection();
-        ArrayList<String> codes = new ArrayList();
-        try {
-            String sql = "select *  from COMPRENDRETYPE WHERE CODEPT='" + codept + "'";
-            System.out.println(sql);
-            Statement st = cx.createStatement();
-            ResultSet rs = st.executeQuery(sql);
-
-            while (rs.next()) {
-                Integer codeProgram = rs.getInt("CODEPT");
-                Integer codeSt = rs.getInt("CODEST");
-                System.out.println(codeSt);
-                //ajouter les autres attributs
-                codes.add(codeSt.toString());
-            }
-            st.close();
-            cx.close();
-        } catch (SQLException ex) {
-            System.out.println("Il y a un problème sur statement de getCodeSceancetype " + ex.getMessage());
-        }
-        return codes;
-    }
+//    public ArrayList<String> getCodeSceanceType(String codept) {
+//        cx = new dbAdmin().getConnection();
+//        ArrayList<String> codes = new ArrayList();
+//        try {
+//            String sql = "select *  from COMPRENDRETYPE WHERE CODEPT='" + codept + "'";
+//            Statement st = cx.createStatement();
+//            ResultSet rs = st.executeQuery(sql);
+//
+//            while (rs.next()) {
+//                Integer codeProgram = rs.getInt("CODEPT");
+//                Integer codeSt = rs.getInt("CODEST");
+//                //ajouter les autres attributs
+//                codes.add(codeSt.toString());
+//            }
+//            st.close();
+//            cx.close();
+//        } catch (SQLException ex) {
+//            System.out.println("Il y a un problème sur statement de getCodeSceancetype " + ex.getMessage());
+//        }
+//        return codes;
+//    }
 
     public ArrayList<String[]> getDescriptionSeance(String codest) {
         cx = new dbAdmin().getConnection();
@@ -378,7 +385,7 @@ public class dbProgram {
      * @param listProfil
      * @Author Jin,Tianyuan
      */
-    public void insertCorrespondre(String[] listProfil) throws SQLException {
+    public void insertCorrespondre(String[] listProfil){
        
         int codePTMax = findMaxCodePT();
         for (int i = 0; i < listProfil.length; i++) {
@@ -408,42 +415,35 @@ public class dbProgram {
      * @throws SQLException
      * @Author Jin,Tianyuan
      */
-    public void insertComprendreType(String[] listSession) throws SQLException {
+    public void insertComprendreType(String[] listSession) {
         int codePTMax = findMaxCodePT();
         cx = new dbAdmin().getConnection();
         for (int i = 0; i < listSession.length; i++) {
             int codeSession = Integer.parseInt(listSession[i]);
             int ordre = i + 1;
+            try {
             if (codeSession == -1) {
                 //inserer dans la table comprendreSBT
-                try {
                     String sql = "insert into COMPRENDRESBT(CODESBT,CODEPT,ORDRESBT) VALUES(1," + codePTMax + "," + ordre + ")";
                     Statement st = cx.createStatement();
                     st.executeUpdate(sql);
                     st.close();
-
-                } catch (SQLException ex) {
-                    System.out.println("Il y a un problÃ¨me sur statement insertComprendreType COMPRENDRESBT " + ex.getMessage());
-                }
-            } else {
+                }  else {
                 //inserer dans la table comprendreType
-                try {
-                    String sql = "insert into COMPRENDRETYPE(CODEPT,CODEST,ORDREPT) VALUES(" + codePTMax + "," + codeSession + "," + ordre + ")";
-                    Statement st = cx.createStatement();
-                    st.executeUpdate(sql);
-                    st.close();
 
-                } catch (SQLException ex) {
+                String sql = "insert into COMPRENDRETYPE(CODEPT,CODEST,ORDREPT) VALUES(" + codePTMax + "," + codeSession + "," + ordre + ")";
+                Statement st = cx.createStatement();
+                st.executeUpdate(sql);
+                st.close();
+            }
+                cx.close();
+            }catch (SQLException ex) {
                     System.out.println("Il y a un problÃ¨me sur statement insertComprendreType COMPRENDRESBT " + ex.getMessage());
                 }
             }
-
-        }
-        cx.close();
-
     }
 
-    public int findMaxCodePT() throws SQLException {
+    public int findMaxCodePT() {
         cx = new dbAdmin().getConnection();
         int code = 0;
         try {

@@ -2,7 +2,7 @@
 <%@ page import="model.Utilisateur" %>
 <%@ page import="db.dbClient" %>
 <%@ page import="servlet.GestionClient.CtrlChangeStatu" %>
-<%@ page import="servlet.Program.ctrlCreateProgram" %>
+<%@ page import="servlet.Program.ctrlProgram" %>
 <%@ page import="model.Seancetype" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
@@ -63,7 +63,7 @@
                                             <tbody id="listSessionTotal">
                                                 <%
 
-                                                    ArrayList<Seancetype> listUu= new ctrlCreateProgram().getAllSeanceType();
+                                                    ArrayList<Seancetype> listUu= new ctrlProgram().getAllSeanceType();
 
         for (Seancetype u : listUu) {
                                                             /*
