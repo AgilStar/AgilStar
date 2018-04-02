@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef1cdac3-136c-4724-8a4f-2c47a48dd52a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dbAdmin.java" afterPath="$PROJECT_DIR$/src/main/java/db/dbAdmin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/templete/listSeance.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/templete/listSeance.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,48 +16,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="createProgram.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/content/createProgram.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1039">
+              <caret line="110" column="91" lean-forward="true" selection-start-line="110" selection-start-column="91" selection-end-line="110" selection-end-column="91" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ajaxCoach.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="231" column="49" lean-forward="false" selection-start-line="231" selection-start-column="49" selection-end-line="231" selection-end-column="49" />
+            <state relative-caret-position="128">
+              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding>
-                <marker date="1522624605578" expanded="true" signature="3081:3093" ph="..." />
+                <marker date="1522659401260" expanded="true" signature="3081:3093" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modifierProgramme.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="modifierProgramme.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="73" column="85" lean-forward="false" selection-start-line="73" selection-start-column="85" selection-end-line="73" selection-end-column="85" />
-              <folding>
-                <element signature="n#style#0;n#h2#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h2#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="312">
+              <caret line="104" column="65" lean-forward="true" selection-start-line="104" selection-start-column="65" selection-end-line="104" selection-end-column="65" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="listSeance.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/listSeance.jsp">
+      <file leaf-file-name="listProfil.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/listProfil.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="39" column="71" lean-forward="false" selection-start-line="39" selection-start-column="71" selection-end-line="39" selection-end-column="71" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fullcalendar.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo/css/lib/calendar/fullcalendar.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="287" column="0" lean-forward="true" selection-start-line="287" selection-start-column="0" selection-end-line="287" selection-end-column="0" />
+            <state relative-caret-position="547">
+              <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -123,41 +119,6 @@
             <state relative-caret-position="-436">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dbClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/db/dbClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-              <folding>
-                <marker date="1522461377371" expanded="true" signature="891:961" ph="select MAILU... UTILISATEUR" />
-                <marker date="1522461377371" expanded="true" signature="2138:2171" ph="select * fro... UTILISATEUR" />
-                <marker date="1522461377371" expanded="true" signature="3404:3464" ph="update UTILI... " />
-                <marker date="1522461377371" expanded="true" signature="4384:4569" ph="insert into SEANCEBILAN... " />
-                <marker date="1522461377371" expanded="true" signature="4965:5187" ph="Insert into PLANIFIERBILAN... " />
-                <marker date="1522461377371" expanded="true" signature="5102:5153" ph="SELECT CODEE... EXERCICE" />
-                <marker date="1522461377371" expanded="true" signature="5544:5823" ph="Insert into PLANIFIERBILAN... " />
-                <marker date="1522461377371" expanded="true" signature="5728:5784" ph="SELECT CODEE... EXERCICE" />
-                <marker date="1522461377371" expanded="true" signature="6187:6466" ph="Insert into PLANIFIERBILAN... " />
-                <marker date="1522461377371" expanded="true" signature="6371:6427" ph="SELECT CODEE... EXERCICE" />
-                <marker date="1522461377371" expanded="true" signature="6824:7089" ph="Insert into PLANIFIERBILAN... " />
-                <marker date="1522461377371" expanded="true" signature="7008:7058" ph="SELECT CODEE... EXERCICE" />
-                <marker date="1522461377371" expanded="true" signature="7446:7710" ph="Insert into PLANIFIERBILAN... " />
-                <marker date="1522461377371" expanded="true" signature="7630:7680" ph="SELECT CODEE... EXERCICE" />
-                <marker date="1522461377371" expanded="true" signature="8067:8331" ph="Insert into PLANIFIERBILAN... " />
-                <marker date="1522461377371" expanded="true" signature="8251:8301" ph="SELECT CODEE... EXERCICE" />
-                <marker date="1522461377371" expanded="true" signature="8687:8948" ph="Insert into PLANIFIERBILAN... " />
-                <marker date="1522461377371" expanded="true" signature="8871:8919" ph="SELECT CODEE... EXERCICE" />
-                <marker date="1522461377371" expanded="true" signature="9295:9407" ph="Insert into MENSURATION... " />
-                <marker date="1522461377371" expanded="true" signature="10079:10163" ph="select count... MENSURATION" />
-                <marker date="1522461377371" expanded="true" signature="10540:10690" ph="update MENSU... " />
-                <marker date="1522461377371" expanded="true" signature="11233:11453" ph="Insert into MENSURATION... " />
-                <marker date="1522461377371" expanded="true" signature="12198:12280" ph="select count... UTILISATEUR" />
-                <marker date="1522461377371" expanded="true" signature="13012:13067" ph="update UTILI... " />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -229,11 +190,11 @@
         <option value="$PROJECT_DIR$/src/main/webapp/content/createProgram.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/db/dbProfil.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/templete/listProfil.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/sessionOnGoing.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/db/dbAdmin.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/templete/listSeance.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp" />
       </list>
     </option>
   </component>
@@ -604,7 +565,7 @@
       <workItem from="1522313233861" duration="11760000" />
       <workItem from="1522331814284" duration="139000" />
       <workItem from="1522331975650" duration="7018000" />
-      <workItem from="1522524117178" duration="24914000" />
+      <workItem from="1522524117178" duration="26545000" />
     </task>
     <servers />
   </component>
@@ -614,7 +575,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82251000" />
+    <option name="totallyTimeSpent" value="83882000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -825,14 +786,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/libHead.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="38" column="20" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlet/GestionClient/CtrlChangeStatu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1017,14 +970,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/listProfil.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/content/indexCoach.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -1070,37 +1015,6 @@
         <state relative-caret-position="1328">
           <caret line="137" column="59" lean-forward="false" selection-start-line="137" selection-start-column="59" selection-end-line="137" selection-end-column="59" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/createProgram.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-91">
-          <caret line="56" column="52" lean-forward="true" selection-start-line="56" selection-start-column="52" selection-end-line="56" selection-end-column="52" />
-          <folding>
-            <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="231" column="49" lean-forward="false" selection-start-line="231" selection-start-column="49" selection-end-line="231" selection-end-column="49" />
-          <folding>
-            <marker date="1522624605578" expanded="true" signature="3081:3093" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="73" column="85" lean-forward="false" selection-start-line="73" selection-start-column="85" selection-end-line="73" selection-end-column="85" />
-          <folding>
-            <element signature="n#style#0;n#h2#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h2#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1202,11 +1116,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/listSeance.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="304">
           <caret line="39" column="71" lean-forward="false" selection-start-line="39" selection-start-column="71" selection-end-line="39" selection-end-column="71" />
           <folding>
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/listProfil.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/createProgram.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1039">
+          <caret line="110" column="91" lean-forward="true" selection-start-line="110" selection-start-column="91" selection-end-line="110" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/libHead.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="20" column="50" lean-forward="false" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <marker date="1522659401260" expanded="true" signature="3081:3093" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="104" column="65" lean-forward="true" selection-start-line="104" selection-start-column="65" selection-end-line="104" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>

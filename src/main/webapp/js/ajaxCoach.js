@@ -235,14 +235,12 @@ function switchListSeance() {
     }else{
         table.removeAttribute("hidden");
     }
-   // alert(document.getElementById("example23").getAttribute("hidden"))
-   // document.getElementById("example23").setAttribute("hidden","hidden");
 
-    // if( document.getElementById("example23").style.display=="block"){
-    //     document.getElementById("example23").style.display="none";
-    // }else{
-    //     document.getElementById("example23").style.display="block";
-    // }
 
+}
+
+
+function modifyProgram() {
+    confirmProfilProgram();
 }
 

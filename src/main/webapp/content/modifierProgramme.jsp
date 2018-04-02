@@ -12,7 +12,7 @@
     <title>Affichage programme <%=codep%>
     </title>
     <%@ include file="/content/templete/libHead.jsp" %>
-    <script type="text/JavaScript" src="../js/ajaxExercice.js"></script>
+    <link href="/css/lib/sweetalert/sweetalert.css" rel="stylesheet">
 </head>
 
 <body class="fix-header fix-sidebar">
@@ -55,12 +55,12 @@
 
                                     <div class="form-group">
                                         <label>Nom du programme</label>
-                                        <input type="string" class="form-control" id="nameExerciceM"
+                                        <input type="string" class="form-control" id="nameProgram"
                                                value="<%=p.getLibellept()%>">
                                     </div>
                                     <div class="form-group">
                                         <label>Description du programme</label>
-                                        <input type="string" class="form-control" id="objectiveExerciceM"
+                                        <input type="string" class="form-control" id="descriptionProgram"
                                                value="<%=p.getDescriptionpt()%>">
                                     </div>
                                 </div>
@@ -80,9 +80,12 @@
                                     </jsp:include>
                                 <input class="form-control" id="codeP" value="<%=p.getCodept()%>" hidden>
                                 <div id="errorMessageM"></div>
-                                <button type="button" class="btn btn-danger btn-rounded m-b-10 m-l-5" onclick="">
+                                <button type="button" class="btn btn-danger btn-rounded button-sweet-success m-b-10 m-l-5" >
                                     Modifier
                                 </button>
+                                <div class="sweetalert m-t-15">
+                                    <button class="btn btn-success btn sweet-prompt">Sweet Prompt</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -97,7 +100,9 @@
     </div>
     <!-- All Jquery -->
     <%@ include file="/content/templete/libJquery.jsp" %>
-
+    <script src="/js/lib/sweetalert/sweetalert.min.js"></script>
+    <!-- scripit init-->
+    <script src="/js/lib/sweetalert/sweetalert.init.js"></script>
 </body>
 
 </html>
