@@ -7,6 +7,7 @@ package servlet.ConnexionClient;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -37,9 +38,10 @@ public class ServletConnexion extends HttpServlet {
         url = new db.dbClient().verifyConnect(email, mdp);
          out.print(url);
          if(url!="errorMot"&&url!="null"){
-            String id=new db.dbAdmin().recupIdUtilisateur(email);
+            ArrayList<String> list=new db.dbAdmin().recupIdUtilisateur(email);
             HttpSession session=req.getSession();
-            session.setAttribute("id", id);
+            session.setAttribute("id", list.get(0));
+            session.setAttribute("statut", list.get(1));
            
          }
    

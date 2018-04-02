@@ -3,6 +3,8 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="model.Seanceperso" %>
 <%@ page import="model.Exercice" %>
+<%@ page import="model.Planifierbilan" %>
+<%@ page import="model.Planifiersp" %>
 <%@ page import="model.Seancebilan" %>
 <%@ page import="db.dbProgramPerso" %>
 <!DOCTYPE html>
@@ -70,48 +72,67 @@
                                                 </tr>
                                             </tfoot>
                                             <tbody>
-                                              
-                          <%
-    //le code de la seance en cours
-    Integer codeS=Integer.parseInt((String) request.getParameter("codeS"));
-    // le type de la seance 
-    String type=(String) request.getParameter("type");
-   //les exercices a faire dans cette seance
-   ArrayList<Exercice> listE= new dbProgramPerso().getAllExercices(codeS,type);
-  
+
+                                                <%
+                          //le code de la seance en cours
+                          Integer codeS=Integer.parseInt((String) request.getParameter("codeS"));
+                          // le type de la seance 
+                          String type=(String) request.getParameter("type");
+                         //les exercices a faire dans cette seance
+                         ArrayList<Exercice> listE= new dbProgramPerso().getAllExercices(codeS,type);
+                    
+                        session.setAttribute("codeS",codeS);
+                        session.setAttribute("type",type);
+                        session.setAttribute("listE",listE);
 
 
-                             for (Exercice e : listE){
-                                 ArrayList<String> orderResult=new dbProgramPerso().getOrderResultForExo(codeS, e.getCodee(),type);
-                                   //out.print("<tr style='background-color: rgb(209, 236, 241); color:black' onclick=\"window.location.href='sessionOnGoing.jsp?codeS="+s[1]+"&type="+s[7]+"'\">");
-                                   out.print("<tr style='background-color: rgb(209, 236, 241);'>");
-                                   out.print("<th style='color:black' scope=\"row\">"+orderResult.get(0)+"</th>");
-                                   out.print("<td style='color:black'>"+e.getLibellee()+"</td>");
-                                   out.print("<td style='color:black'>"+e.getObjectife()+"</td>");
-                                   out.print("<td style='color:black'>"+e.getSerie()+"</td>");
-                                   if(e.getNbAttentu()==null){
-                                        out.print("<td style='color:black'>"+e.getDureeAttentue()+"</td>");
-                                   }else{
-                                        out.print("<td style='color:black'>"+e.getNbAttentu()+"</td>");
-                                   }
-                       
-                                   out.print("<td style='color:black'>"+orderResult.get(1)+"</td>");
-                                   out.print("</tr>");
-                                  
-                                        
-                                    }
-                                    %>
+                                                   for (Exercice e : listE){
+                                                         //out.print("<tr style='background-color: rgb(209, 236, 241); color:black' onclick=\"window.location.href='sessionOnGoing.jsp?codeS="+s[1]+"&type="+s[7]+"'\">");
+                                                       out.print("<tr style='background-color: rgb(209, 236, 241);'>");
+                                                       if(type.equals("bilan")){
+                                                           Planifierbilan p =new dbProgramPerso().getPlanForBilan(codeS,e.getCodee());
+                                                           out.print("<th style='color:black' scope=\"row\">"+p.getOrdreb()+"</th>");//order
+                                                           out.print("<td style='color:black'>"+e.getLibellee()+"</td>");//libelle
+                                                           out.print("<td style='color:black'>"+e.getObjectife()+"</td>");//objectif
+                                                           out.print("<td style='color:black'>--</td>");//serie
+                                                           out.print("<td style='color:black'>Maximum</td>");//quantite
+                                                         if(p.getNbmaxu()==null){
+                                                               out.print("<td style='color:black'>"+p.getTempsmaxu()+"</td>");//resultat
+                                                           }else{
+                                                               out.print("<td style='color:black'>"+p.getNbmaxu()+"</td>");//resultat
+                                                           }
+                                     
+                                                       }else{
+                                    
+                                                           Planifiersp p=new dbProgramPerso().getPlanForSession(codeS,e.getCodee());
+                                    
+                                                            out.print("<th style='color:black' scope=\"row\">"+p.getOrdrep()+"</th>");//order
+                                                            out.print("<td style='color:black'>"+e.getLibellee()+"</td>");//libelle
+                                                            out.print("<td style='color:black'>"+e.getObjectife()+"</td>");//objectif
+                                                            out.print("<td style='color:black'>"+p.getSeriep()+"</td>");//serie
+                                                           if(p.getNbattendue()==null){
+                                                               out.print("<td style='color:black'>"+p.getDureeattenduee()+"</td>");//quantite
+                                                           }else{
+                                                               out.print("<td style='color:black'>"+p.getNbattendue()+"</td>");//quantite
+                                                           }
+                                                            out.print("<td style='color:black'>"+p.getResultatu()+"</td>");//resultat
+                                     
+                                     
+                                                       }
+    
+                                                          }
+                                                %>
                                             <div class="badge badge-primary"></div>
                                             </tbody>
                                         </table>
-                                   
-                                    </div>
-                                  
-                                </div>
-                          <div class="row justify-content-center">
-                              <button type="button" style="margin-top:20px;"class="btn btn-danger btn-rounded m-b-30 m-t-30">Démarrez la séance!</button>
 
-                          </div>
+                                    </div>
+
+                                </div>
+                                <div class="row justify-content-center">
+                                    <button type="button" style="margin-top:20px;"class="btn btn-danger btn-rounded m-b-30 m-t-30" onclick="window.location.href='beginExo.jsp'">Démarrez la séance!</button>
+
+                                </div>
 
                             </div>
 

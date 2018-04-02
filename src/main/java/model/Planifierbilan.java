@@ -11,7 +11,7 @@ public class Planifierbilan  implements java.io.Serializable {
 
      private PlanifierbilanId id;
      private Integer ordreb;
-     private String nbmaxu;
+     private Integer nbmaxu;
      private Integer tempsmaxu;
 
     public Planifierbilan() {
@@ -21,7 +21,7 @@ public class Planifierbilan  implements java.io.Serializable {
     public Planifierbilan(PlanifierbilanId id) {
         this.id = id;
     }
-    public Planifierbilan(PlanifierbilanId id, Integer ordreb, String nbmaxu, Integer tempsmaxu) {
+    public Planifierbilan(PlanifierbilanId id, Integer ordreb, Integer nbmaxu, Integer tempsmaxu) {
        this.id = id;
        this.ordreb = ordreb;
        this.nbmaxu = nbmaxu;
@@ -42,11 +42,11 @@ public class Planifierbilan  implements java.io.Serializable {
     public void setOrdreb(Integer ordreb) {
         this.ordreb = ordreb;
     }
-    public String getNbmaxu() {
+    public Integer getNbmaxu() {
         return this.nbmaxu;
     }
     
-    public void setNbmaxu(String nbmaxu) {
+    public void setNbmaxu(Integer nbmaxu) {
         this.nbmaxu = nbmaxu;
     }
     public Integer getTempsmaxu() {
