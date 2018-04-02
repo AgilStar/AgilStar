@@ -33,6 +33,15 @@ public class Planifiersp  implements java.io.Serializable {
        this.seriep = seriep;
        this.resultatu = resultatu;
     }
+
+    public Planifiersp(Integer ordrep, Integer nbattendue, Integer dureeattenduee, Integer tempsrepose, Integer seriep, String resultatu) {
+        this.ordrep = ordrep;
+        this.nbattendue = nbattendue;
+        this.dureeattenduee = dureeattenduee;
+        this.tempsrepose = tempsrepose;
+        this.seriep = seriep;
+        this.resultatu = resultatu;
+    }
    
     public PlanifierspId getId() {
         return this.id;

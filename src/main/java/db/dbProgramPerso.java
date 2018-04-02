@@ -11,6 +11,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import model.Exercice;
+import model.Planifierbilan;
+import model.Planifiersp;
 import model.Programmeperso;
 import model.Programmetype;
 import model.Seanceperso;
@@ -185,56 +187,55 @@ public class dbProgramPerso {
         return listE;
     }
 
-    public ArrayList<String> getOrderResultForExo(int codeS, int codeE, String type) {
-        ArrayList<String> list = new ArrayList();
-        String order = "";
-        String result = "";
-        cx = new dbAdmin().getConnection();
-        if (type.equals("bilan")) {
-            try {
-                String sql = "select p.ORDREB,p.NBMAXU,p.TEMPSMAXU from planifierbilan p where p.CODESB=" + codeS + " and p.CODEE=" + codeE;
-                Statement st = cx.createStatement();
-                ResultSet rs = st.executeQuery(sql);
+public Planifiersp getPlanForSession(Integer codeS, Integer codeE){
+      System.out.println("aaaaaaaa");
+    Planifiersp p=new Planifiersp();
+    cx = new dbAdmin().getConnection();
+     try {
+            String sql = "select * from PLANIFIERSP where CODEE="+codeE+" and CODESP="+codeS;
+            Statement st = cx.createStatement();
+            ResultSet rs = st.executeQuery(sql);
 
-                while (rs.next()) {
-                    order = rs.getString("ORDREB");
-                    if (rs.getString("NBMAXU") != null) {
-                        result = rs.getString("NBMAXU");
-                    } else {
-                        result = rs.getString("TEMPSMAXU");
-                    }
-                    list.add(order);
-                    list.add(result);
-                }
-                st.close();
-                cx.close();
-
-            } catch (SQLException ex) {
-                System.out.println("Il y a un problème sur statement getOrderResultForExo bilan " + ex.getMessage());
+            while (rs.next()) {
+                p.setOrdrep(rs.getInt("ORDREP"));
+                p.setNbattendue(rs.getInt("NBATTENDUE"));
+                p.setDureeattenduee(rs.getInt("DUREEATTENDUE"));
+                p.setTempsrepose(rs.getInt("TEMPSREPOSE"));
+                p.setSeriep(rs.getInt("SERIEP"));
+                p.setResultatu(rs.getString("RESULTATU"));
+                System.out.println("ssfsfs");
             }
-        } else {
-            try {
-                String sql = "select p.ordrep,p.resultatu from planifiersp p where p.CODESP=" + codeS + " and p.CODEE=" + codeE;
-                Statement st = cx.createStatement();
-                ResultSet rs = st.executeQuery(sql);
-                
-                while (rs.next()) {
-                    
-                    order = rs.getString("ordrep");
-                    result=rs.getString("resultatu");
-                    list.add(order);
-                    list.add(result);
-                  
-                }
-                st.close();
-                cx.close();
+            st.close();
+            cx.close();
 
-            } catch (SQLException ex) {
-                System.out.println("Il y a un problème sur statement getOrderResultForExo seance" + ex.getMessage());
-            }
+        } catch (SQLException ex) {
+            System.out.println("Il y a un problème sur statement " + ex.getMessage());
         }
+    
+    return p;
+}
 
-        return list;
-    }
+public Planifierbilan getPlanForBilan(Integer codeS, Integer codeE){
+    Planifierbilan p=new Planifierbilan();
+    cx = new dbAdmin().getConnection();
+     try {
+            String sql = "select * from PLANIFIERSP where CODEE="+codeE+" and CODESB="+codeS;
+            Statement st = cx.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+               p.setOrdreb(rs.getInt("ORDREB"));
+               p.setNbmaxu(rs.getInt("NBMAXU"));
+               p.setTempsmaxu(rs.getInt("TEMPSMAXU"));
+            }
+            st.close();
+            cx.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Il y a un problème sur statement " + ex.getMessage());
+        }
+    
+    return p;
+}
 
 }
