@@ -14,7 +14,7 @@ public class Planifiersp  implements java.io.Serializable {
      private Integer nbattendue;
      private Integer dureeattenduee;
      private Integer tempsrepose;
-     private Integer seriep;
+     private int seriep;
      private String resultatu;
 
     public Planifiersp() {
@@ -78,11 +78,11 @@ public class Planifiersp  implements java.io.Serializable {
     public void setTempsrepose(Integer tempsrepose) {
         this.tempsrepose = tempsrepose;
     }
-    public Integer getSeriep() {
+    public int getSeriep() {
         return this.seriep;
     }
     
-    public void setSeriep(Integer seriep) {
+    public void setSeriep(int seriep) {
         this.seriep = seriep;
     }
     public String getResultatu() {

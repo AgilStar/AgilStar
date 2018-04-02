@@ -61,8 +61,6 @@
                                                     <th>Série</th>
                                                     <th>Quantité</th>
                                                     <th>Résultat</th>
-
-
                                                 </tr>
                                                 </tr>
                                             </thead>
@@ -89,6 +87,7 @@
                                                    for (Exercice e : listE){
                                                          //out.print("<tr style='background-color: rgb(209, 236, 241); color:black' onclick=\"window.location.href='sessionOnGoing.jsp?codeS="+s[1]+"&type="+s[7]+"'\">");
                                                        out.print("<tr style='background-color: rgb(209, 236, 241);'>");
+                                                       //les exercices de bilan
                                                        if(type.equals("bilan")){
                                                            Planifierbilan p =new dbProgramPerso().getPlanForBilan(codeS,e.getCodee());
                                                            out.print("<th style='color:black' scope=\"row\">"+p.getOrdreb()+"</th>");//order
@@ -103,17 +102,17 @@
                                                            }
                                      
                                                        }else{
-                                    
+                                                             //les exercices de seance
                                                            Planifiersp p=new dbProgramPerso().getPlanForSession(codeS,e.getCodee());
                                     
                                                             out.print("<th style='color:black' scope=\"row\">"+p.getOrdrep()+"</th>");//order
                                                             out.print("<td style='color:black'>"+e.getLibellee()+"</td>");//libelle
                                                             out.print("<td style='color:black'>"+e.getObjectife()+"</td>");//objectif
                                                             out.print("<td style='color:black'>"+p.getSeriep()+"</td>");//serie
-                                                           if(p.getNbattendue()==null){
-                                                               out.print("<td style='color:black'>"+p.getDureeattenduee()+"</td>");//quantite
+                                                           if(p.getNbattendue()==null||p.getNbattendue()==0){
+                                                             out.print("<td style='color:black'>"+p.getDureeattenduee()+"</td>");//quantite
                                                            }else{
-                                                               out.print("<td style='color:black'>"+p.getNbattendue()+"</td>");//quantite
+                                                              out.print("<td style='color:black'>"+p.getNbattendue()+"</td>");//quantite
                                                            }
                                                             out.print("<td style='color:black'>"+p.getResultatu()+"</td>");//resultat
                                      
