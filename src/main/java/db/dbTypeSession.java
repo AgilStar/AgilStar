@@ -43,7 +43,6 @@ public class dbTypeSession {
             }
 
             String sql = "insert into SEANCETYPE(LIBELLEST,CODECAT,DESCRIPTIONST,ECHAUFFEMENTST) VALUES('" + name + "','" + codeCat + "','" + descrS + "','" + descrWU + "')";
-            System.out.println(sql);
             Statement st = cx.createStatement();
             st.executeUpdate(sql);
             st.close();
@@ -85,7 +84,6 @@ public class dbTypeSession {
         try {
 
             String sql = "select *  from EXERCICE where LIBELLEE='" + nameEx + "'";
-            System.out.println(sql);
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
 
@@ -108,7 +106,6 @@ public class dbTypeSession {
         try {
 
             String sql = "select *  from SEANCETYPE where LIBELLEST='" + nameSeance + "'";
-            System.out.println(sql);
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
 
@@ -134,7 +131,6 @@ public class dbTypeSession {
             }else{
             sql = "insert into ORGANISERTYPE VALUES(" + codeE + "," + codeSt + "," + ordreSt + ",'" + serieSt + "',NULL,'"+nbAttendu+"')";  
             }
-            System.out.println(sql);
             Statement st = cx.createStatement();
             st.executeUpdate(sql);
             st.close();

@@ -135,11 +135,10 @@ public class dbClient {
      */
     public void modifySport(int id, int fcr, int fcmax, int frf, int fcrecup, double poids, int tmaxgainage, int nbmaxFenteGauche, int nbmaxFenteDroite, int nbCrunch, int nbPompe, int nbSquat, int nbDips) {
         cx = new dbAdmin().getConnection();
-        //insertion dans la table séance bilan
+        //insertion dans la table sï¿½ance bilan
         try {
 
             String sql = "insert into SEANCEBILAN(CODESBT,FCREPOS, FCMAX, FCFLEXION,FCRECUPERATION,CODEU,DATEM,NUMSEMAINE) VALUES (2," + fcr + "," + fcmax + "," + frf + "," + fcrecup + "," + id + ",sysdate(),-1)";
-            System.out.println(sql);
             Statement st = cx.createStatement();
             int nb = st.executeUpdate(sql);
             st.close();
@@ -297,7 +296,7 @@ public class dbClient {
                     System.out.println("Il y a un problÃ¨me sur statement update mensuration " + ex.getMessage());
                 }
             } else {
-                // on crée un nouvel enregistrement 
+                // on crï¿½e un nouvel enregistrement 
                 try {
 
                     String sql2 = "Insert into MENSURATION(CODEU,DATEM, TAILLE, HANCHES,CUISSES,POITRINE, BRAS) "

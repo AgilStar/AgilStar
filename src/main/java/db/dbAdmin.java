@@ -27,13 +27,13 @@ public class dbAdmin {
 //    private String login = "21201692";
 //    private String password = "04964N";
     
-     private  String url = "jdbc:mysql://localhost:3306/projettttt";
-     private String login = "root";
-     private String password = "";
+//     private  String url = "jdbc:mysql://localhost:3306/projettttt";
+//     private String login = "root";
+//     private String password = "";
 
-//    private  String url = "jdbc:mysql://localhost:8889/projettttt";
-//    private String login = "root";
-//    private String password = "root";
+    private  String url = "jdbc:mysql://localhost:8889/projettttt";
+    private String login = "root";
+    private String password = "root";
     public Connection getConnection(){
         try {
             Class.forName("com.mysql.jdbc.Driver");

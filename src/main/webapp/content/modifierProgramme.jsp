@@ -78,19 +78,22 @@
                                         <jsp:param name="codeP" value="<%=codep%>"/>
                                         <jsp:param name="type" value="modify"/>
                                     </jsp:include>
-                                <input class="form-control" id="codeP" value="<%=p.getCodept()%>" hidden>
-                                <div id="errorMessageM"></div>
-                                <button type="button" class="btn btn-danger btn-rounded button-sweet-success m-b-10 m-l-5" >
-                                    Modifier
-                                </button>
-                                <button class="btn btn-success btn sweet-prompt" onclick=" sweetAlert('Oops...', 'Something went wrong !!', 'error');">Sweet Prompt</button>
 
                             </div>
                         </div>
                     </div>
-
-
+                    <div class="card-body">
+                        <div id="errorMessage"></div>
+                        <button type="button" class="btn btn-danger btn-rounded button-sweet-success m-b-10 m-l-5" onclick="confirmProfilProgram('modify','<%=p.getCodept()%>')">
+                            Modifier
+                        </button>
+                    </div>
                 </div>
+
+
+
+
+
                 <!-- End PAge Content -->
             </div>
             <!-- footer -->

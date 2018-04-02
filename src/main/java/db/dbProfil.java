@@ -134,7 +134,6 @@ public class dbProfil {
         ArrayList<Profil> list=new ArrayList<Profil>();
         try {
             String sql = "select C.CODEPROFIL,LIBELLEPROFIL FROM correspondre C,PROFIL P where P.CODEPROFIL=C.CODEPROFIL AND CODEPT="+codeProgram;
-            System.out.println(sql);
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {

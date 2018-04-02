@@ -93,7 +93,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div id="errorMessage"></div>
-                                <button class="btn btn-success btn sweet-prompt" onclick="confirmProfilProgram() ">Confirmer</button>
+                                <button class="btn btn-success btn sweet-prompt" onclick="confirmProfilProgram('create','0') ">Confirmer</button>
                                 <button class="btn btn-danger btn-rounded m-b-5 m-l-5" onclick="window.location.href='listSession.jsp'">Reset</button>
                             </div>
                         </div>

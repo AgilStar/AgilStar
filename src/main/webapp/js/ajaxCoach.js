@@ -1,13 +1,18 @@
-function  confirmProfilProgram() {
-
+/**
+ * Créer ou modifier un programme
+ * @param type create/modify
+ */
+function  confirmProfilProgram(type,codeP) {
     var xhr = getXMLHttpRequest();
     var flag=true;
+
     var name=document.getElementById("nameProgram").value;
     var desc=document.getElementById("descriptionProgram").value;
    var checkedProfil = getCheckeds("tableProfil"); //will contain all checked checkboxes
-    var message="";
+
     var divErrorMessageParent = document.getElementById("errorMessage");
-    divErrorMessageParent.innerHTML = "";
+    divErrorMessageParent.innerHTML ="";
+    var message="";
    if(name==""){
        flag=false;
        message+="Nom est vide<br>";
@@ -44,13 +49,12 @@ if(flag){
                 }else{
                     sweetAlert('Opps...', 'Le nom de programme a déjà exist', 'error');
                 }
-
             }
 
         }
     // Requête au serveur avec les paramètres éventuels.
 
-    xhr.open("GET", "/ServletAddProgram?name="+name+"&desc="+desc+"&checkedProfil="+checkedProfil+"&listS="+listS, true);
+    xhr.open("GET", "/ServletAddProgram?name="+name+"&desc="+desc+"&checkedProfil="+checkedProfil+"&listS="+listS+"&type="+type+"&codeP="+codeP, true);
     xhr.send(null);
     }else{
     var divErrorMessage = document.createElement("div");

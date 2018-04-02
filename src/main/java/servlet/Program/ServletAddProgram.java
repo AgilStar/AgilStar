@@ -1,6 +1,5 @@
 package servlet.Program;
 
-import db.dbClient;
 import db.dbProgram;
 
 import javax.servlet.ServletException;
@@ -10,9 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 @WebServlet(
         name = "ServletAddProgram",
@@ -26,19 +22,31 @@ public class ServletAddProgram extends HttpServlet {
         PrintWriter out = resp.getWriter();
         String name = req.getParameter("name");
         String des = req.getParameter("desc");
+        String type = req.getParameter("type");
+        String codeP = req.getParameter("codeP");
         String[] checkedProfil = req.getParameter("checkedProfil").split(",");
         String[] listS = req.getParameter("listS").split(",");
 
-        //insertion dans la table programme type
-        if (new dbProgram().insertProgramType(name, des).equals("true")) {
-              //insertion dans la table correspondre profil
-               new dbProgram().insertCorrespondre(checkedProfil);
-              //insertion dans la table comprendre type et la table comprendre sbt
-                new dbProgram().insertComprendreType(listS);
-            out.print("true");
-        }else{
-            out.print("false");
+        dbProgram db = new dbProgram();
+        if (type.equals("modify")) {
+            db.deleteProgram(codeP);
+            db.modifyProgram(codeP,name,des);
+        } else {
+            if (!db.checkNameProgram(name)) {
+                out.print("false");
+                return;
+            }else{
+                //insertion dans la table programme type
+                db.insertProgramType(name, des);
+            }
+        }
+                //insertion dans la table correspondre profil
+                db.insertCorrespondre(checkedProfil);
+                //insertion dans la table comprendre type et la table comprendre sbt
+                db.insertComprendreType(listS);
+                out.print("true");
         }
 
-    }
+
 }
+

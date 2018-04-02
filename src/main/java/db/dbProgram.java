@@ -208,7 +208,6 @@ public class dbProgram {
         try {
 
             String sql = "select *  from SEANCETYPE where CODEST=" + codeSt;
-            System.out.println(sql);
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
 
@@ -363,10 +362,7 @@ public class dbProgram {
      * @return
      * @Author Jin,Tianyuan
      */
-    public String insertProgramType(String name, String desc) {
-        if (!checkNameProgram(name)) {
-            return "Le nom de programme existe";
-        }
+    public void insertProgramType(String name, String desc) {
         cx = new dbAdmin().getConnection();
         try {
             String sql = "insert into PROGRAMMETYPE(LIBELLEPT,DESCRIPTIONPT) VALUES('" + name + "','" + desc + "')";
@@ -376,8 +372,8 @@ public class dbProgram {
             cx.close();
         } catch (SQLException ex) {
             System.out.println("Il y a un problÃ¨me sur statement insertProgram" + ex.getMessage());
+            ex.printStackTrace();
         }
-        return "true";
 
     }
 
@@ -401,6 +397,7 @@ public class dbProgram {
                 cx.close();
             } catch (SQLException ex) {
                 System.out.println("Il y a un problÃ¨me sur statement insertCorrespondre  " + ex.getMessage());
+                ex.printStackTrace();
             }
         }
        
@@ -429,7 +426,7 @@ public class dbProgram {
                     if (codeSession == -1) {
                         //inserer dans la table comprendreSBT
                         String sql = "insert into COMPRENDRESBT(CODESBT,CODEPT,ORDRESBT) VALUES(1," + codePTMax + "," + ordre + ")";
-                        System.out.println(sql);
+
                         Statement st = cx.createStatement();
                         st.executeUpdate(sql);
                         st.close();
@@ -437,7 +434,6 @@ public class dbProgram {
                         //inserer dans la table comprendreType
 
                         String sql = "insert into COMPRENDRETYPE(CODEPT,CODEST,ORDREPT) VALUES(" + codePTMax + "," + codeSession + "," + ordre + ")";
-                        System.out.println(sql);
                         Statement st = cx.createStatement();
                         st.executeUpdate(sql);
                         st.close();
@@ -498,5 +494,60 @@ public class dbProgram {
         }
         return flag;
     }
+
+    /**
+     * Supprimer un programme par codeP
+     * @param codeP code de programme
+     * @Author Tianyuan
+     */
+    public void deleteProgram(String codeP){
+        cx = new dbAdmin().getConnection();
+        try {
+            //Le supprimer dans le table  COMPRENDRESBT sur séance
+            String sqlDeleteSeance="delete from COMPRENDRESBT where codept="+codeP;
+            Statement st1 = cx.createStatement();
+            st1.executeUpdate(sqlDeleteSeance);
+            st1.close();
+            //Le supprimer dans le table  COMPRENDRETYPE sur bilan
+            String sqDeleteBilanl="delete from COMPRENDRETYPE where codept="+codeP;
+            Statement st2 = cx.createStatement();
+            st2.executeUpdate(sqDeleteBilanl);
+            st2.close();
+            //Le supprimer dans le table  CORRESPONDRE sur profil
+            String sqDeleteProfil="delete from CORRESPONDRE where codept="+codeP;
+            Statement st3 = cx.createStatement();
+            st3.executeUpdate(sqDeleteProfil);
+            st3.close();
+            cx.close();
+        } catch (SQLException ex) {
+            System.out.println("Il y a un probleme sur delete programme" + ex.getMessage());
+            ex.printStackTrace();
+        }
+
+    }
+
+    /**
+     * Changer le nom et description
+     * @param codeP code de programme
+     * @param name nom de programme
+     * @param desc description de programme
+     * @Author Tianyuan
+     */
+    public void modifyProgram(String codeP,String name,String desc){
+        cx = new dbAdmin().getConnection();
+        try {
+            String sql="update programmetype SET LIBELLEPT='"+name+"',DESCRIPTIONPT='"+desc+"' where codept="+codeP;
+            Statement st = cx.createStatement();
+            st.executeUpdate(sql);
+            st.close();
+
+            cx.close();
+        } catch (SQLException e) {
+            System.out.println("Il y a un proble,e sur change programme" + e.getMessage());
+            e.printStackTrace();
+        }
+
+    }
+
 
 }
