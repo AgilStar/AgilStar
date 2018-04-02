@@ -31,19 +31,13 @@ public class ServletAddProgram extends HttpServlet {
 
         //insertion dans la table programme type
         if (new dbProgram().insertProgramType(name, des).equals("true")) {
-            
               //insertion dans la table correspondre profil
-
-                new dbProgram().insertCorrespondre(checkedProfil);
-
+               new dbProgram().insertCorrespondre(checkedProfil);
               //insertion dans la table comprendre type et la table comprendre sbt
-
                 new dbProgram().insertComprendreType(listS);
-
-            resp.sendRedirect("content/listProgramm.jsp"); 
+            out.print("true");
         }else{
-            System.out.println("echouer a inserer dans la table programme type");
-            resp.sendRedirect("content/createProgram.jsp"); 
+            out.print("false");
         }
 
     }

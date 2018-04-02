@@ -8,8 +8,10 @@
 <html lang="fr">
 <head>
     <title>Création d'un programme type</title>
+
     <%@ include file="/content/templete/libHead.jsp" %>
     <script type="text/JavaScript" src="../js/ajaxExercice.js"></script>
+    <link href="/css/lib/sweetalert/sweetalert.css" rel="stylesheet">
 </head>
 
 <body class="fix-header fix-sidebar">
@@ -78,7 +80,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h3 style="color: #00ccff"> Étape 3</h3>
-                                <h4 class="card-title">Choisir ou supprimer les séances à ajouter dans le programme</h4>
+                                <h4 class="card-title">Organiser vos séances et billans</h4>
                                 <%@include file="templete/listSeance.jsp"%>
                             </div>
                         </div>
@@ -90,26 +92,19 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h3 class="card-title" style="color: #00ccff">Étape 4</h3>
-                                <h4 class="card-title">Organiser vos séances et billans</h4>
-                                <button class="btn btn-success" onclick="addBilan()">+</button>
-                                <span>Bilan</span>
-                                <button class="btn btn-warning" onclick="deleteBilan()">-</button>
-                                <div class="card-content">
-                                    <div class="nestable">
-                                        <div class="dd" id="nestable">
-                                            <ol class="dd-list" id="listSession">
-                                            </ol>
-                                        </div>
-                                    </div>
-                                </div>
+                                <div id="errorMessage"></div>
+                                <button class="btn btn-success btn sweet-prompt" onclick="confirmProfilProgram() ">Confirmer</button>
+                                <button class="btn btn-danger btn-rounded m-b-5 m-l-5" onclick="window.location.href='listSession.jsp'">Reset</button>
                             </div>
                         </div>
+
                     </div>
                 </div>
+
             </div>
-            <button class="btn btn-danger btn-rounded m-b-5 m-l-5" onclick="confirmProfilProgram()">Confirmer</button>
-            <button class="btn btn-danger btn-rounded m-b-5 m-l-5" onclick="window.location.href='listSession.jsp'">Reset</button>
+
+
+
 
                 <!-- End PAge Content -->
             </div>
@@ -119,7 +114,8 @@
     </div>
     <!-- All Jquery -->
      <%@ include file="/content/templete/libJquery.jsp" %>
-
+    <script src="/js/lib/sweetalert/sweetalert.min.js"></script>
+    <script src="/js/lib/sweetalert/sweetalert.init.js"></script>
 </body>
 
 </html>

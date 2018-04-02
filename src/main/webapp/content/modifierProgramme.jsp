@@ -45,7 +45,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-title">
-                            <h3>Programme <%=codep%>
+                            <h3>Programme: <%=p.getLibellept()%>
                             </h3>
 
                         </div>
@@ -83,9 +83,8 @@
                                 <button type="button" class="btn btn-danger btn-rounded button-sweet-success m-b-10 m-l-5" >
                                     Modifier
                                 </button>
-                                <div class="sweetalert m-t-15">
-                                    <button class="btn btn-success btn sweet-prompt">Sweet Prompt</button>
-                                </div>
+                                <button class="btn btn-success btn sweet-prompt" onclick=" sweetAlert('Oops...', 'Something went wrong !!', 'error');">Sweet Prompt</button>
+
                             </div>
                         </div>
                     </div>

@@ -1,18 +1,21 @@
 function  confirmProfilProgram() {
 
-
+    var xhr = getXMLHttpRequest();
     var flag=true;
     var name=document.getElementById("nameProgram").value;
     var desc=document.getElementById("descriptionProgram").value;
    var checkedProfil = getCheckeds("tableProfil"); //will contain all checked checkboxes
+    var message="";
+    var divErrorMessageParent = document.getElementById("errorMessage");
+    divErrorMessageParent.innerHTML = "";
    if(name==""){
        flag=false;
-       alert("Name!!!");
+       message+="Nom est vide<br>";
    }
 
    if(checkedProfil==""){
        flag=false;
-       alert("Profil!!!");
+       message+="Il faut choisir au moins un profil<br>"
    }
 
     var listSession=document.getElementById("listSession");
@@ -20,22 +23,44 @@ function  confirmProfilProgram() {
     var listS=[];
     if(listLi.length==0){
         flag=false
-        alert("List seance");
+        message+="Il faut choisir au moins un séance<br>"
     }else{
         if(!checkBilanContinue()){
             flag=false;
-            alert("Les bilans sont successifs");
+            message+="Les bilans sont successifs<br>"
         }
     }
     for(var i=0;i<listLi.length;i++){
         listS.push(listLi[i].getAttribute("idSession"));
     }
 
-    if(flag){
-        window.location.href="/ServletAddProgram?name="+name+"&desc="+desc+"&checkedProfil="+checkedProfil+"&listS="+listS;
-    }
+if(flag){
+    xhr.onreadystatechange = function () {
+
+        if (xhr.readyState === 4 && xhr.status === 200) {
+                var errorMessage = xhr.responseText;
+                if(errorMessage=="true"){
+                    sweetAlert('Bravo...', 'Vous avez crée un nouvel programme', 'success');
+                }else{
+                    sweetAlert('Opps...', 'Le nom de programme a déjà exist', 'error');
+                }
+
+            }
+
+        }
+    // Requête au serveur avec les paramètres éventuels.
+
+    xhr.open("GET", "/ServletAddProgram?name="+name+"&desc="+desc+"&checkedProfil="+checkedProfil+"&listS="+listS, true);
+    xhr.send(null);
+    }else{
+    var divErrorMessage = document.createElement("div");
+    divErrorMessage.innerHTML = message;
+    divErrorMessage.setAttribute("class", "alert alert-danger");
+    divErrorMessageParent.appendChild(divErrorMessage);
+}
 
 }
+
 
 function deleteSeance(t) {
 

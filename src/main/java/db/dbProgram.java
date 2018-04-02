@@ -9,6 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import model.*;
+import org.eclipse.jdt.internal.compiler.lookup.SourceTypeBinding;
 
 /**
  *
@@ -419,29 +420,37 @@ public class dbProgram {
     public void insertComprendreType(String[] listSession) {
         int codePTMax = findMaxCodePT();
         cx = new dbAdmin().getConnection();
-        for (int i = 0; i < listSession.length; i++) {
-            int codeSession = Integer.parseInt(listSession[i]);
-            int ordre = i + 1;
-            try {
-            if (codeSession == -1) {
-                //inserer dans la table comprendreSBT
-                    String sql = "insert into COMPRENDRESBT(CODESBT,CODEPT,ORDRESBT) VALUES(1," + codePTMax + "," + ordre + ")";
-                    Statement st = cx.createStatement();
-                    st.executeUpdate(sql);
-                    st.close();
-                }  else {
-                //inserer dans la table comprendreType
 
-                String sql = "insert into COMPRENDRETYPE(CODEPT,CODEST,ORDREPT) VALUES(" + codePTMax + "," + codeSession + "," + ordre + ")";
-                Statement st = cx.createStatement();
-                st.executeUpdate(sql);
-                st.close();
-            }
+            try {
+
+                for (int i = 0; i < listSession.length; i++) {
+                    int codeSession = Integer.parseInt(listSession[i]);
+                    int ordre = i + 1;
+                    if (codeSession == -1) {
+                        //inserer dans la table comprendreSBT
+                        String sql = "insert into COMPRENDRESBT(CODESBT,CODEPT,ORDRESBT) VALUES(1," + codePTMax + "," + ordre + ")";
+                        System.out.println(sql);
+                        Statement st = cx.createStatement();
+                        st.executeUpdate(sql);
+                        st.close();
+                    } else {
+                        //inserer dans la table comprendreType
+
+                        String sql = "insert into COMPRENDRETYPE(CODEPT,CODEST,ORDREPT) VALUES(" + codePTMax + "," + codeSession + "," + ordre + ")";
+                        System.out.println(sql);
+                        Statement st = cx.createStatement();
+                        st.executeUpdate(sql);
+                        st.close();
+                    }
+                }
                 cx.close();
             }catch (SQLException ex) {
                     System.out.println("Il y a un problÃ¨me sur statement insertComprendreType COMPRENDRESBT " + ex.getMessage());
                 }
-            }
+
+
+
+
     }
 
     public int findMaxCodePT() {
