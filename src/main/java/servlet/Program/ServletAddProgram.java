@@ -22,29 +22,37 @@ public class ServletAddProgram extends HttpServlet {
         PrintWriter out = resp.getWriter();
         String name = req.getParameter("name");
         String des = req.getParameter("desc");
-        String type = req.getParameter("type");
+        String type = req.getParameter("type");//createType/modifyType/createPerso/modifyPerso
         String codeP = req.getParameter("codeP");
         String[] checkedProfil = req.getParameter("checkedProfil").split(",");
         String[] listS = req.getParameter("listS").split(",");
 
         dbProgram db = new dbProgram();
-        if (type.equals("modify")) {
+        if (type.equals("modifyType")) {
             db.deleteProgram(codeP);
             db.modifyProgram(codeP,name,des);
-        } else {
+            //insertion dans la table correspondre profil
+            db.insertCorrespondre(checkedProfil);
+            //insertion dans la table comprendre type et la table comprendre sbt
+            db.insertComprendreType(listS);
+            out.print("true");
+        } else if(type.equals("createType")){
             if (!db.checkNameProgram(name)) {
                 out.print("false");
                 return;
             }else{
                 //insertion dans la table programme type
                 db.insertProgramType(name, des);
-            }
-        }
                 //insertion dans la table correspondre profil
                 db.insertCorrespondre(checkedProfil);
                 //insertion dans la table comprendre type et la table comprendre sbt
                 db.insertComprendreType(listS);
                 out.print("true");
+            }
+        }else if(type.equals("createPerso")){
+
+        }
+
         }
 
 

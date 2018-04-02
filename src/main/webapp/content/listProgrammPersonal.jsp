@@ -1,15 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
-<%@ page import="db.dbProgram" %>
-<%@ page import="model.Programmetype" %>
+         pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>
-
+<%@ page import="model.Programmetype" %>
+<%@ page import="db.dbProgram" %>
+<%@ page import="model.Programmeperso" %>
 <%
-    String codeClient=request.getParameter("codeP");
+    String codeUser=request.getParameter("codeUser");
 %>
-
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -23,8 +20,7 @@
 <!-- Preloader - style you can find in spinners.css -->
 <div class="preloader">
     <svg class="circular" viewBox="25 25 50 50">
-        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-    </svg>
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
 </div>
 <!-- Main wrapper  -->
 <div id="main-wrapper">
@@ -37,7 +33,7 @@
         <!-- Bread crumb -->
         <div class="row page-titles">
             <div class="col-md-5 align-self-center">
-                <h3 class="text-primary">Liste des Programmes Types</h3></div>
+                <h3 class="text-primary">Liste des Programmes Types</h3> </div>
         </div>
         <!-- Container fluid  -->
         <div class="container-fluid" id="mainPage">
@@ -49,12 +45,10 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Liste des ProgrammesTypes</h4>
-                            <h6 class="card-subtitle">Tout les programmes types</h6>
+                            <h4 class="card-title">Liste des Programmes du client </h4>
+                            <h6 class="card-subtitle">Tout les programmes</h6>
                             <div class="table-responsive m-t-40">
-                                <table id="example23"
-                                       class="display nowrap table table-hover table-striped table-bordered"
-                                       cellspacing="0" width="100%">
+                                <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
 
                                     <tr>
@@ -66,18 +60,14 @@
                                     </thead>
                                     <tbody>
                                     <%
-
-                                        ArrayList<Programmetype> listPr = new dbProgram().getProgramms();
-
-                                        for (Programmetype p : listPr) {
+                                        ArrayList<Programmeperso> listPr= new dbProgram().getProgrammsPerson(codeUser);
+                                        for (Programmeperso p: listPr){
                                             out.print("<tr>");
-                                            out.print("<th scope=\"row\">" + p.getLibellept() + "</th>");
-                                            out.print("<td>" + p.getDescriptionpt() + "</td>");
-                                            out.print("<td><button type='button' onclick=\"window.location.href='modifierProgramme.jsp?codep=" + p.getCodept() + "'\"+e.getCodept()+'\" class='btn btn-warning btn-rounded m-b-10 m-l-5'>Choisir</button></td>");
-
+                                            out.print("<th scope=\"row\">"+p.getLibellepp()+"</th>");
+                                            out.print("<td>"+p.getDescriptionpp()+"</td>");
+                                            out.print("<td><button type='button' onclick=\"window.location.href='modifierProgramme.jsp?codep="+p.getCodept()+"'\"+e.getCodept()+'\" class='btn btn-warning btn-rounded m-b-10 m-l-5'>Voir</button></td>");
                                             out.print("</tr>");
                                         }
-
                                     %>
                                     <div class="badge badge-primary"></div>
                                     </tbody>
@@ -86,6 +76,15 @@
                         </div>
                     </div>
 
+                </div>
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-title">Ajouter un nouvel programme personalisé à partir de programme type</div>
+                        <div class="body">
+                            <button class="btn btn-warning btn-rounded m-b-10 m-l-5" onclick="window.location.href='listProgramm.jsp?type=createPerso&codeUser=<%=codeUser%>'">Ajouter</button>
+                        </div>
+
+                    </div>
                 </div>
             </div>
 

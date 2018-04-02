@@ -3,6 +3,8 @@
 <%@ page import="db.dbProgram" %>
 <%@ page import="model.Programmetype" %>
 <% Integer codep = new Integer(request.getParameter("codep"));
+    String type=request.getParameter("type");
+    String codeUser=request.getParameter("codeUser");
     Programmetype p = new dbProgram().getOneProgramm(codep);
 %>
 
@@ -45,8 +47,15 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-title">
-                            <h3>Programme: <%=p.getLibellept()%>
-                            </h3>
+                            <%
+                                if(type.equals("createPerso")){
+                                    out.print("<h2>Personaliser le programme :"+p.getLibellept()+"</h2>");
+                                }else if(type.equals("modifyPerso")){
+                                    out.print(" <h2>Modification de programme personalisé:"+p.getLibellept()+"</h2>");
+                                }else{
+                                    out.print(" <h2>Modification de programme type:"+p.getLibellept()+"</h2>");
+                                }
+                            %>
 
                         </div>
                         <div class="card-body">
@@ -83,7 +92,7 @@
                     </div>
                     <div class="card-body">
                         <div id="errorMessage"></div>
-                        <button type="button" class="btn btn-danger btn-rounded button-sweet-success m-b-10 m-l-5" onclick="confirmProfilProgram('modify','<%=p.getCodept()%>')">
+                        <button type="button" class="btn btn-danger btn-rounded button-sweet-success m-b-10 m-l-5" onclick="confirmProfilProgram('<%=type%>','<%=p.getCodept()%>','<%=codeUser%>')">
                             Modifier
                         </button>
                     </div>

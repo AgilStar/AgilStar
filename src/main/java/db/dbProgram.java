@@ -442,7 +442,7 @@ public class dbProgram {
                 cx.close();
             }catch (SQLException ex) {
                     System.out.println("Il y a un problÃ¨me sur statement insertComprendreType COMPRENDRESBT " + ex.getMessage());
-                }
+            }
 
 
 
@@ -549,5 +549,35 @@ public class dbProgram {
 
     }
 
+
+    /**
+     * Obtenir les programmes personalisés
+     * @return La liste de programme personalisé
+     * @Author Tianyuan
+     */
+    public ArrayList<Programmeperso> getProgrammsPerson(String codeUser) {
+        cx = new dbAdmin().getConnection();
+        ArrayList<Programmeperso> programms = new ArrayList();
+        Utilisateur e;
+        try {
+            String sql = "select *  from programmeperso where CODEU="+codeUser;
+            Statement st = cx.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+                Integer CODEPP = rs.getInt("CODEPP");
+                Integer CODEU = rs.getInt("CODEU");
+                Integer CODEPT = rs.getInt("CODEPT");
+                String LIBELLEPP = rs.getString("LIBELLEPP");
+                String DESCRIPTIONPP=rs.getString("DESCRIPTIONPP");
+                programms.add(new Programmeperso(CODEPP, CODEU,CODEPT, LIBELLEPP,DESCRIPTIONPP));
+            }
+            st.close();
+            cx.close();
+        } catch (SQLException ex) {
+            System.out.println("Il y a un problème sur statement " + ex.getMessage());
+        }
+        return programms;
+
+    }
 
 }

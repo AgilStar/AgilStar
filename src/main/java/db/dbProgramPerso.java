@@ -238,4 +238,22 @@ public Planifierbilan getPlanForBilan(Integer codeS, Integer codeE){
     return p;
 }
 
+public String insertProgramPerso(){
+    cx = new dbAdmin().getConnection();
+    try {
+        String sql = "insert into programmeperso(CODEU,CODEPT,LIBELLEPP,DESCRIPTIONPP) VALUES('" + name + "','" + desc + "')";
+        Statement st = cx.createStatement();
+        st.executeUpdate(sql);
+        st.close();
+        cx.close();
+    } catch (SQLException ex) {
+        System.out.println("Il y a un problÃ¨me sur statement insertProgram" + ex.getMessage());
+        ex.printStackTrace();
+    }
+return "";
+
+}
+
+
+
 }
