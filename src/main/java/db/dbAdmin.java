@@ -85,9 +85,9 @@ public class dbAdmin {
         }
         }
 
-    public String recupIdUtilisateur(String mail){
+    public ArrayList<String> recupIdUtilisateur(String mail){
         cx=getConnection();
-        
+        ArrayList<String> list=new ArrayList();
         String idU="";
         try {
             String sql = "select * from UTILISATEUR where MAILU='"+mail+"'";
@@ -96,13 +96,15 @@ public class dbAdmin {
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
                idU = rs.getString("CODEU");    
+               list.add(idU);
+               list.add(rs.getString("STATUTU"));
             }
             st.close();
             cx.close();
         } catch (SQLException ex) {
             System.out.println("Il y a un problÃ¨me sur statement recupEmailUtilisateur" + ex.getMessage());
         }
-        return idU;
+        return list;
     }
     
       public String recupProfilUtilisateur(String profil){

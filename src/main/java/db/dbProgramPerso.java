@@ -181,14 +181,14 @@ public class dbProgramPerso {
             cx.close();
 
         } catch (SQLException ex) {
-            System.out.println("Il y a un problème sur statement " + ex.getMessage());
+            System.out.println("Il y a un problème sur statement getAllExercices " + ex.getMessage());
         }
 
         return listE;
     }
 
 public Planifiersp getPlanForSession(Integer codeS, Integer codeE){
-      System.out.println("aaaaaaaa");
+    
     Planifiersp p=new Planifiersp();
     cx = new dbAdmin().getConnection();
      try {
@@ -199,17 +199,17 @@ public Planifiersp getPlanForSession(Integer codeS, Integer codeE){
             while (rs.next()) {
                 p.setOrdrep(rs.getInt("ORDREP"));
                 p.setNbattendue(rs.getInt("NBATTENDUE"));
-                p.setDureeattenduee(rs.getInt("DUREEATTENDUE"));
+                p.setDureeattenduee(rs.getInt("DUREEATTENDUEE"));
                 p.setTempsrepose(rs.getInt("TEMPSREPOSE"));
                 p.setSeriep(rs.getInt("SERIEP"));
                 p.setResultatu(rs.getString("RESULTATU"));
-                System.out.println("ssfsfs");
+                
             }
             st.close();
             cx.close();
 
         } catch (SQLException ex) {
-            System.out.println("Il y a un problème sur statement " + ex.getMessage());
+            System.out.println("Il y a un problème sur statement getPlanForSession" + ex.getMessage());
         }
     
     return p;
@@ -219,7 +219,7 @@ public Planifierbilan getPlanForBilan(Integer codeS, Integer codeE){
     Planifierbilan p=new Planifierbilan();
     cx = new dbAdmin().getConnection();
      try {
-            String sql = "select * from PLANIFIERSP where CODEE="+codeE+" and CODESB="+codeS;
+            String sql = "select * from PLANIFIERBILAN where CODEE="+codeE+" and CODESB="+codeS;
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
 
@@ -232,7 +232,7 @@ public Planifierbilan getPlanForBilan(Integer codeS, Integer codeE){
             cx.close();
 
         } catch (SQLException ex) {
-            System.out.println("Il y a un problème sur statement " + ex.getMessage());
+            System.out.println("Il y a un problème sur statement getPlanForBilan " + ex.getMessage());
         }
     
     return p;
