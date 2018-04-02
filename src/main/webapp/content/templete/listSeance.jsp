@@ -37,7 +37,7 @@
 
 %>
 
-<div class="table-responsive m-t-40" id="listSeance" <% if(type.equals("modify")){{out.print("hidden");}}%>>
+<div class="table-responsive m-t-40" id="listSeance" <% if(type!=null&&type.equals("modify")){{out.print("hidden");}}%>>
     <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0"
            width="100%">
         <thead>
