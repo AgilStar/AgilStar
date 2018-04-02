@@ -60,7 +60,7 @@ public class ServletInscribeClient extends HttpServlet {
 
             new db.dbAdmin().insertUser(nameUser,lastNameUser,mailUser,sexUser,dateBornUserString,passwordUser,
                     statementUser,adressUser,telUser,infoUser);
-            String idU = new db.dbAdmin().recupIdUtilisateur(mailUser);
+            String idU = new db.dbAdmin().recupIdUtilisateur(mailUser).get(0);
             String idP = new db.dbAdmin().recupProfilUtilisateur(objUser);
             new db.dbAdmin().insertProfilToUser(idP, idU);
 

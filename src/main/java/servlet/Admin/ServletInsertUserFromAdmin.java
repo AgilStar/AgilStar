@@ -56,13 +56,13 @@ public class ServletInsertUserFromAdmin extends HttpServlet {
 
         new db.dbAdmin().insertUser(nameUser, lastNameUser, mailUser, sexUser, dateBornUserString, passwordUser,
                 statementUser, adressUser, telUser, infoUser);
-        String idU = new db.dbAdmin().recupIdUtilisateur(mailUser);
+        String idU = new db.dbAdmin().recupIdUtilisateur(mailUser).get(0);
         String idP = new db.dbAdmin().recupProfilUtilisateur(objUser);
         new db.dbAdmin().insertProfilToUser(idP, idU);
         
         String user=req.getParameter("user");
         if(user.equals("client")){
-            String id=new db.dbAdmin().recupIdUtilisateur(mailUser);
+            String id=new db.dbAdmin().recupIdUtilisateur(mailUser).get(0);
             HttpSession session=req.getSession();
             session.setAttribute("id", id);
             resp.sendRedirect("content/indexClient.jsp");
