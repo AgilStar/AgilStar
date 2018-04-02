@@ -7,7 +7,7 @@
 <%
     Boolean flagChange=false;
     String condition= request.getParameter("condition");
-   if(condition!=null && (condition.equals("valider") ||condition.equals("passerAttente")))
+   if(condition!=null && ((condition.equals("valider") ||condition.equals("passerAttente"))))
        flagChange=true;
 %>
 <!DOCTYPE html>
@@ -78,6 +78,7 @@
                                                 <th>Nom</th>
                                                 <th>Prénom</th>
                                                 <th>Statut</th>
+                                                <th>Opération</th>
                                                 
                                             </tr>
                                             </tr>
@@ -88,7 +89,7 @@
                                                 <th>Nom</th>
                                                 <th>Prénom</th>
                                                 <th>Statut</th>
-                                              
+                                                <th>Opération</th>
                                             </tr>
                                             </tr>
                                             </tfoot>
@@ -117,11 +118,18 @@
             out.print("<td>" + u.getPrenomu() + "</td>");
 
             if (u.getStatutu().equals("validé")) {
+                //Le client est validé
                 out.print("<td><span class=\"badge badge-success\">" + u.getStatutu() + "</span></td>");
+                //Opération: Personaliser un programme
+                out.print("<td><button type=\"button\" class=\"btn btn-primary btn-flat btn-addon m-b-10 m-l-5\"><i class=\"ti-plus\"></i>Programme</button></td>");
             } else if (u.getStatutu().equals("en attente")) {
+                //Le client est en attente
                 out.print("<td><span class=\"badge badge-danger\">" + u.getStatutu() + "</span></td>");
+                out.print("<td><button>Voir</button></td>");
             } else {
+                //Le client est prospect
                 out.print("<td><span class=\"badge badge-warning \">" + u.getStatutu() + "</span></td>");
+                out.print("<td><button>Voir</button></td>");
             }
            
             out.print("</tr>");

@@ -78,7 +78,6 @@
                                         <jsp:param name="codeP" value="<%=codep%>"/>
                                         <jsp:param name="type" value="modify"/>
                                     </jsp:include>
-
                             </div>
                         </div>
                     </div>
