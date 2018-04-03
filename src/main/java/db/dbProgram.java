@@ -223,8 +223,8 @@ public class dbProgram {
 
                 s.setCodest(id);
                 s.setCodecat(idcat);
-                s.setDescriptionst(nomS);
-                s.setEchauffementst(descS);
+                s.setDescriptionst(descS);
+                s.setLibellest(nomS);
                 s.setEchauffementst(echauffS);
             }
             st.close();

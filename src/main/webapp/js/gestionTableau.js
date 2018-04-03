@@ -10,7 +10,7 @@ function addLine()
     colonne1.innerHTML += exercice+"<input type=\"text\" id=\"nameExercice" + arrayLignes + "\" value=\""+exercice+"\" hidden>";
 
     var colonne2 = ligne.insertCell(1);//on ajoute la seconde cellule
-    colonne2.innerHTML += "<input type=\"number\" id=\"serieExercice" + arrayLignes + "\" min=\"0\" \n\
+    colonne2.innerHTML += "<input type=\"number\" id=\"nbserieExercice" + arrayLignes + "\" min=\"0\" \n\
    placeholder=\"Series a faire\">";
 
     var colonne3 = ligne.insertCell(2);
