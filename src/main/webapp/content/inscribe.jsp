@@ -91,14 +91,14 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label" for="sexUser">Genre<span class="text-danger">*</span></label>
                                                     <div class="col-lg-6">
-                                                        <select class="form-control" id="sexUser" name="val-skill">
+                                                        <select class="form-control" id="sexUser" name="sexUser">
                                                             <option value="homme">Homme</option>
                                                             <option value="femme">Femme</option>                           
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="sexUser">Profil <span class="text-danger">*</span></label>
+                                                    <label class="col-lg-4 col-form-label" for="objUser">Profil <span class="text-danger">*</span></label>
                                                     <div class="col-lg-6">
                                                         <select class="form-control" id="objUser" name="objUser">
                                                             <%

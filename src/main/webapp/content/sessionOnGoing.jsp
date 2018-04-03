@@ -83,7 +83,7 @@
                         session.setAttribute("type",type);
                         session.setAttribute("listE",listE);
 
-
+                         
                                                    for (Exercice e : listE){
                                                          //out.print("<tr style='background-color: rgb(209, 236, 241); color:black' onclick=\"window.location.href='sessionOnGoing.jsp?codeS="+s[1]+"&type="+s[7]+"'\">");
                                                        out.print("<tr style='background-color: rgb(209, 236, 241);'>");

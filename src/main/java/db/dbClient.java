@@ -12,6 +12,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.Mensuration;
 import model.Utilisateur;
 
 /**
@@ -354,5 +355,39 @@ public class dbClient {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    
+    public Mensuration getLastMensuration(int codeU){
+        Mensuration m=new Mensuration();
+         try {
+            cx = new dbAdmin().getConnection();
+            String sql = "select * from MENSURATION where CODEU=" + codeU + " and DATEM=(SELECT MAX(DATEM) FROM MENSURATION WHERE CODEU="+codeU+")";
+            System.out.println(sql);
+            Statement st = cx.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            int nb=0;
+            if (rs.next()) {
+                Double taille=rs.getDouble("TAILLE");
+                Double poids=rs.getDouble("POIDS");
+                Double hanches=rs.getDouble("HANCHES");
+                Double cuisses=rs.getDouble("CUISSES");
+                Double poitrine=rs.getDouble("POITRINE");
+                Double bras=rs.getDouble("BRAS");
+                m.setBras(bras);
+                m.setCuisses(cuisses);
+                m.setHanches(hanches);
+                m.setPoids(poids);
+                m.setTaille(taille);
+                m.setPoitrine(poitrine);
+                
+            }
+            System.out.println(nb);
+            st.close();
+            cx.close();
+        } catch (SQLException ex) {
+            System.out.println("Il y a un problème sur statement compter mensuration " + ex.getMessage());
+        }
+         return m;
+
     }
 }

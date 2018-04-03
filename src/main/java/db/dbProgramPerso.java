@@ -74,7 +74,7 @@ public class dbProgramPerso {
         int nb = 0;
         cx = new dbAdmin().getConnection();
         try {
-            String sql = "select (count(sp.codesp)+ count(sb.codesb)) as nb from seanceperso sp,seancebilan sb where sp.codepp=sb.codepp and sp.codepp=" + codePP;
+            String sql = "select (count(sp.codesp)+ count(sb.codesb)) as nb from SEANCEPERSO sp,SEANCEBILAN sb where sp.codepp=sb.codepp and sp.codepp=" + codePP;
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
 
@@ -101,11 +101,11 @@ public class dbProgramPerso {
         cx = new dbAdmin().getConnection();
         try {
             String sql = "select sp.codesp as codeseance,sp.libellesp as libelleseance,sp.descriptionsp as descseance,sp.commentairecoach as commentaire,sp.ouvert as ouvert, sp.validersp as valider ,sp.ordresp as ordre,\"seance\" as type\n"
-                    + "from seanceperso sp\n"
+                    + "from SEANCEPERSO sp\n"
                     + "where sp.codepp=" + codePP + "\n"
                     + "UNION\n"
                     + "SELECT sb.codesb as codeseance,sb.libellesb as libelleseance,\"seance bilan\" as descseance,sb.commentairecoach as commentaire,sb.ouvert as ouvert,sb.validersb as valider,sb.ordresb as ordre,\"bilan\" as type\n"
-                    + "from seancebilan sb\n"
+                    + "from SEANCEBILAN sb\n"
                     + "where sb.codepp=" + codePP + " order by ordre asc";
 
             Statement st = cx.createStatement();
@@ -167,14 +167,9 @@ public class dbProgramPerso {
                 int codee = rs.getInt("CODEE");
                 String libellee = rs.getString("LIBELLEE");
                 String desc = rs.getString("DESCRE");
-                int duree = rs.getInt("DUREEATTENTUE");
                 String lien = rs.getString("LIENVIDEO");
-                int nb = rs.getInt("NBATTENTU");
                 String obj = rs.getString("OBJECTIFE");
-                int serie = rs.getInt("SERIE");
-                int temps = rs.getInt("TEMPSREPOSE");
-             
-                listE.add(new Exercice(codee, libellee, obj, lien,desc, duree, nb, serie, temps));
+                listE.add(new Exercice(codee,libellee, obj, lien,desc));
 
             }
             st.close();

@@ -13,6 +13,7 @@
     </title>
     <%@ include file="/content/templete/libHead.jsp" %>
     <link href="/css/lib/sweetalert/sweetalert.css" rel="stylesheet">
+     
 </head>
 
 <body class="fix-header fix-sidebar">

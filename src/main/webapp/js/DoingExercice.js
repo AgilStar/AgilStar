@@ -5,13 +5,13 @@
  */
 
 function firstPlay(time,type){
-    alert(type);
+  
      if(type=="timeable"){
                  document.getElementById("btnExo").disabled =true;
                  document.getElementById("myprogressbar").removeAttribute("hidden");    
                  Load(time,type);
      }else{
-         alert(type+"ssss");
+     
                 document.getElementById("btnExo").disabled =false;
                 document.getElementById("myprogressbar").setAttribute("hidden",true);
             }

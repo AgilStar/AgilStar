@@ -28,6 +28,15 @@ public class Mensuration  implements java.io.Serializable {
         this.codeu = codeu;
         this.datem = datem;
     }
+
+    public Mensuration(Double taille, Double poids, Double hanches, Double cuisses, Double poitrine, Double bras) {
+        this.taille = taille;
+        this.poids = poids;
+        this.hanches = hanches;
+        this.cuisses = cuisses;
+        this.poitrine = poitrine;
+        this.bras = bras;
+    }
     public Mensuration(int codeu, Date datem, Double taille, Double poids, Double hanches, Double cuisses, Double poitrine, Double bras) {
        this.codeu = codeu;
        this.datem = datem;

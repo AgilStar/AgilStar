@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+
+<%@ page import="model.Mensuration" %>
+<%@ page import="db.dbClient" %>
+<%@ page import="db.dbProfil" %>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -26,19 +30,9 @@
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
                         <!-- vérifier si le client a déjà fait un bilan d'évaluation -->
-                        <%  HttpSession session2=request.getSession(false);
-                            if(session2!=null){
-                            String id=(String)session2.getAttribute("id");
- 
-                            if (new db.dbProfil().countBilanInit(Integer.parseInt(id))==0){
-                                out.print("<h3 class='text-primary'>Remplir le bilan</h3>");
+                        <h3 class='text-primary'>Remplir/Modifier le profil sportif</h3>
                                
-                                }else{
-                                 String date=new db.dbProfil().findDateBilan(Integer.parseInt(id));
-                                out.print(" <button type='button' class='btn btn-primary disabled'>Voir le bilan au "+date+" </button>");
-                                }
-                            }
-                        %>
+                                
 
 
 
@@ -46,8 +40,8 @@
                     </div>
                     <div class="col-md-7 align-self-center">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard</li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Profil</a></li>
+                            <li class="breadcrumb-item active">Profil sportif</li>
                         </ol>
                     </div>
                 </div>
@@ -230,12 +224,13 @@
                         </div>
                         <!--                    formulaire pour la mensuration-->
 
-                        <%  HttpSession session1=request.getSession(false);
+                        <%  
                             if(session!=null){
-                            String id=(String)session1.getAttribute("id");
+                            String id=(String)session.getAttribute("id");
  
-                            if (new db.dbProfil().getProfilUser(Integer.parseInt(id)).contains("Amincissement")){
-                           
+                            if (new dbProfil().getProfilUser(Integer.parseInt(id)).contains("Amincissement")){
+                            Mensuration m=(Mensuration)new dbClient().getLastMensuration(23);
+
                         %>
                         <%@ include file="/content/mensuration.jsp" %>
 
