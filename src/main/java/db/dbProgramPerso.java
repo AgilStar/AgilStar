@@ -25,9 +25,6 @@ public class dbProgramPerso {
 
     Connection cx;//La connection utilisé par toutes les méthodes dans cette classe
 
-    public dbProgramPerso() {
-        cx = new dbAdmin().getConnection();
-    }
 
     /**
      *
@@ -78,7 +75,7 @@ public class dbProgramPerso {
             String sql = "select (count(sp.codesp)+ count(sb.codesb)) as nb from SEANCEPERSO sp,SEANCEBILAN sb where sp.codepp=sb.codepp and sp.codepp=" + codePP;
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
-
+            System.out.println(sql);
             while (rs.next()) {
                 nb = rs.getInt("nb");
             }

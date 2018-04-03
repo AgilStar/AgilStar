@@ -20,7 +20,7 @@
         programflag = false;
     }
     if (programflag) {
-        Programmetype programmetype = new dbProgram().getSceanceTypeProgramm(codep.toString());
+        Programmetype programmetype = new dbProgram().getSceanceTypeProgramm(codep);
         nbMax = Collections.max(programmetype.getListSeanceBilanType().keySet());
         listBilan = programmetype.getListSeanceBilanType();
         listSeance = programmetype.getListSeanceType();

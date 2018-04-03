@@ -63,6 +63,7 @@
                             <div class="card-body">
                                 <jsp:include page="templete/listProfil.jsp" flush="true">
                                     <jsp:param name="codeP" value="-1"/>
+                                    <jsp:param name="type" value="createType"/>
                                 </jsp:include>
                             </div>
                         </div>
@@ -81,7 +82,11 @@
                             <div class="card-body">
                                 <h3 style="color: #00ccff"> Étape 3</h3>
                                 <h4 class="card-title">Organiser vos séances et billans</h4>
-                                <%@include file="templete/listSeance.jsp"%>
+                                <jsp:include page="templete/listSeance.jsp" flush="true">
+                                    <jsp:param name="codeP" value="-1"/>
+                                    <jsp:param name="type" value="createType"/>
+                                </jsp:include>
+
                             </div>
                         </div>
 
