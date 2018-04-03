@@ -39,8 +39,7 @@
                 <!-- Start Page Content -->
                 <div class='row'>
                     <!-- Commmencer ici -->
-                    <div id="ShowDiv"></div> 
-                   
+                 
 
                 </div>
                 <!-- End PAge Content -->

@@ -49,7 +49,9 @@ function changeDisplay(){
             //pour terminer une seance
             if(i==(listExercice.length-2)){
                 document.getElementById("btnExo").innerHTML="Terminer";
-                document.getElementById("btnExo").setAttribute("onClick","alert('Terminer')")
+                disableBtn()
+                document.getElementById("btnExo").setAttribute("onClick","terminer()");
+               
              }
             break;
         }
@@ -87,3 +89,7 @@ function disableBtn(){
     document.getElementById("btnExo").disabled =false;
 }
 
+function terminer(){
+    window.location.href="validateSession.jsp";
+    
+}
