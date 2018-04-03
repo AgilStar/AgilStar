@@ -14,6 +14,7 @@
         <%@ include file="/content/templete/libHead.jsp" %>
         <script type="text/JavaScript" src="../js/ajaxExercice.js"></script>
   <link href="css/lib/sweetalert/sweetalert.css" rel="stylesheet">
+        <script type="text/JavaScript" src="../js/DoingExercice.js"></script>
     </head>
 
     <body class="fix-header fix-sidebar">
@@ -80,34 +81,20 @@
                                                               }else{
                                                                out.print("<td>"+p.getNbattendue()+" unités * "+p.getSeriep()+" séries</td>");
                                                               }
-                                                              out.print("<td><select name='resultat'><option>-----</option><option>Facile</option><option>Bien</option><option>Difficle</option></select></td>");
+                                                              out.print("<td><select name='level'><option value='0'>-----</option><option value='1'>Facile</option><option value='2'>Bien</option><option value='3'>Difficle</option></select></td>");
                                                              out.print("</tr>");
                                                          }
-                                                         
-                                                         
                                                          //pour une seance bilan 
                                                           }else{
                                                             for(Exercice e:listE){
-                                                            
                                                              }
-                                                          
                                                       }
-                                                  
-                                                    
                                                 %>
-                                                
-                                                
-                                               
                                                 </table>
                                                 <div class="sweetalert m-t-15">
-                                                    <button class="btn btn-info btn sweet-image-message" onclick="">Confirmer la séance!</button>
+                                                    <button class="btn btn-info btn sweet-image-message" onclick="checkSeance()">Confirmer la séance!</button>
                                                 </div>
-                                                
-                                                
                                             </div>
-                                            
-                                           
-                                           
                                       <!--</form>-->
                                     </div>
                                 </div>

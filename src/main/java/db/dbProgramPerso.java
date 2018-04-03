@@ -106,7 +106,7 @@ public class dbProgramPerso {
                     + "SELECT sb.codesb as codeseance,sb.libellesb as libelleseance,\"seance bilan\" as descseance,sb.commentairecoach as commentaire,sb.ouvert as ouvert,sb.validersb as valider,sb.ordresb as ordre,\"bilan\" as type\n"
                     + "from SEANCEBILAN sb\n"
                     + "where sb.codepp=" + codePP + " order by ordre asc";
-            sql=sql.toUpperCase();
+
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
 
@@ -159,7 +159,7 @@ public class dbProgramPerso {
             } else {
                 sql = "select * from EXERCICE E, PLANIFIERBILAN P where E.CODEE=P.CODEE and P.CODESB=" + codeS+" order by P.ORDREB";
             }
-
+            System.out.println(sql);
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
 

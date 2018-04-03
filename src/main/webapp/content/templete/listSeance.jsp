@@ -11,17 +11,21 @@
 <%
     String codep = request.getParameter("codeP");
     String type=request.getParameter("type"); //create ou modify
+
     boolean programflag = true;
     HashMap<Integer, Seancebilantype> listBilan = null;
     HashMap<Integer, Seancetype> listSeance = null;
     HashMap<Integer, Integer> listNbSeanceType = null;
     int nbMax = 0;
-    if (codep == null) {
+    if (Integer.parseInt(codep) == -1) {
         programflag = false;
     }
     if (programflag) {
         Programmetype programmetype = new dbProgram().getSceanceTypeProgramm(codep);
         nbMax = Collections.max(programmetype.getListSeanceBilanType().keySet());
+
+
+
         listBilan = programmetype.getListSeanceBilanType();
         listSeance = programmetype.getListSeanceType();
 
@@ -33,6 +37,7 @@
                 listNbSeanceType.put(s.getCodest(), listNbSeanceType.get(s.getCodest()) + 1);
             }
         }
+
     }
 
 %>

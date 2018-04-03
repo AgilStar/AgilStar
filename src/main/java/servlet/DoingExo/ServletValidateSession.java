@@ -27,20 +27,7 @@ public class ServletValidateSession {
             throws ServletException, IOException {
         PrintWriter out = resp.getWriter();
         
-        String email = req.getParameter("email");
-        String mdp = req.getParameter("mdp");
-        //out.print(email);
-        //out.print(mdp);
-        String url = "";
-        url = new db.dbClient().verifyConnect(email, mdp);
-         out.print(url);
-         if(url!="errorMot"&&url!="null"){
-            ArrayList<String> list=new db.dbAdmin().recupIdUtilisateur(email);
-            HttpSession session=req.getSession();
-            session.setAttribute("id", list.get(0));
-            session.setAttribute("statut", list.get(1));
-           
-         }
+
    
     }
 }

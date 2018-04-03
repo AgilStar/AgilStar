@@ -93,3 +93,14 @@ function terminer(){
     window.location.href="validateSession.jsp";
     
 }
+
+function checkSeance() {
+    var listSelect=  document.getElementsByName("level");
+    alert(listSelect.length);
+    for(var i=0;i<listSelect.length;i++){
+        var e=listSelect[i];
+        alert(e.options[e.selectedIndex].value);
+    }
+
+
+}
