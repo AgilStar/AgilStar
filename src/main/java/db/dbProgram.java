@@ -47,6 +47,7 @@ public class dbProgram {
 
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement " + ex.getMessage());
+            ex.printStackTrace();
         }
         return programms;
 
@@ -74,7 +75,9 @@ public class dbProgram {
             cx.close();
 
         } catch (SQLException ex) {
+
             System.out.println("Il y a un problÃ¨me sur statement getOneProgramm" + ex.getMessage());
+            ex.printStackTrace();
         }
         return prog;
     }
@@ -85,16 +88,15 @@ public class dbProgram {
         try {
                 Statement st = cx.createStatement();
                 String sql = "select ST.CODEST AS CODE,LIBELLEST AS LIBELLE,DESCRIPTIONST AS DESCRIPTION, ECHAUFFEMENTST AS ECHAUFFEMENT, OrdrePT AS NB,\"SEANCE\" as TYPE\n" +
-                        "FROM comprendretype CT,seancetype ST\n" +
+                        "FROM COMPRENDRETYPE CT,SEANCETYPE ST\n" +
                         "WHERE CT.CODEST=ST.CODEST\n" +
                         "and CT.CODEPT="+codep+"\n" +
                         "UNION\n" +
                         "select CSBT.CODESBT AS CODE,LIBELLESBT AS LIBELLE,DESCRIPTIONSBT AS DESCRIPTION, \"\" AS ECHAUFFEMENT, (ordreSBT) AS NB,\"BILAN\" as TYPE\n" +
-                        "FROM comprendresbt CSBT,seancebilantype SBT\n" +
+                        "FROM COMPRENDRESBT CSBT,SEANCEBILANTYPE SBT\n" +
                         "WHERE CSBT.CODESBT=SBT.CODESBT\n" +
                         "and CSBT.CODEPT="+codep+"\n" +
                         "ORDER BY NB;";
-
                 ResultSet rs = st.executeQuery(sql);
                 while (rs.next()) {
                     Integer code = rs.getInt("CODE");
@@ -105,7 +107,6 @@ public class dbProgram {
                     Integer nb=rs.getInt("NB");
                     //ajouter les autres attributs
 
-                    System.out.println(type);
                     if (type.equals("BILAN")){
 
                         p.addSeanceBilanType(nb,new Seancebilantype(code,libelle,description));
@@ -120,6 +121,7 @@ public class dbProgram {
 
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statementde getSceanceTypeProgramm " + ex.getMessage());
+            ex.printStackTrace();
         }
 
         return p;
@@ -170,6 +172,7 @@ public class dbProgram {
             cx.close();
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement de getDescriptionSeance " + ex.getMessage());
+            ex.printStackTrace();
         }
         return descriptionEx;
     }
@@ -229,6 +232,7 @@ public class dbProgram {
 
         } catch (SQLException ex) {
             System.out.println("Il y a un problÃ¨me sur statement getOneExercice" + ex.getMessage());
+            ex.printStackTrace();
         }
         return s;
     }
@@ -258,6 +262,7 @@ public class dbProgram {
 
         } catch (SQLException ex) {
             System.out.println("Il y a un problÃ¨me sur statement getOneExercice" + ex.getMessage());
+            ex.printStackTrace();
         }
         return e;
     }
@@ -287,6 +292,7 @@ public class dbProgram {
 
         } catch (SQLException ex) {
             System.out.println("Il y a un problÃ¨me sur statement getOneExercice" + ex.getMessage());
+            ex.printStackTrace();
         }
         return e;
     }
@@ -313,6 +319,7 @@ public class dbProgram {
 
         } catch (SQLException ex) {
             System.out.println("Il y a un problÃ¨me sur statement " + ex.getMessage());
+            ex.printStackTrace();
         }
         return categories;
 
@@ -350,6 +357,7 @@ public class dbProgram {
 
         } catch (SQLException ex) {
             System.out.println("Il y a un problÃ¨me sur statement getOneExercice" + ex.getMessage());
+            ex.printStackTrace();
         }
         return list;
     }
@@ -442,6 +450,7 @@ public class dbProgram {
                 cx.close();
             }catch (SQLException ex) {
                     System.out.println("Il y a un problÃ¨me sur statement insertComprendreType COMPRENDRESBT " + ex.getMessage());
+                ex.printStackTrace();
             }
 
 
@@ -464,6 +473,7 @@ public class dbProgram {
             cx.close();
         } catch (SQLException ex) {
             System.out.println("Il y a un problÃ¨me sur statement findMaxCodePT" + ex.getMessage());
+            ex.printStackTrace();
         }
         return code;
     }
@@ -491,6 +501,7 @@ public class dbProgram {
             cx.close();
         } catch (SQLException ex) {
             System.out.println("Il y a un problÃ¨me sur statement checkNameProgram" + ex.getMessage());
+            ex.printStackTrace();
         }
         return flag;
     }
@@ -560,7 +571,7 @@ public class dbProgram {
         ArrayList<Programmeperso> programms = new ArrayList();
         Utilisateur e;
         try {
-            String sql = "select *  from programmeperso where CODEU="+codeUser;
+            String sql = "select *  from PROGRAMMEPERSO where CODEU="+codeUser;
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
@@ -575,6 +586,7 @@ public class dbProgram {
             cx.close();
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement " + ex.getMessage());
+            ex.printStackTrace();
         }
         return programms;
 

@@ -49,6 +49,7 @@ public class dbTypeSession {
             cx.close();
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement " + ex.getMessage());
+            ex.printStackTrace();
         }
         return true;
 
@@ -57,6 +58,7 @@ public class dbTypeSession {
     public boolean checkExistSession(String name) {
         try {
             cx = new dbAdmin().getConnection();
+
             String sql = "select count(*) as Nb from SEANCETYPE where LIBELLEE='" + name + "'";
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -64,7 +66,6 @@ public class dbTypeSession {
             while (rs.next()) {
                 nb = rs.getInt("Nb");
             }
-
             st.close();
             cx.close();
             if (nb == 1) {
@@ -74,6 +75,7 @@ public class dbTypeSession {
             }
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement " + ex.getMessage());
+            ex.printStackTrace();
         }
         return true;
     }
@@ -96,6 +98,7 @@ public class dbTypeSession {
 
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement getOneExercice" + ex.getMessage());
+            ex.printStackTrace();
         }
         return idE;
     }
@@ -117,6 +120,7 @@ public class dbTypeSession {
 
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement getOneExercice" + ex.getMessage());
+            ex.printStackTrace();
         }
         return idS;
     }
@@ -137,13 +141,37 @@ public class dbTypeSession {
             cx.close();
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement de createOrganiserType" + ex.getMessage());
+            ex.printStackTrace();
         }
+    }
+
+
+
+    public void test(){
+        cx = new dbAdmin().getConnection();
+
+        try {
+
+            String sql = "select *  from SEANCETYPE";
+            Statement st = cx.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+
+            }
+            st.close();
+            cx.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Il y a un problème sur statement getOneExercice" + ex.getMessage());
+            ex.printStackTrace();
+        }
+
     }
 
     public static void main(String[] args) {
         dbTypeSession d = new dbTypeSession();
-
-        System.out.println(d.codeSeance("Etirements"));
+        d.test();
     }
 
 }
