@@ -26,7 +26,7 @@ public class ServletAddProgram extends HttpServlet {
         String codeP = req.getParameter("codeP");
         String[] checkedProfil = req.getParameter("checkedProfil").split(",");
         String[] listS = req.getParameter("listS").split(",");
-
+        String codeUser=req.getParameter("codeUser");
         dbProgram db = new dbProgram();
         if (type.equals("modifyType")) {
             db.deleteProgram(codeP);

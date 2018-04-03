@@ -98,12 +98,14 @@
                     <div class="card-body">
                         <div id="errorMessage"></div>
 
+
                         <button type="button" class="btn btn-danger btn-rounded button-sweet-success m-b-10 m-l-5" onclick="confirmProfilProgram('<%=type%>','<%=p.getCodept()%>','<%=codeUser%>')" <%=type.equals("voirType")?"hidden":""%>>
                             Confirmer
                         </button>
                         <button type="button" class="btn btn-danger btn-rounded button-sweet-success m-b-10 m-l-5" onclick="window.location.href='modifierProgramme.jsp?codep=<%=p.getCodept()%>&type=modifyType&codeUser=<%=codeUser%>'" <%=type.equals("voirType")?"":"hidden"%>>
                             Modifier
                         </button>
+
                     </div>
                 </div>
                 <!-- End PAge Content -->
@@ -117,11 +119,7 @@
     <script src="/js/lib/sweetalert/sweetalert.min.js"></script>
     <!-- scripit init-->
     <script src="/js/lib/sweetalert/sweetalert.init.js"></script>
-<%
-       if(type.equals("voir")){
-           out.print(" <script>changerWatchMode()</script>");
-       }
-        %>
+
 
 </body>
 
