@@ -65,9 +65,13 @@
                                             <input type="string" class="form-control"  id="objectiveExerciceM"  value="<%=e.getObjectife()%>">
                                         </div>
                                          <div class="form-group">
+                                            <label>Description</label>
+                                            <input type="string" class="form-control" id="descExerciceM" value="<%=e.getDesc()%>" >
+                                        </div>  
+                                        <div class="form-group">
                                             <label>Lien multimédia</label>
                                             <input type="string" class="form-control" id="videoExerciceM" value="<%=e.getLienvideo()%>" >
-                                        </div>  
+                                        </div>
                                         
                                             <input type="hidden" class="form-control" id="codeeM" value="<%=e.getCodee()%>">
                                   

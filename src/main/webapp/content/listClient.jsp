@@ -121,7 +121,7 @@
                 //Le client est validé
                 out.print("<td><span class=\"badge badge-success\">" + u.getStatutu() + "</span></td>");
                 //Opération: Personaliser un programme
-                out.print("<td><button type=\"button\" class=\"btn btn-primary btn-flat btn-addon m-b-10 m-l-5\"><i class=\"ti-plus\"></i>Programme</button></td>");
+                out.print("<td><button type=\"button\" onClick=\"window.location.href = 'listProgrammPersonal.jsp?codeUser="+u.getCodeu()+"'\" class=\"btn btn-primary btn-flat btn-addon m-b-10 m-l-5\"><i class=\"ti-plus\"></i>Programme</button></td>");
             } else if (u.getStatutu().equals("en attente")) {
                 //Le client est en attente
                 out.print("<td><span class=\"badge badge-danger\">" + u.getStatutu() + "</span></td>");

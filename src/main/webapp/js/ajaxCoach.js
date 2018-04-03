@@ -1,8 +1,8 @@
 /**
  * Créer ou modifier un programme
- * @param type create/modify
+ * @param type createType/modifyType/createPerso/modifyPerso
  */
-function  confirmProfilProgram(type,codeP) {
+function  confirmProfilProgram(type,codeP,codeUser) {
     var xhr = getXMLHttpRequest();
     var flag=true;
 
@@ -46,15 +46,16 @@ if(flag){
                 var errorMessage = xhr.responseText;
                 if(errorMessage=="true"){
                     sweetAlert('Bravo...', 'Vous avez crée un nouvel programme', 'success');
+
+                    window.location.href='modifierProgramme.jsp?codep='+codeP+'&type=voirType&codeUser='+codeUser;
                 }else{
                     sweetAlert('Opps...', 'Le nom de programme a déjà exist', 'error');
                 }
             }
-
         }
     // Requête au serveur avec les paramètres éventuels.
 
-    xhr.open("GET", "/ServletAddProgram?name="+name+"&desc="+desc+"&checkedProfil="+checkedProfil+"&listS="+listS+"&type="+type+"&codeP="+codeP, true);
+    xhr.open("GET", "/ServletAddProgram?name="+name+"&desc="+desc+"&checkedProfil="+checkedProfil+"&listS="+listS+"&type="+type+"&codeP="+codeP+"&codeUser="+codeUser, true);
     xhr.send(null);
     }else{
     var divErrorMessage = document.createElement("div");
@@ -273,3 +274,10 @@ function modifyProgram() {
     confirmProfilProgram();
 }
 
+
+function changerWatchMode() {
+    var name=document.getElementById("nameProgram");
+    var desc=document.getElementById("descriptionProgram");
+    name.setAttribute("readonly",true);
+    desc.setAttribute("readonly",true);
+}

@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef1cdac3-136c-4724-8a4f-2c47a48dd52a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/content/listProgrammPersonal.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/listClient.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/listClient.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dbProgram.java" afterPath="$PROJECT_DIR$/src/main/java/db/dbProgram.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/ajaxTypeSession.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/ajaxTypeSession.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/gestionTableau.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/gestionTableau.js" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,87 +16,84 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="listClient.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dbProgram.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/db/dbProgram.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="328">
+              <caret line="224" column="36" lean-forward="true" selection-start-line="224" selection-start-column="36" selection-end-line="224" selection-end-column="36" />
+              <folding>
+                <element signature="e#12194#12206#0" expanded="true" />
+                <marker date="1522772556614" expanded="true" signature="786:814" ph="select * fro... PROGRAMMETYPE" />
+                <marker date="1522772556614" expanded="true" signature="1737:1779" ph="select * fro... PROGRAMMETYPE" />
+                <marker date="1522772556614" expanded="true" signature="2734:3042" ph="select ST.CO... COMPRENDRETYPE" />
+                <marker date="1522772556614" expanded="true" signature="2734:3488" ph="select ST.CO... " />
+                <marker date="1522772556614" expanded="true" signature="3118:3437" ph="select CSBT.... COMPRENDRESBT" />
+                <marker date="1522772556614" expanded="true" signature="5720:5798" ph="select * fro... ORGANISERTYPE" />
+                <marker date="1522772556614" expanded="true" signature="8139:8178" ph="select * fro... SEANCETYPE" />
+                <marker date="1522772556614" expanded="true" signature="9241:9286" ph="select * fro... CATEGORIESEANCE" />
+                <marker date="1522772556614" expanded="true" signature="10237:10273" ph="select * fro... EXERCICE" />
+                <marker date="1522772556614" expanded="true" signature="11258:11287" ph="select * fro... CATEGORIESEANCE" />
+                <marker date="1522772556614" expanded="true" signature="12251:12380" ph="select CODES... SEANCETYPE" />
+                <marker date="1522772556614" expanded="true" signature="13566:13654" ph="insert into PROGRAMMETYPE... " />
+                <marker date="1522772556614" expanded="true" signature="14455:14541" ph="insert into CORRESPONDRE... " />
+                <marker date="1522772556614" expanded="true" signature="15638:15730" ph="insert into COMPRENDRESBT... " />
+                <marker date="1522772556614" expanded="true" signature="16009:16118" ph="insert into COMPRENDRETYPE... " />
+                <marker date="1522772556614" expanded="true" signature="16705:16752" ph="select max(C... PROGRAMMETYPE" />
+                <marker date="1522772556614" expanded="true" signature="17513:17584" ph="select count... PROGRAMMETYPE" />
+                <marker date="1522772556614" expanded="true" signature="18411:18450" ph="delete from " />
+                <marker date="1522772556614" expanded="true" signature="18684:18724" ph="delete from " />
+                <marker date="1522772556614" expanded="true" signature="18956:18994" ph="delete from " />
+                <marker date="1522772556614" expanded="true" signature="19676:19760" ph="update progr... " />
+                <marker date="1522772556614" expanded="true" signature="20493:20535" ph="select * fro... PROGRAMMEPERSO" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="listClient.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listClient.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="123" column="147" lean-forward="false" selection-start-line="123" selection-start-column="147" selection-end-line="123" selection-end-column="147" />
+            <state relative-caret-position="15">
+              <caret line="123" column="140" lean-forward="false" selection-start-line="123" selection-start-column="140" selection-end-line="123" selection-end-column="140" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createProgram.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/content/createProgram.jsp">
+      <file leaf-file-name="modifierExo.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierExo.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="90" column="15" lean-forward="false" selection-start-line="90" selection-start-column="15" selection-end-line="93" selection-end-column="51" />
+            <state relative-caret-position="-560">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modifierProgramme.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp">
+      <file leaf-file-name="ServletModifyTypeSession.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/servlet/TypeSession/ServletModifyTypeSession.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1116">
-              <caret line="79" column="50" lean-forward="false" selection-start-line="79" selection-start-column="50" selection-end-line="79" selection-end-column="50" />
+            <state relative-caret-position="534">
+              <caret line="52" column="29" lean-forward="false" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dbTypeSession.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/db/dbTypeSession.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
               <folding>
-                <element signature="n#style#0;n#h2#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h2#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1522767788648" expanded="true" signature="1180:1326" ph="insert into SEANCETYPE... " />
+                <marker date="1522767788648" expanded="true" signature="1763:1828" ph="select count... SEANCETYPE" />
+                <marker date="1522767788648" expanded="true" signature="2522:2577" ph="select * fro... EXERCICE" />
+                <marker date="1522767788648" expanded="true" signature="3152:3214" ph="select * fro... SEANCETYPE" />
+                <marker date="1522767788648" expanded="true" signature="3937:4074" ph="insert into ORGANISERTYPE... " />
+                <marker date="1522767788648" expanded="true" signature="4115:4244" ph="insert into ORGANISERTYPE... " />
+                <marker date="1522767788648" expanded="true" signature="4756:4807" ph="DELETE FROM " />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ajaxCoach.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-              <folding>
-                <marker date="1522681409547" expanded="true" signature="4178:4190" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="listProgram.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listProgram.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-933">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="listExercice.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listExercice.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-848">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="listProgramm.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listProgramm.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-800">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="listProgrammPersonal.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listProgrammPersonal.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="52" lean-forward="false" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -105,53 +101,79 @@
       <file leaf-file-name="dbAdmin.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/db/dbAdmin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="60">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
-                <marker date="1522673757811" expanded="true" signature="1832:2191" ph="insert into UTILISATEUR... " />
-                <marker date="1522673757811" expanded="true" signature="2650:2720" ph="insert into DETENIR... " />
-                <marker date="1522673757811" expanded="true" signature="3306:3354" ph="select * fro... UTILISATEUR" />
-                <marker date="1522673757811" expanded="true" signature="3972:4026" ph="select * fro... PROFIL" />
+                <marker date="1522764344893" expanded="true" signature="1830:2189" ph="insert into UTILISATEUR... " />
+                <marker date="1522764344893" expanded="true" signature="2648:2718" ph="insert into DETENIR... " />
+                <marker date="1522764344893" expanded="true" signature="3354:3402" ph="select * fro... UTILISATEUR" />
+                <marker date="1522764344893" expanded="true" signature="4101:4155" ph="select * fro... PROFIL" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dbProgram.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/db/dbProgram.java">
+      <file leaf-file-name="dbExercice.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/db/dbExercice.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="955">
-              <caret line="515" column="65" lean-forward="false" selection-start-line="515" selection-start-column="65" selection-end-line="515" selection-end-column="65" />
+            <state relative-caret-position="-1234">
+              <caret line="37" column="31" lean-forward="true" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gestionTableau.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/gestionTableau.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="36" lean-forward="true" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
               <folding>
-                <marker date="1522681189384" expanded="true" signature="786:814" ph="select * fro... PROGRAMMETYPE" />
-                <marker date="1522681189384" expanded="true" signature="1703:1745" ph="select * fro... PROGRAMMETYPE" />
-                <marker date="1522681189384" expanded="true" signature="2665:2699" ph="select ST.CO... comprendretype" />
-                <marker date="1522681189384" expanded="true" signature="2665:2930" ph="select ST.CO... comprendretype" />
-                <marker date="1522681189384" expanded="true" signature="2665:2973" ph="select ST.CO... comprendretype" />
-                <marker date="1522681189384" expanded="true" signature="2665:3419" ph="select ST.CO... " />
-                <marker date="1522681189384" expanded="true" signature="2665:3420" ph="select * fro... SEANCETYPE" />
-                <marker date="1522681189384" expanded="true" signature="3049:3321" ph="select CSBT.... comprendresbt" />
-                <marker date="1522681189384" expanded="true" signature="3049:3368" ph="select CSBT.... comprendresbt" />
-                <marker date="1522681189384" expanded="true" signature="4734:4793" ph="select * fro... COMPRENDRETYPE" />
-                <marker date="1522681189384" expanded="true" signature="5664:5742" ph="select * fro... ORGANISERTYPE" />
-                <marker date="1522681189384" expanded="true" signature="7986:8025" ph="select * fro... SEANCETYPE" />
-                <marker date="1522681189384" expanded="true" signature="9059:9104" ph="select * fro... CATEGORIESEANCE" />
-                <marker date="1522681189384" expanded="true" signature="10021:10057" ph="select * fro... EXERCICE" />
-                <marker date="1522681189384" expanded="true" signature="11008:11037" ph="select * fro... CATEGORIESEANCE" />
-                <marker date="1522681189384" expanded="true" signature="11967:12096" ph="select CODES... SEANCETYPE" />
-                <marker date="1522681189384" expanded="true" signature="12795:12970" ph="{...}" />
-                <marker date="1522681189384" expanded="true" signature="13248:13336" ph="insert into PROGRAMMETYPE... " />
-                <marker date="1522681189384" expanded="true" signature="14137:14223" ph="insert into CORRESPONDRE... " />
-                <marker date="1522681189384" expanded="true" signature="15320:15412" ph="insert into COMPRENDRESBT... " />
-                <marker date="1522681189384" expanded="true" signature="15691:15800" ph="insert into COMPRENDRETYPE... " />
-                <marker date="1522681189384" expanded="true" signature="16353:16400" ph="select max(C... PROGRAMMETYPE" />
-                <marker date="1522681189384" expanded="true" signature="17127:17198" ph="select count... PROGRAMMETYPE" />
-                <marker date="1522681189384" expanded="true" signature="17991:18030" ph="delete from " />
-                <marker date="1522681189384" expanded="true" signature="18264:18304" ph="delete from " />
-                <marker date="1522681189384" expanded="true" signature="18536:18574" ph="delete from " />
-                <marker date="1522681189384" expanded="true" signature="19256:19340" ph="update progr... " />
-                <marker date="1522681189384" expanded="true" signature="19262:19340" ph="delete from " />
+                <marker date="1522773347879" expanded="true" signature="719:757" ph="..." />
+                <marker date="1522773347879" expanded="true" signature="904:938" ph="..." />
+                <marker date="1522773347879" expanded="true" signature="1085:1117" ph="..." />
+                <marker date="1522773347879" expanded="true" signature="1287:1316" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxTypeSession.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ajaxTypeSession.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="113" column="19" lean-forward="false" selection-start-line="113" selection-start-column="19" selection-end-line="113" selection-end-column="19" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <marker date="1522773274820" expanded="true" signature="1209:1217" ph="é" />
+                <marker date="1522773274820" expanded="true" signature="1374:1382" ph="é" />
+                <marker date="1522773274820" expanded="true" signature="1535:1543" ph="é" />
+                <marker date="1522773274820" expanded="true" signature="1941:1949" ph="é" />
+                <marker date="1522773274820" expanded="true" signature="2247:2255" ph="é" />
+                <marker date="1522773274820" expanded="true" signature="2491:2499" ph="é" />
+                <marker date="1522773274820" expanded="true" signature="2789:2797" ph="é" />
+                <marker date="1522773274820" expanded="true" signature="2812:2820" ph="é" />
+                <marker date="1522773274820" expanded="true" signature="2821:2829" ph="à" />
+                <marker date="1522773274820" expanded="true" signature="5188:5196" ph="é" />
+                <marker date="1522773274820" expanded="true" signature="5353:5361" ph="é" />
+                <marker date="1522773274820" expanded="true" signature="5514:5522" ph="é" />
+                <marker date="1522773274820" expanded="true" signature="5990:5998" ph="é" />
+                <marker date="1522773274820" expanded="true" signature="6287:6295" ph="é" />
+                <marker date="1522773274820" expanded="true" signature="6531:6539" ph="é" />
+                <marker date="1522773274820" expanded="true" signature="6820:6828" ph="é" />
+                <marker date="1522773274820" expanded="true" signature="6843:6851" ph="é" />
+                <marker date="1522773274820" expanded="true" signature="6852:6860" ph="à" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modifierSeanceType.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierSeanceType.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7">
+              <caret line="14" column="65" lean-forward="false" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="65" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -178,6 +200,12 @@
       <find>changeDelete</find>
       <find>p</find>
       <find>System</find>
+      <find>comprendretype</find>
+      <find>CSBT</find>
+      <find>correspondre</find>
+      <find>type</find>
+      <find>programmetype</find>
+      <find>getDes</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -203,7 +231,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/content/modifierSeanceT.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/createClient.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/outilCommon.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/ajaxAdministrateur.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/templete/libHead.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/ajaxAdmin.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/listSession.jsp" />
@@ -217,21 +244,27 @@
         <option value="$PROJECT_DIR$/src/main/java/model/Programmetype.java" />
         <option value="$PROJECT_DIR$/src/main/java/test.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Profil.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/content/templete/listProfil.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/sessionOnGoing.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/content/templete/listSeance.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/db/dbAdmin.java" />
-        <option value="$PROJECT_DIR$/src/main/java/db/dbProfil.java" />
         <option value="$PROJECT_DIR$/src/main/java/db/dbClient.java" />
-        <option value="$PROJECT_DIR$/src/main/java/db/dbTypeSession.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/content/listProgrammPersonaliser.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/content/listClient.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/content/listProgrammPersonal.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/createProgram.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/Program/ServletAddProgram.java" />
-        <option value="$PROJECT_DIR$/src/main/java/db/dbProgram.java" />
+        <option value="$PROJECT_DIR$/src/main/java/db/dbAdmin.java" />
+        <option value="$PROJECT_DIR$/src/main/java/db/dbProfil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/db/dbProgramPerso.java" />
+        <option value="$PROJECT_DIR$/src/main/java/db/dbTypeSession.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/ajaxAdministrateur.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/content/detailProgramPerso.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/content/templete/listSeance.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/content/listProgramm.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/content/templete/listProfil.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/content/listClient.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/content/listProgrammPersonaliser.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/content/listProgrammPersonal.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/db/dbProgram.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/ajaxTypeSession.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/gestionTableau.js" />
       </list>
     </option>
   </component>
@@ -250,8 +283,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="x" value="1280" />
+    <option name="y" value="-845" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -271,7 +306,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -370,6 +404,15 @@
               <item name="AgilStar" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
+              <item name="TypeSession" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="agilStar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AgilStar" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -406,9 +449,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -440,7 +484,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.test">
+  <component name="RunManager" selected="Application.dbTypeSession">
     <configuration name="All in agilStar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="agilStar" />
@@ -561,6 +605,25 @@
       <properties />
       <listeners />
     </configuration>
+    <configuration name="dbTypeSession" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="db.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="db.dbTypeSession" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="agilStar" />
+      <envs />
+    </configuration>
     <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="test" />
@@ -575,16 +638,18 @@
       <module name="agilStar" />
       <envs />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="JUnit.All in agilStar" />
       <item index="1" class="java.lang.String" itemvalue="Application.Main" />
       <item index="2" class="java.lang.String" itemvalue="Application.test" />
+      <item index="3" class="java.lang.String" itemvalue="Application.dbTypeSession" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="Application.test" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.All in agilStar" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Application.dbTypeSession" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="2" class="java.lang.String" itemvalue="Application.test" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.All in agilStar" />
       </list>
     </recent_temporary>
   </component>
@@ -603,6 +668,7 @@
       <workItem from="1522331814284" duration="139000" />
       <workItem from="1522331975650" duration="7018000" />
       <workItem from="1522524117178" duration="26545000" />
+      <workItem from="1522689433554" duration="11391000" />
     </task>
     <servers />
   </component>
@@ -612,7 +678,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96203000" />
+    <option name="totallyTimeSpent" value="114166000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -624,33 +690,31 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <frame x="1280" y="-845" width="1920" height="1080" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32599726" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32571995" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298351" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27647868" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18768619" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22778675" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15228967" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -674,10 +738,10 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27647868" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27647868" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22778675" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23101777" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -726,69 +790,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/createClient.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="30" lean-forward="true" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/custom.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-572">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/createSession.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1191">
-          <caret line="138" column="46" lean-forward="true" selection-start-line="138" selection-start-column="46" selection-end-line="138" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ajaxAdmin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/GestionClient/CtrlChangeStatu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="18" column="43" lean-forward="false" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/TestlistClientValider.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-944">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/menu.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="28" column="145" lean-forward="false" selection-start-line="28" selection-start-column="145" selection-end-line="28" selection-end-column="145" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listSessionProgramm.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/footer.jsp">
       <provider selected="true" editor-type-id="text-editor">
@@ -824,10 +825,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="40" column="27" lean-forward="false" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
-          <folding>
-            <element signature="e#443#444#0" expanded="false" />
-            <element signature="e#478#479#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -845,25 +842,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Programmetype.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="27" column="27" lean-forward="false" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/Profil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="421">
           <caret line="38" column="37" lean-forward="false" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ajaxAdministrateur.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="41" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -895,7 +877,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
           <caret line="287" column="0" lean-forward="true" selection-start-line="287" selection-start-column="0" selection-end-line="287" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -907,58 +888,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/detailProgramPerso.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-855">
-          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/content/sessionOnGoing.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="111" column="109" lean-forward="false" selection-start-line="111" selection-start-column="109" selection-end-line="111" selection-end-column="109" />
-          <folding>
-            <marker date="1522661872355" expanded="true" signature="5369:5448" ph="..." />
-            <marker date="1522661872355" expanded="true" signature="5369:5586" ph="..." />
-            <marker date="1522661872355" expanded="true" signature="5369:5635" ph="..." />
-            <marker date="1522661872355" expanded="true" signature="5369:5714" ph="..." />
-            <marker date="1522661872355" expanded="true" signature="5369:5788" ph="..." />
-            <marker date="1522661872355" expanded="true" signature="5369:6079" ph="..." />
-            <marker date="1522661872355" expanded="true" signature="5369:6111" ph="..." />
-            <marker date="1522661872355" expanded="true" signature="5369:6142" ph="..." />
-            <marker date="1522661872355" expanded="true" signature="5369:6211" ph="..." />
-            <marker date="1522661872355" expanded="true" signature="5369:6329" ph="..." />
-            <marker date="1522661872355" expanded="true" signature="5369:6344" ph="..." />
-            <marker date="1522661872355" expanded="true" signature="5369:6447" ph="..." />
-            <marker date="1522661872355" expanded="true" signature="5369:6456" ph="..." />
-            <marker date="1522661872355" expanded="true" signature="5855:6043" ph="..." />
-            <marker date="1522661872355" expanded="false" signature="5916:5932" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/listSeance.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="39" column="71" lean-forward="false" selection-start-line="39" selection-start-column="71" selection-end-line="39" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/listProfil.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/libHead.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="20" column="50" lean-forward="false" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
           <folding />
         </state>
       </provider>
@@ -967,7 +900,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="0" column="4093" lean-forward="false" selection-start-line="0" selection-start-column="4093" selection-end-line="0" selection-end-column="4093" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -976,16 +908,6 @@
         <state relative-caret-position="152">
           <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ajaxConnect.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="837">
-          <caret line="57" column="41" lean-forward="false" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1005,202 +927,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbClient.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Programmetype.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="289" column="26" lean-forward="false" selection-start-line="289" selection-start-column="20" selection-end-line="289" selection-end-column="26" />
-          <folding>
-            <marker date="1522674448859" expanded="true" signature="891:961" ph="select MAILU... UTILISATEUR" />
-            <marker date="1522674448859" expanded="true" signature="2138:2171" ph="select * fro... UTILISATEUR" />
-            <marker date="1522674448859" expanded="true" signature="3404:3464" ph="update UTILI... " />
-            <marker date="1522674448859" expanded="true" signature="4384:4569" ph="insert into SEANCEBILAN... " />
-            <marker date="1522674448859" expanded="true" signature="4928:5150" ph="Insert into PLANIFIERBILAN... " />
-            <marker date="1522674448859" expanded="true" signature="5065:5116" ph="SELECT CODEE... EXERCICE" />
-            <marker date="1522674448859" expanded="true" signature="5507:5786" ph="Insert into PLANIFIERBILAN... " />
-            <marker date="1522674448859" expanded="true" signature="5691:5747" ph="SELECT CODEE... EXERCICE" />
-            <marker date="1522674448859" expanded="true" signature="6150:6429" ph="Insert into PLANIFIERBILAN... " />
-            <marker date="1522674448859" expanded="true" signature="6334:6390" ph="SELECT CODEE... EXERCICE" />
-            <marker date="1522674448859" expanded="true" signature="6787:7052" ph="Insert into PLANIFIERBILAN... " />
-            <marker date="1522674448859" expanded="true" signature="6971:7021" ph="SELECT CODEE... EXERCICE" />
-            <marker date="1522674448859" expanded="true" signature="7409:7673" ph="Insert into PLANIFIERBILAN... " />
-            <marker date="1522674448859" expanded="true" signature="7593:7643" ph="SELECT CODEE... EXERCICE" />
-            <marker date="1522674448859" expanded="true" signature="8030:8294" ph="Insert into PLANIFIERBILAN... " />
-            <marker date="1522674448859" expanded="true" signature="8214:8264" ph="SELECT CODEE... EXERCICE" />
-            <marker date="1522674448859" expanded="true" signature="8650:8911" ph="Insert into PLANIFIERBILAN... " />
-            <marker date="1522674448859" expanded="true" signature="8834:8882" ph="SELECT CODEE... EXERCICE" />
-            <marker date="1522674448859" expanded="true" signature="9258:9370" ph="Insert into MENSURATION... " />
-            <marker date="1522674448859" expanded="true" signature="10042:10126" ph="select count... MENSURATION" />
-            <marker date="1522674448859" expanded="true" signature="10503:10653" ph="update MENSU... " />
-            <marker date="1522674448859" expanded="true" signature="11196:11416" ph="Insert into MENSURATION... " />
-            <marker date="1522674448859" expanded="true" signature="12161:12243" ph="select count... UTILISATEUR" />
-            <marker date="1522674448859" expanded="true" signature="12975:13030" ph="update UTILI... " />
-          </folding>
+        <state relative-caret-position="166">
+          <caret line="38" column="11" lean-forward="false" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbCategorie.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ajaxConnect.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="58" column="18" lean-forward="false" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="18" />
-          <folding>
-            <marker date="1522412266000" expanded="true" signature="1042:1071" ph="select * fro... CATEGORIESEANCE" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbTypeSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="132" column="13" lean-forward="false" selection-start-line="132" selection-start-column="13" selection-end-line="132" selection-end-column="13" />
-          <folding>
-            <marker date="1522674448864" expanded="true" signature="1168:1314" ph="insert into SEANCETYPE... " />
-            <marker date="1522674448864" expanded="true" signature="1751:1818" ph="select count... SEANCETYPE" />
-            <marker date="1522674448864" expanded="true" signature="2520:2575" ph="select * fro... EXERCICE" />
-            <marker date="1522674448864" expanded="true" signature="3150:3212" ph="select * fro... SEANCETYPE" />
-            <marker date="1522674448864" expanded="true" signature="3922:4047" ph="insert into ORGANISERTYPE... " />
-            <marker date="1522674448864" expanded="true" signature="4088:4205" ph="insert into ORGANISERTYPE... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbProgramPerso.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="232" column="22" lean-forward="false" selection-start-line="232" selection-start-column="16" selection-end-line="232" selection-end-column="22" />
-          <folding>
-            <marker date="1522661872347" expanded="true" signature="983:1025" ph="select * fro... PROGRAMMEPERSO" />
-            <marker date="1522661872347" expanded="true" signature="2200:2325" ph="select (coun... seanceperso" />
-            <marker date="1522661872347" expanded="true" signature="3067:3367" ph="select sp.co... seanceperso" />
-            <marker date="1522661872347" expanded="true" signature="3067:3770" ph="select sp.co... " />
-            <marker date="1522661872347" expanded="true" signature="3440:3737" ph="SELECT sb.co... seancebilan" />
-            <marker date="1522661872347" expanded="true" signature="5076:5180" ph="select * fro... EXERCICE" />
-            <marker date="1522661872347" expanded="true" signature="5227:5334" ph="select * fro... EXERCICE" />
-            <marker date="1522661872347" expanded="true" signature="6625:6725" ph="select p.ORD... planifierbilan" />
-            <marker date="1522661872347" expanded="true" signature="7544:7632" ph="select p.ord... planifiersp" />
-            <marker date="1522661872347" expanded="true" signature="8306:8307" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbExercice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="54" column="18" lean-forward="false" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="18" />
-          <folding>
-            <marker date="1522403835898" expanded="true" signature="1177:1285" ph="insert into EXERCICE... " />
-            <marker date="1522403835898" expanded="true" signature="1775:1837" ph="select count... EXERCICE" />
-            <marker date="1522403835898" expanded="true" signature="2638:2661" ph="select * fro... EXERCICE" />
-            <marker date="1522403835898" expanded="true" signature="3610:3646" ph="select * fro... EXERCICE" />
-            <marker date="1522403835898" expanded="true" signature="4574:4667" ph="update EXERC... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbProfil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="144" column="18" lean-forward="false" selection-start-line="144" selection-start-column="12" selection-end-line="144" selection-end-column="18" />
-          <folding>
-            <element signature="e#4023#4031#0" expanded="true" />
-            <marker date="1522674448857" expanded="true" signature="830:851" ph="select * fro... PROFIL" />
-            <marker date="1522674448857" expanded="true" signature="1648:1733" ph="select * fro... PROFIL" />
-            <marker date="1522674448857" expanded="true" signature="2485:2556" ph="select count... SEANCEBILAN" />
-            <marker date="1522674448857" expanded="true" signature="3158:3239" ph="select DATE_... " />
-            <marker date="1522674448857" expanded="true" signature="4075:4181" ph="select CODEP... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/Program/ServletAddProgram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="46" column="31" lean-forward="false" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbAdmin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <marker date="1522673757811" expanded="true" signature="1832:2191" ph="insert into UTILISATEUR... " />
-            <marker date="1522673757811" expanded="true" signature="2650:2720" ph="insert into DETENIR... " />
-            <marker date="1522673757811" expanded="true" signature="3306:3354" ph="select * fro... UTILISATEUR" />
-            <marker date="1522673757811" expanded="true" signature="3972:4026" ph="select * fro... PROFIL" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbProgram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="955">
-          <caret line="515" column="65" lean-forward="false" selection-start-line="515" selection-start-column="65" selection-end-line="515" selection-end-column="65" />
-          <folding>
-            <marker date="1522681189384" expanded="true" signature="786:814" ph="select * fro... PROGRAMMETYPE" />
-            <marker date="1522681189384" expanded="true" signature="1703:1745" ph="select * fro... PROGRAMMETYPE" />
-            <marker date="1522681189384" expanded="true" signature="2665:2699" ph="select ST.CO... comprendretype" />
-            <marker date="1522681189384" expanded="true" signature="2665:2930" ph="select ST.CO... comprendretype" />
-            <marker date="1522681189384" expanded="true" signature="2665:2973" ph="select ST.CO... comprendretype" />
-            <marker date="1522681189384" expanded="true" signature="2665:3419" ph="select ST.CO... " />
-            <marker date="1522681189384" expanded="true" signature="2665:3420" ph="select * fro... SEANCETYPE" />
-            <marker date="1522681189384" expanded="true" signature="3049:3321" ph="select CSBT.... comprendresbt" />
-            <marker date="1522681189384" expanded="true" signature="3049:3368" ph="select CSBT.... comprendresbt" />
-            <marker date="1522681189384" expanded="true" signature="4734:4793" ph="select * fro... COMPRENDRETYPE" />
-            <marker date="1522681189384" expanded="true" signature="5664:5742" ph="select * fro... ORGANISERTYPE" />
-            <marker date="1522681189384" expanded="true" signature="7986:8025" ph="select * fro... SEANCETYPE" />
-            <marker date="1522681189384" expanded="true" signature="9059:9104" ph="select * fro... CATEGORIESEANCE" />
-            <marker date="1522681189384" expanded="true" signature="10021:10057" ph="select * fro... EXERCICE" />
-            <marker date="1522681189384" expanded="true" signature="11008:11037" ph="select * fro... CATEGORIESEANCE" />
-            <marker date="1522681189384" expanded="true" signature="11967:12096" ph="select CODES... SEANCETYPE" />
-            <marker date="1522681189384" expanded="true" signature="12795:12970" ph="{...}" />
-            <marker date="1522681189384" expanded="true" signature="13248:13336" ph="insert into PROGRAMMETYPE... " />
-            <marker date="1522681189384" expanded="true" signature="14137:14223" ph="insert into CORRESPONDRE... " />
-            <marker date="1522681189384" expanded="true" signature="15320:15412" ph="insert into COMPRENDRESBT... " />
-            <marker date="1522681189384" expanded="true" signature="15691:15800" ph="insert into COMPRENDRETYPE... " />
-            <marker date="1522681189384" expanded="true" signature="16353:16400" ph="select max(C... PROGRAMMETYPE" />
-            <marker date="1522681189384" expanded="true" signature="17127:17198" ph="select count... PROGRAMMETYPE" />
-            <marker date="1522681189384" expanded="true" signature="17991:18030" ph="delete from " />
-            <marker date="1522681189384" expanded="true" signature="18264:18304" ph="delete from " />
-            <marker date="1522681189384" expanded="true" signature="18536:18574" ph="delete from " />
-            <marker date="1522681189384" expanded="true" signature="19256:19340" ph="update progr... " />
-            <marker date="1522681189384" expanded="true" signature="19262:19340" ph="delete from " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-          <folding>
-            <marker date="1522681409547" expanded="true" signature="4178:4190" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/createProgram.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="90" column="15" lean-forward="false" selection-start-line="90" selection-start-column="15" selection-end-line="93" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1116">
-          <caret line="79" column="50" lean-forward="false" selection-start-line="79" selection-start-column="50" selection-end-line="79" selection-end-column="50" />
-          <folding>
-            <element signature="n#style#0;n#h2#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h2#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="300">
+          <caret line="57" column="60" lean-forward="true" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listExercice.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-848">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -1208,32 +951,297 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listProgram.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-933">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listProgramm.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Programmeperso.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-800">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="332">
+          <caret line="29" column="25" lean-forward="false" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/createProgram.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="96" column="130" lean-forward="false" selection-start-line="96" selection-start-column="130" selection-end-line="96" selection-end-column="130" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/Program/ServletAddProgram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="20" column="50" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="20" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbCategorie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="58" column="18" lean-forward="false" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-632">
+          <caret line="289" column="26" lean-forward="false" selection-start-line="289" selection-start-column="20" selection-end-line="289" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbProgramPerso.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="59" column="33" lean-forward="false" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ajaxAdministrateur.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listProgrammPersonal.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="52" lean-forward="false" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
+        <state relative-caret-position="325">
+          <caret line="83" column="149" lean-forward="false" selection-start-line="83" selection-start-column="149" selection-end-line="83" selection-end-column="149" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/listSeance.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="128" column="43" lean-forward="false" selection-start-line="128" selection-start-column="43" selection-end-line="128" selection-end-column="43" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/libHead.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="20" column="50" lean-forward="false" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listProgramm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="76" column="203" lean-forward="false" selection-start-line="76" selection-start-column="99" selection-end-line="76" selection-end-column="203" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/detailProgramPerso.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="76" column="98" lean-forward="true" selection-start-line="76" selection-start-column="98" selection-end-line="76" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-341">
+          <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+          <folding>
+            <marker date="1522767628078" expanded="true" signature="4356:4368" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbProfil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="39" column="37" lean-forward="true" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/listProfil.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="36" column="80" lean-forward="false" selection-start-line="36" selection-start-column="80" selection-end-line="36" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="81" column="129" lean-forward="false" selection-start-line="81" selection-start-column="129" selection-end-line="81" selection-end-column="129" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/gestionTableau 2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ajaxTypeSession copie.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="42" column="5" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listClient.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="123" column="147" lean-forward="false" selection-start-line="123" selection-start-column="147" selection-end-line="123" selection-end-column="147" />
+        <state relative-caret-position="15">
+          <caret line="123" column="140" lean-forward="false" selection-start-line="123" selection-start-column="140" selection-end-line="123" selection-end-column="140" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierExo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-560">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbAdmin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <marker date="1522764344893" expanded="true" signature="1830:2189" ph="insert into UTILISATEUR... " />
+            <marker date="1522764344893" expanded="true" signature="2648:2718" ph="insert into DETENIR... " />
+            <marker date="1522764344893" expanded="true" signature="3354:3402" ph="select * fro... UTILISATEUR" />
+            <marker date="1522764344893" expanded="true" signature="4101:4155" ph="select * fro... PROFIL" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbExercice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1234">
+          <caret line="37" column="31" lean-forward="true" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbProgram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="224" column="36" lean-forward="true" selection-start-line="224" selection-start-column="36" selection-end-line="224" selection-end-column="36" />
+          <folding>
+            <element signature="e#12194#12206#0" expanded="true" />
+            <marker date="1522772556614" expanded="true" signature="786:814" ph="select * fro... PROGRAMMETYPE" />
+            <marker date="1522772556614" expanded="true" signature="1737:1779" ph="select * fro... PROGRAMMETYPE" />
+            <marker date="1522772556614" expanded="true" signature="2734:3042" ph="select ST.CO... COMPRENDRETYPE" />
+            <marker date="1522772556614" expanded="true" signature="2734:3488" ph="select ST.CO... " />
+            <marker date="1522772556614" expanded="true" signature="3118:3437" ph="select CSBT.... COMPRENDRESBT" />
+            <marker date="1522772556614" expanded="true" signature="5720:5798" ph="select * fro... ORGANISERTYPE" />
+            <marker date="1522772556614" expanded="true" signature="8139:8178" ph="select * fro... SEANCETYPE" />
+            <marker date="1522772556614" expanded="true" signature="9241:9286" ph="select * fro... CATEGORIESEANCE" />
+            <marker date="1522772556614" expanded="true" signature="10237:10273" ph="select * fro... EXERCICE" />
+            <marker date="1522772556614" expanded="true" signature="11258:11287" ph="select * fro... CATEGORIESEANCE" />
+            <marker date="1522772556614" expanded="true" signature="12251:12380" ph="select CODES... SEANCETYPE" />
+            <marker date="1522772556614" expanded="true" signature="13566:13654" ph="insert into PROGRAMMETYPE... " />
+            <marker date="1522772556614" expanded="true" signature="14455:14541" ph="insert into CORRESPONDRE... " />
+            <marker date="1522772556614" expanded="true" signature="15638:15730" ph="insert into COMPRENDRESBT... " />
+            <marker date="1522772556614" expanded="true" signature="16009:16118" ph="insert into COMPRENDRETYPE... " />
+            <marker date="1522772556614" expanded="true" signature="16705:16752" ph="select max(C... PROGRAMMETYPE" />
+            <marker date="1522772556614" expanded="true" signature="17513:17584" ph="select count... PROGRAMMETYPE" />
+            <marker date="1522772556614" expanded="true" signature="18411:18450" ph="delete from " />
+            <marker date="1522772556614" expanded="true" signature="18684:18724" ph="delete from " />
+            <marker date="1522772556614" expanded="true" signature="18956:18994" ph="delete from " />
+            <marker date="1522772556614" expanded="true" signature="19676:19760" ph="update progr... " />
+            <marker date="1522772556614" expanded="true" signature="20493:20535" ph="select * fro... PROGRAMMEPERSO" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbTypeSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding>
+            <marker date="1522767788648" expanded="true" signature="1180:1326" ph="insert into SEANCETYPE... " />
+            <marker date="1522767788648" expanded="true" signature="1763:1828" ph="select count... SEANCETYPE" />
+            <marker date="1522767788648" expanded="true" signature="2522:2577" ph="select * fro... EXERCICE" />
+            <marker date="1522767788648" expanded="true" signature="3152:3214" ph="select * fro... SEANCETYPE" />
+            <marker date="1522767788648" expanded="true" signature="3937:4074" ph="insert into ORGANISERTYPE... " />
+            <marker date="1522767788648" expanded="true" signature="4115:4244" ph="insert into ORGANISERTYPE... " />
+            <marker date="1522767788648" expanded="true" signature="4756:4807" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierSeanceType.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7">
+          <caret line="14" column="65" lean-forward="false" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ajaxTypeSession.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="113" column="19" lean-forward="false" selection-start-line="113" selection-start-column="19" selection-end-line="113" selection-end-column="19" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1522773274820" expanded="true" signature="1209:1217" ph="é" />
+            <marker date="1522773274820" expanded="true" signature="1374:1382" ph="é" />
+            <marker date="1522773274820" expanded="true" signature="1535:1543" ph="é" />
+            <marker date="1522773274820" expanded="true" signature="1941:1949" ph="é" />
+            <marker date="1522773274820" expanded="true" signature="2247:2255" ph="é" />
+            <marker date="1522773274820" expanded="true" signature="2491:2499" ph="é" />
+            <marker date="1522773274820" expanded="true" signature="2789:2797" ph="é" />
+            <marker date="1522773274820" expanded="true" signature="2812:2820" ph="é" />
+            <marker date="1522773274820" expanded="true" signature="2821:2829" ph="à" />
+            <marker date="1522773274820" expanded="true" signature="5188:5196" ph="é" />
+            <marker date="1522773274820" expanded="true" signature="5353:5361" ph="é" />
+            <marker date="1522773274820" expanded="true" signature="5514:5522" ph="é" />
+            <marker date="1522773274820" expanded="true" signature="5990:5998" ph="é" />
+            <marker date="1522773274820" expanded="true" signature="6287:6295" ph="é" />
+            <marker date="1522773274820" expanded="true" signature="6531:6539" ph="é" />
+            <marker date="1522773274820" expanded="true" signature="6820:6828" ph="é" />
+            <marker date="1522773274820" expanded="true" signature="6843:6851" ph="é" />
+            <marker date="1522773274820" expanded="true" signature="6852:6860" ph="à" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/gestionTableau.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="36" lean-forward="true" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+          <folding>
+            <marker date="1522773347879" expanded="true" signature="719:757" ph="..." />
+            <marker date="1522773347879" expanded="true" signature="904:938" ph="..." />
+            <marker date="1522773347879" expanded="true" signature="1085:1117" ph="..." />
+            <marker date="1522773347879" expanded="true" signature="1287:1316" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/TypeSession/ServletModifyTypeSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="52" column="29" lean-forward="false" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
           <folding />
         </state>
       </provider>

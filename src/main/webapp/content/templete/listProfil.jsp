@@ -6,7 +6,7 @@
 <%@ page import="db.dbProfil" %>
 <%
     String codep=request.getParameter("codeP");
-
+    String type=request.getParameter("type");
     ArrayList<Profil> listProfilPrograme=new dbProfil().findProfilProgramm(codep);
 
 %>
@@ -25,11 +25,19 @@
             ArrayList<Profil> listProfil=new ctrlProgram().getProfil();
             for(Profil p:listProfil){
                 if (listProfilPrograme.contains(p)){
-                    out.print("<tr onclick=\"changeDelete(this)\" style=\"background-color:#d1ecf1\">");
+                    if(type.equals("voirType")){
+                        out.print("<tr style=\"background-color:#d1ecf1\">");
+                    }else{
+                        out.print("<tr onclick=\"changeDelete(this)\" style=\"background-color:#d1ecf1\">");
+                    }
                     out.print("<th scope=\"row\">");
                     out.print("<input type=\"checkbox\" name=\"profil\" value=\""+p.getCodeprofil()+"\" hidden checked>");
                 }else{
-                    out.print("<tr onclick=\"changeDelete(this)\" style=\"background-color:#fedee5\">");
+                    if(type.equals("voirType")){
+                        out.print("<tr style=\"background-color:#fedee5\" hidden>");
+                    }else{
+                        out.print("<tr onclick=\"changeDelete(this)\" style=\"background-color:#fedee5\">");
+                    }
                     out.print("<th scope=\"row\">");
                     out.print("<input type=\"checkbox\" name=\"profil\" value=\""+p.getCodeprofil()+"\" hidden>");
                 }

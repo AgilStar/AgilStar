@@ -41,7 +41,7 @@ public class dbTypeSession {
             if (!checkExistSession(name)) {
                 return false;
             }
-
+            
             String sql = "insert into SEANCETYPE(LIBELLEST,CODECAT,DESCRIPTIONST,ECHAUFFEMENTST) VALUES('" + name + "','" + codeCat + "','" + descrS + "','" + descrWU + "')";
             Statement st = cx.createStatement();
             st.executeUpdate(sql);
@@ -57,23 +57,21 @@ public class dbTypeSession {
     public boolean checkExistSession(String name) {
         try {
             cx = new dbAdmin().getConnection();
-            String sql = "select count(*) as Nb from SEANCETYPE where LIBELLEE='" + name + "'";
+            String sql = "select count(*) as Nb from SEANCETYPE where CODEST='" + name + "'";
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
             int nb = 0;
             while (rs.next()) {
                 nb = rs.getInt("Nb");
             }
-
             st.close();
-            cx.close();
             if (nb == 1) {
                 return false;
             } else {
                 return true;
             }
         } catch (SQLException ex) {
-            System.out.println("Il y a un problème sur statement " + ex.getMessage());
+            System.out.println("Il y a un problème sur statement checkExistSession" + ex.getMessage());
         }
         return true;
     }
@@ -122,21 +120,37 @@ public class dbTypeSession {
     }
 
     public void createOrganiserType(String codeE, String codeSt, Integer ordreSt,
-            String serieSt, String dureeAttendue, String nbAttendu) {
+            String serieSt, String dureeAttendue, String nbAttendu,String repos) {
         try {
             cx = new dbAdmin().getConnection();
             String sql;
             if(nbAttendu.equals("")){
-            sql = "insert into ORGANISERTYPE VALUES(" + codeE + "," + codeSt + "," + ordreSt + ",'" + serieSt + "','" + dureeAttendue + "',NULL)";
+            sql = "insert into ORGANISERTYPE VALUES(" + codeE + "," + codeSt + "," + ordreSt + ",'" + serieSt + "','" + dureeAttendue + "',NULL,'"+repos+"')";
             }else{
-            sql = "insert into ORGANISERTYPE VALUES(" + codeE + "," + codeSt + "," + ordreSt + ",'" + serieSt + "',NULL,'"+nbAttendu+"')";  
+            sql = "insert into ORGANISERTYPE VALUES(" + codeE + "," + codeSt + "," + ordreSt + ",'" + serieSt + "',NULL,'"+nbAttendu+"','"+repos+"')";  
             }
+            System.out.println(sql);
             Statement st = cx.createStatement();
             st.executeUpdate(sql);
             st.close();
             cx.close();
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement de createOrganiserType" + ex.getMessage());
+        }
+    }
+    
+    public void deleteOrganiserType(String codeSt){
+         try {
+            cx = new dbAdmin().getConnection();
+            String sql;
+            sql = "DELETE FROM ORGANISERTYPE WHERE CODEST='"+codeSt+"'";
+             System.out.println("delete: "+sql);
+            Statement st = cx.createStatement();
+            st.executeUpdate(sql);
+            st.close();
+            cx.close();
+        } catch (SQLException ex) {
+            System.out.println("Il y a un problème sur statement de deleteOrganiserType" + ex.getMessage());
         }
     }
 

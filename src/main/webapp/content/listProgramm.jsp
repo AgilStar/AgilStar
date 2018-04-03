@@ -3,6 +3,13 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="model.Programmetype" %>
 <%@ page import="db.dbProgram" %>
+<%
+    String type=request.getParameter("type");
+    String codeUser=request.getParameter("codeUser");
+    if(type==null){
+        type="voirType";
+    }
+%>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -34,14 +41,21 @@
                 <!-- Container fluid  -->
                 <div class="container-fluid" id="mainPage">
                     <!-- Start Page Content -->
-
                     <!-- End PAge Content -->
-
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">Liste des ProgrammesTypes</h4>
+                                    <h4 class="card-title">
+                                        <%
+                                        if(type!=null&&type.equals("createPerso")){
+                                            out.print("Choisir un program type pour le client");
+                                        }else{
+                                            out.print("Liste des ProgrammesTypes");
+                                        }
+                                        %>
+
+                                    </h4>
                                     <h6 class="card-subtitle">Tout les programmes types</h6>
                                     <div class="table-responsive m-t-40">
                                         <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
@@ -52,22 +66,17 @@
                                                 <th>Description Programme</th>
                                                 <th>Modifier</th>
                                             </tr>
-                                         
                                             </thead>
                                             <tbody>
                                             <%
-                                                
                                                 ArrayList<Programmetype> listPr= new dbProgram().getProgramms();
-                                                
                                                 for (Programmetype p: listPr){
                                                     out.print("<tr>");
                                                     out.print("<th scope=\"row\">"+p.getLibellept()+"</th>");
                                                     out.print("<td>"+p.getDescriptionpt()+"</td>");
-                                                    out.print("<td><button type='button' onclick=\"window.location.href='modifierProgramme.jsp?codep="+p.getCodept()+"'\"+e.getCodept()+'\" class='btn btn-warning btn-rounded m-b-10 m-l-5'>Voir</button></td>");
-
+                                                    out.print("<td><button type='button' onclick=\"window.location.href='modifierProgramme.jsp?codep="+p.getCodept()+"&type="+type+"&codeUser="+codeUser+"'\" class='btn btn-warning btn-rounded m-b-10 m-l-5'>Voir</button></td>");
                                                     out.print("</tr>");
                                                 }
-                                                
                                             %>
                                             <div class="badge badge-primary"></div>
                                             </tbody>

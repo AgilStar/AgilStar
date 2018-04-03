@@ -57,6 +57,7 @@ public class dbProgramPerso {
 
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement " + ex.getMessage());
+            ex.printStackTrace();
         }
 
         return listPP;
@@ -86,6 +87,7 @@ public class dbProgramPerso {
 
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement " + ex.getMessage());
+            ex.printStackTrace();
         }
         return nb;
     }
@@ -107,7 +109,7 @@ public class dbProgramPerso {
                     + "SELECT sb.codesb as codeseance,sb.libellesb as libelleseance,\"seance bilan\" as descseance,sb.commentairecoach as commentaire,sb.ouvert as ouvert,sb.validersb as valider,sb.ordresb as ordre,\"bilan\" as type\n"
                     + "from SEANCEBILAN sb\n"
                     + "where sb.codepp=" + codePP + " order by ordre asc";
-
+            sql=sql.toUpperCase();
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
 
@@ -137,6 +139,7 @@ public class dbProgramPerso {
 
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement " + ex.getMessage());
+            ex.printStackTrace();
         }
 
         return listS;
@@ -177,6 +180,7 @@ public class dbProgramPerso {
 
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement getAllExercices " + ex.getMessage());
+            ex.printStackTrace();
         }
 
         return listE;
@@ -205,6 +209,7 @@ public Planifiersp getPlanForSession(Integer codeS, Integer codeE){
 
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement getPlanForSession" + ex.getMessage());
+         ex.printStackTrace();
         }
     
     return p;
@@ -228,9 +233,28 @@ public Planifierbilan getPlanForBilan(Integer codeS, Integer codeE){
 
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement getPlanForBilan " + ex.getMessage());
+         ex.printStackTrace();
         }
     
     return p;
 }
+
+//public String insertProgramPerso(){
+//    cx = new dbAdmin().getConnection();
+//    try {
+//        String sql = "insert into programmeperso(CODEU,CODEPT,LIBELLEPP,DESCRIPTIONPP) VALUES('" + name + "','" + desc + "')";
+//        Statement st = cx.createStatement();
+//        st.executeUpdate(sql);
+//        st.close();
+//        cx.close();
+//    } catch (SQLException ex) {
+//        System.out.println("Il y a un problÃ¨me sur statement insertProgram" + ex.getMessage());
+//        ex.printStackTrace();
+//    }
+//return "";
+//
+//}
+
+
 
 }
