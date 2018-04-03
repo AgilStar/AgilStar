@@ -71,7 +71,6 @@
                                             <tbody>
                                                 <%
                             String codeProgramPerso=request.getParameter("codepp");
-                          
                             Integer codePP=Integer.parseInt(codeProgramPerso);
                             
                             //0:ordre, 1:codeseance,2:libelleseance,3:descseance,4:commentaire,5:ouvert,6:valider,7:type

@@ -548,6 +548,7 @@ public class dbProgram {
         cx = new dbAdmin().getConnection();
         try {
             String sql="update programmetype SET LIBELLEPT='"+name+"',DESCRIPTIONPT='"+desc+"' where codept="+codeP;
+            sql=sql.toUpperCase();
             Statement st = cx.createStatement();
             st.executeUpdate(sql);
             st.close();

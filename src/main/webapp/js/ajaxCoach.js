@@ -46,6 +46,8 @@ if(flag){
                 var errorMessage = xhr.responseText;
                 if(errorMessage=="true"){
                     sweetAlert('Bravo...', 'Vous avez crée un nouvel programme', 'success');
+
+                    window.location.href='modifierProgramme.jsp?codep='+codeP+'&type=voirType&codeUser='+codeUser;
                 }else{
                     sweetAlert('Opps...', 'Le nom de programme a déjà exist', 'error');
                 }
@@ -272,3 +274,10 @@ function modifyProgram() {
     confirmProfilProgram();
 }
 
+
+function changerWatchMode() {
+    var name=document.getElementById("nameProgram");
+    var desc=document.getElementById("descriptionProgram");
+    name.setAttribute("readonly",true);
+    desc.setAttribute("readonly",true);
+}

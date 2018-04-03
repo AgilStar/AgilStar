@@ -7,7 +7,7 @@
     String type=request.getParameter("type");
     String codeUser=request.getParameter("codeUser");
     if(type==null){
-        type="modifyType";
+        type="voirType";
     }
 %>
 <!DOCTYPE html>
@@ -41,9 +41,7 @@
                 <!-- Container fluid  -->
                 <div class="container-fluid" id="mainPage">
                     <!-- Start Page Content -->
-
                     <!-- End PAge Content -->
-
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
@@ -68,7 +66,6 @@
                                                 <th>Description Programme</th>
                                                 <th>Modifier</th>
                                             </tr>
-                                         
                                             </thead>
                                             <tbody>
                                             <%
