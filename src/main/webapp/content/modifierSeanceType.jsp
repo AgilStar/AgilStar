@@ -5,13 +5,16 @@
 <%@ page import="model.Exercice" %>
 <%@ page import="model.Categorieseance" %>
 <%@ page import="db.dbProgram" %>
+<%@ page import="db.dbExercice" %>
 <%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
         <title>Ela - Bootstrap Admin Dashboard Template</title>
         <%@ include file="/content/templete/libHead.jsp" %>
+        <script type="text/JavaScript" src="../js/ajaxTypeSession.js"></script>
         <script type="text/JavaScript" src="../js/ajaxExercice.js"></script>
+        <script type="text/JavaScript" src="../js/gestionTableau.js"></script>
     </head>
 
     <body class="fix-header fix-sidebar">
@@ -70,56 +73,50 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Catégorie</label>
-                                            <select>
-                                                 <%
-                                                ArrayList<Categorieseance> listCat = new dbProgram().getCategories();
-                                                for(Categorieseance cat : listCat){
-                                                    if(cat.getCodecat()==st.getCodecat()){
-                                                        out.print("<option value=\""+cat.getLibellecat()+"\"selected>"+cat.getLibellecat()+"</option>");
-                                                    }else{
-                                                     out.print("<option value=\""+cat.getLibellecat()+"\">"+cat.getLibellecat()+"</option>");
-                                                    }
-                                                }
+                                            <select id="codeCateg" name="codeCat">
+                                                <%
+                                               ArrayList<Categorieseance> listCat = new dbProgram().getCategories();
+                                               for(Categorieseance cat : listCat){
+                                                   if(cat.getCodecat()==st.getCodecat()){
+                                                       out.print("<option value=\""+cat.getCodecat()+"\"selected>"+cat.getLibellecat()+"</option>");
+                                                   }else{
+                                                    out.print("<option value=\""+cat.getCodecat()+"\">"+cat.getLibellecat()+"</option>");
+                                                   }
+                                               }
                                                 
                                                 %>
-                                                </select>
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Echauffement de la séance type</label>                                  
-                                            <input type="string" class="form-control"  id="echauffSt"  value="<%=st.getEchauffementst()%>">
+                                            <input type="string" class="form-control"  id="descrWarmUp"  value="<%=st.getEchauffementst()%>">
                                         </div>
 
-                                        <h5>Exercices</h5>
+                                        <h4><b><u>Exercices</b></u></h4></br>
 
                                         <%
                                             ArrayList<String[]> descriptSt = new dbProgram().getDescriptionSeance(codes);
                                             Integer cpt = 0;
+                                            out.print("<tbody><table id=\"example24\" class=\"display nowrap table table-hover table-striped table-bordered\" cellspacing=\"0\" width=\"100%\">");
+                                            out.print("<thead><tr><th>Nom Exercice</th><th>Séries à faire</th><th>Durée attendue</th><th>Quantité Attendue</th><th>Repos</th><th></th></tr></thead>");
+                                            out.print("<tbody>");
                                             for(String[] desc : descriptSt){
                                                 cpt++;
                                                 Exercice e = new dbProgram().getOneExercice (desc[0]);
-                                                out.print("<h5><b>Exercice "+cpt+"</b></h5>");
-                                                out.print("<table id=\"example23\" class=\"display nowrap table table-hover table-striped table-bordered\" cellspacing=\"0\" width=\"100%\">");
-                                                out.print("<thead><tr><th>Nom Exercice</th><th>Objectif</th></tr></thead>");
-                                                out.print("<tbody>");
-                                                out.print("<tr><td><input type=\"string\" "
-                                                    + "class=\"form-control\" id=\"nameExercice"+e.getCodee()+"\" value=\""+e.getLibellee()+"\"></td>");
-                                                out.print("<td>  <input type=\"string\" "
-                                                    + "class=\"form-control\" id=\"objExecice"+e.getCodee()+"\" value=\""+e.getObjectife()+"\"></td> </tr>");
-                                                out.print("</tbody></table></br>");
-                                                out.print("<div class=\"form-group\"><label><b>Lien vidéo</b></label><input type=\"string\" class=\"form-control\" "
-                                                + "id=\"lienExercice\" value=\""+e.getLienvideo()+"\"></div>");
-                                                out.print("<table id=\"example23\" class=\"display nowrap table table-hover table-striped table-bordered\" cellspacing=\"0\" width=\"100%\">");
-                                                out.print("<thead><tr><th>Nombre série</th><th>Durée attendue</th><th>Nombre attendue</th></tr></thead>");
-                                                out.print("<tbody>");
-                                                out.print(" <tr><td><input type=\"number\" "
-                                                    + "class=\"form-control\" id=\"nbsérieExercice"+desc[1]+"\" value=\""+desc[1]+"\"></td>");
-                                                out.print(" <td>  <input type=\"number\" "
-                                                    + "class=\"form-control\" id=\"dureeExercice"+desc[2]+"\" value=\""+desc[2]+"\"></td>");
+                                                out.print("<input type=\"text\" id=\"nameExercice" + cpt + "\" value=\""+e.getLibellee()+"\" hidden>");
+                                                out.print("<tr><td><h5><b><u><a href=\"modifierExo.jsp?codee="+e.getCodee()+"\">"+e.getLibellee()+"</a></b></u></h5></td>");
                                                 out.print("<td><input type=\"number\" "
-                                                    + "class=\"form-control\" id=\"nbExercice"+desc[3]+"\" value=\""+desc[3]+"\"></td></tr>");
-                                                out.print("</tbody></table>");
+                                                    + "class=\"form-control\" id=\"nbserieExercice"+cpt+"\" value=\""+desc[1]+"\"></td>");
+                                                out.print(" <td>  <input type=\"number\" "
+                                                    + "class=\"form-control\" id=\"dureeExercice"+cpt+"\" value=\""+desc[2]+"\"></td>");
+                                                out.print("<td><input type=\"number\" "
+                                                    + "class=\"form-control\" id=\"nbExercice"+cpt+"\" value=\""+desc[3]+"\"></td>");                                              
+                                                out.print("<td><input type=\"number\" "
+                                                    + "class=\"form-control\" id=\"restExercice"+cpt+"\" value=\""+desc[4]+"\"></td>");
+                                                out.print("<td><button onClick=\"deleteLine(" + cpt + ")\" value=\"-\">"+cpt+"</button></td></tr>");
                                                     
                                         }
+                                            out.print("</tbody></table></br>");  
                                             out.print("</br>");
                                         %>
 
@@ -131,14 +128,46 @@
 
                                         </br>
 
-                                        <a href="listSession.jsp"> Retour à la liste des séances</a>
+                                        
 
                                     </div>
                                 </div>
+                                <h4>Ajouter des  exercices</h4></br>
+                                </br>
+                                <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Exercice</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>
+                                                <%
+                                                    ArrayList<Exercice> listEx=new dbExercice().getExercices();
+                                                    out.print("<select id=\"exercices\" name=\"exercices\">");
+                                                    for (Exercice e:listEx){
+                                                        
+                                                        out.print("<option value='"+e.getLibellee()+"' >"+e.getLibellee()+"</option>");
+                                                    }
+                                                    out.print("</select>");
+             
+                                                %> 
+                                            </td>
+                                            
+                                            <td><button onClick="addLine()" value="+">+</button></td>
+                                    </tbody>
+                                </table></br>       
+
+
+
                             </div>
-
-
+<div id="errorMessage"></div>
+<button type="button"  onclick="modifySession()">Modifier</button>
+</br>
+<a href="listSession.jsp"> Retour à la liste des séances</a>
                         </div>
+                                            
                         <!-- End PAge Content -->
                     </div>
                     <!-- footer -->

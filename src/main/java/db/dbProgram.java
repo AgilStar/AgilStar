@@ -159,12 +159,12 @@ public class dbProgram {
             ResultSet rs = st.executeQuery(sql);
 
             while (rs.next()) {
-                organisertype = new String[4];
+                organisertype = new String[5];
                 organisertype[0] = rs.getString("CODEE");
                 organisertype[1] = rs.getString("SERIEST");
                 organisertype[2] = rs.getString("DUREEATTENDUE");
                 organisertype[3] = rs.getString("NBATTENDU");
-
+                organisertype[4] = rs.getString("TEMPSREPOSE");
                 //ajouter les autres attributs
                 descriptionEx.add(organisertype);
             }

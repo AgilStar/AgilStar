@@ -19,12 +19,12 @@ import javax.servlet.http.HttpServletResponse;
  * On verifie que l exercice n existe pas avant de l inserer
  *
  * @author tianyuanliu,Nicolas
- */
+ */ 
 @WebServlet(
-        name = "/InsertTypeSession",
-        urlPatterns = {"/insertTypeSession"}
+        name = "/ServletModifyTypeSession",
+        urlPatterns = {"/ServletModifyTypeSession"}
 )
-public class ServletInsertTypeSession extends HttpServlet {
+public class ServletModifyTypeSession extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -37,7 +37,6 @@ public class ServletInsertTypeSession extends HttpServlet {
         int parseCatSession = Integer.parseInt(catSession);
         String descrSession = req.getParameter("descrSession");
         String descrWarmUp = req.getParameter("descrWarmUp");       
-        new db.dbTypeSession().insertTypeSession(nameSession, parseCatSession,descrSession,descrWarmUp);
         int codeSt = new db.dbTypeSession().codeSeance(nameSession);
         String cptString = req.getParameter("cpt"); 
         int cpt = Integer.parseInt(cptString);
@@ -47,17 +46,17 @@ public class ServletInsertTypeSession extends HttpServlet {
         String quantityExercice;
         String restExercice;
         int codeE;
+        new db.dbTypeSession().deleteOrganiserType(String.valueOf(codeSt));
         for (int i = 1; i <= cpt; i++) {
+            System.out.println("-----------");
             nameExercice = req.getParameter("nameExercice"+i);
             serieExercice = req.getParameter("serieExercice"+i);
             durationExercice = req.getParameter("durationExercice"+i);
             quantityExercice = req.getParameter("quantityExercice"+i);
             restExercice = req.getParameter("restExercice"+i);
-            codeE = new db.dbTypeSession().getCodeExercice(nameExercice);
+            codeE = new db.dbTypeSession().getCodeExercice(nameExercice);           
             new db.dbTypeSession().createOrganiserType(String.valueOf(codeE), String.valueOf(codeSt), i, serieExercice, durationExercice, quantityExercice,restExercice);
-        }
-
-       out.print("youhou");
-        
+        }   
+        out.print("youhou");
     }
 }
