@@ -143,5 +143,11 @@ function modifierExercice()
     }
     
     }
-
+document.querySelector('.sweet-image-message').onclick = function(){
+    swal({
+        title: "Sweet !!",
+        text: "Hey, Here's a custom image !!",
+        imageUrl: "images/hand.jpg"
+    });
+};
 

@@ -13,7 +13,7 @@
         <title>Valider votre séance</title>
         <%@ include file="/content/templete/libHead.jsp" %>
         <script type="text/JavaScript" src="../js/ajaxExercice.js"></script>
-
+  <link href="css/lib/sweetalert/sweetalert.css" rel="stylesheet">
     </head>
 
     <body class="fix-header fix-sidebar">
@@ -61,7 +61,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="basic-form">
-                                        <form>
+                                        <!--<form>-->
                                             <div class="form-group">
                                                 <p class="text-muted m-b-15 f-s-12">Si les exercices te paraissent trop facile ou trop difficile, n'hésites pas à augmenter ou réduire les séries et  <code>notes moi les modifications</code>.</p>
                                                 
@@ -80,7 +80,7 @@
                                                               }else{
                                                                out.print("<td>"+p.getNbattendue()+" unités * "+p.getSeriep()+" séries</td>");
                                                               }
-                                                              out.print("<td><select><option>-----</option><option>Facile</option><option>Bien</option><option>Difficle</option></select></td>");
+                                                              out.print("<td><select name='resultat'><option>-----</option><option>Facile</option><option>Bien</option><option>Difficle</option></select></td>");
                                                              out.print("</tr>");
                                                          }
                                                          
@@ -99,11 +99,16 @@
                                                 
                                                
                                                 </table>
+                                                <div class="sweetalert m-t-15">
+                                                    <button class="btn btn-info btn sweet-image-message" onclick="">Confirmer la séance!</button>
+                                                </div>
+                                                
+                                                
                                             </div>
                                             
                                            
                                            
-                                        </form>
+                                      <!--</form>-->
                                     </div>
                                 </div>
                             </div>
@@ -118,7 +123,7 @@
         </div>
         <!-- All Jquery -->
         <%@ include file="/content/templete/libJquery.jsp" %>
-
+<script src="js/lib/sweetalert/sweetalert.min.js"></script>
     </body>
 
 </html>

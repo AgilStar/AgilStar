@@ -3,33 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package servlet.ConnexionClient;
+package servlet.DoingExo;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author auden
+ * @author mayayePJC
  */
 @WebServlet(
-        name = "MyServletConnection",
-        urlPatterns = {"/ServletConnexion"}
+        name = "MyServletValidateSession",
+        urlPatterns = {"/ServletValidateSession"}
 )
-public class ServletConnexion extends HttpServlet {
-
-    @Override
+public class ServletValidateSession {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         PrintWriter out = resp.getWriter();
+        
         String email = req.getParameter("email");
         String mdp = req.getParameter("mdp");
         //out.print(email);
@@ -47,4 +44,3 @@ public class ServletConnexion extends HttpServlet {
    
     }
 }
-
