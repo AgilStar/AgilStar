@@ -75,7 +75,7 @@ public class dbProgramPerso {
         int nb = 0;
         cx = new dbAdmin().getConnection();
         try {
-            String sql = "select (count(sp.codesp)+ count(sb.codesb)) as nb from SEANCEPERSO sp,SEANCEBILAN sb where sp.codepp=sb.codepp and sp.codepp=" + codePP;
+            String sql = "select (temp1.nb1+temp2.nb2) as nb from (select count(sp.codesp) as nb1 from SEANCEPERSO sp where sp.codepp="+codePP+") temp1, (select count(sb.codesb) as nb2 from SEANCEBILAN sb where sb.codepp="+codePP+") temp2 ";
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
 
