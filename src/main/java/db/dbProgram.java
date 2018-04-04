@@ -1,29 +1,23 @@
 package db;
 
+import model.*;
+
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import model.*;
-import org.eclipse.jdt.internal.compiler.lookup.SourceTypeBinding;
 
 /**
- *
  * @author auden
  */
 public class dbProgram {
 
     Connection cx;//La connection utilisé par toutes les méthodes dans cette classe
 
-   
 
     /**
-     * @author Alice,tianyuan
+     * @author Alice, tianyuan
      */
     public ArrayList<Programmetype> getProgramms() {
         cx = new dbAdmin().getConnection();
@@ -125,7 +119,7 @@ public class dbProgram {
         return p;
     }
 
-//    public ArrayList<String> getCodeSceanceType(String codept) {
+    //    public ArrayList<String> getCodeSceanceType(String codept) {
 //        cx = new dbAdmin().getConnection();
 //        ArrayList<String> codes = new ArrayList();
 //        try {
@@ -203,7 +197,7 @@ public class dbProgram {
     }
      */
     public Seancetype getOneSeanceType(String codeSt) {
- cx = new dbAdmin().getConnection();
+        cx = new dbAdmin().getConnection();
         Seancetype s = new Seancetype();
         try {
 
@@ -234,12 +228,11 @@ public class dbProgram {
     }
 
     /**
-     *
      * @param codeSBT
      * @return les informations d'une seance bilan type
      */
     public Seancebilantype getOneSeanceBilanType(String codeSBT) {
- cx = new dbAdmin().getConnection();
+        cx = new dbAdmin().getConnection();
         Seancebilantype s = new Seancebilantype();
         try {
 
@@ -395,7 +388,7 @@ public class dbProgram {
      * @param name
      * @param desc
      * @return
-     * @Author Jin,Tianyuan
+     * @Author Jin, Tianyuan
      */
     public void insertProgramType(String name, String desc) {
         cx = new dbAdmin().getConnection();
@@ -430,7 +423,7 @@ public class dbProgram {
      * inserer dans la table correspondre pour lier un programme a des profils
      *
      * @param listProfil
-     * @Author Jin,Tianyuan
+     * @Author Jin, Tianyuan
      */
     public void insertCorrespondre(String[] listProfil) {
 
@@ -459,7 +452,7 @@ public class dbProgram {
      * @param listSession
      * @return
      * @throws SQLException
-     * @Author Jin,Tianyuan
+     * @Author Jin, Tianyuan
      */
     public void insertComprendreType(String[] listSession) {
         int codePTMax = findMaxCodePT();
@@ -497,51 +490,52 @@ public class dbProgram {
      * quand on cree un programme perso, on cree des seances et des bilans perso
      *
      * @param listSession
-     * @Author Jin,Tianyuan
+     * @Author Jin, Tianyuan
      */
     public void insertSessionBilanPerso(String[] listSession, int codeU) {
 
         try {
             cx = new dbAdmin().getConnection();
-            Statement st = cx.createStatement();
-            int codePPMax = findMaxProPerso();
+
+            int codePPMax = findMaxProPers();
 
             for (int i = 0; i < listSession.length; i++) {
                 System.out.println("sjfljsl" + i);
                 String codeS = listSession[i];
-                
+
                 int ordre = i + 1;
                 if (codeS.equals("-1")) {
 
                     //inserer dans la table SEANCEBILAN
                     Seancebilantype sbt = getOneSeanceBilanType("1");
                     String sql = "insert into SEANCEBILAN(CODEPP,CODESBT,CODEU,ETATLUCOACH,LIBELLESB,ORDRESB,OUVERT,VALIDERSB,DATEM) VALUES(" + codePPMax + "," + sbt.getCodesbt() + "," + codeU + ",'non','" + sbt.getLibellesbt() + "'," + ordre + ",'non','non',STR_TO_DATE('1-01-2069', '%d-%m-%Y'))";
+                    Statement st = cx.createStatement();
+                    st.executeUpdate(sql);
+                    st.close();
 
-                    int nb1 = st.executeUpdate(sql);
-                    System.out.println(sql);
-                 
                 } else {
                     int codeSession = Integer.parseInt(codeS);
                     //inserer dans la table SEANCEPERSO
                     Seancetype s = getOneSeanceType(listSession[i]);
-
+                    Statement st = cx.createStatement();
                     String sql = "insert into SEANCEPERSO(CODEPP,CODEST,DESCRIPTIONSP,ECHAUFFFEMENTSP,ETATLUCOACH,LIBELLESP,ORDRESP,OUVERT,VALIDERSP) VALUES(" + codePPMax + "," + codeSession + ",'" + s.getDescriptionst() + "','" + s.getEchauffementst() + "','non','" + s.getLibellest() + "'," + ordre + ",'non','non')";
+                    st.executeUpdate(sql);
 
-                    int nb = st.executeUpdate(sql);
-                    if (nb == 1) {
-                        System.out.println(sql);
-                        insertPlanifierSP(listSession[i]);
-                    } else {
-
-                        System.out.println("insertSessionBilanPerso a des pb");
+                    String sql2="select max(CODESP) AS Nb FROM SEANCEPERSO";
+                    Statement st2 = cx.createStatement();
+                    ResultSet rs = st.executeQuery(sql2);
+                    String codeSP="";
+                    while (rs.next()) {
+                        codeSP=rs.getString("Nb");
                     }
-                    
-
+                    st2.close();
+                    insertPlanifierSP(codeSP);
                 }
 
             }
-st.close();
-            
+            cx.close();
+
+
         } catch (SQLException ex) {
             System.out.println("Il y a un problÃ¨me sur statement insertSessionBilanPerso  " + ex.getMessage());
             ex.printStackTrace();
@@ -557,14 +551,8 @@ st.close();
      * @author Jin
      */
     public void insertPlanifierSP(String codeST) {
-         cx = new dbAdmin().getConnection();
+        cx = new dbAdmin().getConnection();
         ArrayList<String[]> listExo = getDescriptionSeance(codeST);
-        for (String[] list : listExo) {
-            for (int i = 0; i < list.length; i++) {
-                System.out.print(list[i] + ",");
-            }
-            System.out.println("");
-        }
         int codeSP = getMaxCodeSP();
 
         for (int i = 0; i < listExo.size(); i++) {
@@ -632,7 +620,7 @@ st.close();
     }
 
     public int findMaxProPers() {
- cx = new dbAdmin().getConnection();
+        cx = new dbAdmin().getConnection();
         int code = 0;
         try {
             String sql = "select max(CODEPP) as codePP from PROGRAMMEPERSO";
@@ -643,6 +631,7 @@ st.close();
 
             }
             st.close();
+            cx.close();
 
         } catch (SQLException ex) {
             System.out.println("Il y a un problÃ¨me sur statement findMaxProPerso" + ex.getMessage());
@@ -656,7 +645,7 @@ st.close();
      *
      * @param name Nom de programme
      * @return
-     * @author Jin,Tianyuan
+     * @author Jin, Tianyuan
      */
     public boolean checkNameProgram(String name) {
         cx = new dbAdmin().getConnection();
@@ -684,7 +673,7 @@ st.close();
      *
      * @param name le nom du programme perso
      * @return boolean
-     * @author Jin,Tianyuan
+     * @author Jin, Tianyuan
      */
     public boolean checkNameProgramPerso(String name) {
         cx = new dbAdmin().getConnection();
@@ -743,8 +732,8 @@ st.close();
      * Changer le nom et description
      *
      * @param codeP code de programme
-     * @param name nom de programme
-     * @param desc description de programme
+     * @param name  nom de programme
+     * @param desc  description de programme
      * @Author Tianyuan
      */
     public void modifyProgram(String codeP, String name, String desc) {
