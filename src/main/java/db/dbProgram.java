@@ -256,6 +256,34 @@ public class dbProgram {
         }
         return s;
     }
+    /**
+     * recuperer les informations d'une seance bilan 
+     * @param codeSB
+     * @return 
+     */
+    public Seancebilan getOneSeanceBilan(String codeSB) {
+        cx = new dbAdmin().getConnection();
+        Seancebilan s = new Seancebilan();
+        try {
+
+            String sql = "select *  from SEANCEBILAN where CODESB=" + codeSB;
+            Statement st = cx.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+                int codeSBT=rs.getInt("CODESBT");
+                String libelleSB=rs.getString("LIBELLESB");
+                s.setCodesbt(codeSBT);
+                s.setLibellesb(libelleSB);
+            }
+            st.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Il y a un problÃ¨me sur statement getOneSeanceBilan " + ex.getMessage());
+            ex.printStackTrace();
+        }
+        return s;
+    }
 
     public Exercice getOneCat(String codeCat) {
         cx = new dbAdmin().getConnection();
@@ -505,12 +533,22 @@ public class dbProgram {
 
                 int ordre = i + 1;
                 if (codeS.equals("-1")) {
-
                     //inserer dans la table SEANCEBILAN
-                    Seancebilantype sbt = getOneSeanceBilanType("1");
-                    String sql = "insert into SEANCEBILAN(CODEPP,CODESBT,CODEU,ETATLUCOACH,LIBELLESB,ORDRESB,OUVERT,VALIDERSB,DATEM) VALUES(" + codePPMax + "," + sbt.getCodesbt() + "," + codeU + ",'non','" + sbt.getLibellesbt() + "'," + ordre + ",'non','non',STR_TO_DATE('1-01-2069', '%d-%m-%Y'))";
+                    Seancebilan sb=getOneSeanceBilan("999");//999 est la seance bilan perso
+                    //Seancebilantype sbt = getOneSeanceBilanType("1");
+                    String sql = "insert into SEANCEBILAN(CODEPP,CODESBT,CODEU,ETATLUCOACH,LIBELLESB,ORDRESB,OUVERT,VALIDERSB,DATEM) VALUES(" + codePPMax + "," + sb.getCodesbt() + "," + codeU + ",'non','" + sb.getLibellesb() + "'," + ordre + ",'non','non',STR_TO_DATE('1-01-2069', '%d-%m-%Y'))";
                     Statement st = cx.createStatement();
                     st.executeUpdate(sql);
+                    
+                    String sql2="select max(CODESB) as nb from SEANCEBILAN";
+                     Statement st2 = cx.createStatement();
+                     ResultSet rs = st.executeQuery(sql2);
+                    String codeSB="";
+                    while (rs.next()) {
+                        codeSB=rs.getString("Nb");
+                    }
+                    st2.close();
+                    insertPlanifierBilan(codeSB);
                     st.close();
 
                 } else {
@@ -529,6 +567,7 @@ public class dbProgram {
                         codeSP=rs.getString("Nb");
                     }
                     st2.close();
+                    st.close();
                     insertPlanifierSP(codeSP);
                 }
 
@@ -566,11 +605,61 @@ public class dbProgram {
                 st.close();
 
             } catch (SQLException ex) {
-                System.out.println("Il y a un problÃ¨me sur statement insertCorrespondre  " + ex.getMessage());
+                System.out.println("Il y a un problÃ¨me sur statement insertPlanifierSP  " + ex.getMessage());
                 ex.printStackTrace();
             }
         }
 
+    }
+    
+    public void insertPlanifierBilan(String codeSB){
+        cx = new dbAdmin().getConnection();
+        ArrayList<String[]> listExo = getPlanifierBilan("999");
+
+        for (int i = 0; i < listExo.size(); i++) {
+            try {
+
+                String sql = "insert into PLANIFIERBILAN(CODEE,CODESB,ORDREB,DATER) VALUES(" + listExo.get(i)[0] + "," + codeSB + "," + listExo.get(i)[1] +",STR_TO_DATE('1-01-2069', '%d-%m-%Y'))";
+                Statement st = cx.createStatement();
+                System.out.println(sql);
+                st.executeUpdate(sql);
+
+                st.close();
+
+            } catch (SQLException ex) {
+                System.out.println("Il y a un problÃ¨me sur statement insertPlanifierBilan  " + ex.getMessage());
+                ex.printStackTrace();
+            }
+        }
+    
+    
+    }
+    
+    public ArrayList<String[]> getPlanifierBilan(String codeSB){
+        cx = new dbAdmin().getConnection();
+        ArrayList<String[]> descriptionEx = new ArrayList();
+        String[] planifierbilan = null;
+        try {
+            String sql = "select *  from PLANIFIERBILAN WHERE CODESB='" + codeSB + "'ORDER BY ORDREB ASC";
+            Statement st = cx.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+                planifierbilan = new String[2];
+                planifierbilan[0] = rs.getString("CODEE");
+                planifierbilan[1] = rs.getString("ORDREB");
+
+                //ajouter les autres attributs
+                descriptionEx.add(planifierbilan);
+            }
+            st.close();
+            cx.close();
+        } catch (SQLException ex) {
+            System.out.println("Il y a un problème sur statement de getPlanifierBilan " + ex.getMessage());
+            ex.printStackTrace();
+        }
+        return descriptionEx;
+        
     }
 
     /**
