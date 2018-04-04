@@ -28,6 +28,9 @@ public class ServletAddProgram extends HttpServlet {
         String[] listS = req.getParameter("listS").split(",");
         String codeUser=req.getParameter("codeUser");
         dbProgram db = new dbProgram();
+       
+         
+        //pour modifier un programme type
         if (type.equals("modifyType")) {
             db.deleteProgram(codeP);
             db.modifyProgram(codeP,name,des);
@@ -35,7 +38,10 @@ public class ServletAddProgram extends HttpServlet {
             db.insertCorrespondre(checkedProfil);
             //insertion dans la table comprendre type et la table comprendre sbt
             db.insertComprendreType(listS);
+          
             out.print("true");
+            
+            //pour creer un programme type 
         } else if(type.equals("createType")){
             if (!db.checkNameProgram(name)) {
                 out.print("false");
@@ -47,14 +53,33 @@ public class ServletAddProgram extends HttpServlet {
                 db.insertCorrespondre(checkedProfil);
                 //insertion dans la table comprendre type et la table comprendre sbt
                 db.insertComprendreType(listS);
+               
                 out.print("true");
             }
+            
+            //pour la creation d'un programme personnalise 
         }else if(type.equals("createPerso")){
-
+            if(!db.checkNameProgramPerso(name)){
+                 out.print("false");
+                 
+                return;
+            }else{
+                //insertion dans la table programme perso
+                db.insertProgrammePerso(name,des,Integer.parseInt(codeUser),Integer.parseInt(codeP));
+                //insertion dans la table seanceperso , la table seancebilan , la table planifiersp
+                
+                
+                db.insertSessionBilanPerso(listS,Integer.parseInt(codeUser));
+                
+                out.print("true");
+                
+            
+                
+            
         }
 
         }
 
 
 }
-
+}
