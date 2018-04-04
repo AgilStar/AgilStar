@@ -41,3 +41,8 @@ function deleteLine(num)
     document.getElementById("example24").deleteRow(num);
     changeOrder();
 }
+
+
+function checkInputExercice(){
+
+}

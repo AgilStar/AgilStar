@@ -48,9 +48,27 @@ public class dbTypeSession {
             st.close();
             cx.close();
         } catch (SQLException ex) {
-            System.out.println("Il y a un problème sur statement " + ex.getMessage());
+            System.out.println("Il y a un problème sur statement insertTypeSession" + ex.getMessage());
         }
         return true;
+
+    }
+
+    public void modifySession(String codes,String noms, String desc, String warmup,String codecat) throws SQLException {
+        cx = new dbAdmin().getConnection();
+        try {
+
+            String sql = "update SEANCETYPE set LIBELLEST='"+noms+"',DESCRIPTIONST='"+desc+"', ECHAUFFEMENTST='"+warmup+"', CODECAT='"+codecat+"' where codest="+codes;
+            System.out.println(sql);
+            Statement st = cx.createStatement();
+            st.executeUpdate(sql);
+            st.close();
+            cx.close();
+        }
+
+        catch (SQLException ex) {
+            System.out.println("Il y a un problème sur statement modifySession" + ex.getMessage());
+        }
 
     }
 

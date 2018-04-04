@@ -110,8 +110,8 @@ function modifySession()
     var catSession = document.getElementById("codeCateg").value;
     var descrSession = document.getElementById("descrSt").value;
     var descrWarmUp = document.getElementById("descrWarmUp").value;
+    var codeSt = document.getElementById("codeS").value;
     var arrayLignes = document.getElementById("example24").rows.length - 1;
-alert(arrayLignes);
     // on vérifie que les champs nom d'exercice et objectif sont remplis
     var errorMessage = "";
     var errorFlag = false;
@@ -169,7 +169,7 @@ alert(arrayLignes);
             url += "&quantityExercice" + i + "=" + document.getElementById("nbExercice" + i).value;
             url += "&restExercice" + i + "=" + document.getElementById("restExercice" + i).value;
         }
-        alert(url);
+
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 {
@@ -179,7 +179,7 @@ alert(arrayLignes);
             ;
         }
         // Requête au serveur avec les paramètres éventuels.
-        xhr.open("GET", "/ServletModifyTypeSession?nameSession=" + nameSession + "&catSession=" + catSession + "&descrSession=" + descrSession + "&descrWarmUp=" + descrWarmUp +
+        xhr.open("GET", "/ServletModifyTypeSession?codeS="+codeSt+"&nameSession=" + nameSession + "&catSession=" + catSession + "&descrSession=" + descrSession + "&descrWarmUp=" + descrWarmUp +
             url, true);
         xhr.send(null);
 

@@ -8,6 +8,7 @@ package servlet.TypeSession;
 import servlet.Exercice.*;
 import java.io.PrintWriter;
 import java.io.IOException;
+import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
@@ -37,7 +38,7 @@ public class ServletModifyTypeSession extends HttpServlet {
         int parseCatSession = Integer.parseInt(catSession);
         String descrSession = req.getParameter("descrSession");
         String descrWarmUp = req.getParameter("descrWarmUp");       
-        int codeSt = new db.dbTypeSession().codeSeance(nameSession);
+        String codeSt =  req.getParameter("codeS");
         String cptString = req.getParameter("cpt"); 
         int cpt = Integer.parseInt(cptString);
         String nameExercice;
@@ -46,6 +47,11 @@ public class ServletModifyTypeSession extends HttpServlet {
         String quantityExercice;
         String restExercice;
         int codeE;
+        try {
+            new db.dbTypeSession().modifySession(codeSt,nameSession,descrSession,descrWarmUp,catSession);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         new db.dbTypeSession().deleteOrganiserType(String.valueOf(codeSt));
         for (int i = 1; i <= cpt; i++) {
             System.out.println("-----------");
