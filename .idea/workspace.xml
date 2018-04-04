@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef1cdac3-136c-4724-8a4f-2c47a48dd52a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dbProgram.java" afterPath="$PROJECT_DIR$/src/main/java/db/dbProgram.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlet/Program/ServletAddProgram.java" afterPath="$PROJECT_DIR$/src/main/java/servlet/Program/ServletAddProgram.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/listSession.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/listSession.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/modifierSeanceType.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/modifierSeanceType.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/gestionTableau.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/gestionTableau.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlet/Program/ctrlProgram.java" afterPath="$PROJECT_DIR$/src/main/java/servlet/Program/ctrlProgram.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/listClient.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/listClient.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/listProgrammPersonal.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/listProgrammPersonal.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/templete/listProfil.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/templete/listProfil.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/templete/listSeance.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/templete/listSeance.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -74,11 +75,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="listSession.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="listSession.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listSession.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="87" column="53" lean-forward="true" selection-start-line="87" selection-start-column="53" selection-end-line="87" selection-end-column="53" />
+            <state relative-caret-position="-654">
+              <caret line="6" column="51" lean-forward="true" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ctrlProgram.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/servlet/Program/ctrlProgram.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding>
+                <element signature="e#208#209#0" expanded="true" />
+                <element signature="e#250#251#0" expanded="true" />
+                <element signature="e#299#300#0" expanded="true" />
+                <element signature="e#348#349#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="listSeance.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/listSeance.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="338">
+              <caret line="122" column="58" lean-forward="false" selection-start-line="122" selection-start-column="58" selection-end-line="122" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -87,18 +113,8 @@
       <file leaf-file-name="modifierProgramme.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="78" column="68" lean-forward="true" selection-start-line="78" selection-start-column="68" selection-end-line="78" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="listProfil.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/listProfil.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="42" />
+            <state relative-caret-position="466">
+              <caret line="84" column="65" lean-forward="false" selection-start-line="84" selection-start-column="65" selection-end-line="84" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -114,11 +130,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="listClient.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listClient.jsp">
+      <file leaf-file-name="listProgrammPersonal.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listProgrammPersonal.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="123" column="140" lean-forward="false" selection-start-line="123" selection-start-column="140" selection-end-line="123" selection-end-column="140" />
+            <state relative-caret-position="469">
+              <caret line="67" column="173" lean-forward="false" selection-start-line="67" selection-start-column="173" selection-end-line="67" selection-end-column="173" />
               <folding />
             </state>
           </provider>
@@ -160,8 +176,13 @@
       <find>hidden</find>
       <find>checkk</find>
       <find>alert(</find>
+      <find>type.equals(&quot;voirType&quot;)</find>
+      <find>Les séances et bilans</find>
       <find>codes</find>
     </findStrings>
+    <replaceStrings>
+      <replace>type.equals(&quot;voirType&quot;)||type.equals(&quot;voirPerso&quot;)</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -192,28 +213,22 @@
         <option value="$PROJECT_DIR$/src/main/java/model/Seancebilantype.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Seancetype.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/Program/ctrlCreateProgram.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlet/Program/ctrlProgram.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Programmetype.java" />
         <option value="$PROJECT_DIR$/src/main/java/test.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Profil.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/sessionOnGoing.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/db/dbClient.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/listProgrammPersonaliser.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/content/listClient.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/content/listProgrammPersonal.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/db/dbProfil.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/ajaxAdministrateur.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/detailProgramPerso.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/listProgramm.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/content/templete/listProfil.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/createProgram.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/content/templete/listSeance.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/db/dbProgramPerso.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/DoingExo/ServletValidateSession.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/validateSession.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/DoingExercice.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/db/dbAdmin.java" />
         <option value="$PROJECT_DIR$/src/main/java/db/dbTypeSession.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/TypeSession/ServletModifyTypeSession.java" />
@@ -225,6 +240,12 @@
         <option value="$PROJECT_DIR$/src/main/webapp/js/gestionTableau.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/gestionTableau.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/listSession.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/servlet/Program/ctrlProgram.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/content/listClient.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/content/listProgrammPersonal.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/content/templete/listProfil.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/content/templete/listSeance.jsp" />
       </list>
     </option>
   </component>
@@ -640,7 +661,7 @@
       <workItem from="1522689433554" duration="11391000" />
       <workItem from="1522791268940" duration="2032000" />
       <workItem from="1522828645943" duration="3758000" />
-      <workItem from="1522844960527" duration="9610000" />
+      <workItem from="1522844960527" duration="11424000" />
     </task>
     <servers />
   </component>
@@ -650,7 +671,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133328000" />
+    <option name="totallyTimeSpent" value="135142000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -811,14 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/Program/ctrlProgram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/content/createExercice.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="562">
@@ -886,14 +899,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listProgrammPersonal.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="83" column="149" lean-forward="false" selection-start-line="83" selection-start-column="149" selection-end-line="83" selection-end-column="149" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/libHead.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -955,14 +960,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1260">
           <caret line="84" column="67" lean-forward="false" selection-start-line="84" selection-start-column="67" selection-end-line="84" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/listSeance.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1160,38 +1157,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierSeanceType.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="115" column="111" lean-forward="false" selection-start-line="115" selection-start-column="75" selection-end-line="115" selection-end-column="111" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/listProfil.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="78" column="68" lean-forward="true" selection-start-line="78" selection-start-column="68" selection-end-line="78" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listClient.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="123" column="140" lean-forward="false" selection-start-line="123" selection-start-column="140" selection-end-line="123" selection-end-column="140" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/gestionTableau.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="581">
@@ -1207,8 +1172,69 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listSession.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="87" column="53" lean-forward="true" selection-start-line="87" selection-start-column="53" selection-end-line="87" selection-end-column="53" />
+        <state relative-caret-position="-654">
+          <caret line="6" column="51" lean-forward="true" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listProgrammPersonal.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="67" column="173" lean-forward="false" selection-start-line="67" selection-start-column="173" selection-end-line="67" selection-end-column="173" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/listProfil.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/Program/ctrlProgram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#208#209#0" expanded="true" />
+            <element signature="e#250#251#0" expanded="true" />
+            <element signature="e#299#300#0" expanded="true" />
+            <element signature="e#348#349#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listClient.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="137" column="179" lean-forward="true" selection-start-line="137" selection-start-column="179" selection-end-line="137" selection-end-column="179" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="84" column="65" lean-forward="false" selection-start-line="84" selection-start-column="65" selection-end-line="84" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierSeanceType.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="115" column="111" lean-forward="false" selection-start-line="115" selection-start-column="75" selection-end-line="115" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/listSeance.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="122" column="58" lean-forward="false" selection-start-line="122" selection-start-column="58" selection-end-line="122" selection-end-column="58" />
           <folding />
         </state>
       </provider>

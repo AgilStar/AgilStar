@@ -25,7 +25,7 @@
             ArrayList<Profil> listProfil=new ctrlProgram().getProfil();
             for(Profil p:listProfil){
                 if (listProfilPrograme.contains(p)){
-                    if(type.equals("voirType")){
+                    if(type.equals("voirType")||type.equals("voirPerso")){
                         out.print("<tr style=\"background-color:#d1ecf1\">");
                     }else{
                         out.print("<tr onclick=\"changeDelete(this)\" style=\"background-color:#d1ecf1\">");
@@ -33,7 +33,7 @@
                     out.print("<th scope=\"row\">");
                     out.print("<input type=\"checkbox\" name=\"profil\" value=\""+p.getCodeprofil()+"\" hidden checked>");
                 }else{
-                    if(type.equals("voirType")){
+                    if(type.equals("voirType")||type.equals("voirPerso")){
                         out.print("<tr style=\"background-color:#fedee5\" hidden>");
                     }else{
                         out.print("<tr onclick=\"changeDelete(this)\" style=\"background-color:#fedee5\">");

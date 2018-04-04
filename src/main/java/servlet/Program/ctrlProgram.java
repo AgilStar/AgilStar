@@ -18,4 +18,8 @@ public ArrayList<Seancetype> getAllSeanceType(){
 }
 
 
+
+
+
+
 }

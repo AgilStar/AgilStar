@@ -66,23 +66,23 @@
                                     <div class="form-group">
                                         <label>Nom du programme</label>
                                         <input type="string" class="form-control" id="nameProgram"
-                                               value="<%=p.getLibellept()%> " <%=type.equals("voirType")?"readonly":""%>>
+                                               value="<%=p.getLibellept()%> " <%=type.equals("voirType")||type.equals("voirPerso")?"readonly":""%>>
                                     </div>
                                     <div class="form-group">
                                         <label>Description du programme</label>
                                         <input type="string" class="form-control" id="descriptionProgram"
-                                               value="<%=p.getDescriptionpt()%>"  <%=type.equals("voirType")?"readonly":""%>>
+                                               value="<%=p.getDescriptionpt()%>"  <%=type.equals("voirType")||type.equals("voirPerso")?"readonly":""%>>
                                     </div>
                                 </div>
                                 <%--List séance à ajouter--%>
-                                    <h2 style="margin-top: 30px"><%=type.equals("voirType")?"Les ":"Modifier les"%> profils</h2>
+                                    <h2 style="margin-top: 30px"><%=type.equals("voirType")||type.equals("voirPerso")?"Les ":"Modifier les"%> profils</h2>
                                 <jsp:include page="templete/listProfil.jsp" flush="true">
                                     <jsp:param name="codeP" value="<%=codep%>"/>
                                     <jsp:param name="type" value="<%=type%>"/>
                                 </jsp:include>
-                                    <h2 style="margin-top: 30px"><%=type.equals("voirType")?"Les ":"Modifier les"%> séances et bilans</h2>
+                                    <h2 style="margin-top: 30px"><%=type.equals("voirType")||type.equals("voirPerso")?"Les ":"Modifier les"%> séances et bilans</h2>
                                 <%
-                                    if(!type.equals("voirType")){
+                                    if(!type.equals("voirType")&&!type.equals("voirPerso")){
                                         out.print(" <button class=\"btn btn-warning col-lg-4 col-sm-12\" onclick=\"switchListSeance()\">Afficher/Cacher la liste de\n" +
                                                 "                                        séance à ajouter\n" +
                                                 "                                    </button>");
@@ -99,10 +99,10 @@
                         <div id="errorMessage"></div>
 
 
-                        <button type="button" class="btn btn-danger btn-rounded button-sweet-success m-b-10 m-l-5" onclick="confirmProfilProgram('<%=type%>','<%=p.getCodept()%>','<%=codeUser%>')" <%=type.equals("voirType")?"hidden":""%>>
+                        <button type="button" class="btn btn-danger btn-rounded button-sweet-success m-b-10 m-l-5" onclick="confirmProfilProgram('<%=type%>','<%=p.getCodept()%>','<%=codeUser%>')" <%=type.equals("voirType")||type.equals("voirPerso")?"hidden":""%>>
                             Confirmer
                         </button>
-                        <button type="button" class="btn btn-danger btn-rounded button-sweet-success m-b-10 m-l-5" onclick="window.location.href='modifierProgramme.jsp?codep=<%=p.getCodept()%>&type=modifyType&codeUser=<%=codeUser%>'" <%=type.equals("voirType")?"":"hidden"%>>
+                        <button type="button" class="btn btn-danger btn-rounded button-sweet-success m-b-10 m-l-5" onclick="window.location.href='modifierProgramme.jsp?codep=<%=p.getCodept()%>&type=modifyType&codeUser=<%=codeUser%>'" <%=type.equals("voirType")||type.equals("voirPerso")?"":"hidden"%>>
                             Modifier
                         </button>
 

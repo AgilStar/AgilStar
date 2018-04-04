@@ -42,7 +42,7 @@
 
 %>
 
-<div class="table-responsive m-t-40" id="listSeance" <% if(type!=null&&(type.equals("modifyType"))||type.equals("modifyPerso")||type.equals("voirType")){{out.print("hidden");}}%>>
+<div class="table-responsive m-t-40" id="listSeance" <% if(type!=null&&(type.equals("modifyType"))||type.equals("modifyPerso")||type.equals("voirType")||type.equals("voirPerso")){{out.print("hidden");}}%>>
     <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0"
            width="100%">
         <thead>
@@ -91,7 +91,7 @@
 
 </div>
 
-<div class="row" style="margin-top: 10px;margin-bottom: 30px;margin-left: 5px" <%=type.equals("voirType")?"hidden":""%>>
+<div class="row" style="margin-top: 10px;margin-bottom: 30px;margin-left: 5px" <%=type.equals("voirType")||type.equals("voirPerso")?"hidden":""%>>
     <button class="btn btn-success" onclick="addBilan()">+</button>
     <h3 class="center">Bilan</h3>
     <button class="btn btn-warning" onclick="deleteBilan()">-</button>
@@ -112,7 +112,7 @@
                             Seancebilantype st = listBilan.get(i);
                             out.print(" <li class=\"dd-item dd-item\" idsession='-1'>");
                         }
-                        if (i == 1 || i == (nbMax)||type.equals("voirType")) {
+                        if (i == 1 || i == (nbMax)||type.equals("voirType")||type.equals("voirPerso")) {
                             out.print("  <div class=\"dd3-handle\" style=\"background-color:#d6d8d9\"></div>");
                         } else {
                             out.print("<div class=\"dd-handle dd3-handle\" style=\"background-color:#ffeacd\"></div>");
@@ -120,7 +120,7 @@
                         if (listSeance.get(i) != null) {
                             Seancetype s = listSeance.get(i);
                             out.print(" <div class=\"dd3-content\">" + s.getLibellest() + "(" + s.getDescriptionst() + ")");
-                            if(!type.equals("voirType")){
+                            if(!type.equals("voirType")&&!type.equals("voirPerso")){
                                 out.print("<button class=\"btn-danger\" style=\"float: right\" onclick=\"deleteSeance(this)\">X</button>" + "</div></li>");
                             }else{
                                 out.print("</div></li>");
@@ -130,7 +130,7 @@
                             out.print(" <div class=\"dd3-content\" style=\"background-color:#d1ecf1\"> Bilan" + "</div></li>");
                         } else {
                             out.print(" <div class=\"dd3-content\" style=\"background-color:#d1ecf1\"> Bilan");
-                            if(!type.equals("voirType")){
+                            if(!type.equals("voirType")&&!type.equals("voirPerso")){
                                 out.print("<button class=\"btn-danger\" style=\"float: right\" onclick=\"deleteSeance(this)\">X</button>" + "</div></li>");
                             }else{
                                 out.print("</div></li>");

@@ -65,7 +65,7 @@
                                             out.print("<tr>");
                                             out.print("<th scope=\"row\">"+p.getLibellepp()+"</th>");
                                             out.print("<td>"+p.getDescriptionpp()+"</td>");
-                                            out.print("<td><button type='button' onclick=\"window.location.href='modifierProgramme.jsp?codep="+p.getCodept()+"'\"+e.getCodept()+'\" class='btn btn-warning btn-rounded m-b-10 m-l-5'>Voir</button></td>");
+                                            out.print("<td><button type='button' onclick=\"window.location.href='modifierProgramme.jsp?codep="+p.getCodept()+"&type=voirPerso'\"+e.getCodept()+'\" class='btn btn-warning btn-rounded m-b-10 m-l-5'>Voir</button></td>");
                                             out.print("</tr>");
                                         }
                                     %>
