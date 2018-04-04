@@ -1,4 +1,4 @@
-function addLine()
+function addLineT()
 {
     var arrayLignes = document.getElementById("example24").rows.length;
     var tableau = document.getElementById("example24");
@@ -14,11 +14,11 @@ function addLine()
    placeholder=\"Series a faire\">";
 
     var colonne3 = ligne.insertCell(2);
-    colonne3.innerHTML += "<input type=\"number\" id=\"durationExercice" + arrayLignes + "\" min=\"0\" \n\
+    colonne3.innerHTML += "<input type=\"number\" id=\"dureeExercice" + arrayLignes + "\" min=\"0\" \n\
    placeholder=\"Duree(sec)\">";
 
     var colonne4 = ligne.insertCell(3);
-    colonne4.innerHTML += "<input type=\"number\" id=\"quantityExercice" + arrayLignes + "\" min=\"0\" \n\
+    colonne4.innerHTML += "<input type=\"number\" id=\"nbExercice" + arrayLignes + "\" min=\"0\" \n\
    placeholder=\"Quantite\">";//les mois commencent par 0
 
     var colonne5 = ligne.insertCell(4);
@@ -34,4 +34,5 @@ function addLine()
 function deleteLine(num)
 {
     document.getElementById("example24").deleteRow(num);
+    changeOrder();
 }

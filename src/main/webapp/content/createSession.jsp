@@ -98,7 +98,7 @@
              
                                                             %> 
                                                         </td>
-                                                        <td><button onClick="addLine()" value="+">+</button></td>
+                                                        <td><button onClick="addLineT()" value="+">+</button></td>
                                                 </tbody>
                                             </table></br>
                                             <h4>Exercices à insérer</h4></br>
