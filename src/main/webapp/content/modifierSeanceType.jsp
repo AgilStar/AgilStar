@@ -48,7 +48,7 @@
             <div class='row'>
 
                 <!-- Commmencer ici -->
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <div class="card">
                         <div class="card-title">
                             <h4>Modification d'une Séance Type</h4>
@@ -95,7 +95,8 @@
                                            value="<%=st.getEchauffementst()%>">
                                 </div>
 
-                                <h4><b><u>Exercices</b></u></h4></br>
+                                <h4><b><u>Exercices</u></b></h4>
+                                </br>
 
                                 <%
                                     ArrayList<String[]> descriptSt = new dbProgram().getDescriptionSeance(codes);
@@ -106,8 +107,7 @@
                                     for (String[] desc : descriptSt) {
                                         cpt++;
                                         Exercice e = new dbProgram().getOneExercice(desc[0]);
-                                        out.print("<input type=\"text\" id=\"nameExercice" + cpt + "\" value=\"" + e.getLibellee() + "\" hidden>");
-                                        out.print("<tr><td><h5><b><u><a href=\"modifierExo.jsp?codee=" + e.getCodee() + "\">" + e.getLibellee() + "</a></u></b></h5></td>");
+                                        out.print("<tr><td><a href=\"modifierExo.jsp?codee=" + e.getCodee() + "\">" + e.getLibellee() + "</a>"+"<input type=\"text\" id=\"nameExercice" + cpt + "\" value=\"" + e.getLibellee() + "\" hidden>"+"</td>");
                                         out.print("<td><input type=\"number\" "
                                                 + "class=\"form-control\" id=\"nbserieExercice" + cpt + "\" value=\"" + desc[1] + "\"></td>");
                                         out.print(" <td>  <input type=\"number\" "
@@ -117,7 +117,6 @@
                                         out.print("<td><input type=\"number\" "
                                                 + "class=\"form-control\" id=\"restExercice" + cpt + "\" value=\"" + desc[4] + "\"></td>");
                                         out.print("<td><button onClick=\"deleteLine(" + cpt + ")\" value=\"-\">" + cpt + "</button></td></tr>");
-
                                     }
                                     out.print("</tbody></table></br>");
                                     out.print("</br>");
@@ -125,14 +124,10 @@
 
 
                                 <input type="hidden" class="form-control" id="codeS" name="codeS" value="<%=codes%>">
-
-                                </br>
-
-
                             </div>
                         </div>
-                        <h4>Ajouter des exercices</h4></br>
-                        </br>
+                        <h4><b><u>Ajouter des exercices</u></b></h4>
+                    </br>
                         <table id="example23" class="display nowrap table table-hover table-striped table-bordered"
                                cellspacing="0" width="100%">
                             <thead>
@@ -149,10 +144,9 @@
                                         out.print("<select id=\"exercices\" name=\"exercices\">");
                                         for (Exercice e : listEx) {
 
-                                            out.print("<option value='" + e.getLibellee() + "' >" + e.getLibellee() + "</option>");
+                                            out.print("<option libelle='"+e.getLibellee()+"' value='" + e.getCodee() + "' >" + e.getLibellee() + "</option>");
                                         }
                                         out.print("</select>");
-
                                     %>
                                 </td>
 
@@ -162,15 +156,12 @@
                             </tbody>
                         </table>
                         </br>
-
-
+                        <div id="errorMessage"></div>
+                        <button type="button" onclick="modifySession()">Sauvegarder Modification</button>
+                        </br>
+                        <a href="listSession.jsp"> Retour à la liste des séances</a>
                     </div>
-                    <div id="errorMessage"></div>
-                    <button type="button" onclick="modifySession()">Modifier</button>
-                    </br>
-                    <a href="listSession.jsp"> Retour à la liste des séances</a>
 
-                    <button onclick="changeOrder()">haha</button>
 
                 </div>
 

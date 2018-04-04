@@ -53,7 +53,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label" for="nameUser"> Nom <span class="text-danger">*</span></label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="nameUser" name="nameUser" placeholder="Entrez votre nom" required>
+                                                        <input type="text" class="form-control" id="nameUser" name="nameUser" required>
                                                         <input type="hidden" name="user" value="client">
                                                         <input type="hidden" name="statut" value="prospect">
                                                     </div>
@@ -61,25 +61,25 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label" for="lastNameUser"> Prénom <span class="text-danger">*</span></label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="lastNameUser" name="lastNameUser" placeholder="Entrez votre prénom" required>
+                                                        <input type="text" class="form-control" id="lastNameUser" name="lastNameUser" required>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label" for="mailUser">Email <span class="text-danger">*</span></label>
                                                     <div class="col-lg-6">
-                                                        <input type="email" class="form-control" id="mailUser" name="mailUser" placeholder="Entrez votre email" required>
+                                                        <input type="email" class="form-control" id="mailUser" name="mailUser"  required>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label" for="val-password">Mot de Passe <span class="text-danger">*</span></label>
                                                     <div class="col-lg-6">
-                                                        <input type="password" class="form-control" id="val-password" name="val-password" placeholder="Un mot de passe sécurisé..">
+                                                        <input type="password" class="form-control" id="val-password" name="val-password">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label" for="val-confirm-password">Confirmation de mot de passe <span class="text-danger">*</span></label>
                                                     <div class="col-lg-6">
-                                                        <input type="password" class="form-control" id="val-confirm-password" name="val-confirm-password" placeholder="..et à confirmer!">
+                                                        <input type="password" class="form-control" id="val-confirm-password" name="val-confirm-password">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -98,9 +98,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="objUser">Profil <span class="text-danger">*</span></label>
+                                                    <label class="col-lg-4 col-form-label" for="objUser">Profil <i>(Ctrl+click pour en choisir plusieurs)</i><span class="text-danger">*</span></label>
                                                     <div class="col-lg-6">
-                                                        <select class="form-control" id="objUser" name="objUser">
+                                                        <select class="form-control" id="objUser" name="objUser" multiple>
                                                             <%
                                                                ArrayList<Profil> listProf;
                                                                 listProf = new dbProfil().getProfils();                                          
@@ -114,13 +114,13 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label" for="telUser">Numéro de téléphone <span class="text-danger"></span></label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" pattern="[0-9]{10}"class="form-control" id="telUser" name="telUser" placeholder="format : 0xxxxxxxxx">
+                                                        <input type="text" pattern="[0-9]{10}"class="form-control" id="telUser" name="telUser" >
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label" for="adressUser">Adresse <span class="text-danger"></span></label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="adressUser" id="adressUser" name="adressUser" placeholder="http://example.com">
+                                                        <input type="text" class="adressUser" id="adressUser" name="adressUser">
                                                     </div>
                                                 </div>
                                                                               
@@ -157,6 +157,8 @@
     <!--Custom JavaScript -->
     <script src="../js/custom.min.js"></script>
     <%@ include file="/content/templete/libJquery.jsp" %>
+        <script src="../js/lib/form-validation/jquery.validate.min.js"></script>
+    <script src="../js/lib/form-validation/jquery.validate-init.js"></script>
 </body>
 
 </html>

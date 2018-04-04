@@ -32,7 +32,8 @@ public class ServletInsertExercice extends HttpServlet {
         String nameExercice = req.getParameter("nameExercice");
         String videoExercice = req.getParameter("videoExercice");
         String objectiveExercice = req.getParameter("objectiveExercice");
-        if(!new db.dbExercice().insertExercice(nameExercice, objectiveExercice, videoExercice)){
+        String descExercice = req.getParameter("descExercice");
+        if(!new db.dbExercice().insertExercice(nameExercice, objectiveExercice, videoExercice,descExercice)){
             String s="L'exercice existe d&eacute;j&agrave;";
             
             out.println(new String(s.getBytes("ISO-8859-1")));

@@ -113,7 +113,7 @@
             }else{
 
             }
-            out.print(u.getNomu());
+            out.print( "<a href=\"/content/displayUser.jsp?codeu="+u.getCodeu()+"\">"+ u.getNomu()+" </a>");
             out.print("</th>");
             out.print("<td>" + u.getPrenomu() + "</td>");
 
@@ -148,7 +148,7 @@
             }else{
 
             }
-            out.print(u.getNomu());
+            out.print( "<a href=\"/content/displayUser.jsp?codeu="+u.getCodeu()+"\">"+ u.getNomu()+" </a>");
             out.print("</th>");
             out.print("<td>" + u.getPrenomu() + "</td>");
 

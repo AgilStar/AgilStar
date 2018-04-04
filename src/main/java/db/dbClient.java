@@ -65,6 +65,54 @@ public class dbClient {
         return url;
     }
 
+    
+     public Utilisateur getOneClient(Integer codeu) {
+        cx = new dbAdmin().getConnection();
+
+        Utilisateur u = new Utilisateur();
+        try {
+
+            String sql = "select *  from UTILISATEUR where CODEU=" + codeu;
+            Statement st = cx.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+                int id = rs.getInt("CODEU");
+                String nomu = rs.getString("NOMU");
+                String prenomu = rs.getString("PRENOMU");
+                String mailu = rs.getString("MAILU");
+                String genreu = rs.getString("GENREU");
+                String birthday = rs.getDate("DATENAISSANCE").toString();
+                String statuu = rs.getString("STATUTU");
+                String adressu = rs.getString("ADRESSEU");
+                String telu = rs.getString("TELU");
+                String infooptu = rs.getString("INFOOPTU");
+                String pwdu = rs.getString("MDPU");
+                
+                u.setCodeu(id);
+                u.setNomu(nomu);
+                u.setPrenomu(prenomu);
+                u.setMailu(mailu);
+                u.setGenreu(genreu);
+                u.setDatenaissance(birthday);
+                u.setStatutu(statuu);
+                u.setAdresseu(adressu);
+                u.setTelu(telu);
+                u.setInfooptu(infooptu);
+                u.setPwd(pwdu);
+                        
+            }
+            st.close();
+            cx.close();
+
+        } catch (SQLException ex) {
+
+            System.out.println("Il y a un problÃ¨me sur statement getOneProgramm" + ex.getMessage());
+            ex.printStackTrace();
+        }
+        return u;
+    }
+     
     /**
      * @author Alice,tianyuan
      */
@@ -389,5 +437,12 @@ public class dbClient {
         }
          return m;
 
+    }
+    
+    public static void main(String[] args) {
+    dbClient d = new dbClient();
+    Utilisateur u = d.getOneClient(24);
+        System.out.println(u.getNomu());
+    
     }
 }

@@ -43,13 +43,10 @@ public class ServletInsertUserFromAdmin extends HttpServlet {
         String lastNameUser = req.getParameter("lastNameUser");
         String mailUser = req.getParameter("mailUser");
         String sexUser = req.getParameter("sexUser");
-        String objUser = req.getParameter("objUser");
-
+        String[] objUser = req.getParameterValues("objUser");
         String dateBornUserString = req.getParameter("dateBornUser");
-        System.out.println("date:" + dateBornUserString);
-
         String passwordUser = req.getParameter("val-password");
-        String statementUser =req.getParameter("statut");
+        String statementUser = req.getParameter("statut");
         String adressUser = req.getParameter("adressUser");
         String telUser = req.getParameter("telUser");
         String infoUser = req.getParameter("infoUser");
@@ -57,18 +54,22 @@ public class ServletInsertUserFromAdmin extends HttpServlet {
         new db.dbAdmin().insertUser(nameUser, lastNameUser, mailUser, sexUser, dateBornUserString, passwordUser,
                 statementUser, adressUser, telUser, infoUser);
         String idU = new db.dbAdmin().recupIdUtilisateur(mailUser).get(0);
-        String idP = new db.dbAdmin().recupProfilUtilisateur(objUser);
-        new db.dbAdmin().insertProfilToUser(idP, idU);
-        
-        String user=req.getParameter("user");
-        if(user.equals("client")){
-            String id=new db.dbAdmin().recupIdUtilisateur(mailUser).get(0);
-            HttpSession session=req.getSession();
+        if (objUser.length !=0 ){
+            String idP = "";
+            for (int i = 0; i < objUser.length; i++) {
+                idP = new db.dbAdmin().recupProfilUtilisateur(objUser[i]);
+                new db.dbAdmin().insertProfilToUser(idP, idU);
+            }          
+        }
+        String user = req.getParameter("user");
+        if (user.equals("client")) {
+            String id = new db.dbAdmin().recupIdUtilisateur(mailUser).get(0);
+            HttpSession session = req.getSession();
             session.setAttribute("id", id);
             resp.sendRedirect("content/indexClient.jsp");
-        }else{
-             resp.sendRedirect("content/indexCoach.jsp");
+        } else {
+            resp.sendRedirect("content/indexCoach.jsp");
         }
-       
+
     }
 }

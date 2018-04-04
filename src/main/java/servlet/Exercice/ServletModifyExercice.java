@@ -37,8 +37,9 @@ public class ServletModifyExercice extends HttpServlet {
         String nameExercice = req.getParameter("nameExercice");
         String videoExercice = req.getParameter("videoExercice");
         String objectiveExercice = req.getParameter("objectiveExercice");
+        String descExercice = req.getParameter("desce");
         try {
-            new db.dbExercice().modifyExercice(codee,nameExercice, objectiveExercice, videoExercice);
+            new db.dbExercice().modifyExercice(codee,nameExercice, objectiveExercice, videoExercice,descExercice);
         } catch (SQLException ex) {
             Logger.getLogger(ServletModifyExercice.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -52,10 +52,15 @@
                                             <label>Objectif</label>
                                             <input type="string" class="form-control" id="objectiveExercice">
                                         </div>
+                                     <div class="form-group">
+                                            <label>Description</label>
+                                            <input type="string" class="form-control"id="descExercice" >
+                                        </div>  
                                          <div class="form-group">
                                             <label>Lien de la vidéo</label>
                                             <input type="string" class="form-control"id="videoExercice" >
-                                        </div>  
+                                        </div> 
+                                    
                                         <div id="errorMessage"></div>
                                         <button type="button"  onclick="insertExercice()">Créer</button>
                                         

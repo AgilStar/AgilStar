@@ -37,7 +37,7 @@ public class dbExercice {
      * @param lien lien de vidéo d'un exercice
      * @author Tianyuan,Nicolas
      */
-    public boolean insertExercice(String name, String objective, String lien) {
+    public boolean insertExercice(String name, String objective, String lien,String desc) {
         try {
                 cx = new dbAdmin().getConnection();
                 if (!checkExistExercice(name,cx)) {
@@ -45,7 +45,7 @@ public class dbExercice {
                     return false;
                 }
 
-                String sql = "insert into EXERCICE(LIBELLEE,OBJECTIFE,LIENVIDEO) VALUES('" + name + "','" + objective + "','" + lien + "')";
+                String sql = "insert into EXERCICE(LIBELLEE,OBJECTIFE,LIENVIDEO,DESCRE) VALUES('" + name + "','" + objective + "','" + lien + "','"+desc+"')";
                 Statement st = cx.createStatement();
                 st.executeUpdate(sql);
                 st.close();
@@ -103,9 +103,10 @@ public class dbExercice {
                 String nome = rs.getString("LIBELLEE");
                 String objectif = rs.getString("OBJECTIFE");
                 String lien = rs.getString("LIENVIDEO");
+                String desce = rs.getString("DESCRE");
 
                 //ajouter les autres attributs 
-                exos.add(new Exercice(id, nome, objectif, lien));
+                exos.add(new Exercice(id, nome, objectif, lien,desce));
             }
             st.close();
             cx.close();
@@ -135,10 +136,13 @@ public class dbExercice {
                 String nome = rs.getString("LIBELLEE");
                 String objectif = rs.getString("OBJECTIFE");
                 String lien = rs.getString("LIENVIDEO");
+                String desce = rs.getString("DESCRE");
+                
                 exo.setCodee(id);
                 exo.setLibellee(nome);
                 exo.setObjectife(objectif);
                 exo.setLienvideo(lien);
+                exo.setDesc(desce);
 
             }
             st.close();
@@ -149,13 +153,14 @@ public class dbExercice {
         }
         return exo;
     }
-     public void modifyExercice(int codee,String nom, String obj, String lien) throws SQLException {
+     public void modifyExercice(int codee,String nom, String obj, String lien,String desc) throws SQLException {
          cx = new dbAdmin().getConnection();
         try {
 
-            String sql = "update EXERCICE set LIBELLEE='"+nom+"',OBJECTIFE='"+obj+"', LIENVIDEO='"+lien+"' where codee="+codee;
+            String sql = "update EXERCICE set LIBELLEE='"+nom+"',OBJECTIFE='"+obj+"', LIENVIDEO='"+lien+"',DESCRE='"+desc+"' where codee="+codee;
             Statement st = cx.createStatement();
-            int nb = st.executeUpdate(sql);
+            System.out.println(sql);
+            st.executeUpdate(sql);
             st.close();
             cx.close();
             }

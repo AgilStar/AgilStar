@@ -199,7 +199,6 @@ function changeOrder() {
         e.setAttribute("onclick","deleteLine("+(i+1)+")");
 
         var name=listTd[0].getElementsByTagName("input")[0];
-        alert(name.value);
         name.setAttribute("id","nameExercice"+(i+1));
 
         var series=listTd[1].getElementsByTagName("input")[0];

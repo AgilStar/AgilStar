@@ -77,6 +77,8 @@
                                   
                                         <div id="errorMessageM"></div>
                                         <button type="button" class="btn btn-danger btn-rounded m-b-10 m-l-5" onclick="modifierExercice()">Modifier</button>
+                                        </br>
+                                        <a href="/content/listExercice.jsp"> Retour à la liste des exercices</a>
                                         
                                         
                                     

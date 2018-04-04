@@ -101,9 +101,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="sexUser">Profil <span class="text-danger">*</span></label>
+                                                    <label class="col-lg-4 col-form-label" for="sexUser">Profil <i>(Ctrl+click pour en choisir plusieurs)</i></label>
                                                     <div class="col-lg-6">
-                                                        <select class="form-control" id="objUser" name="objUser">
+                                                        <select class="form-control" id="objUser" name="objUser" multiple>
                                                             <%
                                                                ArrayList<Profil> listProf;
                                                                 listProf = new dbProfil().getProfils();                                          
@@ -152,7 +152,8 @@
             </div>
 
            
-
+    <script src="../js/lib/form-validation/jquery.validate.min.js"></script>
+    <script src="../js/lib/form-validation/jquery.validate-init.js"></script>
     </body>
 
 </html>

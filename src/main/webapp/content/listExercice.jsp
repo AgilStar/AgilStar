@@ -49,8 +49,8 @@
                                             <tr>
                                                 <th>Nom</th>
                                                 <th>Objectif</th>
+                                                <th>Description</th>
                                                 <th>Lien multimédia</th>
-                                                <th>Modifier</th>
                                             </tr>
                                             </tr>
                                             </thead>
@@ -60,7 +60,6 @@
                                                 <th>Nom</th>
                                                 <th>Objectif</th>
                                                 <th>Lien multimédia</th>
-                                                <th>Modifier</th>
                                             </tr>
                                             </tr>
                                             </tfoot>
@@ -70,10 +69,10 @@
                                                 for (Exercice e:listE){
                                                   
                                                     out.print("<tr>");
-                                                    out.print("<th scope=\"row\">"+e.getLibellee()+"</th>");
+                                                    out.print("<th scope=\"row\"><a href=\"/content/modifierExo.jsp?codee="+e.getCodee()+"\">"+e.getLibellee()+"</a></th>");
                                                     out.print("<td>"+e.getObjectife()+"</td>");
-                                                    out.print("<td>"+e.getLienvideo()+"</td>");
-                                                    out.print("<td><button type='button' onclick=\"window.location.href='modifierExo.jsp?codee="+e.getCodee()+"'\"+e.getCodee()+'\" class='btn btn-warning btn-rounded m-b-10 m-l-5'>Voir</button></td>");
+                                                    out.print("<td>"+e.getDesc()+"</td>");
+                                                    out.print("<td>"+e.getLienvideo()+"</td>");                                                  
                                                     out.print("</tr>");
                                                     
                                                 }

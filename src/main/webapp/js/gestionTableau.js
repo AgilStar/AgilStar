@@ -4,10 +4,15 @@ function addLineT()
     var tableau = document.getElementById("example24");
     var ligne = tableau.insertRow(-1);//on a ajout� une ligne
     //var arrayLignes = document.getElementById("example24").rows.length;
-    var exercice = document.getElementById("exercices").value;
+    var listExercice=document.getElementById("exercices");
+    var code=listExercice.options[listExercice.selectedIndex].value;
+    var libelle=listExercice.options[listExercice.selectedIndex].getAttribute("libelle");
+
+
+
 
     var colonne1 = ligne.insertCell(0);//on a une ajout� une cellule
-    colonne1.innerHTML += exercice+"<input type=\"text\" id=\"nameExercice" + arrayLignes + "\" value=\""+exercice+"\" hidden>";
+    colonne1.innerHTML +="<a href='modifierExo.jsp?codee="+code+"'>" +libelle+"</a><input type=\"text\" id=\"nameExercice" + arrayLignes + "\" value=\""+libelle+"\" hidden>";
 
     var colonne2 = ligne.insertCell(1);//on ajoute la seconde cellule
     colonne2.innerHTML += "<input type=\"number\" id=\"nbserieExercice" + arrayLignes + "\" min=\"0\" \n\

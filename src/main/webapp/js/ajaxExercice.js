@@ -21,6 +21,8 @@ function insertExercice()
     var nameExercice = document.getElementById("nameExercice").value;
     var videoExercice = document.getElementById("videoExercice").value;
     var objectiveExercice = document.getElementById("objectiveExercice").value;
+    var descExercice = document.getElementById("descExercice").value;
+    alert(descExercice);
 // on vérifie que les champs nom d'exercice et objectif sont remplis
     var errorMessage = "";
     var errorFlag = false;
@@ -68,7 +70,7 @@ function insertExercice()
             ;
         };
         // Requête au serveur avec les paramètres éventuels.
-        xhr.open("GET", "/insertExercice?nameExercice=" + nameExercice + "&videoExercice=" + videoExercice + "&objectiveExercice=" + objectiveExercice, true);
+        xhr.open("GET", "/insertExercice?nameExercice=" + nameExercice + "&descExercice="+descExercice+ "&videoExercice=" + videoExercice + "&objectiveExercice=" + objectiveExercice, true);
         xhr.send(null);
 
     }
@@ -86,6 +88,7 @@ function modifierExercice()
     var nameExercice = document.getElementById("nameExerciceM").value;
     var codee = document.getElementById("codeeM").value;
     var videoExercice = document.getElementById("videoExerciceM").value;
+    var descExercice = document.getElementById("descExerciceM").value;
     var objectiveExercice = document.getElementById("objectiveExerciceM").value;
 // on vérifie que les champs nom d'exercice et objectif sont remplis
     var errorMessage = "";
@@ -137,7 +140,7 @@ function modifierExercice()
             ;
         }
         // Requête au serveur avec les paramètres éventuels.
-        xhr.open("GET", "/ServletModifyExercice?codee=" + codee + "&nameExercice=" + nameExercice + "&videoExercice=" + videoExercice + "&objectiveExercice=" + objectiveExercice, true);
+        xhr.open("GET", "/ServletModifyExercice?desce="+descExercice+"&codee=" + codee + "&nameExercice=" + nameExercice + "&videoExercice=" + videoExercice + "&objectiveExercice=" + objectiveExercice, true);
         xhr.send(null);
 
     }

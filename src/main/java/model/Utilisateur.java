@@ -18,6 +18,15 @@ public class Utilisateur  implements java.io.Serializable {
      private String adresseu;
      private String telu;
      private String infooptu;
+    private String pwd;
+
+    public String getPwd() {
+        return pwd;
+    }
+
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
+    }
 
     public Utilisateur() {
     }
