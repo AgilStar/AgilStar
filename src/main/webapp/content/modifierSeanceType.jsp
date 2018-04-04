@@ -111,9 +111,9 @@
                                         out.print("<td><input type=\"number\" "
                                                 + "class=\"form-control\" id=\"nbserieExercice" + cpt + "\" value=\"" + desc[1] + "\"></td>");
                                         out.print(" <td>  <input type=\"number\" "
-                                                + "class=\"form-control\" id=\"dureeExercice" + cpt + "\" value=\"" + desc[2] + "\"></td>");
+                                                + "class=\"form-control\"  onKeyUp=\"checkInputExercice(this)\"   id=\"dureeExercice" + cpt + "\" value=\"" + desc[2] + "\"></td>");
                                         out.print("<td><input type=\"number\" "
-                                                + "class=\"form-control\" id=\"nbExercice" + cpt + "\" value=\"" + desc[3] + "\"></td>");
+                                                + "class=\"form-control\"  onKeyUp=\"checkInputExercice(this)\"  id=\"nbExercice" + cpt + "\" value=\"" + desc[3] + "\"></td>");
                                         out.print("<td><input type=\"number\" "
                                                 + "class=\"form-control\" id=\"restExercice" + cpt + "\" value=\"" + desc[4] + "\"></td>");
                                         out.print("<td><button onClick=\"deleteLine(" + cpt + ")\" value=\"-\">" + cpt + "</button></td></tr>");
@@ -143,7 +143,6 @@
                                         ArrayList<Exercice> listEx = new dbExercice().getExercices();
                                         out.print("<select id=\"exercices\" name=\"exercices\">");
                                         for (Exercice e : listEx) {
-
                                             out.print("<option libelle='"+e.getLibellee()+"' value='" + e.getCodee() + "' >" + e.getLibellee() + "</option>");
                                         }
                                         out.print("</select>");

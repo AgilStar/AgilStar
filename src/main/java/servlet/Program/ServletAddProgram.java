@@ -54,17 +54,11 @@ public class ServletAddProgram extends HttpServlet {
             
             //pour la creation d'un programme personnalise 
         }else if(type.equals("createPerso")){
-            if(!db.checkNameProgramPerso(name)){
-                 out.print("false");
-                return;
-            }else{
                 //insertion dans la table programme perso
                 db.insertProgrammePerso(name,des,Integer.parseInt(codeUser),Integer.parseInt(codeP));
                 //insertion dans la table seanceperso , la table seancebilan , la table planifiersp
                 db.insertSessionBilanPerso(listS,Integer.parseInt(codeUser));
                 out.print("true");
-            
-        }
 
         }
 

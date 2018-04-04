@@ -668,33 +668,6 @@ public class dbProgram {
         return flag;
     }
 
-    /**
-     * verifier si le nom de programme perso existe deja
-     *
-     * @param name le nom du programme perso
-     * @return boolean
-     * @author Jin, Tianyuan
-     */
-    public boolean checkNameProgramPerso(String name) {
-        cx = new dbAdmin().getConnection();
-        boolean flag = true;
-        try {
-            String sql = "select count(*) as Nb from PROGRAMMEPERSO where LIBELLEPP='" + name + "'";
-            Statement st = cx.createStatement();
-            ResultSet rs = st.executeQuery(sql);
-            while (rs.next()) {
-                if (rs.getInt("Nb") == 1) {
-                    flag = false;
-                }
-            }
-            st.close();
-            cx.close();
-        } catch (SQLException ex) {
-            System.out.println("Il y a un problÃ¨me sur statement checkNameProgramPerso " + ex.getMessage());
-            ex.printStackTrace();
-        }
-        return flag;
-    }
 
     /**
      * Supprimer un programme par codeP
