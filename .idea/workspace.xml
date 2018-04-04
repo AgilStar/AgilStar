@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef1cdac3-136c-4724-8a4f-2c47a48dd52a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlet/Program/ctrlProgram.java" afterPath="$PROJECT_DIR$/src/main/java/servlet/Program/ctrlProgram.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/listClient.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/listClient.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/listProgrammPersonal.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/listProgrammPersonal.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/templete/listProfil.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/templete/listProfil.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/templete/listSeance.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/templete/listSeance.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dbProgram.java" afterPath="$PROJECT_DIR$/src/main/java/db/dbProgram.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,43 +15,58 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="dbProgram.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dbProgram.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/db/dbProgram.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9960">
-              <caret line="670" column="0" lean-forward="false" selection-start-line="670" selection-start-column="0" selection-end-line="670" selection-end-column="0" />
+            <state relative-caret-position="284">
+              <caret line="630" column="1" lean-forward="false" selection-start-line="630" selection-start-column="1" selection-end-line="630" selection-end-column="1" />
               <folding>
-                <marker date="1522853090318" expanded="true" signature="577:605" ph="select * fro... PROGRAMMETYPE" />
-                <marker date="1522853090318" expanded="true" signature="1528:1570" ph="select * fro... PROGRAMMETYPE" />
-                <marker date="1522853090318" expanded="true" signature="2519:2815" ph="select ST.CO... COMPRENDRETYPE" />
-                <marker date="1522853090318" expanded="true" signature="2519:3245" ph="select ST.CO... " />
-                <marker date="1522853090318" expanded="true" signature="2887:3194" ph="select CSBT.... COMPRENDRESBT" />
-                <marker date="1522853090318" expanded="true" signature="5425:5503" ph="select * fro... ORGANISERTYPE" />
-                <marker date="1522853090318" expanded="true" signature="7844:7883" ph="select * fro... SEANCETYPE" />
-                <marker date="1522853090318" expanded="true" signature="9049:9094" ph="select * fro... SEANCEBILANTYPE" />
-                <marker date="1522853090318" expanded="true" signature="9947:9992" ph="select * fro... CATEGORIESEANCE" />
-                <marker date="1522853090318" expanded="true" signature="10943:10979" ph="select * fro... EXERCICE" />
-                <marker date="1522853090318" expanded="true" signature="11964:11993" ph="select * fro... CATEGORIESEANCE" />
-                <marker date="1522853090318" expanded="true" signature="12957:13086" ph="select CODES... SEANCETYPE" />
-                <marker date="1522853090318" expanded="true" signature="14273:14361" ph="insert into PROGRAMMETYPE... " />
-                <marker date="1522853090318" expanded="true" signature="14865:14996" ph="insert into PROGRAMMEPERSO... " />
-                <marker date="1522853090318" expanded="true" signature="15795:15883" ph="insert into CORRESPONDRE... " />
-                <marker date="1522853090318" expanded="true" signature="16936:17028" ph="insert into COMPRENDRESBT... " />
-                <marker date="1522853090318" expanded="true" signature="17283:17392" ph="insert into COMPRENDRETYPE... " />
-                <marker date="1522853090318" expanded="true" signature="18534:18796" ph="insert into SEANCEBILAN... " />
-                <marker date="1522853090318" expanded="true" signature="19236:19519" ph="insert into SEANCEPERSO... " />
-                <marker date="1522853090318" expanded="true" signature="19599:19640" ph="select max(C... SEANCEPERSO" />
-                <marker date="1522853090318" expanded="true" signature="20716:21017" ph="insert into PLANIFIERSP... " />
-                <marker date="1522853090318" expanded="true" signature="21670:21715" ph="select max(C... SEANCEPERSO" />
-                <marker date="1522853090318" expanded="true" signature="22302:22349" ph="select max(C... PROGRAMMETYPE" />
-                <marker date="1522853090318" expanded="true" signature="22938:22986" ph="select max(C... PROGRAMMEPERSO" />
-                <marker date="1522853090318" expanded="true" signature="23751:23822" ph="select count... PROGRAMMETYPE" />
-                <marker date="1522853090318" expanded="true" signature="24660:24699" ph="delete from " />
-                <marker date="1522853090318" expanded="true" signature="24937:24977" ph="delete from " />
-                <marker date="1522853090318" expanded="true" signature="25213:25251" ph="delete from " />
-                <marker date="1522853090318" expanded="true" signature="25949:26041" ph="update progr... " />
-                <marker date="1522853090318" expanded="true" signature="26784:26826" ph="select * fro... PROGRAMMEPERSO" />
+                <element signature="e#13772#13784#0" expanded="true" />
+                <marker date="1522860173466" expanded="true" signature="577:605" ph="select * fro... PROGRAMMETYPE" />
+                <marker date="1522860173466" expanded="true" signature="1528:1570" ph="select * fro... PROGRAMMETYPE" />
+                <marker date="1522860173466" expanded="true" signature="2519:2815" ph="select ST.CO... COMPRENDRETYPE" />
+                <marker date="1522860173466" expanded="true" signature="2519:3245" ph="select ST.CO... " />
+                <marker date="1522860173466" expanded="true" signature="2887:3194" ph="select CSBT.... COMPRENDRESBT" />
+                <marker date="1522860173466" expanded="true" signature="5425:5503" ph="select * fro... ORGANISERTYPE" />
+                <marker date="1522860173466" expanded="true" signature="7814:7853" ph="select * fro... SEANCETYPE" />
+                <marker date="1522860173466" expanded="true" signature="9024:9069" ph="select * fro... SEANCEBILANTYPE" />
+                <marker date="1522860173466" expanded="true" signature="10020:10060" ph="select * fro... SEANCEBILAN" />
+                <marker date="1522860173466" expanded="true" signature="10819:10864" ph="select * fro... CATEGORIESEANCE" />
+                <marker date="1522860173466" expanded="true" signature="11815:11851" ph="select * fro... EXERCICE" />
+                <marker date="1522860173466" expanded="true" signature="12836:12865" ph="select * fro... CATEGORIESEANCE" />
+                <marker date="1522860173466" expanded="true" signature="13829:13958" ph="select CODES... SEANCETYPE" />
+                <marker date="1522860173466" expanded="true" signature="15145:15233" ph="insert into PROGRAMMETYPE... " />
+                <marker date="1522860173466" expanded="true" signature="15737:15868" ph="insert into PROGRAMMEPERSO... " />
+                <marker date="1522860173466" expanded="true" signature="16667:16755" ph="insert into CORRESPONDRE... " />
+                <marker date="1522860173466" expanded="true" signature="17808:17900" ph="insert into COMPRENDRESBT... " />
+                <marker date="1522860173466" expanded="true" signature="18155:18264" ph="insert into COMPRENDRETYPE... " />
+                <marker date="1522860173466" expanded="true" signature="19513:19772" ph="insert into SEANCEBILAN... " />
+                <marker date="1522860173466" expanded="true" signature="19911:19952" ph="select max(C... SEANCEBILAN" />
+                <marker date="1522860173466" expanded="true" signature="20776:21059" ph="insert into SEANCEPERSO... " />
+                <marker date="1522860173466" expanded="true" signature="21141:21182" ph="select max(C... SEANCEPERSO" />
+                <marker date="1522860173466" expanded="true" signature="22288:22589" ph="insert into PLANIFIERSP... " />
+                <marker date="1522860173466" expanded="true" signature="23233:23399" ph="insert into PLANIFIERBILAN... " />
+                <marker date="1522860173466" expanded="true" signature="23990:24068" ph="select * fro... PLANIFIERBILAN" />
+                <marker date="1522860173466" expanded="true" signature="25021:25066" ph="select max(C... SEANCEPERSO" />
+                <marker date="1522860173466" expanded="true" signature="25653:25700" ph="select max(C... PROGRAMMETYPE" />
+                <marker date="1522860173466" expanded="true" signature="26289:26337" ph="select max(C... PROGRAMMEPERSO" />
+                <marker date="1522860173466" expanded="true" signature="27102:27173" ph="select count... PROGRAMMETYPE" />
+                <marker date="1522860173466" expanded="true" signature="28011:28050" ph="delete from " />
+                <marker date="1522860173466" expanded="true" signature="28288:28328" ph="delete from " />
+                <marker date="1522860173466" expanded="true" signature="28564:28602" ph="delete from " />
+                <marker date="1522860173466" expanded="true" signature="29300:29392" ph="update progr... " />
+                <marker date="1522860173466" expanded="true" signature="30135:30177" ph="select * fro... PROGRAMMEPERSO" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServletAddProgram.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/servlet/Program/ServletAddProgram.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="521">
+              <caret line="60" column="33" lean-forward="true" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -66,10 +77,10 @@
             <state relative-caret-position="581">
               <caret line="57" column="31" lean-forward="false" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
               <folding>
-                <marker date="1522855033027" expanded="true" signature="924:962" ph="..." />
-                <marker date="1522855033027" expanded="true" signature="1144:1178" ph="..." />
-                <marker date="1522855033027" expanded="true" signature="1359:1391" ph="..." />
-                <marker date="1522855033027" expanded="true" signature="1561:1590" ph="..." />
+                <marker date="1522857514625" expanded="true" signature="924:962" ph="..." />
+                <marker date="1522857514625" expanded="true" signature="1144:1178" ph="..." />
+                <marker date="1522857514625" expanded="true" signature="1359:1391" ph="..." />
+                <marker date="1522857514625" expanded="true" signature="1561:1590" ph="..." />
               </folding>
             </state>
           </provider>
@@ -79,7 +90,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listSession.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-654">
-              <caret line="6" column="51" lean-forward="true" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
+              <caret line="6" column="51" lean-forward="false" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -100,7 +111,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="listSeance.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="listSeance.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/content/templete/listSeance.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="338">
@@ -234,8 +245,6 @@
         <option value="$PROJECT_DIR$/src/main/java/servlet/TypeSession/ServletModifyTypeSession.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/ajaxTypeSession.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/ajaxTypeSession.js" />
-        <option value="$PROJECT_DIR$/src/main/java/db/dbProgram.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlet/Program/ServletAddProgram.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/modifierSeanceType.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/gestionTableau.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/gestionTableau.js" />
@@ -246,6 +255,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/content/templete/listProfil.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/templete/listSeance.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/servlet/Program/ServletAddProgram.java" />
+        <option value="$PROJECT_DIR$/src/main/java/db/dbProgram.java" />
       </list>
     </option>
   </component>
@@ -661,7 +672,7 @@
       <workItem from="1522689433554" duration="11391000" />
       <workItem from="1522791268940" duration="2032000" />
       <workItem from="1522828645943" duration="3758000" />
-      <workItem from="1522844960527" duration="11424000" />
+      <workItem from="1522844960527" duration="14213000" />
     </task>
     <servers />
   </component>
@@ -671,7 +682,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135142000" />
+    <option name="totallyTimeSpent" value="137931000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -695,7 +706,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298351" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20953327" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20953327" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1046,72 +1057,25 @@
         <state relative-caret-position="318">
           <caret line="194" column="35" lean-forward="true" selection-start-line="194" selection-start-column="35" selection-end-line="194" selection-end-column="35" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1522851607301" expanded="true" signature="1209:1217" ph="é" />
-            <marker date="1522851607301" expanded="true" signature="1374:1382" ph="é" />
-            <marker date="1522851607301" expanded="true" signature="1535:1543" ph="é" />
-            <marker date="1522851607301" expanded="true" signature="1943:1951" ph="é" />
-            <marker date="1522851607301" expanded="true" signature="2240:2248" ph="é" />
-            <marker date="1522851607301" expanded="true" signature="2484:2492" ph="é" />
-            <marker date="1522851607301" expanded="true" signature="2773:2781" ph="é" />
-            <marker date="1522851607301" expanded="true" signature="2796:2804" ph="é" />
-            <marker date="1522851607301" expanded="true" signature="2805:2813" ph="à" />
-            <marker date="1522851607301" expanded="true" signature="5202:5210" ph="é" />
-            <marker date="1522851607301" expanded="true" signature="5367:5375" ph="é" />
-            <marker date="1522851607301" expanded="true" signature="5528:5536" ph="é" />
-            <marker date="1522851607301" expanded="true" signature="5937:5945" ph="é" />
-            <marker date="1522851607301" expanded="true" signature="6234:6242" ph="é" />
-            <marker date="1522851607301" expanded="true" signature="6478:6486" ph="é" />
-            <marker date="1522851607301" expanded="true" signature="6767:6775" ph="é" />
-            <marker date="1522851607301" expanded="true" signature="6790:6798" ph="é" />
-            <marker date="1522851607301" expanded="true" signature="6799:6807" ph="à" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/Program/ServletAddProgram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="687">
-          <caret line="55" column="45" lean-forward="false" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbProgram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9960">
-          <caret line="670" column="0" lean-forward="false" selection-start-line="670" selection-start-column="0" selection-end-line="670" selection-end-column="0" />
-          <folding>
-            <marker date="1522853090318" expanded="true" signature="577:605" ph="select * fro... PROGRAMMETYPE" />
-            <marker date="1522853090318" expanded="true" signature="1528:1570" ph="select * fro... PROGRAMMETYPE" />
-            <marker date="1522853090318" expanded="true" signature="2519:2815" ph="select ST.CO... COMPRENDRETYPE" />
-            <marker date="1522853090318" expanded="true" signature="2519:3245" ph="select ST.CO... " />
-            <marker date="1522853090318" expanded="true" signature="2887:3194" ph="select CSBT.... COMPRENDRESBT" />
-            <marker date="1522853090318" expanded="true" signature="5425:5503" ph="select * fro... ORGANISERTYPE" />
-            <marker date="1522853090318" expanded="true" signature="7844:7883" ph="select * fro... SEANCETYPE" />
-            <marker date="1522853090318" expanded="true" signature="9049:9094" ph="select * fro... SEANCEBILANTYPE" />
-            <marker date="1522853090318" expanded="true" signature="9947:9992" ph="select * fro... CATEGORIESEANCE" />
-            <marker date="1522853090318" expanded="true" signature="10943:10979" ph="select * fro... EXERCICE" />
-            <marker date="1522853090318" expanded="true" signature="11964:11993" ph="select * fro... CATEGORIESEANCE" />
-            <marker date="1522853090318" expanded="true" signature="12957:13086" ph="select CODES... SEANCETYPE" />
-            <marker date="1522853090318" expanded="true" signature="14273:14361" ph="insert into PROGRAMMETYPE... " />
-            <marker date="1522853090318" expanded="true" signature="14865:14996" ph="insert into PROGRAMMEPERSO... " />
-            <marker date="1522853090318" expanded="true" signature="15795:15883" ph="insert into CORRESPONDRE... " />
-            <marker date="1522853090318" expanded="true" signature="16936:17028" ph="insert into COMPRENDRESBT... " />
-            <marker date="1522853090318" expanded="true" signature="17283:17392" ph="insert into COMPRENDRETYPE... " />
-            <marker date="1522853090318" expanded="true" signature="18534:18796" ph="insert into SEANCEBILAN... " />
-            <marker date="1522853090318" expanded="true" signature="19236:19519" ph="insert into SEANCEPERSO... " />
-            <marker date="1522853090318" expanded="true" signature="19599:19640" ph="select max(C... SEANCEPERSO" />
-            <marker date="1522853090318" expanded="true" signature="20716:21017" ph="insert into PLANIFIERSP... " />
-            <marker date="1522853090318" expanded="true" signature="21670:21715" ph="select max(C... SEANCEPERSO" />
-            <marker date="1522853090318" expanded="true" signature="22302:22349" ph="select max(C... PROGRAMMETYPE" />
-            <marker date="1522853090318" expanded="true" signature="22938:22986" ph="select max(C... PROGRAMMEPERSO" />
-            <marker date="1522853090318" expanded="true" signature="23751:23822" ph="select count... PROGRAMMETYPE" />
-            <marker date="1522853090318" expanded="true" signature="24660:24699" ph="delete from " />
-            <marker date="1522853090318" expanded="true" signature="24937:24977" ph="delete from " />
-            <marker date="1522853090318" expanded="true" signature="25213:25251" ph="delete from " />
-            <marker date="1522853090318" expanded="true" signature="25949:26041" ph="update progr... " />
-            <marker date="1522853090318" expanded="true" signature="26784:26826" ph="select * fro... PROGRAMMEPERSO" />
+            <element signature="n#!!doc" expanded="false" />
+            <marker date="1522857514624" expanded="true" signature="1209:1217" ph="é" />
+            <marker date="1522857514624" expanded="true" signature="1374:1382" ph="é" />
+            <marker date="1522857514624" expanded="true" signature="1535:1543" ph="é" />
+            <marker date="1522857514624" expanded="true" signature="1943:1951" ph="é" />
+            <marker date="1522857514624" expanded="true" signature="2240:2248" ph="é" />
+            <marker date="1522857514624" expanded="true" signature="2484:2492" ph="é" />
+            <marker date="1522857514624" expanded="true" signature="2773:2781" ph="é" />
+            <marker date="1522857514624" expanded="true" signature="2796:2804" ph="é" />
+            <marker date="1522857514624" expanded="true" signature="2805:2813" ph="à" />
+            <marker date="1522857514624" expanded="true" signature="5202:5210" ph="é" />
+            <marker date="1522857514624" expanded="true" signature="5367:5375" ph="é" />
+            <marker date="1522857514624" expanded="true" signature="5528:5536" ph="é" />
+            <marker date="1522857514624" expanded="true" signature="5937:5945" ph="é" />
+            <marker date="1522857514624" expanded="true" signature="6234:6242" ph="é" />
+            <marker date="1522857514624" expanded="true" signature="6478:6486" ph="é" />
+            <marker date="1522857514624" expanded="true" signature="6767:6775" ph="é" />
+            <marker date="1522857514624" expanded="true" signature="6790:6798" ph="é" />
+            <marker date="1522857514624" expanded="true" signature="6799:6807" ph="à" />
           </folding>
         </state>
       </provider>
@@ -1121,11 +1085,11 @@
         <state relative-caret-position="422">
           <caret line="155" column="4" lean-forward="false" selection-start-line="155" selection-start-column="4" selection-end-line="171" selection-end-column="5" />
           <folding>
-            <marker date="1522843670000" expanded="true" signature="1189:1315" ph="insert into EXERCICE... " />
-            <marker date="1522843670000" expanded="true" signature="1805:1867" ph="select count... EXERCICE" />
-            <marker date="1522843670000" expanded="true" signature="2668:2691" ph="select * fro... EXERCICE" />
-            <marker date="1522843670000" expanded="true" signature="3701:3737" ph="select * fro... EXERCICE" />
-            <marker date="1522843670000" expanded="true" signature="4785:4896" ph="update EXERC... " />
+            <marker date="1522857514578" expanded="true" signature="1189:1315" ph="insert into EXERCICE... " />
+            <marker date="1522857514578" expanded="true" signature="1805:1867" ph="select count... EXERCICE" />
+            <marker date="1522857514578" expanded="true" signature="2668:2691" ph="select * fro... EXERCICE" />
+            <marker date="1522857514578" expanded="true" signature="3701:3737" ph="select * fro... EXERCICE" />
+            <marker date="1522857514578" expanded="true" signature="4785:4896" ph="update EXERC... " />
           </folding>
         </state>
       </provider>
@@ -1135,16 +1099,16 @@
         <state relative-caret-position="353">
           <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
           <folding>
-            <marker date="1522851361227" expanded="true" signature="1180:1326" ph="insert into SEANCETYPE... " />
-            <marker date="1522851361227" expanded="true" signature="1846:1953" ph="update SEANC... " />
-            <marker date="1522851361227" expanded="true" signature="1846:1979" ph="update EXERC... " />
-            <marker date="1522851361227" expanded="true" signature="1846:1986" ph="update SEANC... " />
-            <marker date="1522851361227" expanded="true" signature="2460:2525" ph="select count... SEANCETYPE" />
-            <marker date="1522851361227" expanded="true" signature="3219:3274" ph="select * fro... EXERCICE" />
-            <marker date="1522851361227" expanded="true" signature="3849:3911" ph="select * fro... SEANCETYPE" />
-            <marker date="1522851361227" expanded="true" signature="4634:4771" ph="insert into ORGANISERTYPE... " />
-            <marker date="1522851361227" expanded="true" signature="4812:4941" ph="insert into ORGANISERTYPE... " />
-            <marker date="1522851361227" expanded="true" signature="5453:5504" ph="DELETE FROM " />
+            <marker date="1522857514581" expanded="true" signature="1180:1326" ph="insert into SEANCETYPE... " />
+            <marker date="1522857514581" expanded="true" signature="1846:1953" ph="update SEANC... " />
+            <marker date="1522857514581" expanded="true" signature="1846:1979" ph="update EXERC... " />
+            <marker date="1522857514581" expanded="true" signature="1846:1986" ph="update SEANC... " />
+            <marker date="1522857514581" expanded="true" signature="2460:2525" ph="select count... SEANCETYPE" />
+            <marker date="1522857514581" expanded="true" signature="3219:3274" ph="select * fro... EXERCICE" />
+            <marker date="1522857514581" expanded="true" signature="3849:3911" ph="select * fro... SEANCETYPE" />
+            <marker date="1522857514581" expanded="true" signature="4634:4771" ph="insert into ORGANISERTYPE... " />
+            <marker date="1522857514581" expanded="true" signature="4812:4941" ph="insert into ORGANISERTYPE... " />
+            <marker date="1522857514581" expanded="true" signature="5453:5504" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -1153,27 +1117,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="40" column="47" lean-forward="false" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/gestionTableau.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="57" column="31" lean-forward="false" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
-          <folding>
-            <marker date="1522855033027" expanded="true" signature="924:962" ph="..." />
-            <marker date="1522855033027" expanded="true" signature="1144:1178" ph="..." />
-            <marker date="1522855033027" expanded="true" signature="1359:1391" ph="..." />
-            <marker date="1522855033027" expanded="true" signature="1561:1590" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listSession.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-654">
-          <caret line="6" column="51" lean-forward="true" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -1191,19 +1134,6 @@
         <state relative-caret-position="191">
           <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/Program/ctrlProgram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="e#208#209#0" expanded="true" />
-            <element signature="e#250#251#0" expanded="true" />
-            <element signature="e#299#300#0" expanded="true" />
-            <element signature="e#348#349#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1236,6 +1166,92 @@
         <state relative-caret-position="338">
           <caret line="122" column="58" lean-forward="false" selection-start-line="122" selection-start-column="58" selection-end-line="122" selection-end-column="58" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/Program/ctrlProgram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#208#209#0" expanded="true" />
+            <element signature="e#250#251#0" expanded="true" />
+            <element signature="e#299#300#0" expanded="true" />
+            <element signature="e#348#349#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listSession.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-654">
+          <caret line="6" column="51" lean-forward="false" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/gestionTableau.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="581">
+          <caret line="57" column="31" lean-forward="false" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
+          <folding>
+            <marker date="1522857514625" expanded="true" signature="924:962" ph="..." />
+            <marker date="1522857514625" expanded="true" signature="1144:1178" ph="..." />
+            <marker date="1522857514625" expanded="true" signature="1359:1391" ph="..." />
+            <marker date="1522857514625" expanded="true" signature="1561:1590" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/Program/ServletAddProgram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="60" column="33" lean-forward="true" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbProgram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="630" column="1" lean-forward="false" selection-start-line="630" selection-start-column="1" selection-end-line="630" selection-end-column="1" />
+          <folding>
+            <element signature="e#13772#13784#0" expanded="true" />
+            <marker date="1522860173466" expanded="true" signature="577:605" ph="select * fro... PROGRAMMETYPE" />
+            <marker date="1522860173466" expanded="true" signature="1528:1570" ph="select * fro... PROGRAMMETYPE" />
+            <marker date="1522860173466" expanded="true" signature="2519:2815" ph="select ST.CO... COMPRENDRETYPE" />
+            <marker date="1522860173466" expanded="true" signature="2519:3245" ph="select ST.CO... " />
+            <marker date="1522860173466" expanded="true" signature="2887:3194" ph="select CSBT.... COMPRENDRESBT" />
+            <marker date="1522860173466" expanded="true" signature="5425:5503" ph="select * fro... ORGANISERTYPE" />
+            <marker date="1522860173466" expanded="true" signature="7814:7853" ph="select * fro... SEANCETYPE" />
+            <marker date="1522860173466" expanded="true" signature="9024:9069" ph="select * fro... SEANCEBILANTYPE" />
+            <marker date="1522860173466" expanded="true" signature="10020:10060" ph="select * fro... SEANCEBILAN" />
+            <marker date="1522860173466" expanded="true" signature="10819:10864" ph="select * fro... CATEGORIESEANCE" />
+            <marker date="1522860173466" expanded="true" signature="11815:11851" ph="select * fro... EXERCICE" />
+            <marker date="1522860173466" expanded="true" signature="12836:12865" ph="select * fro... CATEGORIESEANCE" />
+            <marker date="1522860173466" expanded="true" signature="13829:13958" ph="select CODES... SEANCETYPE" />
+            <marker date="1522860173466" expanded="true" signature="15145:15233" ph="insert into PROGRAMMETYPE... " />
+            <marker date="1522860173466" expanded="true" signature="15737:15868" ph="insert into PROGRAMMEPERSO... " />
+            <marker date="1522860173466" expanded="true" signature="16667:16755" ph="insert into CORRESPONDRE... " />
+            <marker date="1522860173466" expanded="true" signature="17808:17900" ph="insert into COMPRENDRESBT... " />
+            <marker date="1522860173466" expanded="true" signature="18155:18264" ph="insert into COMPRENDRETYPE... " />
+            <marker date="1522860173466" expanded="true" signature="19513:19772" ph="insert into SEANCEBILAN... " />
+            <marker date="1522860173466" expanded="true" signature="19911:19952" ph="select max(C... SEANCEBILAN" />
+            <marker date="1522860173466" expanded="true" signature="20776:21059" ph="insert into SEANCEPERSO... " />
+            <marker date="1522860173466" expanded="true" signature="21141:21182" ph="select max(C... SEANCEPERSO" />
+            <marker date="1522860173466" expanded="true" signature="22288:22589" ph="insert into PLANIFIERSP... " />
+            <marker date="1522860173466" expanded="true" signature="23233:23399" ph="insert into PLANIFIERBILAN... " />
+            <marker date="1522860173466" expanded="true" signature="23990:24068" ph="select * fro... PLANIFIERBILAN" />
+            <marker date="1522860173466" expanded="true" signature="25021:25066" ph="select max(C... SEANCEPERSO" />
+            <marker date="1522860173466" expanded="true" signature="25653:25700" ph="select max(C... PROGRAMMETYPE" />
+            <marker date="1522860173466" expanded="true" signature="26289:26337" ph="select max(C... PROGRAMMEPERSO" />
+            <marker date="1522860173466" expanded="true" signature="27102:27173" ph="select count... PROGRAMMETYPE" />
+            <marker date="1522860173466" expanded="true" signature="28011:28050" ph="delete from " />
+            <marker date="1522860173466" expanded="true" signature="28288:28328" ph="delete from " />
+            <marker date="1522860173466" expanded="true" signature="28564:28602" ph="delete from " />
+            <marker date="1522860173466" expanded="true" signature="29300:29392" ph="update progr... " />
+            <marker date="1522860173466" expanded="true" signature="30135:30177" ph="select * fro... PROGRAMMEPERSO" />
+          </folding>
         </state>
       </provider>
     </entry>
