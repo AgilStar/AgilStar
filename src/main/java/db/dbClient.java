@@ -127,6 +127,7 @@ public class dbClient {
             cx = new dbAdmin().getConnection();
 
             String sql = "select *  from UTILISATEUR where " + condition;
+            System.out.println(sql);
 
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -196,7 +197,7 @@ public class dbClient {
             st.close();
 
         } catch (SQLException ex) {
-            System.out.println("Il y a un pro pour insérer la 1ere séance" + ex.getMessage());
+            System.out.println("Il y a un pro pour insï¿½rer la 1ere sï¿½ance" + ex.getMessage());
         }
 
         //insertion dans la table planifierbilan pour gainage
@@ -508,7 +509,7 @@ public class dbClient {
             cx.close();
 
         } catch (SQLException ex) {
-            System.out.println("Il y a un problème sur la requête pour obtenir les infos d'un utilisateur " + ex.getMessage());
+            System.out.println("Il y a un problï¿½me sur la requï¿½te pour obtenir les infos d'un utilisateur " + ex.getMessage());
         }
         return user;
     }
@@ -533,7 +534,7 @@ public class dbClient {
             cx.close();
 
         } catch (SQLException ex) {
-            System.out.println("Il y a un problème sur la requête pour obtenir les infos du profil d'un utilisateur " + ex.getMessage());
+            System.out.println("Il y a un problï¿½me sur la requï¿½te pour obtenir les infos du profil d'un utilisateur " + ex.getMessage());
         }
         return profils;
     }
@@ -570,7 +571,7 @@ public class dbClient {
             st.close();
             cx.close();
         } catch (SQLException ex) {
-            System.out.println("Il y a un problÃ¨me sur la recupération dE LA valeur dE LA SEANCE BIL" + ex.getMessage());
+            System.out.println("Il y a un problÃ¨me sur la recupï¿½ration dE LA valeur dE LA SEANCE BIL" + ex.getMessage());
 
         }
         System.out.println(sea);
@@ -595,9 +596,9 @@ public class dbClient {
             cx.close();
 
         } catch (SQLException ex) {
-            System.out.println("Il y a un problème pour retrouver l'exo " + ex.getMessage());
+            System.out.println("Il y a un problï¿½me pour retrouver l'exo " + ex.getMessage());
         }
-        System.out.println(code+"¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
+        System.out.println(code+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
         return code;
     }
 
@@ -625,7 +626,7 @@ public class dbClient {
             st.close();
             cx.close();
         } catch (SQLException ex) {
-            System.out.println("Il y a un problÃ¨me sur la recupération des anciennes valeurs du profil sportif " + ex.getMessage());
+            System.out.println("Il y a un problÃ¨me sur la recupï¿½ration des anciennes valeurs du profil sportif " + ex.getMessage());
         }
         System.out.println(pb.getTempsmaxu());
         return pb;

@@ -12,8 +12,8 @@ public class CtrlChangeStatu {
     public CtrlChangeStatu(String condition){
         if (condition==null){
             list=getUsers("STATUTU<>'admin'");
-        }else if(condition.equals("validé")){
-            list=getUsers("STATUTU='validé'");
+        }else if(condition.equals("valide")){
+            list=getUsers("STATUTU='valide'");
         }else if (condition.equals("en attente")){
             list=getUsers("STATUTU='en attente'");
         }else if (condition.equals("valider")){
@@ -25,6 +25,7 @@ public class CtrlChangeStatu {
 
 
     private ArrayList<Utilisateur> getUsers(String condition){
+        System.out.println(condition);
         return  new dbClient().getClients(condition);
     }
 

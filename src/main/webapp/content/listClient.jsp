@@ -64,7 +64,7 @@
                     <a href="/content/listClient.jsp">
                         <button type="button" class="btn btn-primary btn-rounded m-b-10 m-l-5">Tous</button>
                     </a>
-                    <a href="/content/listClient.jsp?condition=validé">
+                    <a href="/content/listClient.jsp?condition=valide">
                         <button type="button" class="btn btn-success btn-rounded m-b-10 m-l-5">Validé</button>
                     </a>
                     <a href="/content/listClient.jsp?condition=en attente">
@@ -109,6 +109,7 @@
                                     </tfoot>
                                     <tbody>
                                     <%
+                                        out.print(condition);
 
                                         ArrayList<Utilisateur> listUu = new CtrlChangeStatu(condition).getList();
 
@@ -131,7 +132,7 @@
                                                 out.print("</th>");
                                                 out.print("<td>" + u.getPrenomu() + "</td>");
 
-                                                if (u.getStatutu().equals("validé")) {
+                                                if (u.getStatutu().equals("valide")) {
                                                     //Le client est validé
                                                     out.print("<td><span class=\"badge badge-success\">" + u.getStatutu() + "</span></td>");
                                                     //Opération: Personaliser un programme
@@ -166,7 +167,7 @@
                                                 out.print("</th>");
                                                 out.print("<td>" + u.getPrenomu() + "</td>");
 
-                                                if (u.getStatutu().equals("validé")) {
+                                                if (u.getStatutu().equals("valide")) {
                                                     out.print("<td><span class=\"badge badge-success\">" + u.getStatutu() + "</span></td>");
                                                 } else if (u.getStatutu().equals("en attente")) {
                                                     out.print("<td><span class=\"badge badge-danger\">" + u.getStatutu() + "</span></td>");
@@ -194,7 +195,7 @@
                     out.print("<div class=\"col-12\">");
                     String cible = "";
                     if (condition.equals("valider")) {
-                        cible = "validé";
+                        cible = "valide";
                     } else {
                         cible = "en attente";
                     }
