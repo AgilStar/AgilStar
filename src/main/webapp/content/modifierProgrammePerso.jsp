@@ -3,6 +3,12 @@
 <%@ page import="db.dbProgram" %>
 <%@ page import="model.Programmetype" %>
 <%@ page import="model.Programmeperso" %>
+<%@ page import="model.Seancetype" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="servlet.Program.ctrlProgram" %>
+<%@ page import="java.util.EnumMap" %>
+<%@ page import="model.Seanceperso" %>
+<%@ page import="db.dbProgramPerso" %>
 <% String codep = request.getParameter("codep");
     String type=request.getParameter("type");
     String codeUser=request.getParameter("codeUser");
@@ -91,23 +97,109 @@
                                                 "                                    </button>");
                                     }
                                 %>
-                                    <jsp:include page="templete/listSeance.jsp" flush="true">
-                                        <jsp:param name="codeP" value="<%=codep%>"/>
-                                        <jsp:param name="type" value="<%=type%>"/>
-                                    </jsp:include>
+
+
+
+
+
+
+
+
+
+                                <div class="table-responsive m-t-40" id="listSeance">
+                                    <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0"
+                                           width="100%">
+                                        <thead>
+                                        <tr>
+                                        <tr>
+                                            <th>Séance</th>
+                                            <th>Opération</th>
+                                            <th>Catégorie</th>
+                                            <th>Description</th>
+                                        </tr>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="listSessionTotal">
+                                        <%
+                                            ArrayList<Seancetype> listUu = new ctrlProgram().getAllSeanceType();
+                                            for (Seancetype u : listUu) {
+                                                        /*
+                                                        Pour valider ou passer en attente
+                                                         */
+
+                                                    out.print("<tr style=\"background-color:#fedee5\" nameSession='" + u.getLibellest() + " (" + u.getDescriptionst() + ")' idSession='" + u.getCodest() + "' nbSession=0>");
+
+                                                out.print("<th scope=\"row\">");
+                                                out.print(u.getLibellest());
+                                                out.print("</th>");
+                                                out.print("<td>");
+                                                out.print("<button id='btnAddChoixSession' class='btn btn-success btn-outline' onclick=\"addChoixSessionPerso(this)\" >+</button>");
+                                                out.print("  <button id='btnDeleteChoixSession' class='btn btn-warning btn-outline' onclick=\"deleteChoixSession(this)\" >-</button>");
+                                                out.print("</td>");
+                                                out.print("<td>" + u.getCategorieCat() + "</td>");
+                                                out.print("<td>" + u.getDescriptionst() + "</td>");
+                                                out.print("</tr>");
+                                            }
+                                        %>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+
+                                <div class="row" style="margin-top: 10px;margin-bottom: 30px;margin-left: 5px" >
+                                    <button class="btn btn-success" onclick="addBilanPerso()">+</button>
+                                    <h3 class="center">Bilan</h3>
+                                    <button class="btn btn-warning" onclick="deleteBilan()">-</button>
+                                </div>
+
+                                <div class="nestable">
+                                    <div class="dd" id="nestable">
+                                        <ol class="dd-list" id="listSession">
+                                        <%
+                                            ArrayList<String[]> list=new dbProgramPerso().getAllSeances(p.getCodepp());
+                                            for (int i=0;i<list.size();i++){
+                                                String[] seance=list.get(i);
+                                                out.print(" <li class=\"dd-item dd-item\"  typeSession='perso' isBilan='"+seance[7]+"' idsession=\"" + seance[1] + "\">");
+
+                                                if(i == 0 || i == (list.size()-1)){
+                                                    out.print("  <div class=\"dd3-handle\" style=\"background-color:#d6d8d9\"></div>");
+                                                }else{
+                                                    out.print("<div class=\"dd-handle dd3-handle\" style=\"background-color:#ffeacd\"></div>");
+                                                }
+
+                                                if(seance[7].equals("bilan")){
+                                                    out.print(" <div class=\"dd3-content\" style=\"background-color:#d1ecf1\"> Bilan");
+                                                }else{
+                                                    out.print(" <div class=\"dd3-content\">" + seance[2] + "(" + seance[3] + ")");
+                                                }
+
+                                                if(i != 0 && i != (list.size()-1)){
+                                                    out.print("<button class=\"btn-danger\" style=\"float: right\" onclick=\"deleteSeancePerso(this,"+seance[1]+",'"+seance[7]+"')\">X</button>");
+                                                }
+                                                out.print("</div></li>");
+                                            }
+                                        %>
+                                        </ol>
+                                    </div>
+                                </div>
+
+
+
+
+
+
                             </div>
-                        </div>
                     </div>
                     <div class="card-body">
                         <div id="errorMessage"></div>
 
 
-                        <button type="button" class="btn btn-danger btn-rounded button-sweet-success m-b-10 m-l-5" onclick="confirmProfilProgram('<%=type%>','<%=p.getCodept()%>','<%=codeUser%>')" <%=type.equals("voirType")||type.equals("voirPerso")?"hidden":""%>>
-                            Confirmer
-                        </button>
-                        <button type="button" class="btn btn-danger btn-rounded button-sweet-success m-b-10 m-l-5" onclick="window.location.href='modifierProgramme.jsp?codep=<%=p.getCodept()%>&type=modifyType&codeUser=<%=codeUser%>'" <%=type.equals("voirType")||type.equals("voirPerso")?"":"hidden"%>>
+                        <button type="button" class="btn btn-danger btn-rounded button-sweet-success m-b-10 m-l-5" onclick="confirmProfilProgramPerso('<%=type%>','<%=p.getCodepp()%>','<%=codeUser%>')">
                             Modifier
                         </button>
+
+
+
 
                     </div>
                 </div>

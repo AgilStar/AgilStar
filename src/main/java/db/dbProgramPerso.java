@@ -278,4 +278,107 @@ public Seanceperso getSeanceperso(String codeSp){
 
 }
 
+
+    public void deletePlanifierSP(String[] codesp){
+        String s="";
+        for(int i=0;i<codesp.length;i++){
+            if(i==(codesp.length-1)){
+                s+="CODESP="+codesp[i];
+            }else{
+                s+="CODESP="+codesp[i]+" OR";
+            }
+
+        }
+        String sqlDeleteSeance = "delete from PLANIFIERSP where "+s;
+
+
+        cx = new dbAdmin().getConnection();
+        try {
+            Statement st1 = cx.createStatement();
+            st1.executeUpdate(sqlDeleteSeance);
+            st1.close();
+            cx.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteSeancePerso(String[] codesp){
+        String s="";
+        for(int i=0;i<codesp.length;i++){
+            if(i==(codesp.length-1)){
+                s+="CODESP="+codesp[i];
+            }else{
+                s+="CODESP="+codesp[i]+" OR";
+            }
+
+        }
+        String sqlDeleteSeance = "delete from SEANCEPERSO where "+s;
+
+
+        cx = new dbAdmin().getConnection();
+        try {
+            Statement st1 = cx.createStatement();
+            st1.executeUpdate(sqlDeleteSeance);
+            st1.close();
+            cx.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void deletePlanifierBilan(String[] codesp){
+        String s="";
+        for(int i=0;i<codesp.length;i++){
+            if(i==(codesp.length-1)){
+                s+="CODESB="+codesp[i];
+            }else{
+                s+="CODESB="+codesp[i]+" OR";
+            }
+
+        }
+        String sqlDeleteSeance = "delete from PLANIFIERBILAN where "+s;
+
+        cx = new dbAdmin().getConnection();
+        try {
+            Statement st1 = cx.createStatement();
+            st1.executeUpdate(sqlDeleteSeance);
+            st1.close();
+            cx.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteSeanceBilanPerso(String[] codesp){
+        String s="";
+        for(int i=0;i<codesp.length;i++){
+            if(i==(codesp.length-1)){
+                s+="CODESB="+codesp[i];
+            }else{
+                s+="CODESB="+codesp[i]+" OR";
+            }
+        }
+        String sqlDeleteSeance = "delete from SEANCEBILAN where "+s;
+        cx = new dbAdmin().getConnection();
+        try {
+            Statement st1 = cx.createStatement();
+            st1.executeUpdate(sqlDeleteSeance);
+            st1.close();
+            cx.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void updateSeancePerso(int i,String codesp) {
+        String sqlDeleteSeance = "updaye  SEANCEPERSO set ordreSP="+i+" WHERE CODESP = "+codesp;
+        System.out.println(sqlDeleteSeance);
+    }
+
+    public void updateSeanceBilanPerso(int i, String codesp) {
+        String sqlDeleteSeance = "updaye  SEANCEPERSO set ordreSP="+i+" WHERE CODESP = "+codesp;
+    }
 }

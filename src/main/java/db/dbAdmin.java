@@ -23,7 +23,6 @@ public class dbAdmin {
     /*données de connexion*/
 
 
-
     private  String url = "jdbc:mysql://etu-web:3306/db_21201692";
 
     private String login = "21201692";

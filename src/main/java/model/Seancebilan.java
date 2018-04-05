@@ -18,11 +18,55 @@ public class Seancebilan  implements java.io.Serializable {
      private String etatlucoach;
      private String ouvert;
      private String validersb;
+    private String fcRepos;
+    private String fcMax;
+    private String fcFlexion;
+    private String fcRecup;
+    private String dateM;
 
     public Seancebilan() {
     }
 
-	
+    public String getFcRepos() {
+        return fcRepos;
+    }
+
+    public void setFcRepos(String fcRepos) {
+        this.fcRepos = fcRepos;
+    }
+
+    public String getFcMax() {
+        return fcMax;
+    }
+
+    public void setFcMax(String fcMax) {
+        this.fcMax = fcMax;
+    }
+
+    public String getFcFlexion() {
+        return fcFlexion;
+    }
+
+    public void setFcFlexion(String fcFlexion) {
+        this.fcFlexion = fcFlexion;
+    }
+
+    public String getFcRecup() {
+        return fcRecup;
+    }
+
+    public void setFcRecup(String fcRecup) {
+        this.fcRecup = fcRecup;
+    }
+
+    public String getDateM() {
+        return dateM;
+    }
+
+    public void setDateM(String dateM) {
+        this.dateM = dateM;
+    }
+
     public Seancebilan(int codesbt, int codepp) {
         this.codesbt = codesbt;
         this.codepp = codepp;
@@ -37,7 +81,21 @@ public class Seancebilan  implements java.io.Serializable {
        this.ouvert = ouvert;
        this.validersb = validersb;
     }
-   
+
+    public Seancebilan(int codesb, String nom, String semaine, String com, String lu, String ouvert, String validerSb, String fcRepos, String fcMax, String fcFlexion, String fcRecup, String dateM) {
+        this.codesb = codesb;
+        this.libellesb = nom;
+        this.numsemaine = semaine;
+        this.commentairecoach = com;
+        this.etatlucoach = lu;
+        this.ouvert = ouvert;
+        this.validersb = validerSb;
+        this.fcRepos = fcRepos;
+        this.fcMax = fcMax;
+        this.fcFlexion = fcFlexion;
+        this.fcRecup = fcRecup;
+        this.dateM = dateM;
+    }
     public Integer getCodesb() {
         return this.codesb;
     }

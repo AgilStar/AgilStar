@@ -119,6 +119,7 @@
                         } else {
                             out.print("<div class=\"dd-handle dd3-handle\" style=\"background-color:#ffeacd\"></div>");
                         }
+
                         if (listSeance.get(i) != null) {
                             Seancetype s = listSeance.get(i);
                             out.print(" <div class=\"dd3-content\">" + s.getLibellest() + "(" + s.getDescriptionst() + ")");
