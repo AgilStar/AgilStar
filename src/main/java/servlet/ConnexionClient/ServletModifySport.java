@@ -34,7 +34,7 @@ public class ServletModifySport extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         HttpSession session = req.getSession(false);
-        if (session != null) {
+        
             String id=(String)session.getAttribute("id");
             Double poids=0.0;
             if(req.getParameter("poids")!=""){
@@ -57,7 +57,7 @@ public class ServletModifySport extends HttpServlet {
             }
             
              Integer evalg =0;
-           if(req.getParameter("evalg")!=""){
+           if(req.getParameter("evalg")!=" "){
                 evalg = new Integer(req.getParameter("evalg"));
            }
            
@@ -103,5 +103,5 @@ public class ServletModifySport extends HttpServlet {
        
         }
 
-    }
+    
 }

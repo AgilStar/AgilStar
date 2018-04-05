@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 @WebServlet(
         name = "ServletAddProgram",
@@ -54,7 +55,6 @@ public class ServletAddProgram extends HttpServlet {
             
             //pour la creation d'un programme personnalise 
         }else if(type.equals("createPerso")){
-
                 //insertion dans la table programme perso
                 db.insertProgrammePerso(name,des,Integer.parseInt(codeUser),Integer.parseInt(codeP));
                 //insertion dans la table seanceperso , la table seancebilan , la table planifiersp
@@ -64,6 +64,11 @@ public class ServletAddProgram extends HttpServlet {
 
         }
 
+        try {
+            db.getCx().close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
-}
+    }
 }

@@ -55,9 +55,10 @@
                                     <div class="basic-form">
 
                                         <%
+                                            dbProgram db=new dbProgram();
                                            Integer codep= new Integer(request.getParameter("codep"));
                                            String codes= request.getParameter("codes");
-                                           Seancetype st = new dbProgram().getOneSeanceType(codes);
+                                           Seancetype st = db.getOneSeanceType(codes);
                                            
                                         %>
 
@@ -73,7 +74,7 @@
                                             <label>Catégorie</label>
                                             <select>
                                                  <%
-                                                ArrayList<Categorieseance> listCat = new dbProgram().getCategories();
+                                                ArrayList<Categorieseance> listCat = db.getCategories();
                                                 for(Categorieseance cat : listCat){
                                                     if(cat.getCodecat()==st.getCodecat()){
                                                         out.print("<option value=\""+cat.getLibellecat()+"\"selected>"+cat.getLibellecat()+"</option>");
@@ -93,11 +94,11 @@
                                         <h5>Exercices</h5>
 
                                         <%
-                                            ArrayList<String[]> descriptSt = new dbProgram().getDescriptionSeance(codes);
+                                            ArrayList<String[]> descriptSt = db.getDescriptionSeance(codes);
                                             Integer cpt = 0;
                                             for(String[] desc : descriptSt){
                                                 cpt++;
-                                                Exercice e = new dbProgram().getOneExercice (desc[0]);
+                                                Exercice e = db.getOneExercice (desc[0]);
                                                 out.print("<h5><b>Exercice "+cpt+"</b></h5>");
                                                 out.print("<table id=\"example23\" class=\"display nowrap table table-hover table-striped table-bordered\" cellspacing=\"0\" width=\"100%\">");
                                                 out.print("<thead><tr><th>Nom Exercice</th><th>Objectif</th></tr></thead>");
@@ -122,6 +123,7 @@
                                                     
                                         }
                                             out.print("</br>");
+                                            db.getCx().close();
                                         %>
 
 

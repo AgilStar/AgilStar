@@ -56,7 +56,7 @@
                                                     <th>Type</th>
                                                     <th>Libelle</th>
                                                     <th>Description</th>
-                                                    <th>CommentaireCoach</th>
+                                                    <th>Commentaire Coach</th>
                                                     <th>Etat Ouverture</th>
                                                     <th>Etat Valider</th>
 

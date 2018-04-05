@@ -12,7 +12,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.Exercice;
 import model.Mensuration;
+import model.Planifierbilan;
+import model.Profil;
+import model.Seancebilan;
 import model.Utilisateur;
 
 /**
@@ -186,25 +190,25 @@ public class dbClient {
         //insertion dans la table sÔøΩance bilan
         try {
 
-            String sql = "insert into SEANCEBILAN(CODESBT,FCREPOS, FCMAX, FCFLEXION,FCRECUPERATION,CODEU,DATEM,NUMSEMAINE) VALUES (2," + fcr + "," + fcmax + "," + frf + "," + fcrecup + "," + id + ",sysdate(),-1)";
+            String sql = "insert into SEANCEBILAN(CODESBT,FCREPOS, FCMAX, FCFLEXION,FCRECUPERATION,CODEU,DATEM,NUMSEMAINE,ORDRESB) VALUES (2," + fcr + "," + fcmax + "," + frf + "," + fcrecup + "," + id + ",sysdate(),-1,0)";
             Statement st = cx.createStatement();
             int nb = st.executeUpdate(sql);
             st.close();
 
         } catch (SQLException ex) {
-            System.out.println("Il y a un probl√®me sur statement " + ex.getMessage());
+            System.out.println("Il y a un pro pour insÈrer la 1ere sÈance" + ex.getMessage());
         }
 
         //insertion dans la table planifierbilan pour gainage
         try {
 
-            String sql1 = "Insert into PLANIFIERBILAN(CODESB,CODEE, DATER,TEMPSMAXU, ORDREB) VALUES ((SELECT CODESB from SEANCEBILAN ORDER BY CODESB DESC LIMIT 1),(SELECT CODEE FROM EXERCICE WHERE LIBELLEE='gainage'),sysdate()," + tmaxgainage + ",1)";
+            String sql1 = "Insert into PLANIFIERBILAN(CODESB,CODEE, DATER,TEMPSMAXU, ORDREB) VALUES ((SELECT CODESB from SEANCEBILAN ORDER BY CODESB DESC LIMIT 1),(SELECT CODEE FROM EXERCICE WHERE LIBELLEE='Gainage'),sysdate()," + tmaxgainage + ",1)";
             Statement st = cx.createStatement();
             int nb = st.executeUpdate(sql1);
             st.close();
 
         } catch (SQLException ex) {
-            System.out.println("Il y a un probl√®me sur statement " + ex.getMessage());
+            System.out.println("Il y a un pro pour le gainage " + ex.getMessage());
         }
 
         //insertion dans la table planifierbian pour fente
@@ -212,13 +216,13 @@ public class dbClient {
 
             String sql2 = "Insert into PLANIFIERBILAN(CODESB,CODEE, "
                     + "DATER,NBMAXU, ORDREB) VALUES ((SELECT CODESB from SEANCEBILAN ORDER BY CODESB DESC LIMIT 1),"
-                    + "(SELECT CODEE FROM EXERCICE WHERE LIBELLEE='fente gauche'),sysdate()," + nbmaxFenteGauche + ",2)";
+                    + "(SELECT CODEE FROM EXERCICE WHERE LIBELLEE='Fentes jambe gauche devant'),sysdate()," + nbmaxFenteGauche + ",2)";
             Statement st = cx.createStatement();
             int nb = st.executeUpdate(sql2);
             st.close();
 
         } catch (SQLException ex) {
-            System.out.println("Il y a un probl√®me sur statement " + ex.getMessage());
+            System.out.println("Il y a un pro pour la fente gauche " + ex.getMessage());
         }
 
         //insertion dans la table planifierbian pour fente droite
@@ -226,27 +230,26 @@ public class dbClient {
 
             String sql3 = "Insert into PLANIFIERBILAN(CODESB,CODEE, "
                     + "DATER,NBMAXU, ORDREB) VALUES ((SELECT CODESB from SEANCEBILAN ORDER BY CODESB DESC LIMIT 1),"
-                    + "(SELECT CODEE FROM EXERCICE WHERE LIBELLEE='fente droite'),sysdate()," + nbmaxFenteDroite + ",3)";
+                    + "(SELECT CODEE FROM EXERCICE WHERE LIBELLEE='Fentes jambe droite devant'),sysdate()," + nbmaxFenteDroite + ",3)";
             Statement st = cx.createStatement();
             int nb = st.executeUpdate(sql3);
             st.close();
 
         } catch (SQLException ex) {
-            System.out.println("Il y a un probl√®me sur statement " + ex.getMessage());
-        }
+            System.out.println("Il y a un pro pour la fente droite"+ ex.getMessage());}
 
         //insertion dans la table planifierbian pour crunch
         try {
 
             String sql4 = "Insert into PLANIFIERBILAN(CODESB,CODEE, "
                     + "DATER,NBMAXU, ORDREB) VALUES ((SELECT CODESB from SEANCEBILAN ORDER BY CODESB DESC LIMIT 1),"
-                    + "(SELECT CODEE FROM EXERCICE WHERE LIBELLEE='crunch'),sysdate()," + nbCrunch + ",4)";
+                    + "(SELECT CODEE FROM EXERCICE WHERE LIBELLEE='Crunch'),sysdate()," + nbCrunch + ",4)";
             Statement st = cx.createStatement();
             int nb = st.executeUpdate(sql4);
             st.close();
 
         } catch (SQLException ex) {
-            System.out.println("Il y a un probl√®me sur statement " + ex.getMessage());
+            System.out.println("Il y a un pour crunch " + ex.getMessage());
         }
 
         //insertion dans la table planifierbian pour pompe
@@ -254,13 +257,13 @@ public class dbClient {
 
             String sql5 = "Insert into PLANIFIERBILAN(CODESB,CODEE, "
                     + "DATER,NBMAXU, ORDREB) VALUES ((SELECT CODESB from SEANCEBILAN ORDER BY CODESB DESC LIMIT 1),"
-                    + "(SELECT CODEE FROM EXERCICE WHERE LIBELLEE='pompes'),sysdate()," + nbPompe + ",5)";
+                    + "(SELECT CODEE FROM EXERCICE WHERE LIBELLEE='Pompes ? genoux'),sysdate()," + nbPompe + ",5)";
             Statement st = cx.createStatement();
             int nb = st.executeUpdate(sql5);
             st.close();
 
         } catch (SQLException ex) {
-            System.out.println("Il y a un probl√®me sur statement " + ex.getMessage());
+            System.out.println("Il y a un pro pour les pompe" + ex.getMessage());
         }
 
         //insertion dans la table planifierbian pour squat
@@ -268,13 +271,13 @@ public class dbClient {
 
             String sql6 = "Insert into PLANIFIERBILAN(CODESB,CODEE, "
                     + "DATER,NBMAXU, ORDREB) VALUES ((SELECT CODESB from SEANCEBILAN ORDER BY CODESB DESC LIMIT 1),"
-                    + "(SELECT CODEE FROM EXERCICE WHERE LIBELLEE='squats'),sysdate()," + nbSquat + ",6)";
+                    + "(SELECT CODEE FROM EXERCICE WHERE LIBELLEE='1/2 Squat'),sysdate()," + nbSquat + ",6)";
             Statement st = cx.createStatement();
             int nb = st.executeUpdate(sql6);
             st.close();
 
         } catch (SQLException ex) {
-            System.out.println("Il y a un probl√®me sur statement " + ex.getMessage());
+            System.out.println("Il y a un pro pour le squat " + ex.getMessage());
         }
 
         //insertion dans la table planifierbian pour dips
@@ -282,13 +285,13 @@ public class dbClient {
 
             String sql7 = "Insert into PLANIFIERBILAN(CODESB,CODEE, "
                     + "DATER,NBMAXU, ORDREB) VALUES ((SELECT CODESB from SEANCEBILAN ORDER BY CODESB DESC LIMIT 1),"
-                    + "(SELECT CODEE FROM EXERCICE WHERE LIBELLEE='dips'),sysdate()," + nbDips + ",7)";
+                    + "(SELECT CODEE FROM EXERCICE WHERE LIBELLEE='Dips'),sysdate()," + nbDips + ",7)";
             Statement st = cx.createStatement();
             int nb = st.executeUpdate(sql7);
             st.close();
 
         } catch (SQLException ex) {
-            System.out.println("Il y a un probl√®me sur statement " + ex.getMessage());
+            System.out.println("Il y a un pro pour dips " + ex.getMessage());
         }
 
 //insertion dans la table mensuration pour poids
@@ -301,7 +304,7 @@ public class dbClient {
             st.close();
             cx.close();
         } catch (SQLException ex) {
-            System.out.println("Il y a un probl√®me sur statement " + ex.getMessage());
+            System.out.println("Il y a un pro pour le poids " + ex.getMessage());
         }
 
     }
@@ -409,7 +412,10 @@ public class dbClient {
         Mensuration m = new Mensuration();
         try {
             cx = new dbAdmin().getConnection();
-            String sql = "select * from MENSURATION where CODEU=" + codeU + " and DATEM=(SELECT MAX(DATEM) FROM MENSURATION WHERE CODEU=" + codeU + ")";
+
+            String sql = "select * from MENSURATION where CODEU=" + codeU + " and DATEM=(SELECT MAX(DATEM) FROM MENSURATION WHERE CODEU=" + codeU + ")"
+                    + " and CODEM=(SELECT MAX(CODEM) FROM MENSURATION WHERE CODEU=" + codeU + ")";
+
             System.out.println(sql);
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -438,6 +444,7 @@ public class dbClient {
         return m;
 
     }
+
 
     public void validateSession(int codeS, int codeE, int result) {
         String r = "";
@@ -469,6 +476,161 @@ public class dbClient {
         }
     }
 
+    public Utilisateur getUser(int codeu) {
+        cx = new dbAdmin().getConnection();
+        Utilisateur user = new Utilisateur();
+
+        try {
+
+            String sql = "select *  from UTILISATEUR  where codeu='" + codeu + "'";
+            Statement st = cx.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+                int id = rs.getInt("CODEU");
+                String nom = rs.getString("NOMU");
+                String prenom = rs.getString("PRENOMU");
+                String dn = rs.getString("DATENAISSANCE");
+                String genre = rs.getString("GENREU");
+                String adresse = rs.getString("ADRESSEU");
+
+                String tel = rs.getString("TELU");
+
+                user.setNomu(nom);
+                user.setPrenomu(prenom);
+                user.setDatenaissance(dn);
+                user.setGenreu(genre);
+                user.setTelu(tel);
+                user.setAdresseu(adresse);
+
+            }
+            st.close();
+            cx.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Il y a un problËme sur la requÍte pour obtenir les infos d'un utilisateur " + ex.getMessage());
+        }
+        return user;
+    }
+
+    public ArrayList<Profil> getProfilUser(int codeu) {
+        cx = new dbAdmin().getConnection();
+        ArrayList<Profil> profils = new ArrayList();
+        Profil p;
+
+        try {
+
+            String sql = "select *  from  DETENIR d, PROFIL p where  p.CODEPROFIL=d.CODEPROFIL and d.codeu='" + codeu + "'";
+            Statement st = cx.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+
+                String profil = rs.getString("LIBELLEPROFIL");
+                profils.add(new Profil(profil));
+            }
+            st.close();
+            cx.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Il y a un problËme sur la requÍte pour obtenir les infos du profil d'un utilisateur " + ex.getMessage());
+        }
+        return profils;
+    }
+
+    public void modifyProfil(int codeu, String nom, String adresse, String prenom) {
+        cx = new dbAdmin().getConnection();
+        try {
+
+            String sql = "update UTILISATEUR set NOMU='" + nom + "',ADRESSEU='" + adresse + "',PRENOMU='" + prenom + "' where codeu=" + codeu;
+            Statement st = cx.createStatement();
+            int nb = st.executeUpdate(sql);
+            st.close();
+            cx.close();
+        } catch (SQLException ex) {
+            System.out.println("Il y a un probl√®me sur statement " + ex.getMessage());
+        }
+
+    }
+
+    public int getSeancebilan(int codeu) {
+        Seancebilan s = new Seancebilan();
+        int sea=0;
+        try {
+            
+            cx = new dbAdmin().getConnection();
+            String sql = "select codesb from SEANCEBILAN where codeu='" + codeu + "'and numsemaine='-1' and DATEM=(SELECT MAX(DATEM) FROM SEANCEBILAN WHERE CODEU=" + codeu + ")";
+            Statement st = cx.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            if (rs.next()) {
+                int seance = rs.getInt("CODESB");
+                s.setCodesb(seance);
+                sea=seance;
+            }
+            st.close();
+            cx.close();
+        } catch (SQLException ex) {
+            System.out.println("Il y a un probl√®me sur la recupÈration dE LA valeur dE LA SEANCE BIL" + ex.getMessage());
+
+        }
+        System.out.println(sea);
+        return sea;
+    }
+    public int getExercice(String libelle) {
+        cx = new dbAdmin().getConnection();
+        Exercice exo = new Exercice();
+        int code=0;
+        try {
+
+            String sql = "select codee  from EXERCICE where libellee=" + libelle;
+            Statement st = cx.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+                int id = rs.getInt("CODEE");
+                exo.setCodee(id);
+              code=id;
+            }
+            st.close();
+            cx.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Il y a un problËme pour retrouver l'exo " + ex.getMessage());
+        }
+        System.out.println(code+"§§§§§§§§§§§§§§");
+        return code;
+    }
+
+    public Planifierbilan getLastSport(int codeU, int codesb, int exo) {
+        Planifierbilan pb = new Planifierbilan();
+        
+        try {
+            cx = new dbAdmin().getConnection();
+           
+            String sql="select p.TEMPSMAXU, p.NBMAXU from PLANIFIERBILAN as p, SEANCEBILAN as sb where sb.CODESB=p.CODESB "
+                    + "and sb.CODEU='"+codeU+"' and sb.CODESB='"+codesb+"'and sb.numsemaine='-1' and p.CODEE='"+exo+"'";
+            System.out.println(sql);
+            Statement st = cx.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+       
+            while(rs.next()) {
+                int nbmax=rs.getInt("NBMAXU");
+                int temps = rs.getInt("TEMPSMAXU");
+                pb.setNbmaxu(nbmax);
+                pb.setTempsmaxu(temps);
+                  System.out.println(temps);
+
+            }
+           
+            st.close();
+            cx.close();
+        } catch (SQLException ex) {
+            System.out.println("Il y a un probl√®me sur la recupÈration des anciennes valeurs du profil sportif " + ex.getMessage());
+        }
+        System.out.println(pb.getTempsmaxu());
+        return pb;
+    }
+
     public void validerBilanExo(int codeS, int codeE, int resultat) {
         try {
             cx = new dbAdmin().getConnection();
@@ -481,6 +643,7 @@ public class dbClient {
             System.out.println("Il y a un probl√®me sur statement validerBilanExo " + ex.getMessage());
         }
     }
+
 
     
     public void validerBilan(int codeS, int fcrepos, int fcflexion, int fcallonge) {
@@ -532,10 +695,20 @@ public class dbClient {
        
     }
 
+
     public static void main(String[] args) {
         dbClient d = new dbClient();
         Utilisateur u = d.getOneClient(24);
         System.out.println(u.getNomu());
 
+
+        System.out.println(d.getProfilUser(62));
+        Seancebilan s=new Seancebilan();
+        s.setCodesb(1000);
+        d.getSeancebilan(21);
+        d.getLastSport(23,100,22);
+        d.getExercice("'dips'");
+
     }
+
 }

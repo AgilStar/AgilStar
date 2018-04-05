@@ -5,7 +5,9 @@
 <% Integer codep = new Integer(request.getParameter("codep"));
     String type=request.getParameter("type");
     String codeUser=request.getParameter("codeUser");
-    Programmetype p = new dbProgram().getOneProgramm(codep);
+    dbProgram db= new dbProgram();
+    Programmetype p =db.getOneProgramm(codep);
+    db.getCx().close();
 %>
 
 <!DOCTYPE html>
@@ -55,7 +57,10 @@
                                     out.print(" <h2>Modification du programme personalisé:"+p.getLibellept()+"</h2>");
                                 }else if(type.equals("voirType")){
                                     out.print(" <h2>"+p.getLibellept()+"</h2>");
-                                }else{
+                                }else if(type.equals("voirPerso")){
+                                    out.print(" <h2>"+p.getLibellept()+"</h2>");
+                                }
+                                else{
                                     out.print(" <h2>Modification du programme type:"+p.getLibellept()+"</h2>");
                                 }
                             %>

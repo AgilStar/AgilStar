@@ -106,7 +106,7 @@ public class dbProgramPerso {
                     + "SELECT sb.codesb as codeseance,IFNULL(sb.libellesb,'--') as libelleseance,\"seance bilan\" as descseance,IFNULL(sb.commentairecoach,'--') as commentaire,IFNULL(sb.ouvert,'--') as ouvert,IFNULL(sb.validersb,'--') as valider,sb.ordresb as ordre,\"bilan\" as type\n"
                     + "from SEANCEBILAN sb\n"
                     + "where sb.codepp=" + codePP + " order by ordre asc";
-
+            System.out.println(sql);
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
           //  System.out.println(sql);
@@ -236,22 +236,149 @@ public Planifierbilan getPlanForBilan(Integer codeS, Integer codeE){
     return p;
 }
 
-//public String insertProgramPerso(){
-//    cx = new dbAdmin().getConnection();
-//    try {
-//        String sql = "insert into programmeperso(CODEU,CODEPT,LIBELLEPP,DESCRIPTIONPP) VALUES('" + name + "','" + desc + "')";
-//        Statement st = cx.createStatement();
-//        st.executeUpdate(sql);
-//        st.close();
-//        cx.close();
-//    } catch (SQLException ex) {
-//        System.out.println("Il y a un problÃ¨me sur statement insertProgram" + ex.getMessage());
-//        ex.printStackTrace();
-//    }
-//return "";
-//
-//}
 
 
+public Seanceperso getSeanceperso(String codeSp){
+    Seanceperso s=null;
+    try {
+        cx = new dbAdmin().getConnection();
+        String sql = "select SP.CODEST,CODECAT,CODEPP,CODESP,LIBELLESP,DESCRIPTIONSP,COMMENTAIRECOACH,NBREPETITIONS,NUMSEMAINE,ETATLUCOACH,OUVERT,VALIDERSP,ECHAUFFFEMENTSP,ordreSP from SEANCEPERSO SP where SP.CODESP="+codeSp;
+        Statement st = cx.createStatement();
+        ResultSet rs = st.executeQuery(sql);
 
+        while (rs.next()) {
+            int codesp=rs.getInt("CODESP");
+            int codepp=rs.getInt("CODEPP");
+            int codest=rs.getInt("CODEST");
+            int codecat=rs.getInt("CODECAT");
+            String libellesp=rs.getString("LIBELLESP");
+            String desc=rs.getString("DESCRIPTIONSP");
+            String commentaireCoach=rs.getString("COMMENTAIRECOACH");
+            int nbrepetitions=rs.getInt("NBREPETITIONS");
+            int numsemaine=rs.getInt("NUMSEMAINE");
+            String etatlucaoch=rs.getString("ETATLUCOACH");
+            String ouvert=rs.getString("OUVERT");
+            String validersp=rs.getString("VALIDERSP");
+            String echauffementst=rs.getString("ECHAUFFFEMENTSP");
+            String orderSp=rs.getString("ordreSP");
+
+            s=new Seanceperso(codesp,codepp,codest,libellesp,desc,commentaireCoach,nbrepetitions,numsemaine,etatlucaoch,ouvert,validersp,echauffementst,orderSp,codecat);
+
+        }
+        st.close();
+        cx.close();
+
+
+    } catch (SQLException ex) {
+        System.out.println("Il y a un problème sur statement getPlanForBilan " + ex.getMessage());
+        ex.printStackTrace();
+    }
+
+    return s;
+
+}
+
+
+    public void deletePlanifierSP(String[] codesp){
+        String s="";
+        for(int i=0;i<codesp.length;i++){
+            if(i==(codesp.length-1)){
+                s+="CODESP="+codesp[i];
+            }else{
+                s+="CODESP="+codesp[i]+" OR";
+            }
+
+        }
+        String sqlDeleteSeance = "delete from PLANIFIERSP where "+s;
+
+
+        cx = new dbAdmin().getConnection();
+        try {
+            Statement st1 = cx.createStatement();
+            st1.executeUpdate(sqlDeleteSeance);
+            st1.close();
+            cx.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteSeancePerso(String[] codesp){
+        String s="";
+        for(int i=0;i<codesp.length;i++){
+            if(i==(codesp.length-1)){
+                s+="CODESP="+codesp[i];
+            }else{
+                s+="CODESP="+codesp[i]+" OR";
+            }
+
+        }
+        String sqlDeleteSeance = "delete from SEANCEPERSO where "+s;
+
+
+        cx = new dbAdmin().getConnection();
+        try {
+            Statement st1 = cx.createStatement();
+            st1.executeUpdate(sqlDeleteSeance);
+            st1.close();
+            cx.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void deletePlanifierBilan(String[] codesp){
+        String s="";
+        for(int i=0;i<codesp.length;i++){
+            if(i==(codesp.length-1)){
+                s+="CODESB="+codesp[i];
+            }else{
+                s+="CODESB="+codesp[i]+" OR";
+            }
+
+        }
+        String sqlDeleteSeance = "delete from PLANIFIERBILAN where "+s;
+
+        cx = new dbAdmin().getConnection();
+        try {
+            Statement st1 = cx.createStatement();
+            st1.executeUpdate(sqlDeleteSeance);
+            st1.close();
+            cx.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteSeanceBilanPerso(String[] codesp){
+        String s="";
+        for(int i=0;i<codesp.length;i++){
+            if(i==(codesp.length-1)){
+                s+="CODESB="+codesp[i];
+            }else{
+                s+="CODESB="+codesp[i]+" OR";
+            }
+        }
+        String sqlDeleteSeance = "delete from SEANCEBILAN where "+s;
+        cx = new dbAdmin().getConnection();
+        try {
+            Statement st1 = cx.createStatement();
+            st1.executeUpdate(sqlDeleteSeance);
+            st1.close();
+            cx.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void updateSeancePerso(int i,String codesp) {
+        String sqlDeleteSeance = "updaye  SEANCEPERSO set ordreSP="+i+" WHERE CODESP = "+codesp;
+        System.out.println(sqlDeleteSeance);
+    }
+
+    public void updateSeanceBilanPerso(int i, String codesp) {
+        String sqlDeleteSeance = "updaye  SEANCEPERSO set ordreSP="+i+" WHERE CODESP = "+codesp;
+    }
 }

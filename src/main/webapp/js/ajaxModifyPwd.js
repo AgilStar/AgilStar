@@ -19,16 +19,16 @@ function modifyPwdClient(){
     var errorFlag = false;
      if (!checkEmpty(pwd0)) {
         errorFlag = true;
-        errorMessage = errorMessage + "Entrez votre mot de passe svp ";
+        errorMessage = errorMessage + "Indiquez votre mot de passe  ";
     }
     if (!checkEmpty(pwd1)) {
         errorFlag = true;
-        errorMessage = errorMessage + "Entrez le nouveau mot de passe svp ";
+        errorMessage = errorMessage + "Indiquez le nouveau mot de passe  ";
     }
 
     if (!checkEmpty(pwd2)) {
         errorFlag = true;
-        errorMessage = errorMessage + "Confirmez votre mot de passe svp";
+        errorMessage = errorMessage + "Confirmez le mot de passe ";
     }
 
     if (errorFlag) {

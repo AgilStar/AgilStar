@@ -21,10 +21,12 @@
         programflag = false;
     }
     if (programflag) {
-        Programmetype programmetype = new dbProgram().getSceanceTypeProgramm(codep);
+
+        dbProgram db=new dbProgram();
+        Programmetype programmetype = db.getSceanceTypeProgramm(codep);
         nbMax = Collections.max(programmetype.getListSeanceBilanType().keySet());
 
-
+        db.getCx().close();
 
         listBilan = programmetype.getListSeanceBilanType();
         listSeance = programmetype.getListSeanceType();
@@ -117,6 +119,7 @@
                         } else {
                             out.print("<div class=\"dd-handle dd3-handle\" style=\"background-color:#ffeacd\"></div>");
                         }
+
                         if (listSeance.get(i) != null) {
                             Seancetype s = listSeance.get(i);
                             out.print(" <div class=\"dd3-content\">" + s.getLibellest() + "(" + s.getDescriptionst() + ")");

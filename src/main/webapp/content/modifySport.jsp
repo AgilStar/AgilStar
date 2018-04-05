@@ -2,6 +2,8 @@
          pageEncoding="UTF-8"%>
 
 <%@ page import="model.Mensuration" %>
+<%@ page import="model.Seancebilan" %>
+<%@ page import="model.Planifierbilan" %>
 <%@ page import="db.dbClient" %>
 <%@ page import="db.dbProfil" %>
 <!DOCTYPE html>
@@ -31,8 +33,8 @@
                     <div class="col-md-5 align-self-center">
                         <!-- vérifier si le client a déjà fait un bilan d'évaluation -->
                         <h3 class='text-primary'>Remplir/Modifier le profil sportif</h3>
-                               
-                                
+
+
 
 
 
@@ -61,7 +63,24 @@
                                 <div class="card-body">
                                     <form action="/ServletModifySport" method="get">
                                         <div class="form-body">
+                                            <%  String ids=(String)session.getAttribute("id");
+                                                 int id1=Integer.parseInt(ids);
+                                          
+                                                 int s = new dbClient().getSeancebilan(id1);
+                                                 int code=new dbClient().getExercice("'gainage'");
+                                                  
 
+                                                 Planifierbilan pb1=new dbClient().getLastSport(id1,s,code);
+out.print(s);
+
+//                                                 Planifierbilan pb2=new dbClient().getLastSport(id1,s,"Fentes jambe gauche devant");
+//                                                 Planifierbilan pb3=new dbClient().getLastSport(id1,s,"Fentes jambe droite devant");
+//                                                 Planifierbilan pb4=new dbClient().getLastSport(id1,s,"crunch");   
+//                                                 Planifierbilan pb5=new dbClient().getLastSport(id1,s,"pompe");
+//                                                 Planifierbilan pb6=new dbClient().getLastSport(id1,s,"squat");
+//                                                 Planifierbilan pb7=new dbClient().getLastSport(id1,s,"dips");
+
+                                            %>
                                             <div class="row p-t-20">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
@@ -73,7 +92,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group has-danger">
                                                         <label class="control-label">Poids</label>
-                                                        <input type="text" id="poids" class="form-control form-control-danger" name="poids">
+                                                        <input type="text" id="poids" class="form-control form-control-danger" name="poids" value="">
                                                     </div>
                                                 </div>
                                                 <!--/span-->
@@ -117,10 +136,11 @@
                                                     </div>
                                                 </div>
                                                 <!--/span-->
+
                                                 <div class="col-md-6">
                                                     <div class="form-group has-danger">
                                                         <label class="control-label">Evaluation gainage </label>
-                                                        <input type="text" id="evalg" class="form-control form-control-danger" name="evalg">
+                                                        <input type="text" id="evalg" class="form-control form-control-danger" name="evalg" value="<%=pb1.getTempsmaxu()%>">
                                                     </div>
                                                 </div>
                                                 <!--/span-->
@@ -137,9 +157,9 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group has-danger">
                                                         <label class="control-label">Evaluation jambe gauche devant </label>
-                                                        <input type="text" id="evalfg" class="form-control form-control-danger" name="evalfg">
+                                                        <input type="text" id="evalfg" class="form-control form-control-danger" name="evalfg" value="" >
                                                         <label class="control-label">Evaluation jambe droite devant </label>
-                                                        <input type="text" id="evalfd" class="form-control form-control-danger" name="evalfd">
+                                                        <input type="text" id="evalfd" class="form-control form-control-danger" name="evalfd" value="">
                                                     </div>
                                                 </div>
                                                 <!--/span-->
@@ -229,7 +249,7 @@
                             String id=(String)session.getAttribute("id");
  
                             if (new dbProfil().getProfilUser(Integer.parseInt(id)).contains("Amincissement")){
-                            Mensuration m=(Mensuration)new dbClient().getLastMensuration(23);
+                            Mensuration m=(Mensuration)new dbClient().getLastMensuration(Integer.parseInt(id));
 
                         %>
                         <%@ include file="/content/mensuration.jsp" %>
