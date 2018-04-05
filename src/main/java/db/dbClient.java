@@ -257,7 +257,7 @@ public class dbClient {
 
             String sql5 = "Insert into PLANIFIERBILAN(CODESB,CODEE, "
                     + "DATER,NBMAXU, ORDREB) VALUES ((SELECT CODESB from SEANCEBILAN ORDER BY CODESB DESC LIMIT 1),"
-                    + "(SELECT CODEE FROM EXERCICE WHERE LIBELLEE='Pompes � genoux'),sysdate()," + nbPompe + ",5)";
+                    + "(SELECT CODEE FROM EXERCICE WHERE LIBELLEE='Pompes ? genoux'),sysdate()," + nbPompe + ",5)";
             Statement st = cx.createStatement();
             int nb = st.executeUpdate(sql5);
             st.close();
@@ -412,8 +412,10 @@ public class dbClient {
         Mensuration m = new Mensuration();
         try {
             cx = new dbAdmin().getConnection();
+
             String sql = "select * from MENSURATION where CODEU=" + codeU + " and DATEM=(SELECT MAX(DATEM) FROM MENSURATION WHERE CODEU=" + codeU + ")"
                     + " and CODEM=(SELECT MAX(CODEM) FROM MENSURATION WHERE CODEU=" + codeU + ")";
+
             System.out.println(sql);
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -441,6 +443,37 @@ public class dbClient {
         }
         return m;
 
+    }
+
+
+    public void validateSession(int codeS, int codeE, int result) {
+        String r = "";
+        if (result == 0) {
+            r = "--";
+        } else if (result == 1) {
+            r = "Facile";
+        } else if (result == 2) {
+            r = "Bien";
+        } else {
+            r = "Difficile";
+        }
+
+        try {
+            cx = new dbAdmin().getConnection();
+            String sql = "update PLANIFIERSP set RESULTATU='" + r + "' and DATER=sysdate() where CODEE=" + codeE + " and CODESP=" + codeS;
+            Statement st = cx.createStatement();
+            st.executeUpdate(sql);
+
+            String sql2 = "update SEANCEPERSO set VALIDERSP='oui' where CODESP=" + codeS;
+            Statement st2 = cx.createStatement();
+            st2.executeUpdate(sql2);
+
+            st.close();
+            st2.close();
+            cx.close();
+        } catch (SQLException ex) {
+            System.out.println("Il y a un problème sur statement validateSession " + ex.getMessage());
+        }
     }
 
     public Utilisateur getUser(int codeu) {
@@ -596,13 +629,78 @@ public class dbClient {
         }
         System.out.println(pb.getTempsmaxu());
         return pb;
-
     }
+
+    public void validerBilanExo(int codeS, int codeE, int resultat) {
+        try {
+            cx = new dbAdmin().getConnection();
+            String sql = "update PLANIFIERBILAN set NBMAXU=" + resultat + " where CODESB=" + codeS + " and CODEE=" + codeE;
+            Statement st = cx.createStatement();
+            st.executeUpdate(sql);
+            st.close();
+            cx.close();
+        } catch (SQLException ex) {
+            System.out.println("Il y a un problème sur statement validerBilanExo " + ex.getMessage());
+        }
+    }
+
+
+    
+    public void validerBilan(int codeS, int fcrepos, int fcflexion, int fcallonge) {
+        cx = new dbAdmin().getConnection();
+         try{
+                String sql2 = "update SEANCEBILAN set VALIDERSB='oui' where CODESB=" + codeS;
+                Statement st2 = cx.createStatement();
+                st2.executeUpdate(sql2);
+
+                st2.close();}
+         catch(SQLException ex) {
+            System.out.println("Il y a un problème sur statement validerBilan valider " + ex.getMessage());
+        }
+          try{
+                String sql3 = "update SEANCEBILAN set FCREPOS=" + fcrepos + " where CODESB=" + codeS;
+                Statement st3 = cx.createStatement();
+                st3.executeUpdate(sql3);
+
+                st3.close();}
+         catch(SQLException ex) {
+            System.out.println("Il y a un problème sur statement validerBilan FCREPOS " + ex.getMessage());
+        }
+          try{
+                String sql4 = "update SEANCEBILAN set FCFLEXION=" + fcflexion + " where CODESB=" + codeS;
+                Statement st4 = cx.createStatement();
+                st4.executeUpdate(sql4);
+
+                st4.close();}
+         catch(SQLException ex) {
+            System.out.println("Il y a un problème sur statement validerBilan FCFLEXION " + ex.getMessage());
+        }
+           try{
+                String sql5 = "update SEANCEBILAN set FCRECUPERATION=" + fcallonge + " where CODESB=" + codeS;
+                Statement st5 = cx.createStatement();
+                st5.executeUpdate(sql5);
+
+                st5.close();}
+         catch(SQLException ex) {
+            System.out.println("Il y a un problème sur statement validerBilan FCRECUPERATION " + ex.getMessage());
+        }
+  
+
+        try {
+            cx.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(dbClient.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+       
+    }
+
 
     public static void main(String[] args) {
         dbClient d = new dbClient();
         Utilisateur u = d.getOneClient(24);
         System.out.println(u.getNomu());
+
 
         System.out.println(d.getProfilUser(62));
         Seancebilan s=new Seancebilan();
@@ -610,6 +708,7 @@ public class dbClient {
         d.getSeancebilan(21);
         d.getLastSport(23,100,22);
         d.getExercice("'dips'");
+
     }
 
 }

@@ -4,103 +4,144 @@
  * and open the template in the editor.
  */
 
-function firstPlay(time,type){
-  
-     if(type=="timeable"){
-                 document.getElementById("btnExo").disabled =true;
-                 document.getElementById("myprogressbar").removeAttribute("hidden");    
-                 Load(time,type);
-     }else{
-     
-                document.getElementById("btnExo").disabled =false;
-                document.getElementById("myprogressbar").setAttribute("hidden",true);
-            }
-    
-    
+function firstPlay(time, type) {
+
+    if (type == "timeable") {
+        document.getElementById("btnExo").disabled = true;
+        document.getElementById("myprogressbar").removeAttribute("hidden");
+        Load(time, type);
+    } else {
+
+        document.getElementById("btnExo").disabled = false;
+        document.getElementById("myprogressbar").setAttribute("hidden", true);
+    }
+
+
 }
 
 
-function changeDisplay(){
-    
-    var listExercice=document.getElementById("listExercice").getElementsByTagName("div");
- 
-    for(var i=0;i<listExercice.length;i++){
-        if(listExercice[i].getAttribute("hidden")==null){
+function changeDisplay(typeP) {
+
+    var listExercice = document.getElementById("listExercice").getElementsByTagName("div");
+
+    for (var i = 0; i < listExercice.length; i++) {
+        if (listExercice[i].getAttribute("hidden") == null) {
             //show
             //pour changer l'exercice
-            listExercice[i].setAttribute("hidden",true);
-            var time=listExercice[i+1].getAttribute("time");
-            var type=listExercice[i+1].getAttribute("type");
-            listExercice[i+1].removeAttribute("hidden");
-            
-            if(type=="timeable"||type=="repose"){
-                 document.getElementById("btnExo").disabled =true;
-                 document.getElementById("myprogressbar").removeAttribute("hidden");    
-                 Load(time,type);
+            listExercice[i].setAttribute("hidden", true);
+            var time = listExercice[i + 1].getAttribute("time");
+            var type = listExercice[i + 1].getAttribute("type");
+            listExercice[i + 1].removeAttribute("hidden");
 
-            }else{
-                document.getElementById("btnExo").disabled =false;
-                document.getElementById("myprogressbar").setAttribute("hidden",true);
+            if (type == "timeable" || type == "repose") {
+                document.getElementById("btnExo").disabled = true;
+                document.getElementById("myprogressbar").removeAttribute("hidden");
+                Load(time, type);
+
+            } else {
+                document.getElementById("btnExo").disabled = false;
+                document.getElementById("myprogressbar").setAttribute("hidden", true);
             }
-          
-            
-            
-            
+
+
+
+
             //pour terminer une seance
-            if(i==(listExercice.length-2)){
-                document.getElementById("btnExo").innerHTML="Terminer";
-                disableBtn()
-                document.getElementById("btnExo").setAttribute("onClick","terminer()");
-               
-             }
+            if (i == (listExercice.length - 2)) {
+                document.getElementById("btnExo").innerHTML = "Terminer";
+                disableBtn();
+                
+                if(typeP=="bilan"){
+                  
+                    document.getElementById("btnExo").setAttribute("onClick", "terminerBilan()");
+                }else{
+                    document.getElementById("btnExo").setAttribute("onClick", "terminer()");
+                }
+                
+
+            }
             break;
         }
-        
-        
+
+
+    }
+
+}
+
+function Load(secs, type) {
+    for (var i = secs; i >= 0; i--)
+    {
+        window.setTimeout(doUpdate, (secs - i) * 1000, i, secs, type);
+    }
+}
+function doUpdate(num, total, type) {
+    var message;
+    if (type == "repose") {
+        message = "Repos pour";
+        document.getElementById('ShowDiv').innerHTML = message + ' ' + num + ' secs ';
+        document.getElementById("bar").style.width = num / total * 100 + "%";
+
+    } else {
+        message = "Finir dans";
+        document.getElementById('ShowDiv').innerHTML = message + ' ' + num + ' secs ';
+        document.getElementById("bar").style.width = num / total * 100 + "%";
+
+    }
+    if (num == 0) {
+        changeDisplay()
+    }
+
+
+}
+
+function disableBtn() {
+    document.getElementById("btnExo").disabled = false;
+}
+
+function terminer() {
+    window.location.href = "validateSession.jsp";
+
+}
+
+function terminerBilan() {
+     var listExercice = document.getElementById("listExercice").getElementsByTagName("div");
+     var list=new Array();
+     for (var i = 0; i < listExercice.length; i++) {
+         list[i]=(document.getElementById("exercice"+i).value);
     }
     
+ window.location.href = "validateSession.jsp?bilan="+list;
 }
 
-function Load(secs,type){ 
-    for(var i=secs;i>=0;i--) 
-      { 
-        window.setTimeout(doUpdate, (secs-i) * 1000,i,secs,type); 
-} 
-} 
-function doUpdate(num,total,type){ 
-   var message;
-    if(type=="repose"){
-        message="Repos pour";
-        document.getElementById('ShowDiv').innerHTML = message+' '+num+' secs ' ; 
-        document.getElementById("bar").style.width=num/total*100+"%";
-       
-    }else{
-        message="Finir dans";
-        document.getElementById('ShowDiv').innerHTML = message+' '+num+' secs ' ; 
-        document.getElementById("bar").style.width=num/total*100+"%";
-       
-    }
-      if(num == 0) { changeDisplay()} 
-     
-       
-} 
-
-function disableBtn(){
-    document.getElementById("btnExo").disabled =false;
-}
-
-function terminer(){
-    window.location.href="validateSession.jsp";
-    
-}
 
 function checkSeance() {
-    var listSelect=  document.getElementsByName("level");
-    alert(listSelect.length);
-    for(var i=0;i<listSelect.length;i++){
-        var e=listSelect[i];
-        alert(e.options[e.selectedIndex].value);
+    //bilan
+    var fcrepos=document.getElementById("fcrepos").value;
+    var fcflexion=document.getElementById("fcflexion").value;
+    var fcallonge=document.getElementById("fcallonge").value;
+    
+   
+    //seance
+    var list = [];
+    var listSelect = document.getElementsByName("level");
+    //alert(listSelect.length);
+    for (var i = 0; i < listSelect.length; i++) {
+        var e = listSelect[i];
+        list[i] = e.options[e.selectedIndex].value;
+       // alert(list[i]);
     }
+    var xhr = getXMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            {
+                window.location.href = "listProgram.jsp";
+            }
+        }
+        ;
+    };
+    // Requête au serveur avec les paramètres éventuels.
+    xhr.open("GET", "/ServletValidateSession?list=" + list+"&fcrepos="+fcrepos+"&fcflexion="+fcflexion+"&fcallonge="+fcallonge, true);
+    xhr.send(null);
 
 
 }

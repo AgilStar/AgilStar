@@ -95,8 +95,8 @@
                                                     <div class="col-lg-6">
                                                         <select class="form-control" id="statut" name="statut">
                                                             <option value="prospect">prospect</option>
-                                                            <option value="attente">en attente</option>   
-                                                            <option value="valide">validé</option> 
+                                                            <option value="en attente">en attente</option>   
+                                                            <option value="validé">validé</option> 
                                                         </select>
                                                     </div>
                                                 </div>
