@@ -49,7 +49,7 @@ if(flag){
 
                     window.location.href='modifierProgramme.jsp?codep='+codeP+'&type=voirType&codeUser='+codeUser;
                 }else{
-                    sweetAlert('Oups...', 'Le nom de programme a d√©j√† exist', 'error');
+                    sweetAlert('Oups...', 'Le nom de programme existe dÈj‡', 'error');
                 }
             }
         }
