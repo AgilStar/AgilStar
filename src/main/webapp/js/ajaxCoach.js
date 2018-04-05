@@ -15,7 +15,7 @@ function  confirmProfilProgram(type,codeP,codeUser) {
     var message="";
    if(name==""){
        flag=false;
-       message+="Nom est vide<br>";
+       message+="Le nom est manquant<br>";
    }
 
    if(checkedProfil==""){
@@ -28,7 +28,7 @@ function  confirmProfilProgram(type,codeP,codeUser) {
     var listS=[];
     if(listLi.length==0){
         flag=false
-        message+="Il faut choisir au moins un séance<br>"
+        message+="Il faut choisir au moins une séance<br>"
     }else{
         if(!checkBilanContinue()){
             flag=false;
@@ -45,11 +45,11 @@ if(flag){
         if (xhr.readyState === 4 && xhr.status === 200) {
                 var errorMessage = xhr.responseText;
                 if(errorMessage=="true"){
-                    sweetAlert('Bravo...', 'Vous avez crée un nouvel programme', 'success');
+                    sweetAlert('Bravo...', 'Vous avez crée un nouveau programme', 'success');
 
                     window.location.href='modifierProgramme.jsp?codep='+codeP+'&type=voirType&codeUser='+codeUser;
                 }else{
-                    sweetAlert('Oups...', 'Le nom de programme a déjà exist', 'error');
+                    sweetAlert('Oups...', 'Le nom de programme existe d�j�', 'error');
                 }
             }
         }

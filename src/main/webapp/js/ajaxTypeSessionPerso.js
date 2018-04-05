@@ -53,7 +53,7 @@ function insertSessionPerso()
 
         if (!checkEmpty(document.getElementById("dureeExercice" + i).value) && !checkEmpty(document.getElementById("nbExercice" + i).value)) {
             errorFlag = true;
-            errorMessage = errorMessage + "Le nombre ou la dur&eacute;e de l'exercice est manquant pour l'exercice" + i + "</br>";
+            errorMessage = errorMessage + "Le nombre de répétitions ou la dur&eacute;e de l'exercice est manquant pour l'exercice" + i + "</br>";
         }
         if (!checkEmpty(document.getElementById("restExercice" + i).value)) {
             errorFlag = true;
@@ -61,7 +61,7 @@ function insertSessionPerso()
         }
         if (checkEmpty(document.getElementById("dureeExercice" + i).value) && checkEmpty(document.getElementById("nbExercice" + i).value)) {
             errorFlag = true;
-            errorMessage = errorMessage + "Choisir la dur&eacute;e OU la quantit&eacute; &agrave; effectuer pour l'exercice" + i + "</br>";
+            errorMessage = errorMessage + "Choisir la dur&eacute;e OU la quantit&eacute; de répétition &agrave; effectuer pour l'exercice" + i + "</br>";
         }
     }
     if (errorFlag) {

@@ -43,7 +43,7 @@ function connectVerify() {
                     var errorMessage = xhr.responseText;
                     if (errorMessage == "errorMot") {
                         var divErrorMessage = document.createElement("div");
-                        divErrorMessage.innerHTML = "Mot de passe n'est pas correct";
+                        divErrorMessage.innerHTML = "Le mot de passe n'est pas correct";
                         divErrorMessage.setAttribute("class", "alert alert-danger");
                         divErrorParent.appendChild(divErrorMessage);
 
