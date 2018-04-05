@@ -346,6 +346,11 @@ function modifyProgram() {
 }
 
 
+function changeimg() {
+   var lien= document.getElementById("videoExerciceM").value;
+  document.getElementById("imgg").setAttribute("src",lien);
+}
+
 function changerWatchMode() {
     var name=document.getElementById("nameProgram");
     var desc=document.getElementById("descriptionProgram");

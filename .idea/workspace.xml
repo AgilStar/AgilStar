@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ef1cdac3-136c-4724-8a4f-2c47a48dd52a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/modifierExo.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/modifierExo.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -110,12 +111,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modifierExo.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="modifierExo.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierExo.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="78" column="76" lean-forward="true" selection-start-line="78" selection-start-column="76" selection-end-line="78" selection-end-column="76" />
+            <state relative-caret-position="507">
+              <caret line="78" column="103" lean-forward="false" selection-start-line="78" selection-start-column="103" selection-end-line="78" selection-end-column="103" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxCoach.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="385">
+              <caret line="348" column="22" lean-forward="false" selection-start-line="348" selection-start-column="22" selection-end-line="348" selection-end-column="22" />
+              <folding>
+                <marker date="1522954792488" expanded="true" signature="4425:4437" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -178,45 +191,6 @@
                 <marker date="1522953803671" expanded="true" signature="24174:24234" ph="update SEANC... " />
                 <marker date="1522953803671" expanded="true" signature="24569:24633" ph="update SEANC... " />
                 <marker date="1522953803671" expanded="true" signature="24971:25040" ph="update SEANC... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dbProgramPerso.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/db/dbProgramPerso.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2590">
-              <caret line="391" column="65" lean-forward="false" selection-start-line="391" selection-start-column="65" selection-end-line="391" selection-end-column="65" />
-              <folding>
-                <marker date="1522953436034" expanded="true" signature="958:1000" ph="select * fro... PROGRAMMEPERSO" />
-                <marker date="1522953436034" expanded="true" signature="2209:2217" ph="select (coun... SEANCEPERSO" />
-                <marker date="1522953436034" expanded="true" signature="2209:2421" ph="select (temp... count" />
-                <marker date="1522953436034" expanded="true" signature="2250:2317" ph="select count... SEANCEPERSO" />
-                <marker date="1522953436034" expanded="true" signature="2337:2404" ph="select count... SEANCEBILAN" />
-                <marker date="1522953436034" expanded="true" signature="4193:5027" ph="{...}" />
-                <marker date="1522953436034" expanded="true" signature="5033:5157" ph="/**...*/" />
-                <marker date="1522953436034" expanded="true" signature="5229:6497" ph="{...}" />
-                <marker date="1522953436034" expanded="true" signature="5431:5535" ph="select * fro... EXERCICE" />
-                <marker date="1522953436034" expanded="true" signature="5582:5689" ph="select * fro... EXERCICE" />
-                <marker date="1522953436034" expanded="true" signature="6565:7509" ph="{...}" />
-                <marker date="1522953436034" expanded="true" signature="6686:6745" ph="select * fro... PLANIFIERSP" />
-                <marker date="1522953436034" expanded="true" signature="7578:8318" ph="{...}" />
-                <marker date="1522953436034" expanded="true" signature="7700:7762" ph="select * fro... PLANIFIERBILAN" />
-                <marker date="1522953436034" expanded="true" signature="8370:9957" ph="{...}" />
-                <marker date="1522953436034" expanded="true" signature="8472:8666" ph="select SP.CO... SEANCETYPE" />
-                <marker date="1522953436034" expanded="true" signature="10010:10602" ph="{...}" />
-                <marker date="1522953436034" expanded="true" signature="10277:10306" ph="delete from " />
-                <marker date="1522953436034" expanded="true" signature="10654:11246" ph="{...}" />
-                <marker date="1522953436034" expanded="true" signature="10921:10950" ph="delete from " />
-                <marker date="1522953436034" expanded="true" signature="11302:11945" ph="{...}" />
-                <marker date="1522953436034" expanded="true" signature="11569:11601" ph="delete from " />
-                <marker date="1522953436034" expanded="true" signature="12002:12591" ph="{...}" />
-                <marker date="1522953436034" expanded="true" signature="12268:12297" ph="delete from " />
-                <marker date="1522953436034" expanded="true" signature="12649:13037" ph="{...}" />
-                <marker date="1522953436034" expanded="true" signature="12685:12738" ph="update SEANC... " />
-                <marker date="1522953436034" expanded="true" signature="13100:13487" ph="{...}" />
-                <marker date="1522953436034" expanded="true" signature="13136:13189" ph="update SEANC... " />
               </folding>
             </state>
           </provider>
@@ -335,7 +309,6 @@
         <option value="$PROJECT_DIR$/src/main/java/model/Seancebilan.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/Program/ServletAddProgram.java" />
         <option value="$PROJECT_DIR$/src/main/java/db/dbProgramPerso.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/TypeSession/ServeletDeleteSessionPerso.java" />
         <option value="$PROJECT_DIR$/src/main/java/db/dbProgram.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/detailProgramPersoCoach.jsp" />
@@ -345,6 +318,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/content/listClient.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/createClient.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/modifierExo.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js" />
       </list>
     </option>
   </component>
@@ -773,7 +747,7 @@
       <workItem from="1522689433554" duration="11391000" />
       <workItem from="1522791268940" duration="2032000" />
       <workItem from="1522828645943" duration="3758000" />
-      <workItem from="1522844960527" duration="63926000" />
+      <workItem from="1522844960527" duration="64181000" />
     </task>
     <servers />
   </component>
@@ -783,7 +757,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187644000" />
+    <option name="totallyTimeSpent" value="187899000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1346,16 +1320,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="407" column="56" lean-forward="false" selection-start-line="407" selection-start-column="56" selection-end-line="407" selection-end-column="56" />
-          <folding>
-            <marker date="1522950976050" expanded="true" signature="4425:4437" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierProgrammePerso.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
@@ -1549,6 +1513,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierExo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="78" column="103" lean-forward="false" selection-start-line="78" selection-start-column="103" selection-end-line="78" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/content/createClient.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1557,11 +1529,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierExo.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="78" column="76" lean-forward="true" selection-start-line="78" selection-start-column="76" selection-end-line="78" selection-end-column="76" />
-          <folding />
+        <state relative-caret-position="385">
+          <caret line="348" column="22" lean-forward="false" selection-start-line="348" selection-start-column="22" selection-end-line="348" selection-end-column="22" />
+          <folding>
+            <marker date="1522954792488" expanded="true" signature="4425:4437" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

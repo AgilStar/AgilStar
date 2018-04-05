@@ -70,13 +70,13 @@
                                         </div>  
                                         <div class="form-group">
                                             <label>Lien multimédia</label>
-                                            <input type="string" class="form-control" id="videoExerciceM" value="<%=e.getLienvideo()%>" >
+                                            <input type="string" class="form-control" id="videoExerciceM"  onkeyup="changeimg()"  value="<%=e.getLienvideo()%>" >
                                         </div>
                                         
                                             <input type="hidden" class="form-control" id="codeeM" value="<%=e.getCodee()%>">
 
 
-                                    <img src="<%=e.getLienvideo()%>" alt="">
+                                    <img id="imgg" src="<%=e.getLienvideo()%>" alt="Photo de l'exercice">
 
 
                                         <div id="errorMessageM"></div>
