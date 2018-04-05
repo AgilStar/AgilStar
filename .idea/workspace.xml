@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef1cdac3-136c-4724-8a4f-2c47a48dd52a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dbClient.java" afterPath="$PROJECT_DIR$/src/main/java/db/dbClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlet/GestionClient/CtrlChangeStatu.java" afterPath="$PROJECT_DIR$/src/main/java/servlet/GestionClient/CtrlChangeStatu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/createClient.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/createClient.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/listClient.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/listClient.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/modifierExo.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/modifierExo.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -103,11 +100,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createClient.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="createClient.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/content/createClient.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
               <caret line="98" column="89" lean-forward="false" selection-start-line="98" selection-start-column="83" selection-end-line="98" selection-end-column="89" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modifierExo.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierExo.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="501">
+              <caret line="78" column="76" lean-forward="true" selection-start-line="78" selection-start-column="76" selection-end-line="78" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -228,16 +235,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modifierProgrammePerso.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierProgrammePerso.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="149" column="84" lean-forward="false" selection-start-line="149" selection-start-column="84" selection-end-line="149" selection-end-column="84" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -297,7 +294,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/content/listProgrammPersonaliser.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/db/dbProfil.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/ajaxAdministrateur.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/detailProgramPerso.jsp" />
@@ -348,6 +344,7 @@
         <option value="$PROJECT_DIR$/src/main/java/servlet/GestionClient/CtrlChangeStatu.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/listClient.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/createClient.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/content/modifierExo.jsp" />
       </list>
     </option>
   </component>
@@ -776,7 +773,7 @@
       <workItem from="1522689433554" duration="11391000" />
       <workItem from="1522791268940" duration="2032000" />
       <workItem from="1522828645943" duration="3758000" />
-      <workItem from="1522844960527" duration="63806000" />
+      <workItem from="1522844960527" duration="63926000" />
     </task>
     <servers />
   </component>
@@ -786,7 +783,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187524000" />
+    <option name="totallyTimeSpent" value="187644000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -945,14 +942,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/content/mensuration.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-29">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierExo.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-29">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1564,6 +1553,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="98" column="89" lean-forward="false" selection-start-line="98" selection-start-column="83" selection-end-line="98" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierExo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="78" column="76" lean-forward="true" selection-start-line="78" selection-start-column="76" selection-end-line="78" selection-end-column="76" />
           <folding />
         </state>
       </provider>

@@ -74,7 +74,11 @@
                                         </div>
                                         
                                             <input type="hidden" class="form-control" id="codeeM" value="<%=e.getCodee()%>">
-                                  
+
+
+                                    <img src="<%=e.getLienvideo()%>" alt="">
+
+
                                         <div id="errorMessageM"></div>
                                         <button type="button" class="btn btn-danger btn-rounded m-b-10 m-l-5" onclick="modifierExercice()">Modifier</button>
                                         </br>
