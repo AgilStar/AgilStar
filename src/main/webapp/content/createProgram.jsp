@@ -81,7 +81,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h3 style="color: #00ccff"> Étape 3</h3>
-                                <h4 class="card-title">Organiser vos séances et billans</h4>
+                                <h4 class="card-title">Organiser vos séances et bilans</h4>
                                 <jsp:include page="templete/listSeance.jsp" flush="true">
                                     <jsp:param name="codeP" value="-1"/>
                                     <jsp:param name="type" value="createType"/>

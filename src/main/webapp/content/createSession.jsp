@@ -109,7 +109,7 @@
                                                         <th>Exercice</th>
                                                         <th>Séries à faire</th>
                                                         <th>Durée attendue</th>
-                                                        <th>Quantité Attendue</th>
+                                                        <th>R�p�titions</th>
                                                         <th></th>
                                                     </tr>
                                                 </thead>

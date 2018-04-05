@@ -28,12 +28,12 @@ function insertExercice()
     var errorFlag = false;
     if (!checkEmpty(nameExercice)) {
         errorFlag = true;
-        errorMessage = errorMessage + "Le nom de l'exercice est manquant "
+        errorMessage = errorMessage + "Le nom de l'exercice est manquant</br> "
     }
 
     if (!checkEmpty(objectiveExercice)) {
         errorFlag = true;
-        errorMessage = errorMessage + "L'objectif de l'exercice est manquant"
+        errorMessage = errorMessage + "L'objectif de l'exercice est manquant</br>"
     }
 
     if (errorFlag) {

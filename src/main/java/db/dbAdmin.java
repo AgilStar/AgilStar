@@ -34,14 +34,12 @@ public class dbAdmin {
 //    private String login = "21201692";
 //    private String password = "04964N";
 
-//    private  String url = "jdbc:mysql://localhost:3306/projettttt";
-//     private String login = "root";
-//    private String password = "";
+//    private  String url = "jdbc:mysql://localhost:3306/projet";
+//     private String login = "aude";
+//    private String password = "projet";
 
 
-    //private  String url = "jdbc:mysql://localhost:8889/projettttt";
-   // private String login = "root";
-   // private String password = "root";
+  
     public Connection getConnection(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -60,7 +58,7 @@ public class dbAdmin {
     public void insertUser(String nomu, String prenomu, String mailu, String genreu,         
             String datenaissance, String mdpu, String statutu, String adresseu, String telu, String infooptu) {
        cx=getConnection();
-        System.out.println("**************SEX USER   "+genreu+"  //////////");
+        
         try {
             String sql = "insert into UTILISATEUR(NOMU,PRENOMU,MAILU,GENREU,DATENAISSANCE,MDPU,STATUTU,ADRESSEU,TELU,INFOOPTU) "
                     + "VALUES('" + nomu + "','" + prenomu + "','" + mailu + "','" + genreu + "'"
@@ -81,7 +79,7 @@ public class dbAdmin {
         cx=getConnection();   
         try {
             String sql = "insert into DETENIR(CODEPROFIL,CODEU) VALUES('"+profil+"','"+codeu+"')";
-                    ;
+                    
             System.out.println("****************************************");
             System.out.println(sql);
             Statement st = cx.createStatement();

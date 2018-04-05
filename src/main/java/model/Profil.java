@@ -14,6 +14,9 @@ public class Profil  implements java.io.Serializable {
 
     public Profil() {
     }
+    public Profil( String libelleprofil) {
+         this.libelleprofil = libelleprofil;
+    }
 
     public Profil(Integer codeprofil, String libelleprofil) {
         this.codeprofil=codeprofil;

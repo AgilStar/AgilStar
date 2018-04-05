@@ -1,6 +1,9 @@
 package model;
 // Generated 28 mars 2018 10:29:50 by Hibernate Tools 4.3.1
 
+import java.sql.Date;
+
+
 
 
 /**
@@ -13,6 +16,9 @@ public class Planifierbilan  implements java.io.Serializable {
      private Integer ordreb;
      private Integer nbmaxu;
      private Integer tempsmaxu;
+     private Date dater;
+
+   
 
     public Planifierbilan() {
     }
@@ -21,7 +27,8 @@ public class Planifierbilan  implements java.io.Serializable {
     public Planifierbilan(PlanifierbilanId id) {
         this.id = id;
     }
-    public Planifierbilan(PlanifierbilanId id, Integer ordreb, Integer nbmaxu, Integer tempsmaxu) {
+    public Planifierbilan(PlanifierbilanId id, Date date,Integer ordreb, Integer nbmaxu, Integer tempsmaxu) {
+        this.dater=date;
        this.id = id;
        this.ordreb = ordreb;
        this.nbmaxu = nbmaxu;
@@ -57,8 +64,13 @@ public class Planifierbilan  implements java.io.Serializable {
         this.tempsmaxu = tempsmaxu;
     }
 
+ public Date getDater() {
+        return dater;
+    }
 
-
+    public void setDater(Date dater) {
+        this.dater = dater;
+    }
 
 }
 

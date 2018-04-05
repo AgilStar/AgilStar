@@ -62,7 +62,7 @@
             <div class="row">
                 <div class="col-12">
                     <a href="/content/listClient.jsp">
-                        <button type="button" class="btn btn-primary btn-rounded m-b-10 m-l-5">Tout</button>
+                        <button type="button" class="btn btn-primary btn-rounded m-b-10 m-l-5">Tous</button>
                     </a>
                     <a href="/content/listClient.jsp?condition=validé">
                         <button type="button" class="btn btn-success btn-rounded m-b-10 m-l-5">Validé</button>
