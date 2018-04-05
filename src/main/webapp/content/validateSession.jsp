@@ -13,7 +13,7 @@
         <title>Valider votre séance</title>
         <%@ include file="/content/templete/libHead.jsp" %>
         <script type="text/JavaScript" src="../js/ajaxExercice.js"></script>
-  <link href="css/lib/sweetalert/sweetalert.css" rel="stylesheet">
+        <link href="css/lib/sweetalert/sweetalert.css" rel="stylesheet">
         <script type="text/JavaScript" src="../js/DoingExercice.js"></script>
     </head>
 
@@ -63,39 +63,68 @@
                                 <div class="card-body">
                                     <div class="basic-form">
                                         <!--<form>-->
-                                            <div class="form-group">
-                                                <p class="text-muted m-b-15 f-s-12">Si les exercices te paraissent trop facile ou trop difficile, n'hésites pas à augmenter ou réduire les séries et  <code>notes moi les modifications</code>.</p>
-                                                
-                                                <!--parcourir tous les exercices-->
-                                                <table class="table">
-                                                    <thead><tr><th>Exercice</th><th>Quantite</th><th>Niveau</th></tr></thead>
-                                                <%
-                                                    //pour une seance normale
-                                                      if(type.equals("seance")){
-                                                         for(Exercice e:listE){
-                                                             Planifiersp p=new dbProgramPerso().getPlanForSession(codeS,e.getCodee());
-                                                             out.print("<tr>");
-                                                             out.print("<td>"+e.getLibellee()+"</td>");
-                                                              if( p.getNbattendue()==null ||p.getNbattendue()==0){
-                                                               out.print("<td>"+p.getDureeattenduee()+" secs * "+p.getSeriep()+" séries</td>");
-                                                              }else{
-                                                               out.print("<td>"+p.getNbattendue()+" unités * "+p.getSeriep()+" séries</td>");
-                                                              }
-                                                              out.print("<td><select name='level'><option value='0'>-----</option><option value='1'>Facile</option><option value='2'>Bien</option><option value='3'>Difficle</option></select></td>");
-                                                             out.print("</tr>");
-                                                         }
-                                                         //pour une seance bilan 
-                                                          }else{
-                                                            for(Exercice e:listE){
-                                                             }
-                                                      }
-                                                %>
-                                                </table>
-                                                <div class="sweetalert m-t-15">
-                                                    <button class="btn btn-info btn sweet-image-message" onclick="checkSeance()">Confirmer la séance!</button>
-                                                </div>
+                                        <div class="form-group">
+                                            <p class="text-muted m-b-15 f-s-12">Si les exercices te paraissent trop facile ou trop difficile, n'hésites pas à augmenter ou réduire les séries et  <code>notes moi les modifications</code>.</p>
+
+                                            <!--parcourir tous les exercices-->
+                                            <table class="table">
+                                                <thead><tr><th>Exercice</th><th>Quantite</th>
+                                                        <%
+                                                            if(type.equals("seance")){
+                                                                out.print("<th>Niveau</th>");
+                                                            }
+                                                        %>
+                                                        </tr></thead>
+                                                            <%
+                                                                //pour une seance normale
+                                                                  if(type.equals("seance")){
+                                                                     for(Exercice e:listE){
+                                                                         Planifiersp p=new dbProgramPerso().getPlanForSession(codeS,e.getCodee());
+                                                                         out.print("<tr>");
+                                                                         out.print("<td>"+e.getLibellee()+"</td>");
+                                                                          if( p.getNbattendue()==null ||p.getNbattendue()==0){
+                                                                           out.print("<td>"+p.getDureeattenduee()+" secs * "+p.getSeriep()+" séries</td>");
+                                                                          }else{
+                                                                           out.print("<td>"+p.getNbattendue()+" unités * "+p.getSeriep()+" séries</td>");
+                                                                          }
+                                                                          out.print("<td><select name='level'><option value='0'>-----</option><option value='1'>Facile</option><option value='2'>Bien</option><option value='3'>Difficle</option></select></td>");
+                                                                         out.print("</tr>");
+                                                                     }
+                                                                     //pour une seance bilan 
+                                                                      }else{
+                                                                       String[] list=request.getParameter("bilan").split(",");
+                                                                       int i=0;
+                                                                        for(Exercice e:listE){
+                                                                            Planifierbilan p=new dbProgramPerso().getPlanForBilan(codeS,e.getCodee());
+                                                                             out.print("<tr>");
+                                                                             out.print("<td>"+e.getLibellee()+"</td>");
+                                                                             out.print("<td>"+list[i]+" unités </td>");
+                                                                              i++;
+                                                                            out.print("</tr>");
+                                                                         }
+                                                                        session.setAttribute("listBilan",list);
+                                                                               
+                                                                  }
+                                                            %>
+                                            </table>
+                                            <%
+                                                if(type.equals("bilan")){
+                                                    out.print(" <label class='control-label'>Fréquence cardiaque au repos</label>");
+                                                    out.print("<input type='number' id='fcrepos' class='form-control input-focus' name='fcr' required"); 
+                                                    
+                                                    out.print(" <label class='control-label'>Fréquence cardiaque après 30 flexions complètes en 45 sec</label>");
+                                                    out.print("<input type='number' id='fcflexion' class='form-control input-focus' name='fcflexion' required");
+                                                    
+                                                    out.print(" <label class='control-label'>Fréquence cardiaque après exercice allongé</label>");
+                                                    out.print("<input type='number' id='fcallonge' class='form-control input-focus' name='fcallonge' required");
+      
+                                                }
+                                            %>
+                                            <div class="sweetalert m-t-15">
+                                                <button class="btn btn-info btn sweet-image-message" onclick="checkSeance()">Confirmer la séance!</button>
                                             </div>
-                                      <!--</form>-->
+                                        </div>
+                                        <!--</form>-->
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +139,7 @@
         </div>
         <!-- All Jquery -->
         <%@ include file="/content/templete/libJquery.jsp" %>
-<script src="js/lib/sweetalert/sweetalert.min.js"></script>
+        <script src="js/lib/sweetalert/sweetalert.min.js"></script>
     </body>
 
 </html>

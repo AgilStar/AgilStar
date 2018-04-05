@@ -56,7 +56,9 @@
                         <div class="col-sm-12">              
                             <div class="card">           
                                 <div class="card-body" id="listExercice">
+                                    
                                     <%
+                                      
                                         for(int i=0;i<listE.size();i++){
                                             Exercice e=listE.get(i);
                                             
@@ -108,6 +110,8 @@
                                          
                                              //les exercices de bilan    
                                              }else{
+                                              
+                                               
                                                  Planifierbilan p =new dbProgramPerso().getPlanForBilan(codeS,e.getCodee());
                                                   if(i==0){
                                              out.print("<div class='col-sm-12' ordre='"+i+"'>");
@@ -116,13 +120,14 @@
                                             }
                                             out.print("<h1 class=\"text-center\">"+e.getLibellee()+"</h1>");
                                             out.print("<img class='col-sm-12' stype='text-align:center;'src='"+e.getLienvideo()+"'>");
-                                            
+                                            out.print("Entrez le résultat ici   ");
+                                            out.print("<input type='number' id='exercice"+i+"' required ></input>");
                                             out.print("</div>");
-                                                 
-                                             //le bilan n'a pas de temps repos
+                                          
                                             }
                                            
                                         }
+                                         
                                     %> 
 
                                 </div>
@@ -138,7 +143,7 @@
                                         </div>
                                     </div>
                                     
-                                    <button id="btnExo" type="button" style="margin-top:20px;"class="btn btn-danger btn-rounded m-b-30 m-t-30" onclick="changeDisplay()" disabled="disabled">Suivant</button>
+                                    <button id="btnExo" type="button" style="margin-top:20px;"class="btn btn-danger btn-rounded m-b-30 m-t-30" onclick="changeDisplay('<%=type%>')" disabled="disabled">Suivant</button>
                                 </div>
                             </div>
                         </div>
