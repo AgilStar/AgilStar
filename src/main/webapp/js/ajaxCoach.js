@@ -49,7 +49,7 @@ if(flag){
 
                     window.location.href='modifierProgramme.jsp?codep='+codeP+'&type=voirType&codeUser='+codeUser;
                 }else{
-                    sweetAlert('Oups...', 'Le nom de programme existe déjà', 'error');
+                    sweetAlert('Oups...', 'Le nom de programme existe dï¿½jï¿½', 'error');
                 }
             }
         }
@@ -296,12 +296,15 @@ function addBilanPerso() {
     if(listSession.getElementsByTagName("li").length==0){
         var nodeBilan1=createNodeLiSession(-1,"Bilan",false);
         nodeBilan1.setAttribute("isBilan","bilan");
+        nodeBilan1.setAttribute("typesession","type");
         listSession.insertBefore(nodeBilan1,listSession.children[1]);
         var nodeBilan2=createNodeLiSession(-1,"Bilan",false);
+        nodeBilan2.setAttribute("typesession","type");
         nodeBilan2.setAttribute("isBilan","bilan");
         listSession.insertBefore(nodeBilan2,listSession.children[1]);
     }else{
         var node=createNodeLiSession(-1,"Bilan",true);
+        node.setAttribute("typesession","type");
         node.setAttribute("isBilan","bilan");
         listSession.insertBefore(node,listSession.children[1]);
     }
@@ -401,13 +404,8 @@ function  confirmProfilProgramPerso(type,codeP,codeUser) {
         }
     }
     for(var i=0;i<listLi.length;i++){
-        if(listLi[i].getAttribute("isBilan")=="bilan"){
-            listB.push(istLi[i].getAttribute("idSession"))
-        }else{
-            listS.push(listLi[i].getAttribute("idSession"));
-        }
-
-
+        listB.push(listLi[i].getAttribute("isBilan"));
+        listS.push(listLi[i].getAttribute("idsession"));
         listType.push(listLi[i].getAttribute("typesession"));
     }
 
@@ -426,7 +424,7 @@ function  confirmProfilProgramPerso(type,codeP,codeUser) {
             }
         }
         // RequÃªte au serveur avec les paramÃ¨tres Ã©ventuels.
-alert("/ServeletDeleteSessionPerso?listDeleteBilan="+listDeleteBilan+"&listDeleteSession="+listDeleteSession+"&listType="+listType+"&name="+name+"&desc="+desc+"&checkedProfil="+checkedProfil+"&listS="+listS+"&type="+type+"&codeP="+codeP+"&codeUser="+codeUser);
+alert("/ServeletDeleteSessionPerso?listB="+listB+"&listDeleteBilan="+listDeleteBilan+"&listDeleteSession="+listDeleteSession+"&listType="+listType+"&name="+name+"&desc="+desc+"&checkedProfil="+checkedProfil+"&listS="+listS+"&type="+type+"&codeP="+codeP+"&codeUser="+codeUser);
         xhr.open("GET", "/ServeletDeleteSessionPerso?listB="+listB+"&listDeleteBilan="+listDeleteBilan+"&listDeleteSession="+listDeleteSession+"&listType="+listType+"&name="+name+"&desc="+desc+"&checkedProfil="+checkedProfil+"&listS="+listS+"&type="+type+"&codeP="+codeP+"&codeUser="+codeUser, true);
 
         xhr.send(null);

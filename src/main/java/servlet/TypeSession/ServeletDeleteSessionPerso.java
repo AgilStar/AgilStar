@@ -1,5 +1,6 @@
 package servlet.TypeSession;
 
+import db.dbProgram;
 import db.dbProgramPerso;
 
 import javax.servlet.ServletException;
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 
 @WebServlet(
         name = "/ServeletDeleteSessionPerso",
@@ -32,12 +34,30 @@ public class ServeletDeleteSessionPerso extends HttpServlet {
 
 
 
-//        new dbProgramPerso().deletePlanifierBilan(listDeleteBilan);
-//       new dbProgramPerso().deleteSeanceBilanPerso(listDeleteBilan);
-//        new dbProgramPerso().deletePlanifierSP(listDeleteSession);
-//        new dbProgramPerso().deleteSeancePerso(listDeleteSession);
+if(!listDeleteBilan[0].equals("")){
+    new dbProgramPerso().deletePlanifierBilan(listDeleteBilan);
+    new dbProgramPerso().deleteSeanceBilanPerso(listDeleteBilan);
+}
+
+       if(!listDeleteSession[0].equals("")){
+           new dbProgramPerso().deletePlanifierSP(listDeleteSession);
+           new dbProgramPerso().deleteSeancePerso(listDeleteSession);
+       }
+
 
         //Update
+        ArrayList<String> listSS=new ArrayList<String>();
+ArrayList<String> listOrder=new ArrayList<String>();
+        System.out.println("Liste de seance");
+       for(int i=0;i<listS.length;i++){
+           System.out.println(listS[i]);
+       }
+        System.out.println("Liste de type");
+        for(int i=0;i<type.length;i++){
+            System.out.println(type[i]);
+        }
+
+
         for(int i=0;i<type.length;i++){
            if(type[i].equals("perso")){
                if(listB[i].equals("seance")){
@@ -46,16 +66,15 @@ public class ServeletDeleteSessionPerso extends HttpServlet {
                    new dbProgramPerso().updateSeanceBilanPerso((i+1),listS[i]);
                }
 
+           }else{
+               listOrder.add(i+"");
+               listSS.add(listS[i]);
+
            }
         }
-//        String codesp=req.getParameter("codesp");
-//        String type=req.getParameter("type");
-//        if(type.equals("seance")){
-
-//        }else{
-//
-//        }
-
+        dbProgram db = new dbProgram();
+        String[] lsitsss=listSS.toArray(new String[0]);
+        db.insertSessionBilanPerso2(lsitsss,Integer.parseInt(codeUser),Integer.parseInt(codeP),listOrder);
 
 
 

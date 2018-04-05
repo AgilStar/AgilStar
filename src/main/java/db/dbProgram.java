@@ -571,13 +571,9 @@ public dbProgram(){
      * @param listSession
      * @Author Jin, Tianyuan
      */
-    public void insertSessionBilanPerso(String[] listSession, int codeU) {
+    public void insertSessionBilanPerso(String[] listSession, int codeU,int  codePPMax) {
 
         try {
-
-
-            int codePPMax = findMaxProPers();
-
             for (int i = 0; i < listSession.length; i++) {
                 System.out.println("sjfljsl" + i);
                 String codeS = listSession[i];
@@ -636,6 +632,70 @@ public dbProgram(){
         }
 
     }
+
+
+    public void insertSessionBilanPerso2(String[] listSession, int codeU,int  codePPMax,ArrayList<String> order) {
+
+        try {
+            for (int i = 0; i < listSession.length; i++) {
+                System.out.println("sjfljsl" + i);
+                String codeS = listSession[i];
+
+                int ordre = i + 1;
+                if (codeS.equals("-1")) {
+
+                    //inserer dans la table SEANCEBILAN
+                    Seancebilan sb = getOneSeanceBilan("999",cx);//999 est la seance bilan perso
+                    //Seancebilantype sbt = getOneSeanceBilanType("1");
+                    String sql = "insert into SEANCEBILAN(CODEPP,CODESBT,CODEU,ETATLUCOACH,LIBELLESB,ORDRESB,OUVERT,VALIDERSB,DATEM) VALUES(" + codePPMax + "," + sb.getCodesbt() + "," + codeU + ",'non','" + sb.getLibellesb() + "'," + order.get(i) + ",'non','non',STR_TO_DATE('1-01-2069', '%d-%m-%Y'))";
+                    Statement st = cx.createStatement();
+                    st.executeUpdate(sql);
+
+                    String sql2 = "select max(CODESB) as Nb from SEANCEBILAN";
+                    Statement st2 = cx.createStatement();
+                    ResultSet rs = st.executeQuery(sql2);
+                    String codeSB = "";
+                    while (rs.next()) {
+                        codeSB = rs.getString("Nb");
+                    }
+                    st.close();
+                    st2.close();
+                    insertPlanifierBilan(codeSB,cx);
+
+
+                } else {
+
+                    int codeSession = Integer.parseInt(codeS);
+                    //inserer dans la table SEANCEPERSO
+                    System.out.println(listSession[i]);
+                    Seancetype s = getOneSeanceType(listSession[i]);
+                    Statement st = cx.createStatement();
+                    String sql = "insert into SEANCEPERSO(CODEPP,CODEST,DESCRIPTIONSP,ECHAUFFFEMENTSP,ETATLUCOACH,LIBELLESP,ORDRESP,OUVERT,VALIDERSP,CODECAT) VALUES(" + codePPMax + "," + codeSession + ",'" + s.getDescriptionst() + "','" + s.getEchauffementst() + "','non','" + s.getLibellest() + "'," + ordre + ",'non','non',"+s.getCodecat()+")";
+                    st.executeUpdate(sql);
+                    String sql2 = "select max(CODEST) AS Nb FROM SEANCETYPE";
+                    Statement st2 = cx.createStatement();
+                    ResultSet rs = st.executeQuery(sql2);
+                    String codeST = "";
+                    while (rs.next()) {
+                        codeST = rs.getString("Nb");
+                    }
+                    st2.close();
+                    st.close();
+                    insertPlanifierSP(codeST);
+
+                }
+
+            }
+
+
+
+        } catch (SQLException ex) {
+            System.out.println("Il y a un problÃ¨me sur statement insertSessionBilanPerso  " + ex.getMessage());
+            ex.printStackTrace();
+        }
+
+    }
+
 
     /**
      * quand on cree une seance perso, on initialise les parametres pareils que

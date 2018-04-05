@@ -52,6 +52,8 @@
             
                             if(type.equals("modify")){
                                 flagModification=true;
+                            }else{
+                                flagModification=false;
                             }
    %>
    
@@ -59,9 +61,9 @@
                             <div class="col-12">
                                 <%
                                     if(flagModification){
-                                        out.print("<button onclick=\"window.location.href='modifierSeancePerso.jsp?type=vizualize&codeP="+codepp+"\"'>Visualier</button>");
+                                        out.print("<button onclick=\"window.location.href='modifierBilan.jsp?type=vizualize&codepp="+codepp+"'\">Visualier</button>");
                                         }else{
-                                       out.print("<button onclick=\"window.location.href='modifierSeancePerso.jsp?type=modify&codeP="+codepp+"\"'>Modifier</button>"); 
+                                       out.print("<button onclick=\"window.location.href='modifierBilan.jsp?type=modify&codepp="+codepp+"'\">Modifier</button>");
                                     }
                             
                               %>

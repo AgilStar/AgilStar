@@ -58,7 +58,8 @@ public class ServletAddProgram extends HttpServlet {
                 //insertion dans la table programme perso
                 db.insertProgrammePerso(name,des,Integer.parseInt(codeUser),Integer.parseInt(codeP));
                 //insertion dans la table seanceperso , la table seancebilan , la table planifiersp
-                db.insertSessionBilanPerso(listS,Integer.parseInt(codeUser));
+            int codePPMax = db.findMaxProPers();
+                db.insertSessionBilanPerso(listS,Integer.parseInt(codeUser),codePPMax);
                 out.print("true");
 
 

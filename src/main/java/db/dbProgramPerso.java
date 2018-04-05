@@ -342,6 +342,7 @@ public Seanceperso getSeanceperso(String codeSp){
 
         cx = new dbAdmin().getConnection();
         try {
+            System.out.println(sqlDeleteSeance);
             Statement st1 = cx.createStatement();
             st1.executeUpdate(sqlDeleteSeance);
             st1.close();
@@ -374,11 +375,29 @@ public Seanceperso getSeanceperso(String codeSp){
 
 
     public void updateSeancePerso(int i,String codesp) {
-        String sqlDeleteSeance = "updaye  SEANCEPERSO set ordreSP="+i+" WHERE CODESP = "+codesp;
-        System.out.println(sqlDeleteSeance);
+        String sqlDeleteSeance = "update  SEANCEPERSO set ordreSP="+i+" WHERE CODESP = "+codesp;
+        cx = new dbAdmin().getConnection();
+        try {
+            Statement st1 = cx.createStatement();
+            st1.executeUpdate(sqlDeleteSeance);
+            st1.close();
+            cx.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public void updateSeanceBilanPerso(int i, String codesp) {
-        String sqlDeleteSeance = "updaye  SEANCEPERSO set ordreSP="+i+" WHERE CODESP = "+codesp;
+        String sqlDeleteSeance = "update  SEANCEBILAN set ordreSB="+i+" WHERE CODESB = "+codesp;
+        cx = new dbAdmin().getConnection();
+        try {
+            Statement st1 = cx.createStatement();
+            st1.executeUpdate(sqlDeleteSeance);
+            st1.close();
+            cx.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

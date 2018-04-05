@@ -73,7 +73,7 @@
                                     <tbody>
                                     <%
 
-
+                                        String codeuser=request.getParameter("codeUser");
                                         String codeProgramPerso = request.getParameter("codepp");
                                         Integer codePP = Integer.parseInt(codeProgramPerso);
 
@@ -128,11 +128,22 @@
                     <div class="card">
                         <div class="card-body">
                             <button onclick="window.location.href='modifierSeancePerso.jsp?type=watch&codeP=<%=codeProgramPerso%>'">
-                                Détail
+                                Consulter le détail de toutes les séances
                             </button>
                             <button onclick="window.location.href='modifierSeancePerso.jsp?type=modify&codeP=<%=codeProgramPerso%>'">
-                                Modifier
+                                Ajouter/Supprimer/Ordonner les exercices
                             </button>
+                            <button onclick="window.location.href='modifierProgrammePerso.jsp?codeP=<%=codeProgramPerso%>&codeUser=<%=codeuser%>&type=voirPerso'">
+                                Ajouter/Supprimer/Ordonner les séances/bilans
+                            </button>
+                            <button onclick="window.location.href='modifierProgrammePerso.jsp?codeP=<%=codeProgramPerso%>&codeUser=<%=codeuser%>&type=voirPerso'">
+                                Ajouter/Supprimer/Ordonner les séances/bilans
+                            </button>
+                            <button onclick="window.location.href='modifierBilan.jsp?codepp=<%=codeProgramPerso%>&type=voir'">
+                                Consulter/Modifier les bilans
+                            </button>
+
+
                         </div>
                     </div>
 
