@@ -131,7 +131,7 @@
                                                 </div>
                                             </form>
                                     <div class="register-link m-t-15 text-center">
-                                        <p>Vous avez déjà un compte ? <a href="page-login.html"> Connectez-vous ici </a></p>
+                                        <p>Vous avez déjà un compte ? </br><a href="page-login.html"> Connectez-vous ici </a></p>
                                     </div>
                                 
                             </div>

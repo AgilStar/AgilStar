@@ -5,16 +5,16 @@
  */
 package servlet.TypeSession;
 
-import servlet.Exercice.*;
-import java.io.PrintWriter;
-import java.io.IOException;
-import java.sql.SQLException;
+import db.dbPersoSession;
+
 import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
 
 /**
  * On verifie que l exercice n existe pas avant de l inserer
@@ -22,10 +22,10 @@ import javax.servlet.http.HttpServletResponse;
  * @author tianyuanliu,Nicolas
  */ 
 @WebServlet(
-        name = "/ServletModifyTypeSession",
-        urlPatterns = {"/ServletModifyTypeSession"}
+        name = "/ServletModifyPersoSession",
+        urlPatterns = {"/ServletModifyPersoSession"}
 )
-public class ServletModifyTypeSession extends HttpServlet {
+public class ServletModifyPersoSession extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -38,31 +38,44 @@ public class ServletModifyTypeSession extends HttpServlet {
         int parseCatSession = Integer.parseInt(catSession);
         String descrSession = req.getParameter("descrSession");
         String descrWarmUp = req.getParameter("descrWarmUp");       
-        String codeSt =  req.getParameter("codeS");
+        String codeSp =  req.getParameter("codeSP");
         String cptString = req.getParameter("cpt"); 
         int cpt = Integer.parseInt(cptString);
-        String nameExercice;
+        String idExercice;
         String serieExercice;
         String durationExercice;
         String quantityExercice;
         String restExercice;
         int codeE;
+
+        dbPersoSession db=new dbPersoSession();
+        db.modifyPersoSession(codeSp,nameSession,descrSession,descrWarmUp,catSession);
+        db.deletePlanifier(codeSp);
+
+        for (int i = 1; i <= cpt; i++) {
+            idExercice = req.getParameter("idExercice"+i);
+            serieExercice = req.getParameter("serieExercice"+i);
+            if(serieExercice.equals("")){
+                serieExercice="null";
+            }
+            durationExercice = req.getParameter("durationExercice"+i);
+            if(durationExercice.equals("")){
+                durationExercice="null";
+            }
+            quantityExercice = req.getParameter("quantityExercice"+i);
+            if(quantityExercice.equals("")){
+                quantityExercice="null";
+            }
+            restExercice = req.getParameter("restExercice"+i);
+           db.createPlanifier(idExercice,codeSp,durationExercice,quantityExercice,i,serieExercice,restExercice);
+          }
+
+
         try {
-            new db.dbTypeSession().modifySession(codeSt,nameSession,descrSession,descrWarmUp,catSession);
+            db.getCx().close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        new db.dbTypeSession().deleteOrganiserType(String.valueOf(codeSt));
-        for (int i = 1; i <= cpt; i++) {
-            System.out.println("-----------");
-            nameExercice = req.getParameter("nameExercice"+i);
-            serieExercice = req.getParameter("serieExercice"+i);
-            durationExercice = req.getParameter("durationExercice"+i);
-            quantityExercice = req.getParameter("quantityExercice"+i);
-            restExercice = req.getParameter("restExercice"+i);
-            codeE = new db.dbTypeSession().getCodeExercice(nameExercice);           
-            new db.dbTypeSession().createOrganiserType(String.valueOf(codeE), String.valueOf(codeSt), i, serieExercice, durationExercice, quantityExercice,restExercice);
-        }   
         out.print("youhou");
     }
 }

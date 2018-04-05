@@ -2,12 +2,13 @@
          pageEncoding="UTF-8" %>
 <%@ page import="db.dbProgram" %>
 <%@ page import="model.Programmetype" %>
-<% Integer codep = new Integer(request.getParameter("codep"));
+<%@ page import="model.Programmeperso" %>
+<% String codep = request.getParameter("codep");
     String type=request.getParameter("type");
     String codeUser=request.getParameter("codeUser");
-    dbProgram db= new dbProgram();
-    Programmetype p =db.getOneProgramm(codep);
-    db.getCx().close();
+    dbProgram db=new dbProgram();
+    Programmeperso p = db.getProgrammPerson(codep);
+
 %>
 
 <!DOCTYPE html>
@@ -52,17 +53,13 @@
                         <div class="card-title">
                             <%
                                 if(type.equals("createPerso")){
-                                    out.print("<h2>Personaliser le programme :"+p.getLibellept()+"</h2>");
+                                    out.print("<h2>Personaliser le programme :"+p.getLibellepp()+"</h2>");
                                 }else if(type.equals("modifyPerso")){
-                                    out.print(" <h2>Modification du programme personalisé:"+p.getLibellept()+"</h2>");
-                                }else if(type.equals("voirType")){
-                                    out.print(" <h2>"+p.getLibellept()+"</h2>");
+                                    out.print(" <h2>Modification du programme personalisé:"+p.getLibellepp()+"</h2>");
                                 }else if(type.equals("voirPerso")){
-                                    out.print(" <h2>"+p.getLibellept()+"</h2>");
+                                    out.print(" <h2>"+p.getLibellepp()+"</h2>");
                                 }
-                                else{
-                                    out.print(" <h2>Modification du programme type:"+p.getLibellept()+"</h2>");
-                                }
+
                             %>
                         </div>
                         <div class="card-body">
@@ -71,19 +68,20 @@
                                     <div class="form-group">
                                         <label>Nom du programme</label>
                                         <input type="string" class="form-control" id="nameProgram"
-                                               value="<%=p.getLibellept()%> " <%=type.equals("voirType")||type.equals("voirPerso")?"readonly":""%>>
+                                               value="<%=p.getLibellepp()%> " <%=type.equals("voirType")||type.equals("voirPerso")?"readonly":""%>>
                                     </div>
                                     <div class="form-group">
                                         <label>Description du programme</label>
                                         <input type="string" class="form-control" id="descriptionProgram"
-                                               value="<%=p.getDescriptionpt()%>"  <%=type.equals("voirType")||type.equals("voirPerso")?"readonly":""%>>
+                                               value="<%=p.getDescriptionpp()%>"  <%=type.equals("voirType")||type.equals("voirPerso")?"readonly":""%>>
                                     </div>
                                 </div>
                                 <%--List séance à ajouter--%>
                                     <h2 style="margin-top: 30px"><%=type.equals("voirType")||type.equals("voirPerso")?"Les ":"Modifier les"%> profils</h2>
                                 <jsp:include page="templete/listProfil.jsp" flush="true">
-                                    <jsp:param name="codeP" value="<%=codep%>"/>
+                                    <jsp:param name="codePP" value="<%=codep%>"/>
                                     <jsp:param name="type" value="<%=type%>"/>
+                                    <jsp:param name="codeP" value="<%=p.getCodept()%>"/>
                                 </jsp:include>
                                     <h2 style="margin-top: 30px"><%=type.equals("voirType")||type.equals("voirPerso")?"Les ":"Modifier les"%> séances et bilans</h2>
                                 <%
