@@ -20,17 +20,43 @@ public class Seanceperso  implements java.io.Serializable {
      private String etatlucoach;
      private String ouvert;
      private String validersp;
-
+    private String echauffementst;
+    private String orderSp;
+    private int codecat;
     public Seanceperso() {
     }
 
-	
+    public String getOrderSp() {
+        return orderSp;
+    }
+
+    public void setOrderSp(String orderSp) {
+        this.orderSp = orderSp;
+    }
+
+    public int getCodecat() {
+        return codecat;
+    }
+
+    public void setCodecat(int codecat) {
+        this.codecat = codecat;
+    }
+
+    public String getEchauffementst() {
+        return echauffementst;
+    }
+
+    public void setEchauffementst(String echauffementst) {
+        this.echauffementst = echauffementst;
+    }
+
     public Seanceperso(int codepp, int codest) {
         this.codepp = codepp;
         this.codest = codest;
     }
-    public Seanceperso(int codepp, int codest, String libellesp, String descriptionsp, String commentairecoach, Integer nbrepetitions, Integer numsemaine, String etatlucoach, String ouvert, String validersp) {
-       this.codepp = codepp;
+    public Seanceperso(int codesp,int codepp, int codest, String libellesp, String descriptionsp, String commentairecoach, Integer nbrepetitions, Integer numsemaine, String etatlucoach, String ouvert, String validersp,String echauffementst,String orderSp,int codecat) {
+       this.codesp=codesp;
+        this.codepp = codepp;
        this.codest = codest;
        this.libellesp = libellesp;
        this.descriptionsp = descriptionsp;
@@ -40,6 +66,9 @@ public class Seanceperso  implements java.io.Serializable {
        this.etatlucoach = etatlucoach;
        this.ouvert = ouvert;
        this.validersp = validersp;
+       this.echauffementst=echauffementst;
+       this.orderSp=orderSp;
+       this.codecat=codecat;
     }
 
    

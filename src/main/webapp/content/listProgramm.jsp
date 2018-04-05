@@ -69,7 +69,9 @@
                                             </thead>
                                             <tbody>
                                             <%
+                                                dbProgram db=new dbProgram();
                                                 ArrayList<Programmetype> listPr= new dbProgram().getProgramms();
+                                                db.getCx().close();
                                                 for (Programmetype p: listPr){
                                                     out.print("<tr>");
                                                     out.print("<th scope=\"row\">"+p.getLibellept()+"</th>");

@@ -106,7 +106,7 @@ public class dbProgramPerso {
                     + "SELECT sb.codesb as codeseance,sb.libellesb as libelleseance,\"seance bilan\" as descseance,sb.commentairecoach as commentaire,sb.ouvert as ouvert,sb.validersb as valider,sb.ordresb as ordre,\"bilan\" as type\n"
                     + "from SEANCEBILAN sb\n"
                     + "where sb.codepp=" + codePP + " order by ordre asc";
-
+            System.out.println(sql);
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
 
@@ -236,22 +236,46 @@ public Planifierbilan getPlanForBilan(Integer codeS, Integer codeE){
     return p;
 }
 
-//public String insertProgramPerso(){
-//    cx = new dbAdmin().getConnection();
-//    try {
-//        String sql = "insert into programmeperso(CODEU,CODEPT,LIBELLEPP,DESCRIPTIONPP) VALUES('" + name + "','" + desc + "')";
-//        Statement st = cx.createStatement();
-//        st.executeUpdate(sql);
-//        st.close();
-//        cx.close();
-//    } catch (SQLException ex) {
-//        System.out.println("Il y a un problÃ¨me sur statement insertProgram" + ex.getMessage());
-//        ex.printStackTrace();
-//    }
-//return "";
-//
-//}
 
 
+public Seanceperso getSeanceperso(String codeSp){
+    Seanceperso s=null;
+    try {
+        cx = new dbAdmin().getConnection();
+        String sql = "select SP.CODEST,CODECAT,CODEPP,CODESP,LIBELLESP,DESCRIPTIONSP,COMMENTAIRECOACH,NBREPETITIONS,NUMSEMAINE,ETATLUCOACH,OUVERT,VALIDERSP,ECHAUFFFEMENTSP,ordreSP from SEANCEPERSO SP where SP.CODESP="+codeSp;
+        Statement st = cx.createStatement();
+        ResultSet rs = st.executeQuery(sql);
+
+        while (rs.next()) {
+            int codesp=rs.getInt("CODESP");
+            int codepp=rs.getInt("CODEPP");
+            int codest=rs.getInt("CODEST");
+            int codecat=rs.getInt("CODECAT");
+            String libellesp=rs.getString("LIBELLESP");
+            String desc=rs.getString("DESCRIPTIONSP");
+            String commentaireCoach=rs.getString("COMMENTAIRECOACH");
+            int nbrepetitions=rs.getInt("NBREPETITIONS");
+            int numsemaine=rs.getInt("NUMSEMAINE");
+            String etatlucaoch=rs.getString("ETATLUCOACH");
+            String ouvert=rs.getString("OUVERT");
+            String validersp=rs.getString("VALIDERSP");
+            String echauffementst=rs.getString("ECHAUFFFEMENTSP");
+            String orderSp=rs.getString("ordreSP");
+
+            s=new Seanceperso(codesp,codepp,codest,libellesp,desc,commentaireCoach,nbrepetitions,numsemaine,etatlucaoch,ouvert,validersp,echauffementst,orderSp,codecat);
+
+        }
+        st.close();
+        cx.close();
+
+
+    } catch (SQLException ex) {
+        System.out.println("Il y a un problème sur statement getPlanForBilan " + ex.getMessage());
+        ex.printStackTrace();
+    }
+
+    return s;
+
+}
 
 }

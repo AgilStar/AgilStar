@@ -12,7 +12,7 @@
  * @author Alice
  */
 
-function insertSession()
+function insertSessionPerso()
 {
     //Initialiser
     var divErrorMessageParent = document.getElementById("errorMessage");
@@ -98,20 +98,19 @@ function insertSession()
 
 }
 
-function modifySession()
+function modifySessionPerso(codesp)
 {
 
     //Initialiser
-    var divErrorMessageParent = document.getElementById("errorMessage");
+    var divErrorMessageParent = document.getElementById(codesp+"errorMessage");
     divErrorMessageParent.innerHTML = "";
     // Objet XMLHttpRequest.
     var xhr = getXMLHttpRequest();
-    var nameSession = document.getElementById("libelleSt").value;
-    var catSession = document.getElementById("codeCateg").value;
-    var descrSession = document.getElementById("descrSt").value;
-    var descrWarmUp = document.getElementById("descrWarmUp").value;
-    var codeSt = document.getElementById("codeS").value;
-    var arrayLignes = document.getElementById("example24").rows.length - 1;
+    var nameSession = document.getElementById(codesp+"libelleSt").value;
+    var catSession = document.getElementById(codesp+"codeCateg").value;
+    var descrSession = document.getElementById(codesp+"descrSt").value;
+    var descrWarmUp = document.getElementById(codesp+"descrWarmUp").value;
+    var arrayLignes = document.getElementById(codesp+"example24").rows.length - 1;
     // on vérifie que les champs nom d'exercice et objectif sont remplis
     var errorMessage = "";
     var errorFlag = false;
@@ -134,20 +133,20 @@ function modifySession()
     }
 
     for (var i = 1; i <= arrayLignes; i++) {
-        if (!checkEmpty(document.getElementById("nbserieExercice" + i).value)) {
+        if (!checkEmpty(document.getElementById(codesp+"nbserieExercice" + i).value)) {
             errorFlag = true;
             errorMessage = errorMessage + "Le nombre de s&eacute;ries pour  pour l'exercice" + i + "</br>";
         }
 
-        if (!checkEmpty(document.getElementById("dureeExercice" + i).value) && !checkEmpty(document.getElementById("nbExercice" + i).value)) {
+        if (!checkEmpty(document.getElementById(codesp+"dureeExercice" + i).value) && !checkEmpty(document.getElementById(codesp+"nbExercice" + i).value)) {
             errorFlag = true;
             errorMessage = errorMessage + "Le nombre ou la dur&eacute;e de l'exercice est manquant pour l'exercice" + i + "</br>";
         }
-        if (!checkEmpty(document.getElementById("restExercice" + i).value)) {
+        if (!checkEmpty(document.getElementById(codesp+"restExercice" + i).value)) {
             errorFlag = true;
             errorMessage = errorMessage + "Choisir la dur&eacute;e de repos pour l'exercice" + i + "</br>";
         }
-        if (checkEmpty(document.getElementById("dureeExercice" + i).value) && checkEmpty(document.getElementById("nbExercice" + i).value)) {
+        if (checkEmpty(document.getElementById(codesp+"dureeExercice" + i).value) && checkEmpty(document.getElementById(codesp+"nbExercice" + i).value)) {
             errorFlag = true;
             errorMessage = errorMessage + "Choisir la dur&eacute;e OU la quantit&eacute; &agrave; effectuer pour l'exercice" + i + "</br>";
         }
@@ -163,11 +162,11 @@ function modifySession()
     } else {
         var url = "&cpt=" + arrayLignes;
         for (var i = 1; i <= arrayLignes; i++) {
-            url += "&nameExercice" + i + "=" + document.getElementById("nameExercice" + i).value;
-            url += "&serieExercice" + i + "=" + document.getElementById("nbserieExercice" + i).value;
-            url += "&durationExercice" + i + "=" + document.getElementById("dureeExercice" + i).value;
-            url += "&quantityExercice" + i + "=" + document.getElementById("nbExercice" + i).value;
-            url += "&restExercice" + i + "=" + document.getElementById("restExercice" + i).value;
+            url += "&idExercice" + i + "=" + document.getElementById(codesp+"nameExercice" + i).getAttribute("ide");
+            url += "&serieExercice" + i + "=" + document.getElementById(codesp+"nbserieExercice" + i).value;
+            url += "&durationExercice" + i + "=" + document.getElementById(codesp+"dureeExercice" + i).value;
+            url += "&quantityExercice" + i + "=" + document.getElementById(codesp+"nbExercice" + i).value;
+            url += "&restExercice" + i + "=" + document.getElementById(codesp+"restExercice" + i).value;
         }
 
         xhr.onreadystatechange = function () {
@@ -179,7 +178,7 @@ function modifySession()
             ;
         }
         // Requête au serveur avec les paramètres éventuels.
-        xhr.open("GET", "/ServletModifyTypeSession?codeS="+codeSt+"&nameSession=" + nameSession + "&catSession=" + catSession + "&descrSession=" + descrSession + "&descrWarmUp=" + descrWarmUp +
+        xhr.open("GET", "/ServletModifyPersoSession?codeSP="+codesp+"&nameSession=" + nameSession + "&catSession=" + catSession + "&descrSession=" + descrSession + "&descrWarmUp=" + descrWarmUp +
             url, true);
         xhr.send(null);
 
@@ -190,32 +189,46 @@ function modifySession()
 
 }
 
-function changeOrder() {
-
-    var list=document.getElementById("example24").getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+function changeOrderPerso(codesp) {
+    var list=document.getElementById(codesp+"example24").getElementsByTagName("tbody")[0].getElementsByTagName("tr");
     for(var i=0;i<list.length;i++){
         var listTd=list[i].getElementsByTagName("td");
         var e=listTd[5].getElementsByTagName("button")[0];
         e.innerHTML=i+1;
-        e.setAttribute("onclick","deleteLine("+(i+1)+")");
+        e.setAttribute("onclick","deleteLinePerso("+(i+1)+","+codesp+")");
 
         var name=listTd[0].getElementsByTagName("input")[0];
-        name.setAttribute("id","nameExercice"+(i+1));
+        name.setAttribute("id",codesp+"nameExercice"+(i+1));
 
         var series=listTd[1].getElementsByTagName("input")[0];
-        series.setAttribute("id","nbserieExercice"+(i+1));
+        series.setAttribute("id",codesp+"nbserieExercice"+(i+1));
 
         var duree=listTd[2].getElementsByTagName("input")[0];
-        duree.setAttribute("id","dureeExercice"+(i+1));
+        duree.setAttribute("id",codesp+"dureeExercice"+(i+1));
 
         var quantite=listTd[3].getElementsByTagName("input")[0];
-        quantite.setAttribute("id","nbExercice"+(i+1));
+        quantite.setAttribute("id",codesp+"nbExercice"+(i+1));
 
         var repos=listTd[4].getElementsByTagName("input")[0];
-        repos.setAttribute("id","restExercice"+(i+1));
+        repos.setAttribute("id",codesp+"restExercice"+(i+1));
 
     }
 
+
+}
+
+function modifyCommentaire(codesp) {
+    var xhr = getXMLHttpRequest();
+    var content=document.getElementById(codesp+"commentaire").value;
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            alert("Commentaire a été changé")
+        }
+    }
+    // Requête au serveur avec les paramètres éventuels.
+
+    xhr.open("GET", "/ServeletCommentaire?codesp="+codesp+"&content="+content+"&type=seance", true);
+    xhr.send(null);
 }
 
 

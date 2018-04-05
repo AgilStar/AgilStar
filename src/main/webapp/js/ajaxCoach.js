@@ -281,3 +281,17 @@ function changerWatchMode() {
     name.setAttribute("readonly",true);
     desc.setAttribute("readonly",true);
 }
+
+function openSessionPerso(codesp,type) {
+    var xhr = getXMLHttpRequest();
+    xhr.onreadystatechange = function () {
+
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            location.reload();
+        }
+    }
+    // Requête au serveur avec les paramètres éventuels.
+
+    xhr.open("GET", "/ServletOpenSession?type="+type+"&codesp="+codesp, true);
+    xhr.send(null);
+}
