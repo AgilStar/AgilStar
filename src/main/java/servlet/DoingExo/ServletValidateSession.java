@@ -36,30 +36,33 @@ public class ServletValidateSession extends HttpServlet {
         String type = (String) session.getAttribute("type");
         String[] listBilan = (String[]) session.getAttribute("listBilan");
         ArrayList<Exercice> listE = (ArrayList<Exercice>) session.getAttribute("listE");
-        String list = req.getParameter("list");
-        String fcrepos = req.getParameter("fcrepos");
-        String fcflexion = req.getParameter("fcflexion");
-        String fcallonge = req.getParameter("fcallonge");
-        String[] listResult = list.split(",");
+       
+
         System.out.println(type);
         if (type.equals("seance")) {
-
+            String list = req.getParameter("list");
+            String[] listResult = list.split(",");
             for (int i = 0; i < listResult.length; i++) {
                 new db.dbClient().validateSession(codeS, listE.get(i).getCodee(), Integer.parseInt(listResult[i]));
             }
         } else {
+            
+            String fcrepos = req.getParameter("fcrepos");
+            String fcflexion = req.getParameter("fcflexion");
+            String fcallonge = req.getParameter("fcallonge");
             //System.out.println(fcrepos+"--"+fcflexion+"--"+fcallonge);
             for (int i = 0; i < listBilan.length; i++) {
-                System.out.println(listBilan[i]);
-                new db.dbClient().validerBilanExo(codeS, listE.get(i).getCodee(), Integer.parseInt(listBilan[i]));  
+               
+                new db.dbClient().validerBilanExo(codeS, listE.get(i).getCodee(), listBilan[i]);
             }
-              new db.dbClient().validerBilan(codeS,Integer.parseInt(fcrepos), Integer.parseInt(fcflexion), Integer.parseInt(fcallonge));
-
+            new db.dbClient().validerBilan(codeS, fcrepos, fcflexion, fcallonge);
+           
         }
 
         session.removeAttribute(type);
         session.removeAttribute("codeS");
         session.removeAttribute("listE");
+        
 
     }
 }

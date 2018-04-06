@@ -109,7 +109,7 @@
                                                         <th>Exercice</th>
                                                         <th>Séries à faire</th>
                                                         <th>Durée attendue</th>
-                                                        <th>R�p�titions</th>
+                                                        <th>Répétitions</th>
                                                         <th></th>
                                                     </tr>
                                                 </thead>
@@ -126,10 +126,13 @@
                                         <!-- footer -->
                                         <%@ include file="/content/templete/footer.jsp" %>
                                     </div>
+                                                      
                                 </div>
+                                                        
                                 <!-- All Jquery -->
                                 <%@ include file="/content/templete/libJquery.jsp" %>
 
                                 </body>
+                                  
 
                                 </html>

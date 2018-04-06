@@ -67,6 +67,16 @@
                                                 <th>Modifier</th>
                                             </tr>
                                             </thead>
+                                             <tfoot>
+                                            <tr>
+                                            <tr>
+                                                <th>Nom Programme</th>
+                                                <th>Description Programme</th>
+                                                <th>Modifier</th>
+                                              
+                                            </tr>
+                                            </tr>
+                                            </tfoot>
                                             <tbody>
                                             <%
                                                 dbProgram db=new dbProgram();

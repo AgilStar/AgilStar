@@ -59,6 +59,7 @@
                                             <tr>
                                                 <th>Nom</th>
                                                 <th>Objectif</th>
+                                                <th>Description</th>
                                                 <th>Lien multimédia</th>
                                             </tr>
                                             </tr>
@@ -67,9 +68,10 @@
                                             <%
                                                 ArrayList<Exercice> listE= new dbExercice().getExercices();
                                                 for (Exercice e:listE){
-                                                  
-                                                    out.print("<tr>");
-                                                    out.print("<th scope=\"row\"><a href=\"/content/modifierExo.jsp?codee="+e.getCodee()+"\">"+e.getLibellee()+"</a></th>");
+                                                 
+                                                    out.print("<tr onclick=\"window.location.href='/content/modifierExo.jsp?codee="+e.getCodee()+"'\">");
+                                                    
+                                                    out.print("<th scope=\"row\">"+e.getLibellee()+"</th>");
                                                     out.print("<td>"+e.getObjectife()+"</td>");
                                                     out.print("<td>"+e.getDesc()+"</td>");
                                                     out.print("<td>"+e.getLienvideo()+"</td>");                                                  

@@ -461,20 +461,38 @@ public class dbClient {
 
         try {
             cx = new dbAdmin().getConnection();
-            String sql = "update PLANIFIERSP set RESULTATU='" + r + "' and DATER=sysdate() where CODEE=" + codeE + " and CODESP=" + codeS;
+            String sql = "update PLANIFIERSP set RESULTATU='" + r + "' , DATER=sysdate() where CODEE=" + codeE + " and CODESP=" + codeS;
+            System.out.println(sql);
             Statement st = cx.createStatement();
             st.executeUpdate(sql);
 
-            String sql2 = "update SEANCEPERSO set VALIDERSP='oui' where CODESP=" + codeS;
-            Statement st2 = cx.createStatement();
-            st2.executeUpdate(sql2);
+           
 
             st.close();
-            st2.close();
-            cx.close();
+            
+            
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement validateSession " + ex.getMessage());
         }
+        
+         
+          
+        try {
+            String sql2 = "update SEANCEPERSO set VALIDERSP='oui' where CODESP=" + codeS;
+            System.out.println(sql2);
+              Statement st2 = cx.createStatement();
+            st2.executeUpdate(sql2);
+            st2.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(dbClient.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            cx.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(dbClient.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
     }
 
     public Utilisateur getUser(int codeu) {
@@ -637,7 +655,7 @@ public class dbClient {
         return pb;
     }
 
-    public void validerBilanExo(int codeS, int codeE, int resultat) {
+    public void validerBilanExo(int codeS, int codeE, String resultat) {
         try {
             cx = new dbAdmin().getConnection();
             String sql = "update PLANIFIERBILAN set NBMAXU=" + resultat + " where CODESB=" + codeS + " and CODEE=" + codeE;
@@ -652,10 +670,11 @@ public class dbClient {
 
 
     
-    public void validerBilan(int codeS, int fcrepos, int fcflexion, int fcallonge) {
+    public void validerBilan(int codeS, String fcrepos, String fcflexion, String fcallonge) {
         cx = new dbAdmin().getConnection();
          try{
                 String sql2 = "update SEANCEBILAN set VALIDERSB='oui' where CODESB=" + codeS;
+                System.out.println(sql2);
                 Statement st2 = cx.createStatement();
                 st2.executeUpdate(sql2);
 
@@ -665,6 +684,7 @@ public class dbClient {
         }
           try{
                 String sql3 = "update SEANCEBILAN set FCREPOS=" + fcrepos + " where CODESB=" + codeS;
+                  System.out.println(sql3);
                 Statement st3 = cx.createStatement();
                 st3.executeUpdate(sql3);
 
@@ -674,6 +694,7 @@ public class dbClient {
         }
           try{
                 String sql4 = "update SEANCEBILAN set FCFLEXION=" + fcflexion + " where CODESB=" + codeS;
+                System.out.println(sql4);
                 Statement st4 = cx.createStatement();
                 st4.executeUpdate(sql4);
 
@@ -683,6 +704,7 @@ public class dbClient {
         }
            try{
                 String sql5 = "update SEANCEBILAN set FCRECUPERATION=" + fcallonge + " where CODESB=" + codeS;
+                System.out.println(sql5);
                 Statement st5 = cx.createStatement();
                 st5.executeUpdate(sql5);
 

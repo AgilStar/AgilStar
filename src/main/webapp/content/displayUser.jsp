@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Affichage Client <%=codeu%>
+    <title>Affichage Client
     </title>
     <%@ include file="/content/templete/libHead.jsp" %>
     <link href="/css/lib/sweetalert/sweetalert.css" rel="stylesheet">
@@ -36,7 +36,7 @@
         <!-- Bread crumb -->
           <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text-primary">Affichage de client</h3> </div>
+                        <h3 class="text-primary">Profil du client</h3> </div>
                     <div class="col-md-7 align-self-center">
                     </div>
                 </div>
@@ -102,6 +102,8 @@
                                        out.print(phrase);
                                        %>  <%--<%=type.equals("voirType")?"readonly":""%>--%>
                                     </div>
+                                    <button onclick="window.location.href='listClient.jsp'">Retour à la liste des clients</button>
+                                    
                                 </div>                                                                  
                             </div>
                         </div>
