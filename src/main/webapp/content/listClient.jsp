@@ -140,11 +140,11 @@
                                                 } else if (u.getStatutu().equals("en attente")) {
                                                     //Le client est en attente
                                                     out.print("<td><span class=\"badge badge-danger\">" + u.getStatutu() + "</span></td>");
-                                                    out.print("<td><button>Voir</button></td>");
+                                                    out.print("<td><button onclick=\"window.location.href='detailUser.jsp?codeu='" + u.getCodeu() + "')\">Voir</button></td>");
                                                 } else {
                                                     //Le client est prospect
                                                     out.print("<td><span class=\"badge badge-warning \">" + u.getStatutu() + "</span></td>");
-                                                    out.print("<td><button>Voir</button></td>");
+                                                    out.print(<td><button onclick=\"window.location.href='detailUser.jsp?codeu='" + u.getCodeu() + "')\">Voir</button></td>");
                                                 }
 
                                                 out.print("</tr>");
