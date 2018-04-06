@@ -61,9 +61,18 @@ public class ServletInsertUserFromAdmin extends HttpServlet {
                 new db.dbAdmin().insertProfilToUser(idP, idU);
             }          
         }
+        String id = new db.dbAdmin().recupIdUtilisateur(mailUser).get(0);
+        new db.dbBilan().insertPoidsInit(idU, "0");
+        new db.dbBilan().createBilanInit(id);
+        String idBilan = new db.dbBilan().getBilanInit(id);
+        
+        int cpt = 0;
+        for (int i = 100; i <= 106; i++) {
+            cpt++;
+            new db.dbBilan().createPlanifierBilan(idBilan, String.valueOf(i), cpt);
+        }
         String user = req.getParameter("user");
-        if (user.equals("client")) {
-            String id = new db.dbAdmin().recupIdUtilisateur(mailUser).get(0);
+        if (user.equals("client")) {          
             HttpSession session = req.getSession();
             session.setAttribute("id", id);
             resp.sendRedirect("content/indexClient.jsp");

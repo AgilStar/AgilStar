@@ -10,7 +10,6 @@ function addLineT()
 
 
 
-
     var colonne1 = ligne.insertCell(0);//on a une ajout� une cellule
     colonne1.innerHTML +="<a href='modifierExo.jsp?codee="+code+"'>" +libelle+"</a><input type=\"text\" id=\"nameExercice" + arrayLignes + "\" value=\""+libelle+"\" hidden>";
 
@@ -39,8 +38,9 @@ function addLineT()
 function deleteLine(num)
 {
     document.getElementById("example24").deleteRow(num);
-    changeOrder();
+   changeOrder();
 }
+
 
 
 function checkInputExercice(node){

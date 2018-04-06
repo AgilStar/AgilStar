@@ -5,7 +5,9 @@
 <%@ page import="model.Seancebilan" %>
 <%@ page import="model.Planifierbilan" %>
 <%@ page import="db.dbClient" %>
+<%@ page import="db.dbBilan" %>
 <%@ page import="db.dbProfil" %>
+<%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -63,24 +65,21 @@
                                 <div class="card-body">
                                     <form action="/ServletModifySport" method="get">
                                         <div class="form-body">
-                                            <%  String ids=(String)session.getAttribute("id");
-                                                 int id1=Integer.parseInt(ids);
-                                          
-                                                 int s = new dbClient().getSeancebilan(id1);
-                                                 int code=new dbClient().getExercice("'gainage'");
-                                                  
-
-                                                 Planifierbilan pb1=new dbClient().getLastSport(id1,s,code);
-out.print(s);
-
-//                                                 Planifierbilan pb2=new dbClient().getLastSport(id1,s,"Fentes jambe gauche devant");
-//                                                 Planifierbilan pb3=new dbClient().getLastSport(id1,s,"Fentes jambe droite devant");
-//                                                 Planifierbilan pb4=new dbClient().getLastSport(id1,s,"crunch");   
-//                                                 Planifierbilan pb5=new dbClient().getLastSport(id1,s,"pompe");
-//                                                 Planifierbilan pb6=new dbClient().getLastSport(id1,s,"squat");
-//                                                 Planifierbilan pb7=new dbClient().getLastSport(id1,s,"dips");
-
+                                            <%  String ids=(String)session.getAttribute("id"); 
+                                        
+                                                 String s = new dbBilan().getBilanInit(ids);
+               
+                                                 out.print("<input type=\"text\" id=\"idSb\" name=\"idSb\" value=\""+s+"\" hidden>");
+                                                 ArrayList<String> nbRep = new ArrayList<String>();
+                                                 
+                                                for (int i = 100; i <= 106; i++) {
+                                                    nbRep.add(new dbClient().getLastSport(Integer.parseInt(s),i));
+                                                }
+                                                String[] frequences = new dbBilan().recupDataBilan(s);
+                                                String poids = new dbBilan().getPoidsInit(ids);
+        
                                             %>
+                                            <!--
                                             <div class="row p-t-20">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
@@ -88,11 +87,20 @@ out.print(s);
                                                         <input type="text" id="age" class="form-control" name="age">
                                                     </div>
                                                 </div>
+                                            -->
                                                 <!--/span-->
+                                                </br>
                                                 <div class="col-md-6">
                                                     <div class="form-group has-danger">
                                                         <label class="control-label">Poids</label>
-                                                        <input type="text" id="poids" class="form-control form-control-danger" name="poids" value="">
+                                                        <%
+                                                           if(poids.equals("0.00")){
+                                                                out.print("<input type=\"text\" id=\"poids\" class=\"form-control form-control-danger\" name=\"poids\">");
+                                                            }else{
+                                                                out.print("<input type=\"text\" class=\"form-control form-control-danger\" value=\""+poids+"\"disabled>");
+                                                                out.print("<input type=\"text\" id=\"poids\" class=\"form-control form-control-danger\" name=\"poids\" value=\""+poids+"\"hidden>");
+                                                            }
+                                                           %>
                                                     </div>
                                                 </div>
                                                 <!--/span-->
@@ -103,14 +111,28 @@ out.print(s);
                                             <div class="col-md-12 ">
                                                 <div class="form-group has-danger">
                                                     <label class="control-label">Fréquence cardiaque au repos</label>
-                                                    <input type="text" id="fcr" class="form-control form-control-danger" name="fcr">
+                                                         <%
+                                                            if(frequences[0].equals("0")){
+                                                                out.print("<input type=\"text\" id=\"fcr\" class=\"form-control form-control-danger\" name=\"fcr\">");
+                                                            }else{
+                                                                out.print("<input type=\"text\" class=\"form-control form-control-danger\" value=\""+frequences[0]+"\"disabled>");
+                                                                out.print("<input type=\"text\" id=\"fcr\" class=\"form-control form-control-danger\" name=\"fcr\" value=\""+frequences[0]+"\"hidden>");
+                                                            }
+                                                            %>
                                                 </div>
                                             </div>
                                             <!--/row-->
                                             <div class="col-md-12 ">
                                                 <div class="form-group has-danger">
                                                     <label class="control-label">Fréquence cardiaque après 30 flexions complètes en 45 sec</label>
-                                                    <input type="text" id="fcf" class="form-control form-control-danger" name="fcf">
+                                                     <%
+                                                            if(frequences[1].equals("0")){
+                                                                out.print("<input type=\"text\" id=\"fcf\" class=\"form-control form-control-danger\" name=\"fcf\">");
+                                                            }else{
+                                                                out.print("<input type=\"text\"  class=\"form-control form-control-danger\"  value=\""+frequences[1]+"\" disabled>");
+                                                                out.print("<input type=\"text\" id=\"fcf\" class=\"form-control form-control-danger\" name=\"fcf\" value=\""+frequences[1]+"\" hidden>");
+                                                            }
+                                                            %>
                                                 </div>
                                             </div>
 
@@ -119,7 +141,14 @@ out.print(s);
                                             <div class="col-md-12 ">
                                                 <div class="form-group has-danger">
                                                     <label class="control-label">Fréquence cardiaque après exercice allongé</label>
-                                                    <input type="text" id="fca" class="form-control form-control-danger" name="fca">
+                                                     <%
+                                                            if(frequences[2].equals("0")){
+                                                                out.print("<input type=\"text\" id=\"fca\" class=\"form-control form-control-danger\" name=\"fca\">");
+                                                            }else{
+                                                                out.print("<input type=\"text\"  class=\"form-control form-control-danger\"  value=\""+frequences[2]+"\" disabled>");
+                                                                out.print("<input type=\"text\" id=\"fca\" class=\"form-control form-control-danger\" name=\"fca\" value=\""+frequences[2]+"\" hidden>");
+                                                            }
+                                                            %>
                                                 </div>
                                             </div>
                                             <!--/row-->
@@ -140,7 +169,14 @@ out.print(s);
                                                 <div class="col-md-6">
                                                     <div class="form-group has-danger">
                                                         <label class="control-label">Evaluation gainage </label>
-                                                        <input type="text" id="evalg" class="form-control form-control-danger" name="evalg" value="<%=pb1.getTempsmaxu()%>">
+                                                        <%
+                                                            if(nbRep.get(0).equals("0")){
+                                                                out.print("<input type=\"text\" id=\"evalg\" class=\"form-control form-control-danger\" name=\"evalg\">");
+                                                            }else{
+                                                                out.print("<input type=\"text\" class=\"form-control form-control-danger\"  value=\""+nbRep.get(0)+"\" disabled>");
+                                                                out.print("<input type=\"text\" id=\"evalg\" class=\"form-control form-control-danger\" name=\"evalg\" value=\""+nbRep.get(0)+"\" hidden>");
+                                                            }
+                                                            %>
                                                     </div>
                                                 </div>
                                                 <!--/span-->
@@ -157,9 +193,23 @@ out.print(s);
                                                 <div class="col-md-6">
                                                     <div class="form-group has-danger">
                                                         <label class="control-label">Evaluation jambe gauche devant </label>
-                                                        <input type="text" id="evalfg" class="form-control form-control-danger" name="evalfg" value="" >
+                                                           <%
+                                                            if(nbRep.get(1).equals("0")){
+                                                                out.print("<input type=\"text\" id=\"evalfg\" class=\"form-control form-control-danger\" name=\"evalfg\">");
+                                                            }else{
+                                                                out.print("<input type=\"text\" class=\"form-control form-control-danger\" value=\""+nbRep.get(1)+"\" disabled>");
+                                                                out.print("<input type=\"text\" id=\"evalfg\" class=\"form-control form-control-danger\" name=\"evalfg\" value=\""+nbRep.get(1)+"\" hidden>");
+                                                            }
+                                                            %>
                                                         <label class="control-label">Evaluation jambe droite devant </label>
-                                                        <input type="text" id="evalfd" class="form-control form-control-danger" name="evalfd" value="">
+                                                         <%
+                                                            if(nbRep.get(2).equals("0")){
+                                                                out.print("<input type=\"text\" id=\"evalfd\" class=\"form-control form-control-danger\" name=\"evalfd\">");
+                                                            }else{
+                                                                out.print("<input type=\"text\" id=\"evalfd\" class=\"form-control form-control-danger\" name=\"evalfd\" value=\""+nbRep.get(2)+"\" disabled>");
+                                                                out.print("<input type=\"text\" class=\"form-control form-control-danger\" value=\""+nbRep.get(2)+"\" hidden>");
+                                                            }
+                                                            %>
                                                     </div>
                                                 </div>
                                                 <!--/span-->
@@ -175,7 +225,14 @@ out.print(s);
                                                 <div class="col-md-6">
                                                     <div class="form-group has-danger">
                                                         <label class="control-label">Evaluation crunch </label>
-                                                        <input type="text" id="crunch" class="form-control form-control-danger" name="crunch">
+                                                           <%
+                                                            if(nbRep.get(3).equals("0")){
+                                                                out.print("<input type=\"text\" id=\"crunch\" class=\"form-control form-control-danger\" name=\"crunch\">");
+                                                            }else{
+                                                                out.print("<input type=\"text\" id=\"crunch\" class=\"form-control form-control-danger\" name=\"crunch\" value=\""+nbRep.get(3)+"\" disabled>");
+                                                                out.print("<input type=\"text\" class=\"form-control form-control-danger\"  value=\""+nbRep.get(3)+"\" disabled>");
+                                                            }
+                                                            %>
                                                     </div>
                                                 </div>
                                                 <!--/span-->
@@ -193,7 +250,14 @@ out.print(s);
                                                     <div class="form-group has-danger">
 
                                                         <label class="control-label">Evaluation 1/2 pompes</label>
-                                                        <input type="text" id="pompe" class="form-control form-control-danger" name="pompe">
+                                                          <%
+                                                            if(nbRep.get(4).equals("0")){
+                                                                out.print("<input type=\"text\" id=\"pompe\" class=\"form-control form-control-danger\" name=\"pompe\">");
+                                                            }else{
+                                                                out.print("<input type=\"text\" class=\"form-control form-control-danger\" value=\""+nbRep.get(4)+"\" disabled>");
+                                                                out.print("<input type=\"text\" id=\"pompe\" class=\"form-control form-control-danger\" name=\"pompe\" value=\""+nbRep.get(4)+"\" hidden>");
+                                                            }
+                                                            %>
                                                     </div>
                                                 </div>
                                                 <!--/span-->
@@ -210,7 +274,14 @@ out.print(s);
                                                     <div class="form-group has-danger">
 
                                                         <label class="control-label">Evaluation 1/2 squat</label>
-                                                        <input type="text" id="squat" class="form-control form-control-danger" name="squat">
+                                                            <%
+                                                            if(nbRep.get(5).equals("0")){
+                                                                out.print("<input type=\"text\" id=\"squat\" class=\"form-control form-control-danger\" name=\"squat\">");
+                                                            }else{
+                                                                out.print("<input type=\"text\" class=\"form-control form-control-danger\" value=\""+nbRep.get(5)+"\" disabled>");
+                                                                out.print("<input type=\"text\" id=\"squat\" class=\"form-control form-control-danger\" name=\"squat\" value=\""+nbRep.get(5)+"\" hidden>");
+                                                            }
+                                                            %>
                                                     </div>
                                                 </div>
                                                 <!--/span-->
@@ -228,7 +299,14 @@ out.print(s);
                                                     <div class="form-group has-danger">
 
                                                         <label class="control-label">Evaluation dips</label>
-                                                        <input type="text" id="dips" class="form-control form-control-danger" name="dips">
+                                                           <%
+                                                            if(nbRep.get(6).equals("0")){
+                                                                out.print("<input type=\"text\" id=\"dips\" class=\"form-control form-control-danger\" name=\"dips\">");
+                                                            }else{
+                                                                out.print("<input type=\"text\" class=\"form-control form-control-danger\" value=\""+nbRep.get(6)+"\" disabled>");
+                                                                out.print("<input type=\"text\" id=\"dips\" class=\"form-control form-control-danger\" name=\"dips\" value=\""+nbRep.get(6)+"\" hidden>");
+                                                            }
+                                                            %>
                                                     </div>
                                                 </div>
                                                 <!--/span-->
@@ -250,12 +328,10 @@ out.print(s);
  
                             if (new dbProfil().getProfilUser(Integer.parseInt(id)).contains("Amincissement")){
                             Mensuration m=(Mensuration)new dbClient().getLastMensuration(Integer.parseInt(id));
-
+                            }
+                            }
                         %>
-                        <%@ include file="/content/mensuration.jsp" %>
-
-                        <%}
-                        }%>
+                      <!--  </%@ include file="/content/mensuration.jsp" %>-->
 
                         <!-- End PAge Content -->
                     </div>

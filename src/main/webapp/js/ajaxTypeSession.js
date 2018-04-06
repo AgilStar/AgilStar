@@ -53,7 +53,7 @@ function insertSession()
 
         if (!checkEmpty(document.getElementById("dureeExercice" + i).value) && !checkEmpty(document.getElementById("nbExercice" + i).value)) {
             errorFlag = true;
-            errorMessage = errorMessage + "Le nombre de répétition ou la dur&eacute;e de l'exercice est manquant pour l'exercice" + i + "</br>";
+            errorMessage = errorMessage + "Le nombre de rï¿½pï¿½tition ou la dur&eacute;e de l'exercice est manquant pour l'exercice" + i + "</br>";
         }
         if (!checkEmpty(document.getElementById("restExercice" + i).value)) {
             errorFlag = true;
@@ -61,7 +61,7 @@ function insertSession()
         }
         if (checkEmpty(document.getElementById("dureeExercice" + i).value) && checkEmpty(document.getElementById("nbExercice" + i).value)) {
             errorFlag = true;
-            errorMessage = errorMessage + "Choisir la dur&eacute;e OU les répétitions; &agrave; effectuer pour l'exercice" + i + "</br>";
+            errorMessage = errorMessage + "Choisir la dur&eacute;e OU les rï¿½pï¿½titions; &agrave; effectuer pour l'exercice" + i + "</br>";
         }
     }
     if (errorFlag) {
@@ -141,7 +141,7 @@ function modifySession()
 
         if (!checkEmpty(document.getElementById("dureeExercice" + i).value) && !checkEmpty(document.getElementById("nbExercice" + i).value)) {
             errorFlag = true;
-            errorMessage = errorMessage + "Le nombre de répétitions ou la dur&eacute;e de l'exercice est manquant pour l'exercice" + i + "</br>";
+            errorMessage = errorMessage + "Le nombre de rï¿½pï¿½titions ou la dur&eacute;e de l'exercice est manquant pour l'exercice" + i + "</br>";
         }
         if (!checkEmpty(document.getElementById("restExercice" + i).value)) {
             errorFlag = true;
@@ -149,7 +149,7 @@ function modifySession()
         }
         if (checkEmpty(document.getElementById("dureeExercice" + i).value) && checkEmpty(document.getElementById("nbExercice" + i).value)) {
             errorFlag = true;
-            errorMessage = errorMessage + "Choisir la dur&eacute;e OU la quantit&eacute; de répétitions &agrave; effectuer pour l'exercice" + i + "</br>";
+            errorMessage = errorMessage + "Choisir la dur&eacute;e OU la quantit&eacute; de rï¿½pï¿½titions &agrave; effectuer pour l'exercice" + i + "</br>";
         }
     }
     if (errorFlag) {
@@ -192,8 +192,8 @@ function modifySession()
 
 function changeOrder() {
 
-    var list=document.getElementById("example24").getElementsByTagName("tbody")[0].getElementsByTagName("tr");
-    for(var i=0;i<list.length;i++){
+    var list=document.getElementById("example24").getElementsByTagName("thead")[0].getElementsByTagName("tr");
+    for(var i=1;i<list.length;i++){
         var listTd=list[i].getElementsByTagName("td");
         var e=listTd[5].getElementsByTagName("button")[0];
         e.innerHTML=i+1;

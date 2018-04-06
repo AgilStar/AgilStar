@@ -92,7 +92,7 @@
                                                                 ArrayList<Exercice> listEx=new dbExercice().getExercices();
                                                                 out.print("<select id=\"exercices\" name=\"exercices\">");
                                                                 for (Exercice e:listEx){
-                                                                    out.print("<option value='"+e.getLibellee()+"' >"+e.getLibellee()+"</option>");
+                                                                    out.print("<option libelle='"+e.getLibellee()+"' value='"+e.getLibellee()+"' >"+e.getLibellee()+"</option>");
                                                                 }
                                                                 out.print("</select>");
              

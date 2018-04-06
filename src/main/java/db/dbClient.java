@@ -169,7 +169,6 @@ public class dbClient {
         }
 
     }
-
     /**
      *
      * @param id
@@ -186,126 +185,19 @@ public class dbClient {
      * @param nbSquat
      * @param nbDips
      */
-    public void modifySport(int id, int fcr, int fcmax, int frf, int fcrecup, double poids, int tmaxgainage, int nbmaxFenteGauche, int nbmaxFenteDroite, int nbCrunch, int nbPompe, int nbSquat, int nbDips) {
+    public void modifySport(String codeSb, String codeEx, String nb) {
         cx = new dbAdmin().getConnection();
-        //insertion dans la table s�ance bilan
+        //insertion dans la table sï¿½ance bilan
         try {
 
-            String sql = "insert into SEANCEBILAN(CODESBT,FCREPOS, FCMAX, FCFLEXION,FCRECUPERATION,CODEU,DATEM,NUMSEMAINE,ORDRESB) VALUES (2," + fcr + "," + fcmax + "," + frf + "," + fcrecup + "," + id + ",sysdate(),-1,0)";
+            String sql = "UPDATE PLANIFIERBILAN SET NBMAXU='" + nb + "' WHERE CODESB='" + codeSb + "' AND CODEE='" + codeEx + "'";
+            System.out.println(sql);
             Statement st = cx.createStatement();
-            int nb = st.executeUpdate(sql);
+            st.executeUpdate(sql);
             st.close();
 
         } catch (SQLException ex) {
-            System.out.println("Il y a un pro pour ins�rer la 1ere s�ance" + ex.getMessage());
-        }
-
-        //insertion dans la table planifierbilan pour gainage
-        try {
-
-            String sql1 = "Insert into PLANIFIERBILAN(CODESB,CODEE, DATER,TEMPSMAXU, ORDREB) VALUES ((SELECT CODESB from SEANCEBILAN ORDER BY CODESB DESC LIMIT 1),(SELECT CODEE FROM EXERCICE WHERE LIBELLEE='Gainage'),sysdate()," + tmaxgainage + ",1)";
-            Statement st = cx.createStatement();
-            int nb = st.executeUpdate(sql1);
-            st.close();
-
-        } catch (SQLException ex) {
-            System.out.println("Il y a un pro pour le gainage " + ex.getMessage());
-        }
-
-        //insertion dans la table planifierbian pour fente
-        try {
-
-            String sql2 = "Insert into PLANIFIERBILAN(CODESB,CODEE, "
-                    + "DATER,NBMAXU, ORDREB) VALUES ((SELECT CODESB from SEANCEBILAN ORDER BY CODESB DESC LIMIT 1),"
-                    + "(SELECT CODEE FROM EXERCICE WHERE LIBELLEE='Fentes jambe gauche devant'),sysdate()," + nbmaxFenteGauche + ",2)";
-            Statement st = cx.createStatement();
-            int nb = st.executeUpdate(sql2);
-            st.close();
-
-        } catch (SQLException ex) {
-            System.out.println("Il y a un pro pour la fente gauche " + ex.getMessage());
-        }
-
-        //insertion dans la table planifierbian pour fente droite
-        try {
-
-            String sql3 = "Insert into PLANIFIERBILAN(CODESB,CODEE, "
-                    + "DATER,NBMAXU, ORDREB) VALUES ((SELECT CODESB from SEANCEBILAN ORDER BY CODESB DESC LIMIT 1),"
-                    + "(SELECT CODEE FROM EXERCICE WHERE LIBELLEE='Fentes jambe droite devant'),sysdate()," + nbmaxFenteDroite + ",3)";
-            Statement st = cx.createStatement();
-            int nb = st.executeUpdate(sql3);
-            st.close();
-
-        } catch (SQLException ex) {
-            System.out.println("Il y a un pro pour la fente droite"+ ex.getMessage());}
-
-        //insertion dans la table planifierbian pour crunch
-        try {
-
-            String sql4 = "Insert into PLANIFIERBILAN(CODESB,CODEE, "
-                    + "DATER,NBMAXU, ORDREB) VALUES ((SELECT CODESB from SEANCEBILAN ORDER BY CODESB DESC LIMIT 1),"
-                    + "(SELECT CODEE FROM EXERCICE WHERE LIBELLEE='Crunch'),sysdate()," + nbCrunch + ",4)";
-            Statement st = cx.createStatement();
-            int nb = st.executeUpdate(sql4);
-            st.close();
-
-        } catch (SQLException ex) {
-            System.out.println("Il y a un pour crunch " + ex.getMessage());
-        }
-
-        //insertion dans la table planifierbian pour pompe
-        try {
-
-            String sql5 = "Insert into PLANIFIERBILAN(CODESB,CODEE, "
-                    + "DATER,NBMAXU, ORDREB) VALUES ((SELECT CODESB from SEANCEBILAN ORDER BY CODESB DESC LIMIT 1),"
-                    + "(SELECT CODEE FROM EXERCICE WHERE LIBELLEE='Pompes ? genoux'),sysdate()," + nbPompe + ",5)";
-            Statement st = cx.createStatement();
-            int nb = st.executeUpdate(sql5);
-            st.close();
-
-        } catch (SQLException ex) {
-            System.out.println("Il y a un pro pour les pompe" + ex.getMessage());
-        }
-
-        //insertion dans la table planifierbian pour squat
-        try {
-
-            String sql6 = "Insert into PLANIFIERBILAN(CODESB,CODEE, "
-                    + "DATER,NBMAXU, ORDREB) VALUES ((SELECT CODESB from SEANCEBILAN ORDER BY CODESB DESC LIMIT 1),"
-                    + "(SELECT CODEE FROM EXERCICE WHERE LIBELLEE='1/2 Squat'),sysdate()," + nbSquat + ",6)";
-            Statement st = cx.createStatement();
-            int nb = st.executeUpdate(sql6);
-            st.close();
-
-        } catch (SQLException ex) {
-            System.out.println("Il y a un pro pour le squat " + ex.getMessage());
-        }
-
-        //insertion dans la table planifierbian pour dips
-        try {
-
-            String sql7 = "Insert into PLANIFIERBILAN(CODESB,CODEE, "
-                    + "DATER,NBMAXU, ORDREB) VALUES ((SELECT CODESB from SEANCEBILAN ORDER BY CODESB DESC LIMIT 1),"
-                    + "(SELECT CODEE FROM EXERCICE WHERE LIBELLEE='Dips'),sysdate()," + nbDips + ",7)";
-            Statement st = cx.createStatement();
-            int nb = st.executeUpdate(sql7);
-            st.close();
-
-        } catch (SQLException ex) {
-            System.out.println("Il y a un pro pour dips " + ex.getMessage());
-        }
-
-//insertion dans la table mensuration pour poids
-        try {
-
-            String sql7 = "Insert into MENSURATION(CODEU,DATEM, "
-                    + "POIDS) VALUES (" + id + ",sysdate()," + poids + ")";
-            Statement st = cx.createStatement();
-            int nb = st.executeUpdate(sql7);
-            st.close();
-            cx.close();
-        } catch (SQLException ex) {
-            System.out.println("Il y a un pro pour le poids " + ex.getMessage());
+            System.out.println("Il y a un pro pour insérer la 1ere séance" + ex.getMessage());
         }
 
     }
@@ -625,34 +517,27 @@ public class dbClient {
         return code;
     }
 
-    public Planifierbilan getLastSport(int codeU, int codesb, int exo) {
-        Planifierbilan pb = new Planifierbilan();
-        
+    public String getLastSport(int codesb, int exo) {
+        String nb = new String();
+
         try {
             cx = new dbAdmin().getConnection();
-           
-            String sql="select p.TEMPSMAXU, p.NBMAXU from PLANIFIERBILAN as p, SEANCEBILAN as sb where sb.CODESB=p.CODESB "
-                    + "and sb.CODEU='"+codeU+"' and sb.CODESB='"+codesb+"'and sb.numsemaine='-1' and p.CODEE='"+exo+"'";
+
+            String sql = "select NBMAXU from PLANIFIERBILAN AS P WHERE P.CODEE='" + exo + "' AND P.CODESB='" + codesb + "'";
             System.out.println(sql);
             Statement st = cx.createStatement();
             ResultSet rs = st.executeQuery(sql);
-       
-            while(rs.next()) {
-                int nbmax=rs.getInt("NBMAXU");
-                int temps = rs.getInt("TEMPSMAXU");
-                pb.setNbmaxu(nbmax);
-                pb.setTempsmaxu(temps);
-                  System.out.println(temps);
-
+            while (rs.next()) {
+                nb = rs.getString("NBMAXU");
             }
-           
             st.close();
             cx.close();
         } catch (SQLException ex) {
-            System.out.println("Il y a un problème sur la recup�ration des anciennes valeurs du profil sportif " + ex.getMessage());
+            System.out.println("Il y a un problÃ¨me sur la recupération des anciennes valeurs du profil sportif " + ex.getMessage());
         }
-        System.out.println(pb.getTempsmaxu());
-        return pb;
+
+        return nb;
+
     }
 
     public void validerBilanExo(int codeS, int codeE, String resultat) {
@@ -744,20 +629,7 @@ public class dbClient {
 
 
 
-    public static void main(String[] args) {
-        dbClient d = new dbClient();
-        Utilisateur u = d.getOneClient(24);
-        System.out.println(u.getNomu());
 
-
-        System.out.println(d.getProfilUser(62));
-        Seancebilan s=new Seancebilan();
-        s.setCodesb(1000);
-        d.getSeancebilan(21);
-        d.getLastSport(23,100,22);
-        d.getExercice("'dips'");
-
-    }
 
     public void CreateDetenir(String idS, String idProfil) {
         cx = new dbAdmin().getConnection();

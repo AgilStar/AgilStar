@@ -34,74 +34,90 @@ public class ServletModifySport extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         HttpSession session = req.getSession(false);
-        
-            String id=(String)session.getAttribute("id");
-            Double poids=0.0;
-            if(req.getParameter("poids")!=""){
-               poids = new Double(req.getParameter("poids"));
-            }
-            
-            Integer fcr=0;
-           if(req.getParameter("fcr")!=""){
-               fcr = new Integer(req.getParameter("fcr"));
-           }
-           
-           Integer fcf = 0;
-           if(req.getParameter("fcf")!=""){
-                fcf = new Integer(req.getParameter("fcf"));
-           }
-           
-            Integer fca =0;
-            if(req.getParameter("fca")!=""){
-               fca = new Integer(req.getParameter("fca"));
-            }
-            
-             Integer evalg =0;
-           if(req.getParameter("evalg")!=" "){
-                evalg = new Integer(req.getParameter("evalg"));
-           }
-           
-           Integer evalfg =0;
-            if(req.getParameter("evalfg")!=""){
-                evalfg = new Integer(req.getParameter("evalfg"));
-            }
-            
-             Integer evalfd =0;
-            if(req.getParameter("evalfd")!=""){
-               evalfd = new Integer(req.getParameter("evalfd"));
-            }
-            
-            Integer crunch =0;
-            if(req.getParameter("crunch")!=""){
-                 crunch = new Integer(req.getParameter("crunch"));
-            }
-            
-            Integer pompe =0;
-           if(req.getParameter("pompe")!=""){
-               pompe = new Integer(req.getParameter("pompe"));
-           }
-           
-            Integer squat =0;
-           if(req.getParameter("squat")!=""){
-               squat = new Integer(req.getParameter("squat"));
-           }
-           
-            Integer dips =0;
-           if(req.getParameter("dips")!=""){
-               dips = new Integer(req.getParameter("dips"));
-           }
-           
-           Integer age=0;
-           Integer fcmax=0;
-            if(req.getParameter("age")!=""){
-               age=new Integer(req.getParameter("age"));
-               fcmax=220-age;
-            }
 
-            new db.dbClient().modifySport(Integer.parseInt(id), fcr, fcmax,  fcf, fca,poids, evalg, evalfg, evalfd, crunch, pompe, squat, dips);
-            resp.sendRedirect("content/profilClient.jsp");
-       
+        String idSb = req.getParameter("idSb");
+        System.out.println("--idSB : "+idSb);
+        String id = (String) session.getAttribute("id");
+
+        Double poids = 0.0;
+        if (req.getParameter("poids")!=null&&!req.getParameter("poids").equals("")) {
+            poids = new Double(req.getParameter("poids"));
         }
 
-    
+        String fcr = "0";
+         if(req.getParameter("fcr")!=null&&!req.getParameter("fcr").equals("")) {
+             System.out.println("==================="+req.getParameter("fcr"));
+            fcr = req.getParameter("fcr");
+        }
+        
+
+        String fcf = "0";
+        if(req.getParameter("fcf")!=null&&!req.getParameter("fcf").equals("")) {
+            fcf = req.getParameter("fcf");
+        }
+            
+        String fca = "0";
+        if(req.getParameter("fca")!=null&&!req.getParameter("fca").equals("")) {
+            fca=req.getParameter("fca");
+        }
+        
+
+
+        String evalg = "0";
+         if(req.getParameter("evalg") !=null&&!req.getParameter("evalg").equals("")) {
+            evalg=req.getParameter("evalg");
+        }
+
+        String evalfg = "0";
+         if(req.getParameter("evalfg") != null&&!req.getParameter("evalfg").equals("")) {
+            evalfg=req.getParameter("evalfg");
+        }
+
+        String evalfd = "0";
+         if(req.getParameter("evalfd") != null&&!req.getParameter("evalfd").equals("")) {
+            evalfd=req.getParameter("evalfd");
+        }
+
+        String crunch = "0";
+         if(req.getParameter("crunch") != null&&!req.getParameter("crunch").equals("")) {
+            crunch=req.getParameter("crunch");
+        }
+
+        String pompe = "0";
+         if(req.getParameter("pompe") != null&&!req.getParameter("pompe").equals("")) {
+            pompe=req.getParameter("pompe");
+        }
+
+        String squat = "0";
+         if(req.getParameter("squat") != null&&!req.getParameter("squat").equals("")) {
+            squat=req.getParameter("squat");
+        }
+
+        String dips = "0";
+         if(req.getParameter("dips") != null&&!req.getParameter("dips").equals("")) {
+            dips=req.getParameter("dips");
+        }
+
+        Integer age = 0;
+        Integer fcmax = 0;
+       
+        
+        if (req.getParameter("age") != null&&!req.getParameter("age").equals("")) {
+            age = new Integer(req.getParameter("age"));
+            fcmax = 220 - age;
+        }
+        new db.dbBilan().modifyPoidsInit(id, String.valueOf(poids));
+        new db.dbBilan().updateBilanInit(idSb, fcr, String.valueOf(fcmax), fcf, fca);
+        new db.dbClient().modifySport(idSb, "100", evalg);
+        new db.dbClient().modifySport(idSb, "101", evalfg);
+        new db.dbClient().modifySport(idSb, "102", evalfd);
+        new db.dbClient().modifySport(idSb, "103", crunch);
+        new db.dbClient().modifySport(idSb, "104", pompe);
+        new db.dbClient().modifySport(idSb, "105", squat);
+        new db.dbClient().modifySport(idSb, "106", dips);
+              
+        resp.sendRedirect("content/profilClient.jsp");
+
+    }
+
 }
