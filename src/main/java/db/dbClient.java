@@ -461,20 +461,38 @@ public class dbClient {
 
         try {
             cx = new dbAdmin().getConnection();
-            String sql = "update PLANIFIERSP set RESULTATU='" + r + "' and DATER=sysdate() where CODEE=" + codeE + " and CODESP=" + codeS;
+            String sql = "update PLANIFIERSP set RESULTATU='" + r + "' , DATER=sysdate() where CODEE=" + codeE + " and CODESP=" + codeS;
+            System.out.println(sql);
             Statement st = cx.createStatement();
             st.executeUpdate(sql);
 
-            String sql2 = "update SEANCEPERSO set VALIDERSP='oui' where CODESP=" + codeS;
-            Statement st2 = cx.createStatement();
-            st2.executeUpdate(sql2);
+           
 
             st.close();
-            st2.close();
-            cx.close();
+            
+            
         } catch (SQLException ex) {
             System.out.println("Il y a un problème sur statement validateSession " + ex.getMessage());
         }
+        
+         
+          
+        try {
+            String sql2 = "update SEANCEPERSO set VALIDERSP='oui' where CODESP=" + codeS;
+            System.out.println(sql2);
+              Statement st2 = cx.createStatement();
+            st2.executeUpdate(sql2);
+            st2.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(dbClient.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            cx.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(dbClient.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
     }
 
     public Utilisateur getUser(int codeu) {

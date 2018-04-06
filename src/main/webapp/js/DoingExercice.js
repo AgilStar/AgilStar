@@ -50,14 +50,14 @@ function changeDisplay(typeP) {
             if (i == (listExercice.length - 2)) {
                 document.getElementById("btnExo").innerHTML = "Terminer";
                 disableBtn();
-                
-                if(typeP=="bilan"){
-                  
+
+                if (typeP == "bilan") {
+
                     document.getElementById("btnExo").setAttribute("onClick", "terminerBilan()");
-                }else{
+                } else {
                     document.getElementById("btnExo").setAttribute("onClick", "terminer()");
                 }
-                
+
 
             }
             break;
@@ -104,44 +104,66 @@ function terminer() {
 }
 
 function terminerBilan() {
-     var listExercice = document.getElementById("listExercice").getElementsByTagName("div");
-     var list=new Array();
-     for (var i = 0; i < listExercice.length; i++) {
-         list[i]=(document.getElementById("exercice"+i).value);
+    var listExercice = document.getElementById("listExercice").getElementsByTagName("div");
+    var list = new Array();
+    for (var i = 0; i < listExercice.length; i++) {
+        list[i] = (document.getElementById("exercice" + i).value);
     }
-    
- window.location.href = "validateSession.jsp?bilan="+list;
+
+    window.location.href = "validateSession.jsp?bilan=" + list;
 }
 
 
 function checkSeance() {
     //bilan
-    var fcrepos=document.getElementById("fcrepos").value;
-    var fcflexion=document.getElementById("fcflexion").value;
-    var fcallonge=document.getElementById("fcallonge").value;
-    
-   
-    //seance
-    var list = [];
-    var listSelect = document.getElementsByName("level");
-    //alert(listSelect.length);
-    for (var i = 0; i < listSelect.length; i++) {
-        var e = listSelect[i];
-        list[i] = e.options[e.selectedIndex].value;
-       // alert(list[i]);
-    }
-    var xhr = getXMLHttpRequest();
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            {
-                window.location.href = "listProgram.jsp";
+    if (document.getElementById("fcrepos")!= null) {
+        var fcrepos = document.getElementById("fcrepos").value;
+        var fcflexion = document.getElementById("fcflexion").value;
+        var fcallonge = document.getElementById("fcallonge").value;
+
+        var xhr = getXMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                {
+                    window.location.href = "listProgram.jsp";
+                }
             }
+            ;
+        };
+        // Requête au serveur avec les paramètres éventuels.
+        xhr.open("GET", "/ServletValidateSession?fcrepos=" + fcrepos + "&fcflexion=" + fcflexion + "&fcallonge=" + fcallonge, true);
+        xhr.send(null);
+
+
+    }
+    //seance
+    if (document.getElementsByName("level") != null) {
+        var listSelect = document.getElementsByName("level");
+        //seance
+        var list = [];
+
+        //alert(listSelect.length);
+        for (var i = 0; i < listSelect.length; i++) {
+            var e = listSelect[i];
+            list[i] = e.options[e.selectedIndex].value;
+            // alert(list[i]);
         }
-        ;
-    };
-    // Requête au serveur avec les paramètres éventuels.
-    xhr.open("GET", "/ServletValidateSession?list=" + list+"&fcrepos="+fcrepos+"&fcflexion="+fcflexion+"&fcallonge="+fcallonge, true);
-    xhr.send(null);
+        var xhr = getXMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                {
+                    window.location.href = "listProgram.jsp";
+                }
+            }
+            ;
+        };
+        // Requête au serveur avec les paramètres éventuels.
+        xhr.open("GET", "/ServletValidateSession?list=" + list, true);
+        xhr.send(null);
+
+    }
+
+
 
 
 }
