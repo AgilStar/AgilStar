@@ -43,7 +43,7 @@ function insertSession()
     }
     if (arrayLignes == 0) {
         errorFlag = true;
-        errorMessage = errorMessage + "Il faut cr? au moins un exercice" + i + "</br>";
+        errorMessage = errorMessage + "Il faut cr&eacuteer au moins un exercice" + i + "</br>";
     }
     for (var i = 1; i <= arrayLignes; i++) {
         if (!checkEmpty(document.getElementById("nbserieExercice" + i).value)) {
@@ -53,7 +53,7 @@ function insertSession()
 
         if (!checkEmpty(document.getElementById("dureeExercice" + i).value) && !checkEmpty(document.getElementById("nbExercice" + i).value)) {
             errorFlag = true;
-            errorMessage = errorMessage + "Le nombre de r�p�tition ou la dur&eacute;e de l'exercice est manquant pour l'exercice" + i + "</br>";
+            errorMessage = errorMessage + "Le nombre de r&eacute;p&eacute;tition ou la dur&eacute;e de l'exercice est manquant pour l'exercice" + i + "</br>";
         }
         if (!checkEmpty(document.getElementById("restExercice" + i).value)) {
             errorFlag = true;
@@ -61,7 +61,7 @@ function insertSession()
         }
         if (checkEmpty(document.getElementById("dureeExercice" + i).value) && checkEmpty(document.getElementById("nbExercice" + i).value)) {
             errorFlag = true;
-            errorMessage = errorMessage + "Choisir la dur&eacute;e OU les r�p�titions; &agrave; effectuer pour l'exercice" + i + "</br>";
+            errorMessage = errorMessage + "Choisir la dur&eacute;e OU les r&eacute;p&eacute;tition; &agrave; effectuer pour l'exercice" + i + "</br>";
         }
     }
     if (errorFlag) {
@@ -84,7 +84,8 @@ function insertSession()
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 {
-                    alert("vous avez r?si l'insertion !!");
+                    alert("vous avez r&eacute;ussi l'insertion !!");
+                    window.location.href="listSession.jsp";
                 }
             }
             ;

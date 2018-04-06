@@ -47,7 +47,7 @@ if(flag){
                 if(errorMessage=="true"){
                     sweetAlert('Bravo...', 'Vous avez crée un nouveau programme', 'success');
 
-                    window.location.href='modifierProgramme.jsp?codep='+codeP+'&type=voirType&codeUser='+codeUser;
+                    window.location.href='listProgramm.jsp';
                 }else{
                     sweetAlert('Oups...', 'Le nom de programme existe d�j�', 'error');
                 }

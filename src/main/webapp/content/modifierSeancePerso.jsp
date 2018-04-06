@@ -128,7 +128,7 @@
                                             ArrayList<String[]> descriptSt = db.getDescriptionSeancePerso(seanceperso.getCodesp().toString());
                                             Integer cpt = 0;
                                             out.print("<table id=\""+seanceperso.getCodesp()+"example24\" class=\"display nowrap table table-hover table-striped table-bordered\" cellspacing=\"0\" width=\"100%\">");
-                                            out.print("<thead><tr><th>Nom Exercice</th><th>Séries à faire</th><th>Durée attendue</th><th>R�p�tition</th><th>Repos</th>");
+                                            out.print("<thead><tr><th>Nom Exercice</th><th>Séries à faire</th><th>Durée attendue</th><th>Répétition</th><th>Repos</th>");
                                             if(flagModification){
                                                 out.print("<th>Supprime</th>");
                                             }else{

@@ -22,7 +22,7 @@ function insertExercice()
     var videoExercice = document.getElementById("videoExercice").value;
     var objectiveExercice = document.getElementById("objectiveExercice").value;
     var descExercice = document.getElementById("descExercice").value;
-    alert(descExercice);
+
 // on vérifie que les champs nom d'exercice et objectif sont remplis
     var errorMessage = "";
     var errorFlag = false;
@@ -62,6 +62,7 @@ function insertExercice()
 
                     } else {
                         alert("Vous avez réussi à créer un nouvel exercice");
+                        window.location.href="listExercice.jsp";
                     }
 
 

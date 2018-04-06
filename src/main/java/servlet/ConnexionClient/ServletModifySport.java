@@ -116,7 +116,7 @@ public class ServletModifySport extends HttpServlet {
         new db.dbClient().modifySport(idSb, "105", squat);
         new db.dbClient().modifySport(idSb, "106", dips);
               
-        resp.sendRedirect("content/profilClient.jsp");
+        resp.sendRedirect("content/modifySport.jsp");
 
     }
 
