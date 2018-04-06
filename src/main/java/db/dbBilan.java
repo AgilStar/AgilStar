@@ -21,6 +21,11 @@ public class dbBilan {
 
     Connection cx;//La connection utilisé par toutes les méthodes dans cette classe
 
+    /**
+     * Obtenir la liste de bilan par code de program personalisé
+     * @param codepp code de programùe personalisé
+     * @return la liste de bilan
+     */
     public ArrayList<Seancebilan> getBilans(String codepp) {
         cx = new dbAdmin().getConnection();
         ArrayList<Seancebilan> bilans = new ArrayList();
@@ -55,6 +60,11 @@ public class dbBilan {
         return bilans;
     }
 
+    /**
+     * Obtenir bilan inital
+     * @param idU
+     * @return
+     */bilan inital
     public String getBilanInit(String idU) {
         String id = "";
         try {
@@ -274,6 +284,6 @@ public class dbBilan {
 
     public static void main(String[] args) {
         dbBilan db = new dbBilan();
-        System.out.println(db.getExercice("Mont�e de genoux"));
+        System.out.println(db.getExercice("Mont�e de genoux"));
     }
 }

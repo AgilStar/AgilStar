@@ -34,8 +34,6 @@ public class dbAdmin {
     private String password = "gs9yu3v1vkklitcy";
 
 
-
-  
     public Connection getConnection(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -50,7 +48,10 @@ public class dbAdmin {
         }
         return cx;
     }
-   
+
+    /**
+     * Enregistrer un utilisateur
+     */
     public void insertUser(String nomu, String prenomu, String mailu, String genreu,         
             String datenaissance, String mdpu, String statutu, String adresseu, String telu, String infooptu) {
        cx=getConnection();
@@ -71,13 +72,16 @@ public class dbAdmin {
 
     }
 
+
+    /**
+     * Ajouoter un ou des profils
+     * @param profil Code de profil
+     * @param codeu Code d'utilisateur
+     */
     public void insertProfilToUser(String profil, String codeu){
         cx=getConnection();   
         try {
             String sql = "insert into DETENIR(CODEPROFIL,CODEU) VALUES('"+profil+"','"+codeu+"')";
-                    
-            System.out.println("****************************************");
-            System.out.println(sql);
             Statement st = cx.createStatement();
             st.executeUpdate(sql);
               st.close();
@@ -87,6 +91,11 @@ public class dbAdmin {
         }
         }
 
+    /**
+     * Obtenir code d'utilisateur par email
+     * @param mail email
+     * @return id utilisateur
+     */
     public ArrayList<String> recupIdUtilisateur(String mail){
         cx=getConnection();
         ArrayList<String> list=new ArrayList();
@@ -108,7 +117,12 @@ public class dbAdmin {
         }
         return list;
     }
-    
+
+    /**
+     * Obtenir code de profil à partir de libelle de profil
+     * @param profil libelle de profil
+     * @return code de profil
+     */
       public String recupProfilUtilisateur(String profil){
           cx=getConnection();
         String idP="";
