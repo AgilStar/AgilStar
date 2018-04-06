@@ -92,8 +92,8 @@
       <file leaf-file-name="listClient.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listClient.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="146" column="172" lean-forward="false" selection-start-line="146" selection-start-column="172" selection-end-line="146" selection-end-column="172" />
+            <state relative-caret-position="568">
+              <caret line="146" column="63" lean-forward="false" selection-start-line="146" selection-start-column="63" selection-end-line="146" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -743,7 +743,7 @@
       <workItem from="1522791268940" duration="2032000" />
       <workItem from="1522828645943" duration="3758000" />
       <workItem from="1522844960527" duration="64181000" />
-      <workItem from="1523000047429" duration="273000" />
+      <workItem from="1523000047429" duration="314000" />
     </task>
     <servers />
   </component>
@@ -753,7 +753,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188172000" />
+    <option name="totallyTimeSpent" value="188213000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1309,8 +1309,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listClient.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="146" column="172" lean-forward="false" selection-start-line="146" selection-start-column="172" selection-end-line="146" selection-end-column="172" />
+        <state relative-caret-position="568">
+          <caret line="146" column="63" lean-forward="false" selection-start-line="146" selection-start-column="63" selection-end-line="146" selection-end-column="63" />
           <folding />
         </state>
       </provider>

@@ -144,7 +144,7 @@
                                                 } else {
                                                     //Le client est prospect
                                                     out.print("<td><span class=\"badge badge-warning \">" + u.getStatutu() + "</span></td>");
-                                                    out.print(<td><button onclick=\"window.location.href='detailUser.jsp?codeu='" + u.getCodeu() + "')\">Voir</button></td>");
+                                                    out.print("<td><button onclick=\"window.location.href='detailUser.jsp?codeu='" + u.getCodeu() + "')\">Voir</button></td>");
                                                 }
 
                                                 out.print("</tr>");
