@@ -117,6 +117,7 @@ function terminerBilan() {
 function checkSeance() {
     //bilan
     if (document.getElementById("fcrepos")!= null) {
+       
         var fcrepos = document.getElementById("fcrepos").value;
         var fcflexion = document.getElementById("fcflexion").value;
         var fcallonge = document.getElementById("fcallonge").value;
@@ -125,7 +126,8 @@ function checkSeance() {
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 {
-                    window.location.href = "listProgram.jsp";
+                  
+                    
                 }
             }
             ;
@@ -162,8 +164,8 @@ function checkSeance() {
         xhr.send(null);
 
     }
+    }
+    
 
 
 
-
-}
