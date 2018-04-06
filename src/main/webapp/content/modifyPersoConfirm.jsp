@@ -69,7 +69,8 @@
                                           
                                          Utilisateur u = new dbClient().getUser(id);
                                   ArrayList<Profil> po= new dbClient().getProfilUser(id);
-                                          //   out.print(u.getGenreu());
+                                  ArrayList<Profil> listPo=new dbProfil().getProfils();
+
 
                                          %>
                                                     <div class="form-group">
@@ -102,8 +103,15 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Objectif sportif</label>
-                                                            <%  for (Profil prof : po) {
-                                                       out.print( "<input type='text' value='"+prof.getLibelleprofil()+"' disabled>");}
+                                                            <%  for (Profil prof : listPo) {
+                                                                if(po.contains(prof)){
+                                                                    out.print( "<p><input type='checkbox'  onchange='changeProfil(this)' name='profil'  value='"+prof.getCodeprofil()+"' checked />");
+                                                                }else{
+                                                                    out.print( "<p><input type='checkbox'  onchange='changeProfil(this)' name='profil'  value='"+prof.getCodeprofil()+"' />");
+                                                                }
+                                                                out.print(prof.getLibelleprofil()+"</p>");
+                                                            }
+
                                                    %>
                                                     </div>
                                                      <div class="form-group">

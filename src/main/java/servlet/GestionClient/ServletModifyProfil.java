@@ -23,7 +23,7 @@ import javax.servlet.http.HttpSession;
         urlPatterns = {"/ServletModifyProfil"}
 )
 public class ServletModifyProfil  extends HttpServlet {
-    
+    @Override
      protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
      
@@ -32,12 +32,17 @@ public class ServletModifyProfil  extends HttpServlet {
         String idS;
        HttpSession session=req.getSession();
        idS= (String)session.getAttribute("id");
+
        int id=Integer.parseInt(idS);
                                            
         String nom = req.getParameter("nom");
         String adresse = req.getParameter("adress");
         String prenom = req.getParameter("prenom");
        new db.dbClient().modifyProfil(id, nom, adresse, prenom);
+//new db.dbClient().deleteDetenir(idS);
+//         new db.dbClient().CreateDetenir(idS,idProfil);
+
+
      resp.sendRedirect("content/modifyPerso.jsp");
      }
     

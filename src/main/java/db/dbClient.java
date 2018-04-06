@@ -526,9 +526,9 @@ public class dbClient {
             ResultSet rs = st.executeQuery(sql);
 
             while (rs.next()) {
-
+                int id = rs.getInt("CODEPROFIL");
                 String profil = rs.getString("LIBELLEPROFIL");
-                profils.add(new Profil(profil));
+                profils.add(new Profil(id,profil));
             }
             st.close();
             cx.close();
@@ -538,6 +538,11 @@ public class dbClient {
         }
         return profils;
     }
+
+
+
+
+
 
     public void modifyProfil(int codeu, String nom, String adresse, String prenom) {
         cx = new dbAdmin().getConnection();
@@ -697,6 +702,26 @@ public class dbClient {
     }
 
 
+    public void deleteDetenir(String idU,String idP){
+        cx = new dbAdmin().getConnection();
+        try{
+
+            String sql2 = "delete FROM DETENIR where CODEU=" + idU+" and CODEPROFIL="+idP;
+            Statement st2 = cx.createStatement();
+            st2.executeUpdate(sql2);
+            st2.close();}
+        catch(SQLException ex) {
+            System.out.println("Il y a un problème sur statement validerBilan valider " + ex.getMessage());
+        }
+        try {
+            cx.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
     public static void main(String[] args) {
         dbClient d = new dbClient();
         Utilisateur u = d.getOneClient(24);
@@ -712,4 +737,25 @@ public class dbClient {
 
     }
 
+    public void CreateDetenir(String idS, String idProfil) {
+        cx = new dbAdmin().getConnection();
+        try{
+
+
+                String sql2 = "INSERT INTO DETENIR VALUES("+idProfil+","+idS+")";
+            System.out.println(sql2);
+                Statement st2 = cx.createStatement();
+                st2.executeUpdate(sql2);
+                st2.close();
+
+        }
+        catch(SQLException ex) {
+            System.out.println("Il y a un problème sur statement validerBilan valider " + ex.getMessage());
+        }
+        try {
+            cx.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

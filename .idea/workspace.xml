@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef1cdac3-136c-4724-8a4f-2c47a48dd52a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/indexClient.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/indexClient.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/listClient.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/listClient.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/servlet/GestionClient/ServletMProfil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dbClient.java" afterPath="$PROJECT_DIR$/src/main/java/db/dbClient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlet/GestionClient/ServletModifyProfil.java" afterPath="$PROJECT_DIR$/src/main/java/servlet/GestionClient/ServletModifyProfil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/content/modifyPersoConfirm.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/content/modifyPersoConfirm.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/ajaxExercice.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/ajaxExercice.js" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,8 +22,8 @@
       <file leaf-file-name="dbProgram.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/db/dbProgram.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="681">
-              <caret line="645" column="0" lean-forward="false" selection-start-line="645" selection-start-column="0" selection-end-line="645" selection-end-column="0" />
+            <state relative-caret-position="239">
+              <caret line="876" column="22" lean-forward="false" selection-start-line="876" selection-start-column="16" selection-end-line="876" selection-end-column="22" />
               <folding>
                 <element signature="method#insertSessionBilanPerso#0;class#dbProgram#0" expanded="false" />
                 <marker date="1522951439357" expanded="true" signature="660:688" ph="select * fro... PROGRAMMETYPE" />
@@ -70,27 +74,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detailProgramPersoCoach.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/content/detailProgramPersoCoach.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2115">
-              <caret line="141" column="123" lean-forward="false" selection-start-line="141" selection-start-column="123" selection-end-line="141" selection-end-column="123" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="modifierBilan.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierBilan.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="63" column="142" lean-forward="false" selection-start-line="63" selection-start-column="142" selection-end-line="63" selection-end-column="142" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="listClient.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="listClient.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listClient.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="106">
@@ -100,31 +84,45 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="modifyPersoConfirm.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifyPersoConfirm.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="314">
+              <caret line="107" column="157" lean-forward="false" selection-start-line="107" selection-start-column="152" selection-end-line="107" selection-end-column="157" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxExercice.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ajaxExercice.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="176" column="56" lean-forward="false" selection-start-line="176" selection-start-column="56" selection-end-line="176" selection-end-column="56" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServletMProfil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/servlet/GestionClient/ServletMProfil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="18" lean-forward="false" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="indexClient.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/content/indexClient.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
               <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createClient.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/content/createClient.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1470">
-              <caret line="98" column="89" lean-forward="false" selection-start-line="98" selection-start-column="83" selection-end-line="98" selection-end-column="89" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="modifierExo.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierExo.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1170">
-              <caret line="78" column="103" lean-forward="false" selection-start-line="78" selection-start-column="103" selection-end-line="78" selection-end-column="103" />
               <folding />
             </state>
           </provider>
@@ -142,64 +140,60 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CtrlChangeStatu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/servlet/GestionClient/CtrlChangeStatu.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="14" column="41" lean-forward="false" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="dbClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/db/dbClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1695">
-              <caret line="129" column="36" lean-forward="false" selection-start-line="129" selection-start-column="36" selection-end-line="129" selection-end-column="36" />
+            <state relative-caret-position="240">
+              <caret line="739" column="57" lean-forward="false" selection-start-line="739" selection-start-column="49" selection-end-line="739" selection-end-column="57" />
               <folding>
-                <marker date="1522953803671" expanded="true" signature="1016:1086" ph="select MAILU... UTILISATEUR" />
-                <marker date="1522953803671" expanded="true" signature="2165:2204" ph="select * fro... UTILISATEUR" />
-                <marker date="1522953803671" expanded="true" signature="3924:3957" ph="select * fro... UTILISATEUR" />
-                <marker date="1522953803671" expanded="true" signature="5227:5287" ph="update UTILI... " />
-                <marker date="1522953803671" expanded="true" signature="6207:6402" ph="insert into SEANCEBILAN... " />
-                <marker date="1522953803671" expanded="true" signature="6769:6991" ph="Insert into PLANIFIERBILAN... " />
-                <marker date="1522953803671" expanded="true" signature="6906:6957" ph="SELECT CODEE... EXERCICE" />
-                <marker date="1522953803671" expanded="true" signature="7345:7638" ph="Insert into PLANIFIERBILAN... " />
-                <marker date="1522953803671" expanded="true" signature="7529:7599" ph="SELECT CODEE... EXERCICE" />
-                <marker date="1522953803671" expanded="true" signature="8004:8297" ph="Insert into PLANIFIERBILAN... " />
-                <marker date="1522953803671" expanded="true" signature="8188:8258" ph="SELECT CODEE... EXERCICE" />
-                <marker date="1522953803671" expanded="true" signature="8646:8911" ph="Insert into PLANIFIERBILAN... " />
-                <marker date="1522953803671" expanded="true" signature="8830:8880" ph="SELECT CODEE... EXERCICE" />
-                <marker date="1522953803671" expanded="true" signature="9257:9530" ph="Insert into PLANIFIERBILAN... " />
-                <marker date="1522953803671" expanded="true" signature="9441:9500" ph="SELECT CODEE... EXERCICE" />
-                <marker date="1522953803671" expanded="true" signature="9882:10149" ph="Insert into PLANIFIERBILAN... " />
-                <marker date="1522953803671" expanded="true" signature="10066:10119" ph="SELECT CODEE... EXERCICE" />
-                <marker date="1522953803671" expanded="true" signature="10500:10761" ph="Insert into PLANIFIERBILAN... " />
-                <marker date="1522953803671" expanded="true" signature="10684:10732" ph="SELECT CODEE... EXERCICE" />
-                <marker date="1522953803671" expanded="true" signature="11099:11211" ph="Insert into MENSURATION... " />
-                <marker date="1522953803671" expanded="true" signature="11878:11962" ph="select count... MENSURATION" />
-                <marker date="1522953803671" expanded="true" signature="12339:12489" ph="update MENSU... " />
-                <marker date="1522953803671" expanded="true" signature="13032:13252" ph="Insert into MENSURATION... " />
-                <marker date="1522953803671" expanded="true" signature="13997:14081" ph="select count... UTILISATEUR" />
-                <marker date="1522953803671" expanded="true" signature="14822:14877" ph="update UTILI... " />
-                <marker date="1522953803671" expanded="true" signature="15327:15549" ph="select * fro... MENSURATION" />
-                <marker date="1522953803671" expanded="true" signature="15390:15437" ph="SELECT MAX(D... MENSURATION" />
-                <marker date="1522953803671" expanded="true" signature="15488:15535" ph="SELECT MAX(C... MENSURATION" />
-                <marker date="1522953803671" expanded="true" signature="16985:17087" ph="update PLANI... " />
-                <marker date="1522953803671" expanded="true" signature="17210:17262" ph="update SEANC... " />
-                <marker date="1522953803671" expanded="true" signature="17766:17821" ph="select * fro... UTILISATEUR" />
-                <marker date="1522953803671" expanded="true" signature="19049:19145" ph="select * fro... DETENIR" />
-                <marker date="1522953803671" expanded="true" signature="19840:19946" ph="update UTILI... " />
-                <marker date="1522953803671" expanded="true" signature="20445:20595" ph="select codes... SEANCEBILAN" />
-                <marker date="1522953803671" expanded="true" signature="20534:20581" ph="SELECT MAX(D... SEANCEBILAN" />
-                <marker date="1522953803671" expanded="true" signature="21319:21362" ph="select codee... EXERCICE" />
-                <marker date="1522953803671" expanded="true" signature="22120:22338" ph="select p.TEM... PLANIFIERBILAN" />
-                <marker date="1522953803671" expanded="true" signature="23221:23308" ph="update PLANI... " />
-                <marker date="1522953803671" expanded="true" signature="23787:23839" ph="update SEANC... " />
-                <marker date="1522953803671" expanded="true" signature="24174:24234" ph="update SEANC... " />
-                <marker date="1522953803671" expanded="true" signature="24569:24633" ph="update SEANC... " />
-                <marker date="1522953803671" expanded="true" signature="24971:25040" ph="update SEANC... " />
+                <marker date="1523008450406" expanded="true" signature="1016:1086" ph="select MAILU... UTILISATEUR" />
+                <marker date="1523008450406" expanded="true" signature="2165:2204" ph="select * fro... UTILISATEUR" />
+                <marker date="1523008450406" expanded="true" signature="3924:3957" ph="select * fro... UTILISATEUR" />
+                <marker date="1523008450406" expanded="true" signature="5227:5287" ph="update UTILI... " />
+                <marker date="1523008450406" expanded="true" signature="6207:6402" ph="insert into SEANCEBILAN... " />
+                <marker date="1523008450406" expanded="true" signature="6769:6991" ph="Insert into PLANIFIERBILAN... " />
+                <marker date="1523008450406" expanded="true" signature="6906:6957" ph="SELECT CODEE... EXERCICE" />
+                <marker date="1523008450406" expanded="true" signature="7345:7638" ph="Insert into PLANIFIERBILAN... " />
+                <marker date="1523008450406" expanded="true" signature="7529:7599" ph="SELECT CODEE... EXERCICE" />
+                <marker date="1523008450406" expanded="true" signature="8004:8297" ph="Insert into PLANIFIERBILAN... " />
+                <marker date="1523008450406" expanded="true" signature="8188:8258" ph="SELECT CODEE... EXERCICE" />
+                <marker date="1523008450406" expanded="true" signature="8646:8911" ph="Insert into PLANIFIERBILAN... " />
+                <marker date="1523008450406" expanded="true" signature="8830:8880" ph="SELECT CODEE... EXERCICE" />
+                <marker date="1523008450406" expanded="true" signature="9257:9530" ph="Insert into PLANIFIERBILAN... " />
+                <marker date="1523008450406" expanded="true" signature="9441:9500" ph="SELECT CODEE... EXERCICE" />
+                <marker date="1523008450406" expanded="true" signature="9882:10149" ph="Insert into PLANIFIERBILAN... " />
+                <marker date="1523008450406" expanded="true" signature="10066:10119" ph="SELECT CODEE... EXERCICE" />
+                <marker date="1523008450406" expanded="true" signature="10500:10761" ph="Insert into PLANIFIERBILAN... " />
+                <marker date="1523008450406" expanded="true" signature="10684:10732" ph="SELECT CODEE... EXERCICE" />
+                <marker date="1523008450406" expanded="true" signature="11099:11211" ph="Insert into MENSURATION... " />
+                <marker date="1523008450406" expanded="true" signature="11878:11962" ph="select count... MENSURATION" />
+                <marker date="1523008450406" expanded="true" signature="12339:12489" ph="update MENSU... " />
+                <marker date="1523008450406" expanded="true" signature="13032:13252" ph="Insert into MENSURATION... " />
+                <marker date="1523008450406" expanded="true" signature="13997:14081" ph="select count... UTILISATEUR" />
+                <marker date="1523008450406" expanded="true" signature="14822:14877" ph="update UTILI... " />
+                <marker date="1523008450406" expanded="true" signature="15327:15549" ph="select * fro... MENSURATION" />
+                <marker date="1523008450406" expanded="true" signature="15390:15437" ph="SELECT MAX(D... MENSURATION" />
+                <marker date="1523008450406" expanded="true" signature="15488:15535" ph="SELECT MAX(C... MENSURATION" />
+                <marker date="1523008450406" expanded="true" signature="16985:17087" ph="update PLANI... " />
+                <marker date="1523008450406" expanded="true" signature="17210:17262" ph="update SEANC... " />
+                <marker date="1523008450406" expanded="true" signature="17766:17821" ph="select * fro... UTILISATEUR" />
+                <marker date="1523008450406" expanded="true" signature="19049:19145" ph="select * fro... DETENIR" />
+                <marker date="1523008450406" expanded="true" signature="19897:20003" ph="update UTILI... " />
+                <marker date="1523008450406" expanded="true" signature="20502:20652" ph="select codes... SEANCEBILAN" />
+                <marker date="1523008450406" expanded="true" signature="20591:20638" ph="SELECT MAX(D... SEANCEBILAN" />
+                <marker date="1523008450406" expanded="true" signature="21376:21419" ph="select codee... EXERCICE" />
+                <marker date="1523008450406" expanded="true" signature="22177:22395" ph="select p.TEM... PLANIFIERBILAN" />
+                <marker date="1523008450406" expanded="true" signature="23278:23365" ph="update PLANI... " />
+                <marker date="1523008450406" expanded="true" signature="23844:23896" ph="update SEANC... " />
+                <marker date="1523008450406" expanded="true" signature="24231:24291" ph="update SEANC... " />
+                <marker date="1523008450406" expanded="true" signature="24626:24690" ph="update SEANC... " />
+                <marker date="1523008450406" expanded="true" signature="25028:25097" ph="update SEANC... " />
+                <marker date="1523008450406" expanded="true" signature="25721:25753" ph="delete FROM " />
+                <marker date="1523008450406" expanded="true" signature="25721:25777" ph="delete FROM " />
+                <marker date="1523008450406" expanded="true" signature="25721:25778" ph="delete FROM " />
+                <marker date="1523008450406" expanded="true" signature="26717:26744" ph="INSERT INTO DETENIR... " />
+                <marker date="1523008450406" expanded="true" signature="26717:26757" ph="INSERT INTO DETENIR... " />
+                <marker date="1523008450406" expanded="true" signature="26717:26765" ph="INSERT INTO DETENIR... " />
               </folding>
             </state>
           </provider>
@@ -235,7 +229,6 @@
       <find>insert into PLANI</find>
       <find>Repo</find>
       <find>getAllSe</find>
-      <find>delete</find>
       <find>deleteSeance</find>
       <find>addChoixSession</find>
       <find>listS</find>
@@ -247,6 +240,7 @@
       <find>getParameter</find>
       <find>Modifier</find>
       <find>validé</find>
+      <find>delete</find>
       <find>Voir</find>
     </findStrings>
     <replaceStrings>
@@ -264,11 +258,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/js/ajaxAdministrateur.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/content/detailProgramPerso.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/content/createProgram.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/servlet/DoingExo/ServletValidateSession.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/content/validateSession.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/DoingExercice.js" />
         <option value="$PROJECT_DIR$/src/main/java/db/dbTypeSession.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/TypeSession/ServletModifyTypeSession.java" />
@@ -308,13 +297,18 @@
         <option value="$PROJECT_DIR$/src/main/java/db/dbProgram.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/detailProgramPersoCoach.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/modifierBilan.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/db/dbClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/GestionClient/CtrlChangeStatu.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/createClient.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/modifierExo.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/indexClient.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/content/listClient.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/model/Profil.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/content/modifyPersoConfirm.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/servlet/GestionClient/ServletModifyProfil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlet/GestionClient/ServletMProfil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/db/dbClient.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/ajaxExercice.js" />
       </list>
     </option>
   </component>
@@ -459,15 +453,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="servlet" type="462c0819:PsiDirectoryNode" />
               <item name="GestionClient" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="agilStar" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AgilStar" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
-              <item name="Program" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="agilStar" type="b2602c69:ProjectViewProjectNode" />
@@ -744,7 +729,7 @@
       <workItem from="1522791268940" duration="2032000" />
       <workItem from="1522828645943" duration="3758000" />
       <workItem from="1522844960527" duration="64181000" />
-      <workItem from="1523000047429" duration="827000" />
+      <workItem from="1523000047429" duration="6942000" />
     </task>
     <servers />
   </component>
@@ -754,7 +739,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188726000" />
+    <option name="totallyTimeSpent" value="194841000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -846,47 +831,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/detailProgramPerso.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="102" column="50" lean-forward="true" selection-start-line="102" selection-start-column="50" selection-end-line="102" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/detailUser.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listProgrammPersonal.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="63" column="89" lean-forward="false" selection-start-line="63" selection-start-column="74" selection-end-line="63" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listProgramm.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="73" column="67" lean-forward="true" selection-start-line="73" selection-start-column="67" selection-end-line="73" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/listSession.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14">
-          <caret line="6" column="51" lean-forward="false" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/mensuration.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-29">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifierProgramme.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -1052,13 +996,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbProfil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ajaxTypeSessionPerso.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1137,6 +1074,36 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2590">
           <caret line="391" column="65" lean-forward="false" selection-start-line="391" selection-start-column="65" selection-end-line="391" selection-end-column="65" />
+          <folding>
+            <marker date="1522953436034" expanded="true" signature="958:1000" ph="select * fro... PROGRAMMEPERSO" />
+            <marker date="1522953436034" expanded="true" signature="2209:2217" ph="select (coun... SEANCEPERSO" />
+            <marker date="1522953436034" expanded="true" signature="2209:2421" ph="select (temp... count" />
+            <marker date="1522953436034" expanded="true" signature="2250:2317" ph="select count... SEANCEPERSO" />
+            <marker date="1522953436034" expanded="true" signature="2337:2404" ph="select count... SEANCEBILAN" />
+            <marker date="1522953436034" expanded="true" signature="4193:5027" ph="{...}" />
+            <marker date="1522953436034" expanded="true" signature="5033:5157" ph="/**...*/" />
+            <marker date="1522953436034" expanded="true" signature="5229:6497" ph="{...}" />
+            <marker date="1522953436034" expanded="true" signature="5431:5535" ph="select * fro... EXERCICE" />
+            <marker date="1522953436034" expanded="true" signature="5582:5689" ph="select * fro... EXERCICE" />
+            <marker date="1522953436034" expanded="true" signature="6565:7509" ph="{...}" />
+            <marker date="1522953436034" expanded="true" signature="6686:6745" ph="select * fro... PLANIFIERSP" />
+            <marker date="1522953436034" expanded="true" signature="7578:8318" ph="{...}" />
+            <marker date="1522953436034" expanded="true" signature="7700:7762" ph="select * fro... PLANIFIERBILAN" />
+            <marker date="1522953436034" expanded="true" signature="8370:9957" ph="{...}" />
+            <marker date="1522953436034" expanded="true" signature="8472:8666" ph="select SP.CO... SEANCETYPE" />
+            <marker date="1522953436034" expanded="true" signature="10010:10602" ph="{...}" />
+            <marker date="1522953436034" expanded="true" signature="10277:10306" ph="delete from " />
+            <marker date="1522953436034" expanded="true" signature="10654:11246" ph="{...}" />
+            <marker date="1522953436034" expanded="true" signature="10921:10950" ph="delete from " />
+            <marker date="1522953436034" expanded="true" signature="11302:11945" ph="{...}" />
+            <marker date="1522953436034" expanded="true" signature="11569:11601" ph="delete from " />
+            <marker date="1522953436034" expanded="true" signature="12002:12591" ph="{...}" />
+            <marker date="1522953436034" expanded="true" signature="12268:12297" ph="delete from " />
+            <marker date="1522953436034" expanded="true" signature="12649:13037" ph="{...}" />
+            <marker date="1522953436034" expanded="true" signature="12685:12738" ph="update SEANC... " />
+            <marker date="1522953436034" expanded="true" signature="13100:13487" ph="{...}" />
+            <marker date="1522953436034" expanded="true" signature="13136:13189" ph="update SEANC... " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1164,57 +1131,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1695">
-          <caret line="129" column="36" lean-forward="false" selection-start-line="129" selection-start-column="36" selection-end-line="129" selection-end-column="36" />
-          <folding>
-            <marker date="1522953803671" expanded="true" signature="1016:1086" ph="select MAILU... UTILISATEUR" />
-            <marker date="1522953803671" expanded="true" signature="2165:2204" ph="select * fro... UTILISATEUR" />
-            <marker date="1522953803671" expanded="true" signature="3924:3957" ph="select * fro... UTILISATEUR" />
-            <marker date="1522953803671" expanded="true" signature="5227:5287" ph="update UTILI... " />
-            <marker date="1522953803671" expanded="true" signature="6207:6402" ph="insert into SEANCEBILAN... " />
-            <marker date="1522953803671" expanded="true" signature="6769:6991" ph="Insert into PLANIFIERBILAN... " />
-            <marker date="1522953803671" expanded="true" signature="6906:6957" ph="SELECT CODEE... EXERCICE" />
-            <marker date="1522953803671" expanded="true" signature="7345:7638" ph="Insert into PLANIFIERBILAN... " />
-            <marker date="1522953803671" expanded="true" signature="7529:7599" ph="SELECT CODEE... EXERCICE" />
-            <marker date="1522953803671" expanded="true" signature="8004:8297" ph="Insert into PLANIFIERBILAN... " />
-            <marker date="1522953803671" expanded="true" signature="8188:8258" ph="SELECT CODEE... EXERCICE" />
-            <marker date="1522953803671" expanded="true" signature="8646:8911" ph="Insert into PLANIFIERBILAN... " />
-            <marker date="1522953803671" expanded="true" signature="8830:8880" ph="SELECT CODEE... EXERCICE" />
-            <marker date="1522953803671" expanded="true" signature="9257:9530" ph="Insert into PLANIFIERBILAN... " />
-            <marker date="1522953803671" expanded="true" signature="9441:9500" ph="SELECT CODEE... EXERCICE" />
-            <marker date="1522953803671" expanded="true" signature="9882:10149" ph="Insert into PLANIFIERBILAN... " />
-            <marker date="1522953803671" expanded="true" signature="10066:10119" ph="SELECT CODEE... EXERCICE" />
-            <marker date="1522953803671" expanded="true" signature="10500:10761" ph="Insert into PLANIFIERBILAN... " />
-            <marker date="1522953803671" expanded="true" signature="10684:10732" ph="SELECT CODEE... EXERCICE" />
-            <marker date="1522953803671" expanded="true" signature="11099:11211" ph="Insert into MENSURATION... " />
-            <marker date="1522953803671" expanded="true" signature="11878:11962" ph="select count... MENSURATION" />
-            <marker date="1522953803671" expanded="true" signature="12339:12489" ph="update MENSU... " />
-            <marker date="1522953803671" expanded="true" signature="13032:13252" ph="Insert into MENSURATION... " />
-            <marker date="1522953803671" expanded="true" signature="13997:14081" ph="select count... UTILISATEUR" />
-            <marker date="1522953803671" expanded="true" signature="14822:14877" ph="update UTILI... " />
-            <marker date="1522953803671" expanded="true" signature="15327:15549" ph="select * fro... MENSURATION" />
-            <marker date="1522953803671" expanded="true" signature="15390:15437" ph="SELECT MAX(D... MENSURATION" />
-            <marker date="1522953803671" expanded="true" signature="15488:15535" ph="SELECT MAX(C... MENSURATION" />
-            <marker date="1522953803671" expanded="true" signature="16985:17087" ph="update PLANI... " />
-            <marker date="1522953803671" expanded="true" signature="17210:17262" ph="update SEANC... " />
-            <marker date="1522953803671" expanded="true" signature="17766:17821" ph="select * fro... UTILISATEUR" />
-            <marker date="1522953803671" expanded="true" signature="19049:19145" ph="select * fro... DETENIR" />
-            <marker date="1522953803671" expanded="true" signature="19840:19946" ph="update UTILI... " />
-            <marker date="1522953803671" expanded="true" signature="20445:20595" ph="select codes... SEANCEBILAN" />
-            <marker date="1522953803671" expanded="true" signature="20534:20581" ph="SELECT MAX(D... SEANCEBILAN" />
-            <marker date="1522953803671" expanded="true" signature="21319:21362" ph="select codee... EXERCICE" />
-            <marker date="1522953803671" expanded="true" signature="22120:22338" ph="select p.TEM... PLANIFIERBILAN" />
-            <marker date="1522953803671" expanded="true" signature="23221:23308" ph="update PLANI... " />
-            <marker date="1522953803671" expanded="true" signature="23787:23839" ph="update SEANC... " />
-            <marker date="1522953803671" expanded="true" signature="24174:24234" ph="update SEANC... " />
-            <marker date="1522953803671" expanded="true" signature="24569:24633" ph="update SEANC... " />
-            <marker date="1522953803671" expanded="true" signature="24971:25040" ph="update SEANC... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlet/GestionClient/CtrlChangeStatu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1239,6 +1155,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/indexClient.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbProfil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="40" column="35" lean-forward="true" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
+          <folding>
+            <marker date="1522773953830" expanded="true" signature="830:851" ph="select * fro... PROFIL" />
+            <marker date="1522773953830" expanded="true" signature="1648:1733" ph="select * fro... PROFIL" />
+            <marker date="1522773953830" expanded="true" signature="2499:2580" ph="select DATE_... " />
+            <marker date="1522773953830" expanded="true" signature="3416:3522" ph="select C.COD... correspondre" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Profil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="35" column="4" lean-forward="true" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+          <folding>
+            <element signature="e#1174#1175#0" expanded="true" />
+            <element signature="e#1223#1224#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ajaxCoach.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -1251,8 +1199,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/db/dbProgram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="681">
-          <caret line="645" column="0" lean-forward="false" selection-start-line="645" selection-start-column="0" selection-end-line="645" selection-end-column="0" />
+        <state relative-caret-position="239">
+          <caret line="876" column="22" lean-forward="false" selection-start-line="876" selection-start-column="16" selection-end-line="876" selection-end-column="22" />
           <folding>
             <element signature="method#insertSessionBilanPerso#0;class#dbProgram#0" expanded="false" />
             <marker date="1522951439357" expanded="true" signature="660:688" ph="select * fro... PROGRAMMETYPE" />
@@ -1302,11 +1250,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/indexClient.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/GestionClient/ServletModifyProfil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+        <state relative-caret-position="435">
+          <caret line="39" column="51" lean-forward="true" selection-start-line="39" selection-start-column="51" selection-end-line="39" selection-end-column="51" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/GestionClient/ServletChangeStatu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/dbClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="739" column="57" lean-forward="false" selection-start-line="739" selection-start-column="49" selection-end-line="739" selection-end-column="57" />
+          <folding>
+            <marker date="1523008450406" expanded="true" signature="1016:1086" ph="select MAILU... UTILISATEUR" />
+            <marker date="1523008450406" expanded="true" signature="2165:2204" ph="select * fro... UTILISATEUR" />
+            <marker date="1523008450406" expanded="true" signature="3924:3957" ph="select * fro... UTILISATEUR" />
+            <marker date="1523008450406" expanded="true" signature="5227:5287" ph="update UTILI... " />
+            <marker date="1523008450406" expanded="true" signature="6207:6402" ph="insert into SEANCEBILAN... " />
+            <marker date="1523008450406" expanded="true" signature="6769:6991" ph="Insert into PLANIFIERBILAN... " />
+            <marker date="1523008450406" expanded="true" signature="6906:6957" ph="SELECT CODEE... EXERCICE" />
+            <marker date="1523008450406" expanded="true" signature="7345:7638" ph="Insert into PLANIFIERBILAN... " />
+            <marker date="1523008450406" expanded="true" signature="7529:7599" ph="SELECT CODEE... EXERCICE" />
+            <marker date="1523008450406" expanded="true" signature="8004:8297" ph="Insert into PLANIFIERBILAN... " />
+            <marker date="1523008450406" expanded="true" signature="8188:8258" ph="SELECT CODEE... EXERCICE" />
+            <marker date="1523008450406" expanded="true" signature="8646:8911" ph="Insert into PLANIFIERBILAN... " />
+            <marker date="1523008450406" expanded="true" signature="8830:8880" ph="SELECT CODEE... EXERCICE" />
+            <marker date="1523008450406" expanded="true" signature="9257:9530" ph="Insert into PLANIFIERBILAN... " />
+            <marker date="1523008450406" expanded="true" signature="9441:9500" ph="SELECT CODEE... EXERCICE" />
+            <marker date="1523008450406" expanded="true" signature="9882:10149" ph="Insert into PLANIFIERBILAN... " />
+            <marker date="1523008450406" expanded="true" signature="10066:10119" ph="SELECT CODEE... EXERCICE" />
+            <marker date="1523008450406" expanded="true" signature="10500:10761" ph="Insert into PLANIFIERBILAN... " />
+            <marker date="1523008450406" expanded="true" signature="10684:10732" ph="SELECT CODEE... EXERCICE" />
+            <marker date="1523008450406" expanded="true" signature="11099:11211" ph="Insert into MENSURATION... " />
+            <marker date="1523008450406" expanded="true" signature="11878:11962" ph="select count... MENSURATION" />
+            <marker date="1523008450406" expanded="true" signature="12339:12489" ph="update MENSU... " />
+            <marker date="1523008450406" expanded="true" signature="13032:13252" ph="Insert into MENSURATION... " />
+            <marker date="1523008450406" expanded="true" signature="13997:14081" ph="select count... UTILISATEUR" />
+            <marker date="1523008450406" expanded="true" signature="14822:14877" ph="update UTILI... " />
+            <marker date="1523008450406" expanded="true" signature="15327:15549" ph="select * fro... MENSURATION" />
+            <marker date="1523008450406" expanded="true" signature="15390:15437" ph="SELECT MAX(D... MENSURATION" />
+            <marker date="1523008450406" expanded="true" signature="15488:15535" ph="SELECT MAX(C... MENSURATION" />
+            <marker date="1523008450406" expanded="true" signature="16985:17087" ph="update PLANI... " />
+            <marker date="1523008450406" expanded="true" signature="17210:17262" ph="update SEANC... " />
+            <marker date="1523008450406" expanded="true" signature="17766:17821" ph="select * fro... UTILISATEUR" />
+            <marker date="1523008450406" expanded="true" signature="19049:19145" ph="select * fro... DETENIR" />
+            <marker date="1523008450406" expanded="true" signature="19897:20003" ph="update UTILI... " />
+            <marker date="1523008450406" expanded="true" signature="20502:20652" ph="select codes... SEANCEBILAN" />
+            <marker date="1523008450406" expanded="true" signature="20591:20638" ph="SELECT MAX(D... SEANCEBILAN" />
+            <marker date="1523008450406" expanded="true" signature="21376:21419" ph="select codee... EXERCICE" />
+            <marker date="1523008450406" expanded="true" signature="22177:22395" ph="select p.TEM... PLANIFIERBILAN" />
+            <marker date="1523008450406" expanded="true" signature="23278:23365" ph="update PLANI... " />
+            <marker date="1523008450406" expanded="true" signature="23844:23896" ph="update SEANC... " />
+            <marker date="1523008450406" expanded="true" signature="24231:24291" ph="update SEANC... " />
+            <marker date="1523008450406" expanded="true" signature="24626:24690" ph="update SEANC... " />
+            <marker date="1523008450406" expanded="true" signature="25028:25097" ph="update SEANC... " />
+            <marker date="1523008450406" expanded="true" signature="25721:25753" ph="delete FROM " />
+            <marker date="1523008450406" expanded="true" signature="25721:25777" ph="delete FROM " />
+            <marker date="1523008450406" expanded="true" signature="25721:25778" ph="delete FROM " />
+            <marker date="1523008450406" expanded="true" signature="26717:26744" ph="INSERT INTO DETENIR... " />
+            <marker date="1523008450406" expanded="true" signature="26717:26757" ph="INSERT INTO DETENIR... " />
+            <marker date="1523008450406" expanded="true" signature="26717:26765" ph="INSERT INTO DETENIR... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/GestionClient/ServletMProfil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="18" lean-forward="false" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1315,6 +1338,24 @@
         <state relative-caret-position="106">
           <caret line="121" column="104" lean-forward="true" selection-start-line="121" selection-start-column="104" selection-end-line="121" selection-end-column="104" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/content/modifyPersoConfirm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="107" column="157" lean-forward="false" selection-start-line="107" selection-start-column="152" selection-end-line="107" selection-end-column="157" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ajaxExercice.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="176" column="56" lean-forward="false" selection-start-line="176" selection-start-column="56" selection-end-line="176" selection-end-column="56" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

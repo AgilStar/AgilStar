@@ -154,3 +154,28 @@ document.querySelector('.sweet-image-message').onclick = function(){
     });
 };
 
+function changeProfil(n) {
+    var xhr = getXMLHttpRequest();
+    var type="";
+    if(n.checked){
+        type="add";
+    }else{
+        type="delete";
+    }
+var id=n.value;
+
+    xhr.onreadystatechange = function () {
+
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            {
+
+
+            }
+        }
+        ;
+    }
+    // Requête au serveur avec les paramètres éventuels.
+    xhr.open("GET", "/ServletMProfil?type="+type+"&id=" + id, true);
+    xhr.send(null);
+
+}
